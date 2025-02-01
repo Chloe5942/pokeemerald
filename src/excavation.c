@@ -1413,77 +1413,107 @@ static void Excavation_MainCB(void) {
   DoScheduledBgTilemapCopiesToVram();
 }
 
+static void ShakeSprite(s16 dx, s16 dy) {
+    u32 i;
+    // Red Button
+    //gSprites[sExcavationUiState->bRedSpriteIndex].x += dx;
+    //wgSprites[sExcavationUiState->bRedSpriteIndex].y += dy;
+        
+    // Blue Button
+    //gSprites[sExcavationUiState->bBlueSpriteIndex].x += dx;
+    //gSprites[sExcavationUiState->bBlueSpriteIndex].y += dy;
+
+    for (i=0;i<128;i++) {
+        gSprites[i].x += dx;
+        gSprites[i].y += dy;
+    }
+
+}
+
 static void ExcavationUi_Shake(u8 taskId) {
   switch(sExcavationUiState->shakeState) {
-    case 0:
+    case 0: // Left 1 - Down 1
       MakeCursorInvisible();
-      SetGpuReg(REG_OFFSET_BG3HOFS, 1);
-      SetGpuReg(REG_OFFSET_BG2HOFS, 1);
+      ShakeSprite(-1, 1);
       sExcavationUiState->shakeState++;
       break;
-    case 1:
-      SetGpuReg(REG_OFFSET_BG3VOFS, 1);
-      SetGpuReg(REG_OFFSET_BG2VOFS, 1);
+    case 1: 
+      SetGpuReg(REG_OFFSET_BG3HOFS, 1);
+      SetGpuReg(REG_OFFSET_BG2HOFS, 1);
+      SetGpuReg(REG_OFFSET_BG3VOFS, -1);
+      SetGpuReg(REG_OFFSET_BG2VOFS, -1);
+      sExcavationUiState->shakeState++;
+      break;
+    case 3: // Right 2 - Up 2
+      ShakeSprite(3, -3);
       gSprites[sExcavationUiState->ShakeHitEffect].invisible = 1;
       gSprites[sExcavationUiState->ShakeHitTool].invisible = 1;
       sExcavationUiState->shakeState++;
       break;
-    case 2:
-      SetGpuReg(REG_OFFSET_BG3HOFS, -1);
-      SetGpuReg(REG_OFFSET_BG2HOFS, -1);
+    case 4:
+      SetGpuReg(REG_OFFSET_BG3HOFS, -2);
+      SetGpuReg(REG_OFFSET_BG2HOFS, -2);
+      SetGpuReg(REG_OFFSET_BG3VOFS, 2);
+      SetGpuReg(REG_OFFSET_BG2VOFS, 2);
+      sExcavationUiState->shakeState++;
+      break;
+    case 6: // Down 2
+      ShakeSprite(-2, 4);
       gSprites[sExcavationUiState->ShakeHitEffect].invisible = 0;
       gSprites[sExcavationUiState->ShakeHitTool].invisible = 0;
       sExcavationUiState->shakeState++;
       break;
-    case 3:
-      SetGpuReg(REG_OFFSET_BG3VOFS, -1);
-      SetGpuReg(REG_OFFSET_BG2VOFS, -1);
+    case 7:
+      SetGpuReg(REG_OFFSET_BG3VOFS, -2);
+      SetGpuReg(REG_OFFSET_BG2VOFS, -2);
+      SetGpuReg(REG_OFFSET_BG3HOFS, 0);
+      SetGpuReg(REG_OFFSET_BG2HOFS, 0);
+      sExcavationUiState->shakeState++;
+      break;
+    case 9: // Left 2 - Up 2
+      ShakeSprite(-2, -4);
       gSprites[sExcavationUiState->ShakeHitEffect].invisible = 1;
       sExcavationUiState->shakeState++;
       break;
-    case 4:
-      SetGpuReg(REG_OFFSET_BG3HOFS, 1);
-      SetGpuReg(REG_OFFSET_BG2HOFS, 1);
+    case 10:      
+      SetGpuReg(REG_OFFSET_BG2HOFS, 2);
+      SetGpuReg(REG_OFFSET_BG3HOFS, 2);
+      SetGpuReg(REG_OFFSET_BG3VOFS, 2);
+      SetGpuReg(REG_OFFSET_BG2VOFS, 2);
+      sExcavationUiState->shakeState++;
+      break;
+    case 12: // Right 1 - Down 1
+      ShakeSprite(3, 3);
       gSprites[sExcavationUiState->ShakeHitEffect].invisible = 0;
       gSprites[sExcavationUiState->ShakeHitTool].x += 7;
       StartSpriteAnim(&gSprites[sExcavationUiState->ShakeHitTool], 1);
       sExcavationUiState->shakeState++;
       break;
-    case 5:
-      SetGpuReg(REG_OFFSET_BG3VOFS, 1);
-      SetGpuReg(REG_OFFSET_BG2VOFS, 1);
-      gSprites[sExcavationUiState->ShakeHitEffect].invisible = 1;
-      sExcavationUiState->shakeState++;
-      VBlankIntrWait();
-      break;
-    case 6:
+    case 13:      
       SetGpuReg(REG_OFFSET_BG3HOFS, -1);
       SetGpuReg(REG_OFFSET_BG2HOFS, -1);
-      gSprites[sExcavationUiState->ShakeHitEffect].invisible = 0;
-      gSprites[sExcavationUiState->ShakeHitTool].invisible = 1;
-      sExcavationUiState->shakeState++;
-      VBlankIntrWait();
-      break;
-    case 7:
       SetGpuReg(REG_OFFSET_BG3VOFS, -1);
       SetGpuReg(REG_OFFSET_BG2VOFS, -1);
-      gSprites[sExcavationUiState->ShakeHitEffect].invisible = 1;
-      gSprites[sExcavationUiState->ShakeHitTool].invisible = 0;
       sExcavationUiState->shakeState++;
-      VBlankIntrWait();
       break;
-    case 8:
+    case 15:
+      ShakeSprite(-1, -1);
+      gSprites[sExcavationUiState->cursorSpriteIndex].invisible = 0;
+      sExcavationUiState->shakeState++;
+      break;
+    case 16:
       SetGpuReg(REG_OFFSET_BG3VOFS, 0);
       SetGpuReg(REG_OFFSET_BG3HOFS, 0);
       SetGpuReg(REG_OFFSET_BG2HOFS, 0);
       SetGpuReg(REG_OFFSET_BG2VOFS, 0);
-      gSprites[sExcavationUiState->cursorSpriteIndex].invisible = 0;
       sExcavationUiState->shakeState = 0;
       sExcavationUiState->shouldShake = FALSE;
       DestroySprite(&gSprites[sExcavationUiState->ShakeHitTool]);
       DestroySprite(&gSprites[sExcavationUiState->ShakeHitEffect]);
       DestroyTask(taskId);
-      VBlankIntrWait();
+      break;
+    default:
+      sExcavationUiState->shakeState++;
       break;
   }
   BuildOamBuffer();
