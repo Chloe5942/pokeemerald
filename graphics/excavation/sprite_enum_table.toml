@@ -23,6 +23,7 @@
 "../graphics/excavation/items/moon_stone.4bpp" = "ITEMID_MOON_STONE"
 "../graphics/excavation/items/sun_stone.4bpp" = "ITEMID_SUN_STONE"
 "../graphics/excavation/items/odd_key_stone.4bpp" = "ITEMID_ODD_KEY_STONE"
+"../graphics/excavation/items/skull_fossil.4bpp" = "ITEMID_SKULL_FOSSIL"
 
 [stones]
 "../graphics/excavation/stones/stone_2x2.4bpp" = "ID_STONE_2x2"

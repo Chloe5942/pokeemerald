@@ -618,6 +618,9 @@ static const u16 gItemSunStonePal[] = INCBIN_U16("graphics/excavation/items/sun_
 static const u32 gItemOddKeyStoneGfx[] = INCBIN_U32("graphics/excavation/items/odd_key_stone.4bpp.lz");
 static const u16 gItemOddKeyStonePal[] = INCBIN_U16("graphics/excavation/items/odd_key_stone.gbapal");
 
+static const u32 gItemSkullFossilGfx[] = INCBIN_U32("graphics/excavation/items/skull_fossil.4bpp.lz");
+static const u16 gItemSkullFossilPal[] = INCBIN_U16("graphics/excavation/items/skull_fossil.gbapal");
+
 // Stone SpriteSheets and SpritePalettes
 static const struct CompressedSpriteSheet sSpriteSheet_Stone1x4[] = {
   {gStone1x4Gfx, 64*64/2, TAG_STONE_1X4},
@@ -828,6 +831,12 @@ static const struct CompressedSpriteSheet sSpriteSheet_ItemOddKeyStone = {
   gItemOddKeyStoneGfx,
   64*64/2,
   TAG_ITEM_ODD_KEY_STONE,
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_ItemSkullFossil = {
+  gItemSkullFossilGfx,
+  64*64/2,
+  TAG_ITEM_SKULL_FOSSIL,
 };
 
 static const struct SpriteTemplate gSpriteStone1x4 = {
@@ -1162,6 +1171,16 @@ static const struct ExcavationItem ExcavationItemList[] = {
     .tag = TAG_ITEM_ODD_KEY_STONE,
     .sheet = &sSpriteSheet_ItemOddKeyStone,
     .paldata = gItemOddKeyStonePal,
+  },
+  [ITEMID_SKULL_FOSSIL] = {
+    .excItemId = ITEMID_SKULL_FOSSIL,
+    .realItemId = ITEM_SUN_STONE,
+    .top = 3,
+    .left = 3,
+    .totalTiles = 13,
+    .tag = TAG_ITEM_SKULL_FOSSIL,
+    .sheet = &sSpriteSheet_ItemSkullFossil,
+    .paldata = gItemSkullFossilPal,
   },
 };
 
@@ -1659,6 +1678,7 @@ static const struct ItemRarity ItemRarityTable_Rare[] = {
   ITEMID_MOON_STONE,
   ITEMID_SUN_STONE,
   ITEMID_ODD_KEY_STONE,
+  ITEMID_SKULL_FOSSIL,
 };
 
 static u8 GetRandomItemId() {
@@ -3148,7 +3168,7 @@ static u32 Debug_CreateRandomItem(u32 random, u32 itemId)
 #endif
     {
         case 0: return ITEMID_ODD_KEY_STONE;
-        case 1: return ITEMID_SUN_STONE;
+        case 1: return ITEMID_SKULL_FOSSIL;
         case 2: return ITEMID_WATER_STONE;
         case 3: return ITEMID_THUNDER_STONE;
         default: return itemId;
