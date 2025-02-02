@@ -83,6 +83,7 @@ static u32 GetBuriedItemId(u32 index);
 static u32 GetNumberOfFoundItems(void);
 static bool32 GetBuriedItemStatus(u32 index);
 static void ExitExcavationUI(u8 taskId);
+static void WallCollapseAnimation();
 
 static u32 Debug_SetNumberOfBuriedItems(u32 rnd);
 static u32 Debug_CreateRandomItem(u32 random, u32 itemId);
@@ -100,6 +101,7 @@ struct ExcavationState {
   u32 loadGameState;            // ?
   bool32 shouldShake;           // If set to true, shake gets executed every VBlank
   u32 shakeState;               // State of shaking steps
+  u32 shakeDuration;            // How many times should the shaking loop?
   u32 ShakeHitTool;
   u32 ShakeHitEffect;
   bool32 mode;                  // Hammer or Pickaxe
@@ -1214,6 +1216,7 @@ static void Excavation_Init(MainCallback callback) {
   sExcavationUiState->leavingCallback = callback;
   sExcavationUiState->shakeState = 0;
   sExcavationUiState->shouldShake = FALSE;
+  sExcavationUiState->shakeDuration = 0;
   sExcavationUiState->loadGameState = 0;
   sExcavationUiState->crackCount = 0;
   sExcavationUiState->crackPos = 0;
@@ -1415,19 +1418,10 @@ static void Excavation_MainCB(void) {
 
 static void ShakeSprite(s16 dx, s16 dy) {
     u32 i;
-    // Red Button
-    //gSprites[sExcavationUiState->bRedSpriteIndex].x += dx;
-    //wgSprites[sExcavationUiState->bRedSpriteIndex].y += dy;
-        
-    // Blue Button
-    //gSprites[sExcavationUiState->bBlueSpriteIndex].x += dx;
-    //gSprites[sExcavationUiState->bBlueSpriteIndex].y += dy;
-
     for (i=0;i<128;i++) {
         gSprites[i].x += dx;
         gSprites[i].y += dy;
     }
-
 }
 
 static void ExcavationUi_Shake(u8 taskId) {
@@ -1459,8 +1453,10 @@ static void ExcavationUi_Shake(u8 taskId) {
       break;
     case 6: // Down 2
       ShakeSprite(-2, 4);
-      gSprites[sExcavationUiState->ShakeHitEffect].invisible = 0;
-      gSprites[sExcavationUiState->ShakeHitTool].invisible = 0;
+      if (!IsCrackMax()) {
+        gSprites[sExcavationUiState->ShakeHitEffect].invisible = 0;
+        gSprites[sExcavationUiState->ShakeHitTool].invisible = 0;
+      }
       sExcavationUiState->shakeState++;
       break;
     case 7:
@@ -1484,7 +1480,9 @@ static void ExcavationUi_Shake(u8 taskId) {
       break;
     case 12: // Right 1 - Down 1
       ShakeSprite(3, 3);
-      gSprites[sExcavationUiState->ShakeHitEffect].invisible = 0;
+      if (!IsCrackMax()) {
+          gSprites[sExcavationUiState->ShakeHitEffect].invisible = 0;
+      }
       gSprites[sExcavationUiState->ShakeHitTool].x += 7;
       StartSpriteAnim(&gSprites[sExcavationUiState->ShakeHitTool], 1);
       sExcavationUiState->shakeState++;
@@ -1498,7 +1496,8 @@ static void ExcavationUi_Shake(u8 taskId) {
       break;
     case 15:
       ShakeSprite(-1, -1);
-      gSprites[sExcavationUiState->cursorSpriteIndex].invisible = 0;
+      if (!IsCrackMax())
+        gSprites[sExcavationUiState->cursorSpriteIndex].invisible = 0;
       sExcavationUiState->shakeState++;
       break;
     case 16:
@@ -1506,10 +1505,20 @@ static void ExcavationUi_Shake(u8 taskId) {
       SetGpuReg(REG_OFFSET_BG3HOFS, 0);
       SetGpuReg(REG_OFFSET_BG2HOFS, 0);
       SetGpuReg(REG_OFFSET_BG2VOFS, 0);
-      sExcavationUiState->shakeState = 0;
-      sExcavationUiState->shouldShake = FALSE;
       DestroySprite(&gSprites[sExcavationUiState->ShakeHitTool]);
       DestroySprite(&gSprites[sExcavationUiState->ShakeHitEffect]);
+      if (sExcavationUiState->shakeDuration > 0) {
+        sExcavationUiState->shakeDuration--;
+        sExcavationUiState->shakeState = 0;
+        break;
+      }
+      if (IsCrackMax()) {
+        WallCollapseAnimation();
+        DebugPrintf("Hello I was executed ");
+        PrintMessage(sText_TheWall);
+      }
+      sExcavationUiState->shakeState = 0;
+      sExcavationUiState->shouldShake = FALSE;
       DestroyTask(taskId);
       break;
     default:
@@ -1781,7 +1790,7 @@ static void Task_ExcavationWaitFadeIn(u8 taskId) {
 #define RED_BUTTON 1
 
 static void Task_ExcavationMainInput(u8 taskId) {
-    if (gMain.newKeys & A_BUTTON && !sExcavationUiState->shouldShake /*&& sExcavationUiState->crackPos < 8 */)  {
+    if (gMain.newKeys & A_BUTTON && !sExcavationUiState->shouldShake)  {
         Excavation_UpdateTerrain();
         Excavation_UpdateCracks();
         ScheduleBgCopyTilemapToVram(2);
@@ -2734,6 +2743,15 @@ static void Excavation_FreeResources(void) {
     {
         Free(sBg3TilemapBuffer);
     }
+    if (sBg2TilemapBuffer != NULL)
+    {
+        Free(sBg2TilemapBuffer);
+    }
+    if (sBg1TilemapBuffer != NULL)
+    {
+        Free(sBg1TilemapBuffer);
+    }
+
     // Free all allocated tilemap and pixel buffers associated with the windows.
     FreeAllWindowBuffers();
     ReleaseComfyAnims();
@@ -2978,7 +2996,7 @@ static void WallCollapseAnimation() {
     u16* tilemapBuf = GetBgTilemapBuffer(1);
     ShowBg(1);
 
-    WallCollapse_Shake(4000);
+    //WallCollapse_Shake(4000);
 
     /*for (i = 0; i<20; delay++) { // Black screen falling from the top
         if (delay == 10000) {
@@ -3016,8 +3034,9 @@ static void HandleGameFinish(u8 taskId) {
   //SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_ALL);
 
 	if (IsCrackMax()) {
-        WallCollapseAnimation();
-		PrintMessage(sText_TheWall);
+        // The Shake-Task creation is handled by Task_ExcavationUi_HandleMainInput
+        // Here, we only set the Shake Duration.
+        sExcavationUiState->shakeDuration = 6; 
     } else {
 		PrintMessage(sText_EverythingWas);
     }
