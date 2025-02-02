@@ -615,6 +615,9 @@ static const u16 gItemMoonStonePal[] = INCBIN_U16("graphics/excavation/items/moo
 static const u32 gItemSunStoneGfx[] = INCBIN_U32("graphics/excavation/items/sun_stone.4bpp.lz");
 static const u16 gItemSunStonePal[] = INCBIN_U16("graphics/excavation/items/sun_stone.gbapal");
 
+static const u32 gItemOddKeyStoneGfx[] = INCBIN_U32("graphics/excavation/items/odd_key_stone.4bpp.lz");
+static const u16 gItemOddKeyStonePal[] = INCBIN_U16("graphics/excavation/items/odd_key_stone.gbapal");
+
 // Stone SpriteSheets and SpritePalettes
 static const struct CompressedSpriteSheet sSpriteSheet_Stone1x4[] = {
   {gStone1x4Gfx, 64*64/2, TAG_STONE_1X4},
@@ -819,6 +822,12 @@ static const struct CompressedSpriteSheet sSpriteSheet_ItemSunStone = {
   gItemSunStoneGfx,
   64*64/2,
   TAG_ITEM_SUN_STONE,
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_ItemOddKeyStone = {
+  gItemOddKeyStoneGfx,
+  64*64/2,
+  TAG_ITEM_ODD_KEY_STONE,
 };
 
 static const struct SpriteTemplate gSpriteStone1x4 = {
@@ -1143,6 +1152,16 @@ static const struct ExcavationItem ExcavationItemList[] = {
     .tag = TAG_ITEM_SUN_STONE,
     .sheet = &sSpriteSheet_ItemSunStone,
     .paldata = gItemSunStonePal,
+  },
+  [ITEMID_ODD_KEY_STONE] = {
+    .excItemId = ITEMID_ODD_KEY_STONE,
+    .realItemId = ITEM_SUN_STONE,
+    .top = 3,
+    .left = 3,
+    .totalTiles = 15,
+    .tag = TAG_ITEM_ODD_KEY_STONE,
+    .sheet = &sSpriteSheet_ItemOddKeyStone,
+    .paldata = gItemOddKeyStonePal,
   },
 };
 
@@ -1639,6 +1658,7 @@ static const struct ItemRarity ItemRarityTable_Rare[] = {
   ITEMID_THUNDER_STONE,
   ITEMID_MOON_STONE,
   ITEMID_SUN_STONE,
+  ITEMID_ODD_KEY_STONE,
 };
 
 static u8 GetRandomItemId() {
@@ -3127,7 +3147,7 @@ static u32 Debug_CreateRandomItem(u32 random, u32 itemId)
     switch (debug)
 #endif
     {
-        case 0: return ITEMID_MOON_STONE;
+        case 0: return ITEMID_ODD_KEY_STONE;
         case 1: return ITEMID_SUN_STONE;
         case 2: return ITEMID_WATER_STONE;
         case 3: return ITEMID_THUNDER_STONE;
