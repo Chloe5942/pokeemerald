@@ -619,7 +619,8 @@ static const u32 gItemOddKeyStoneGfx[] = INCBIN_U32("graphics/excavation/items/o
 static const u16 gItemOddKeyStonePal[] = INCBIN_U16("graphics/excavation/items/odd_key_stone.gbapal");
 
 static const u32 gItemSkullFossilGfx[] = INCBIN_U32("graphics/excavation/items/skull_fossil.4bpp.lz");
-static const u16 gItemSkullFossilPal[] = INCBIN_U16("graphics/excavation/items/skull_fossil.gbapal");
+static const u32 gItemArmorFossilGfx[] = INCBIN_U32("graphics/excavation/items/armor_fossil.4bpp.lz");
+static const u16 gItemFossilPal[] = INCBIN_U16("graphics/excavation/items/fossil.gbapal");
 
 // Stone SpriteSheets and SpritePalettes
 static const struct CompressedSpriteSheet sSpriteSheet_Stone1x4[] = {
@@ -837,6 +838,12 @@ static const struct CompressedSpriteSheet sSpriteSheet_ItemSkullFossil = {
   gItemSkullFossilGfx,
   64*64/2,
   TAG_ITEM_SKULL_FOSSIL,
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_ItemArmorFossil = {
+  gItemArmorFossilGfx,
+  64*64/2,
+  TAG_ITEM_ARMOR_FOSSIL,
 };
 
 static const struct SpriteTemplate gSpriteStone1x4 = {
@@ -1180,7 +1187,17 @@ static const struct ExcavationItem ExcavationItemList[] = {
     .totalTiles = 13,
     .tag = TAG_ITEM_SKULL_FOSSIL,
     .sheet = &sSpriteSheet_ItemSkullFossil,
-    .paldata = gItemSkullFossilPal,
+    .paldata = gItemFossilPal,
+  },
+  [ITEMID_ARMOR_FOSSIL] = {
+    .excItemId = ITEMID_ARMOR_FOSSIL,
+    .realItemId = ITEM_SUN_STONE,
+    .top = 3,
+    .left = 3,
+    .totalTiles = 15,
+    .tag = TAG_ITEM_ARMOR_FOSSIL,
+    .sheet = &sSpriteSheet_ItemArmorFossil,
+    .paldata = gItemFossilPal,
   },
 };
 
@@ -1679,6 +1696,7 @@ static const struct ItemRarity ItemRarityTable_Rare[] = {
   ITEMID_SUN_STONE,
   ITEMID_ODD_KEY_STONE,
   ITEMID_SKULL_FOSSIL,
+  ITEMID_ARMOR_FOSSIL,
 };
 
 static u8 GetRandomItemId() {
@@ -3169,7 +3187,7 @@ static u32 Debug_CreateRandomItem(u32 random, u32 itemId)
     {
         case 0: return ITEMID_ODD_KEY_STONE;
         case 1: return ITEMID_SKULL_FOSSIL;
-        case 2: return ITEMID_WATER_STONE;
+        case 2: return ITEMID_ARMOR_FOSSIL;
         case 3: return ITEMID_THUNDER_STONE;
         default: return itemId;
     }

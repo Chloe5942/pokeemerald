@@ -62,6 +62,9 @@ static const int SpriteTileTable[][16] = {
     [ITEMID_GREEN_SHARD] = {
       1,1,1,1,1,1,1,1,1,1,0,1,0,0,0,0,
     },
+    [ITEMID_ARMOR_FOSSIL] = {
+      1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+    },
     [ITEMID_HARD_STONE] = {
       1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,
     },
