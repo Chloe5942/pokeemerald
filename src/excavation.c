@@ -104,6 +104,7 @@ struct ExcavationState {
   u32 shakeDuration;            // How many times should the shaking loop?
   u32 ShakeHitTool;
   u32 ShakeHitEffect;
+  bool32 toggleShakeDuringAnimation;
   bool32 mode;                  // Hammer or Pickaxe
   u32 cursorSpriteIndex;
   u32 bRedSpriteIndex;
@@ -1586,9 +1587,12 @@ static void Excavation_MainCB(void) {
 
 static void ShakeSprite(s16 dx, s16 dy) {
     u32 i;
-    for (i=0;i<128;i++) {
-        gSprites[i].x += dx;
-        gSprites[i].y += dy;
+
+    if (sExcavationUiState->toggleShakeDuringAnimation == FALSE) {
+        for (i=0;i<128;i++) {
+            gSprites[i].x += dx;
+            gSprites[i].y += dy;
+        }
     }
 }
 
@@ -1596,14 +1600,19 @@ static void ExcavationUi_Shake(u8 taskId) {
   switch(sExcavationUiState->shakeState) {
     case 0: // Left 1 - Down 1
       MakeCursorInvisible();
+      if (!IsCrackMax() && Random() % 100 < 20) { // 20 % chance of not shaking the screen
+        sExcavationUiState->toggleShakeDuringAnimation = TRUE;  
+      }
       ShakeSprite(-1, 1);
       sExcavationUiState->shakeState++;
       break;
-    case 1: 
-      SetGpuReg(REG_OFFSET_BG3HOFS, 1);
-      SetGpuReg(REG_OFFSET_BG2HOFS, 1);
-      SetGpuReg(REG_OFFSET_BG3VOFS, -1);
-      SetGpuReg(REG_OFFSET_BG2VOFS, -1);
+    case 1:
+      if (sExcavationUiState->toggleShakeDuringAnimation == FALSE) {
+        SetGpuReg(REG_OFFSET_BG3HOFS, 1);
+        SetGpuReg(REG_OFFSET_BG2HOFS, 1);
+        SetGpuReg(REG_OFFSET_BG3VOFS, -1);
+        SetGpuReg(REG_OFFSET_BG2VOFS, -1);
+      }
       sExcavationUiState->shakeState++;
       break;
     case 3: // Right 2 - Up 2
@@ -1613,10 +1622,12 @@ static void ExcavationUi_Shake(u8 taskId) {
       sExcavationUiState->shakeState++;
       break;
     case 4:
-      SetGpuReg(REG_OFFSET_BG3HOFS, -2);
-      SetGpuReg(REG_OFFSET_BG2HOFS, -2);
-      SetGpuReg(REG_OFFSET_BG3VOFS, 2);
-      SetGpuReg(REG_OFFSET_BG2VOFS, 2);
+      if (sExcavationUiState->toggleShakeDuringAnimation == FALSE) {
+          SetGpuReg(REG_OFFSET_BG3HOFS, -2);
+          SetGpuReg(REG_OFFSET_BG2HOFS, -2);
+          SetGpuReg(REG_OFFSET_BG3VOFS, 2);
+          SetGpuReg(REG_OFFSET_BG2VOFS, 2);
+      }
       sExcavationUiState->shakeState++;
       break;
     case 6: // Down 2
@@ -1628,10 +1639,12 @@ static void ExcavationUi_Shake(u8 taskId) {
       sExcavationUiState->shakeState++;
       break;
     case 7:
-      SetGpuReg(REG_OFFSET_BG3VOFS, -2);
-      SetGpuReg(REG_OFFSET_BG2VOFS, -2);
-      SetGpuReg(REG_OFFSET_BG3HOFS, 0);
-      SetGpuReg(REG_OFFSET_BG2HOFS, 0);
+      if (sExcavationUiState->toggleShakeDuringAnimation == FALSE) {
+          SetGpuReg(REG_OFFSET_BG3VOFS, -2);
+          SetGpuReg(REG_OFFSET_BG2VOFS, -2);
+          SetGpuReg(REG_OFFSET_BG3HOFS, 0);
+          SetGpuReg(REG_OFFSET_BG2HOFS, 0);
+      }
       sExcavationUiState->shakeState++;
       break;
     case 9: // Left 2 - Up 2
@@ -1639,11 +1652,13 @@ static void ExcavationUi_Shake(u8 taskId) {
       gSprites[sExcavationUiState->ShakeHitEffect].invisible = 1;
       sExcavationUiState->shakeState++;
       break;
-    case 10:      
-      SetGpuReg(REG_OFFSET_BG2HOFS, 2);
-      SetGpuReg(REG_OFFSET_BG3HOFS, 2);
-      SetGpuReg(REG_OFFSET_BG3VOFS, 2);
-      SetGpuReg(REG_OFFSET_BG2VOFS, 2);
+    case 10:     
+      if (sExcavationUiState->toggleShakeDuringAnimation == FALSE) {
+        SetGpuReg(REG_OFFSET_BG2HOFS, 2);
+        SetGpuReg(REG_OFFSET_BG3HOFS, 2);
+        SetGpuReg(REG_OFFSET_BG3VOFS, 2);
+        SetGpuReg(REG_OFFSET_BG2VOFS, 2);
+      }
       sExcavationUiState->shakeState++;
       break;
     case 12: // Right 1 - Down 1
@@ -1655,17 +1670,19 @@ static void ExcavationUi_Shake(u8 taskId) {
       StartSpriteAnim(&gSprites[sExcavationUiState->ShakeHitTool], 1);
       sExcavationUiState->shakeState++;
       break;
-    case 13:      
-      SetGpuReg(REG_OFFSET_BG3HOFS, -1);
-      SetGpuReg(REG_OFFSET_BG2HOFS, -1);
-      SetGpuReg(REG_OFFSET_BG3VOFS, -1);
-      SetGpuReg(REG_OFFSET_BG2VOFS, -1);
+    case 13: 
+      if (sExcavationUiState->toggleShakeDuringAnimation == FALSE) {
+        SetGpuReg(REG_OFFSET_BG3HOFS, -1);
+        SetGpuReg(REG_OFFSET_BG2HOFS, -1);
+        SetGpuReg(REG_OFFSET_BG3VOFS, -1);
+        SetGpuReg(REG_OFFSET_BG2VOFS, -1);
+      }
       sExcavationUiState->shakeState++;
       break;
     case 15:
       ShakeSprite(-1, -1);
-      if (!IsCrackMax())
-        gSprites[sExcavationUiState->cursorSpriteIndex].invisible = 0;
+      //if (!IsCrackMax())
+      //  gSprites[sExcavationUiState->cursorSpriteIndex].invisible = 0;
       sExcavationUiState->shakeState++;
       break;
     case 16:
@@ -1678,15 +1695,17 @@ static void ExcavationUi_Shake(u8 taskId) {
       if (sExcavationUiState->shakeDuration > 0) {
         sExcavationUiState->shakeDuration--;
         sExcavationUiState->shakeState = 0;
+        sExcavationUiState->toggleShakeDuringAnimation = FALSE;
         break;
       }
       if (IsCrackMax()) {
         WallCollapseAnimation();
-        DebugPrintf("Hello I was executed ");
         PrintMessage(sText_TheWall);
       }
+      gSprites[sExcavationUiState->cursorSpriteIndex].invisible = 0;
       sExcavationUiState->shakeState = 0;
       sExcavationUiState->shouldShake = FALSE;
+      sExcavationUiState->toggleShakeDuringAnimation = FALSE;
       DestroyTask(taskId);
       break;
     default:
@@ -2872,7 +2891,7 @@ static u8 Terrain_Pickaxe_OverwriteTiles(u16* ptr) {
 
     // Center hit
     Terrain_UpdateLayerTileOnScreen(ptr,0,0);
-    if (sExcavationUiState->mode == BLUE_BUTTON) {
+    if (sExcavationUiState->mode == BLUE_BUTTON && sExcavationUiState->layerMap[pos] != 6) {
         Terrain_UpdateLayerTileOnScreen(ptr,0,0);
     }
     return 0;
@@ -2883,8 +2902,8 @@ static u8 Terrain_Pickaxe_OverwriteTiles(u16* ptr) {
 
 static void Terrain_Hammer_OverwriteTiles(u16* ptr) {
   u8 isItemDugUp;
+  u8 pos = sExcavationUiState->cursorX + (sExcavationUiState->cursorY-2)*12;
 
-  Terrain_Pickaxe_OverwriteTiles(ptr);
   isItemDugUp = Terrain_Pickaxe_OverwriteTiles(ptr);
   if (isItemDugUp == 0) {
     // Corners
@@ -2903,6 +2922,10 @@ static void Terrain_Hammer_OverwriteTiles(u16* ptr) {
 
     if (sExcavationUiState->cursorX != 0 && sExcavationUiState->cursorY != 2) {
       Terrain_UpdateLayerTileOnScreen(ptr, -1, -1);
+    }
+    
+    if (sExcavationUiState->layerMap[pos] != 6) {
+        Terrain_Pickaxe_OverwriteTiles(ptr);
     }
   }
 }
