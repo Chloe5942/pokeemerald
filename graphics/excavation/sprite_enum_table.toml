@@ -33,6 +33,7 @@
 "../graphics/excavation/stones/stone_4x1.4bpp" = "ID_STONE_4x1"
 "../graphics/excavation/stones/stone_2x4.4bpp" = "ID_STONE_2x4"
 "../graphics/excavation/stones/stone_4x2.4bpp" = "ID_STONE_4x2"
-
 "../graphics/excavation/stones/stone_snake1.4bpp" = "ID_STONE_SNAKE1"
 "../graphics/excavation/stones/stone_snake2.4bpp" = "ID_STONE_SNAKE2"
+"../graphics/excavation/stones/stone_mushroom1.4bpp" = "ID_STONE_MUSHROOM1"
+"../graphics/excavation/stones/stone_mushroom2.4bpp" = "ID_STONE_MUSHROOM2"

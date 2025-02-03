@@ -226,7 +226,6 @@ static const u16 sUiPalette[] = INCBIN_U16("graphics/excavation/ui.gbapal");
 
 // Collapse screen
 static const u32 sCollapseScreenTiles[] = INCBIN_U32("graphics/excavation/collapse.4bpp.lz");
-static const u32 sCollapseScreenUiTilemap[] = INCBIN_U32("graphics/excavation/collapse.bin.lz");
 static const u16 sCollapseScreenPalette[] = INCBIN_U16("graphics/excavation/collapse.gbapal");
 
 static const u32 gCracksAndTerrainTiles[] = INCBIN_U32("graphics/excavation/cracks_terrain.4bpp.lz");
@@ -545,9 +544,10 @@ static const u32 gStone2x4Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_2
 static const u32 gStone4x2Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_4x2.4bpp.lz");
 static const u32 gStone2x2Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_2x2.4bpp.lz");
 static const u32 gStone3x3Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_3x3.4bpp.lz");
-
 static const u32 gStoneSnake1Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_snake1.4bpp.lz");
 static const u32 gStoneSnake2Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_snake2.4bpp.lz");
+static const u32 gStoneMushroom1Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_mushroom1.4bpp.lz");
+static const u32 gStoneMushroom2Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_mushroom2.4bpp.lz");
 
 static const u32 gItemHeartScaleGfx[] = INCBIN_U32("graphics/excavation/items/heart_scale.4bpp.lz");
 static const u16 gItemHeartScalePal[] = INCBIN_U16("graphics/excavation/items/heart_scale.gbapal");
@@ -711,6 +711,28 @@ static const struct CompressedSpriteSheet sSpriteSheet_StoneSnake2[] = {
 static const struct SpritePalette sSpritePal_StoneSnake2[] =
 {
   {gStonePal, TAG_STONE_SNAKE2},
+  {NULL},
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_StoneMushroom1[] = {
+  {gStoneMushroom1Gfx, 64*64/2, TAG_STONE_MUSHROOM1},
+  {NULL},
+};
+
+static const struct SpritePalette sSpritePal_StoneMushroom1[] =
+{
+  {gStonePal, TAG_STONE_MUSHROOM1},
+  {NULL},
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_StoneMushroom2[] = {
+  {gStoneMushroom2Gfx, 64*64/2, TAG_STONE_MUSHROOM2},
+  {NULL},
+};
+
+static const struct SpritePalette sSpritePal_StoneMushroom2[] =
+{
+  {gStonePal, TAG_STONE_MUSHROOM2},
   {NULL},
 };
 
@@ -950,6 +972,27 @@ static const struct SpriteTemplate gSpriteStoneSnake2 = {
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy,
 };
+
+static const struct SpriteTemplate gSpriteStoneMushroom1 = {
+    .tileTag = TAG_STONE_MUSHROOM1,
+    .paletteTag = TAG_STONE_MUSHROOM1,
+    .oam = &gOamItem64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static const struct SpriteTemplate gSpriteStoneMushroom2 = {
+    .tileTag = TAG_STONE_MUSHROOM2,
+    .paletteTag = TAG_STONE_MUSHROOM2,
+    .oam = &gOamItem64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
 
 struct ExcavationItem {
   u32 excItemId;
@@ -1295,6 +1338,19 @@ static const struct ExcavationStone ExcavationStoneList[] = {
     .width = 3,
     .height = 2,
   },
+  [ID_STONE_MUSHROOM1] = {
+    .top = 1,
+    .left = 2,
+    .width = 3,
+    .height = 2,
+  },
+  [ID_STONE_MUSHROOM2] = {
+    .top = 1,
+    .left = 2,
+    .width = 3,
+    .height = 2,
+  },
+
 };
 
 static const u8 sText_SomethingPinged[] = _("Something pinged in the wall!\n{STR_VAR_1} confirmed!");
@@ -2301,6 +2357,16 @@ static void DrawItemSprite(u8 x, u8 y, u8 itemId, u32 itemNumPalTag) {
       LoadCompressedSpriteSheet(sSpriteSheet_StoneSnake2);
       spriteId = CreateSprite(&gSpriteStoneSnake2, posX+POS_OFFS_64X64, posY+POS_OFFS_64X64, 3);
       break;
+    case ID_STONE_MUSHROOM1:
+      LoadSpritePalette(sSpritePal_StoneMushroom1);
+      LoadCompressedSpriteSheet(sSpriteSheet_StoneMushroom1);
+      spriteId = CreateSprite(&gSpriteStoneMushroom1, posX+POS_OFFS_64X64, posY+POS_OFFS_64X64, 3);
+      break;
+    case ID_STONE_MUSHROOM2:
+      LoadSpritePalette(sSpritePal_StoneMushroom2);
+      LoadCompressedSpriteSheet(sSpriteSheet_StoneMushroom2);
+      spriteId = CreateSprite(&gSpriteStoneMushroom2, posX+POS_OFFS_64X64, posY+POS_OFFS_64X64, 3);
+      break;
     default: // If Item and not Stone
       gSpriteTemplate = CreatePaletteAndReturnTemplate(ExcavationItemList[itemId].tag, itemNumPalTag, itemId);
       LoadCompressedSpriteSheet(ExcavationItemList[itemId].sheet);
@@ -3262,7 +3328,7 @@ static u32 Debug_CreateRandomItem(u32 random, u32 itemId)
 
 static u32 Debug_DetermineStoneSize(u32 stone, u32 stoneIndex)
 {
-    u32 desiredStones[2] = {ID_STONE_SNAKE1, ID_STONE_SNAKE2};
+    u32 desiredStones[2] = {ID_STONE_MUSHROOM2, ID_STONE_MUSHROOM1};
     stoneIndex = (stoneIndex > 1) ? 1 : stoneIndex;
 
 #if DEBUG_ENABLE_ITEM_GENERATION_OPTIONS == TRUE

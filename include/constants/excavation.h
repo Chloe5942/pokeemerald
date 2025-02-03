@@ -53,6 +53,8 @@ enum {
     TAG_STONE_3X3,
     TAG_STONE_SNAKE1,
     TAG_STONE_SNAKE2,
+    TAG_STONE_MUSHROOM1,
+    TAG_STONE_MUSHROOM2,
 };
 
 /*********** FLAGS ************/
@@ -71,6 +73,8 @@ enum {
     ID_STONE_3x3,
     ID_STONE_SNAKE1,
     ID_STONE_SNAKE2,
+    ID_STONE_MUSHROOM1,
+    ID_STONE_MUSHROOM2,
     ITEMID_HEART_SCALE,
     ITEMID_HARD_STONE,
     ITEMID_REVIVE,
@@ -99,7 +103,7 @@ enum {
     ITEMID_ARMOR_FOSSIL,   
 };
 
-#define COUNT_ID_STONE                  ID_STONE_SNAKE2
+#define COUNT_ID_STONE                  ID_STONE_MUSHROOM2
 
 #define GRID_WIDTH 12
 #define GRID_HEIGHT 8
