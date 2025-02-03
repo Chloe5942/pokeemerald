@@ -2872,6 +2872,9 @@ static u8 Terrain_Pickaxe_OverwriteTiles(u16* ptr) {
 
     // Center hit
     Terrain_UpdateLayerTileOnScreen(ptr,0,0);
+    if (sExcavationUiState->mode == BLUE_BUTTON) {
+        Terrain_UpdateLayerTileOnScreen(ptr,0,0);
+    }
     return 0;
   } else {
     return 1;
@@ -2881,6 +2884,7 @@ static u8 Terrain_Pickaxe_OverwriteTiles(u16* ptr) {
 static void Terrain_Hammer_OverwriteTiles(u16* ptr) {
   u8 isItemDugUp;
 
+  Terrain_Pickaxe_OverwriteTiles(ptr);
   isItemDugUp = Terrain_Pickaxe_OverwriteTiles(ptr);
   if (isItemDugUp == 0) {
     // Corners
