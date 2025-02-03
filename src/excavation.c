@@ -546,6 +546,9 @@ static const u32 gStone4x2Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_4
 static const u32 gStone2x2Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_2x2.4bpp.lz");
 static const u32 gStone3x3Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_3x3.4bpp.lz");
 
+static const u32 gStoneSnake1Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_snake1.4bpp.lz");
+static const u32 gStoneSnake2Gfx[] = INCBIN_U32("graphics/excavation/stones/stone_snake2.4bpp.lz");
+
 static const u32 gItemHeartScaleGfx[] = INCBIN_U32("graphics/excavation/items/heart_scale.4bpp.lz");
 static const u16 gItemHeartScalePal[] = INCBIN_U16("graphics/excavation/items/heart_scale.gbapal");
 
@@ -686,6 +689,28 @@ static const struct CompressedSpriteSheet sSpriteSheet_Stone3x3[] = {
 static const struct SpritePalette sSpritePal_Stone3x3[] =
 {
   {gStonePal, TAG_STONE_3X3},
+  {NULL},
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_StoneSnake1[] = {
+  {gStoneSnake1Gfx, 64*64/2, TAG_STONE_SNAKE1},
+  {NULL},
+};
+
+static const struct SpritePalette sSpritePal_StoneSnake1[] =
+{
+  {gStonePal, TAG_STONE_SNAKE1},
+  {NULL},
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_StoneSnake2[] = {
+  {gStoneSnake2Gfx, 64*64/2, TAG_STONE_SNAKE2},
+  {NULL},
+};
+
+static const struct SpritePalette sSpritePal_StoneSnake2[] =
+{
+  {gStonePal, TAG_STONE_SNAKE2},
   {NULL},
 };
 
@@ -899,6 +924,26 @@ static const struct SpriteTemplate gSpriteStone2x2 = {
 static const struct SpriteTemplate gSpriteStone3x3 = {
     .tileTag = TAG_STONE_3X3,
     .paletteTag = TAG_STONE_3X3,
+    .oam = &gOamItem64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static const struct SpriteTemplate gSpriteStoneSnake1 = {
+    .tileTag = TAG_STONE_SNAKE1,
+    .paletteTag = TAG_STONE_SNAKE1,
+    .oam = &gOamItem64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static const struct SpriteTemplate gSpriteStoneSnake2 = {
+    .tileTag = TAG_STONE_SNAKE2,
+    .paletteTag = TAG_STONE_SNAKE2,
     .oam = &gOamItem64x64,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -1237,6 +1282,18 @@ static const struct ExcavationStone ExcavationStoneList[] = {
     .left = 2,
     .width = 3,
     .height = 3,
+  },
+  [ID_STONE_SNAKE1] = {
+    .top = 1,
+    .left = 2,
+    .width = 3,
+    .height = 2,
+  },
+  [ID_STONE_SNAKE2] = {
+    .top = 1,
+    .left = 2,
+    .width = 3,
+    .height = 2,
   },
 };
 
@@ -2234,6 +2291,16 @@ static void DrawItemSprite(u8 x, u8 y, u8 itemId, u32 itemNumPalTag) {
       LoadCompressedSpriteSheet(sSpriteSheet_Stone3x3);
       spriteId = CreateSprite(&gSpriteStone3x3, posX+POS_OFFS_64X64, posY+POS_OFFS_64X64, 3);
       break;
+    case ID_STONE_SNAKE1:
+      LoadSpritePalette(sSpritePal_StoneSnake1);
+      LoadCompressedSpriteSheet(sSpriteSheet_StoneSnake1);
+      spriteId = CreateSprite(&gSpriteStoneSnake1, posX+POS_OFFS_64X64, posY+POS_OFFS_64X64, 3);
+      break;
+    case ID_STONE_SNAKE2:
+      LoadSpritePalette(sSpritePal_StoneSnake2);
+      LoadCompressedSpriteSheet(sSpriteSheet_StoneSnake2);
+      spriteId = CreateSprite(&gSpriteStoneSnake2, posX+POS_OFFS_64X64, posY+POS_OFFS_64X64, 3);
+      break;
     default: // If Item and not Stone
       gSpriteTemplate = CreatePaletteAndReturnTemplate(ExcavationItemList[itemId].tag, itemNumPalTag, itemId);
       LoadCompressedSpriteSheet(ExcavationItemList[itemId].sheet);
@@ -3185,9 +3252,9 @@ static u32 Debug_CreateRandomItem(u32 random, u32 itemId)
     switch (debug)
 #endif
     {
-        case 0: return ITEMID_ODD_KEY_STONE;
-        case 1: return ITEMID_SKULL_FOSSIL;
-        case 2: return ITEMID_ARMOR_FOSSIL;
+        case 0: return ITEMID_THUNDER_STONE;
+        case 1: return ITEMID_THUNDER_STONE;
+        case 2: return ITEMID_THUNDER_STONE;
         case 3: return ITEMID_THUNDER_STONE;
         default: return itemId;
     }
@@ -3195,7 +3262,7 @@ static u32 Debug_CreateRandomItem(u32 random, u32 itemId)
 
 static u32 Debug_DetermineStoneSize(u32 stone, u32 stoneIndex)
 {
-    u32 desiredStones[2] = {ITEMID_NONE, ITEMID_NONE};
+    u32 desiredStones[2] = {ID_STONE_SNAKE1, ID_STONE_SNAKE2};
     stoneIndex = (stoneIndex > 1) ? 1 : stoneIndex;
 
 #if DEBUG_ENABLE_ITEM_GENERATION_OPTIONS == TRUE

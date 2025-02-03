@@ -51,10 +51,12 @@ enum {
     TAG_STONE_4X2,
     TAG_STONE_2X2,
     TAG_STONE_3X3,
+    TAG_STONE_SNAKE1,
+    TAG_STONE_SNAKE2,
 };
 
 /*********** FLAGS ************/
-#define FLAG_USE_DEFAULT_MESSAGE_BOX FALSE
+#define FLAG_USE_DEFAULT_MESSAGE_BOX            FALSE
 
 /*********** DEBUG FLAGS ************/
 #define DEBUG_ENABLE_ITEM_GENERATION_OPTIONS    TRUE
@@ -67,6 +69,8 @@ enum {
     ID_STONE_4x2,
     ID_STONE_2x2,
     ID_STONE_3x3,
+    ID_STONE_SNAKE1,
+    ID_STONE_SNAKE2,
     ITEMID_HEART_SCALE,
     ITEMID_HARD_STONE,
     ITEMID_REVIVE,
@@ -95,7 +99,7 @@ enum {
     ITEMID_ARMOR_FOSSIL,   
 };
 
-#define COUNT_ID_STONE                  ID_STONE_3x3
+#define COUNT_ID_STONE                  ID_STONE_SNAKE2
 
 #define GRID_WIDTH 12
 #define GRID_HEIGHT 8
