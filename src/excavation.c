@@ -2822,7 +2822,7 @@ static void Terrain_UpdateLayerTileOnScreen(u16* ptr, s8 ofsX, s8 ofsY) {
   i = (sExcavationUiState->cursorY-2+ofsY)*12 + sExcavationUiState->cursorX + ofsX; // Why the minus 2? Because the cursorY value starts at 2, so when calculating the position of the cursor, we have that additional 2 with it!!
   tileX = (sExcavationUiState->cursorX+ofsX) * 2;
   tileY = (sExcavationUiState->cursorY+ofsY) * 2;
-
+ if (sExcavationUiState->layerMap[i] < 6) {
   // Here, case 0 is missing because it will never appear. Why? Because the value we are doing the switch statement on would need to be negative.
   // Case 6 clears the tile so we can take a look at Bg3 (for the item sprite)!
   //
@@ -2868,11 +2868,13 @@ sExcavationUiState->layerMap[i]++;
       OverwriteTileDataInTilemapBuffer(0x00, tileX + 1, tileY + 1, ptr, 0x01);
       break;
   }
+ }
 }
 
 // Using this function here to overwrite the tilemap entry when hitting with the pickaxe (blue button is pressed)
 static u8 Terrain_Pickaxe_OverwriteTiles(u16* ptr) {
   u8 pos = sExcavationUiState->cursorX + (sExcavationUiState->cursorY-2)*12;
+
   if (sExcavationUiState->itemMap[pos] != ITEM_TILE_DUG_UP) {
     if (sExcavationUiState->cursorX != 0) {
       Terrain_UpdateLayerTileOnScreen(ptr, -1, 0);
@@ -2891,7 +2893,7 @@ static u8 Terrain_Pickaxe_OverwriteTiles(u16* ptr) {
 
     // Center hit
     Terrain_UpdateLayerTileOnScreen(ptr,0,0);
-    if (sExcavationUiState->mode == BLUE_BUTTON && sExcavationUiState->layerMap[pos] != 6) {
+    if (sExcavationUiState->mode == BLUE_BUTTON) {
         Terrain_UpdateLayerTileOnScreen(ptr,0,0);
     }
     return 0;
