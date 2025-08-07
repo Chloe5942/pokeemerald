@@ -20,6 +20,7 @@
 #include "trig.h"
 #include "intro.h"
 #include "graphics.h"
+#include "pokemon_icon.h"
 #include "sound.h"
 #include "util.h"
 #include "title_screen.h"
@@ -1124,6 +1125,10 @@ static u8 SetUpCopyrightScreen(void)
         {
             if (gMultibootProgramStruct.gcmb_field_2 == 2)
             {
+                // Load save so we can load mon icons into IWRAM
+                SetSaveBlocksPointers(GetSaveBlocksPointersBaseOffset());
+                LoadGameSave(SAVE_NORMAL);
+                LoadSavedPartyIconGfxIwram();
                 // check the multiboot ROM header game code to see if we already did this
                 if (*(u32 *)(EWRAM_START + 0xAC) == COLOSSEUM_GAME_CODE)
                 {
@@ -1169,7 +1174,7 @@ void CB2_InitCopyrightScreenAfterTitleScreen(void)
 static void Task_Scene1_Load(u8 taskId)
 {
     SetVBlankCallback(NULL);
-    sIntroCharacterGender = MOD(Random(), GENDER_COUNT);
+    sIntroCharacterGender = gSaveBlock2Ptr->playerGender; // Loads the gender in the save file to show in into. If no save file, defaults to male
     IntroResetGpuRegs();
     SetGpuReg(REG_OFFSET_BG3VOFS, 0);
     SetGpuReg(REG_OFFSET_BG2VOFS, 80);

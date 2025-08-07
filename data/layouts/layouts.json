@@ -4410,6 +4410,26 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_LILYCOVE_CITY_GTS_1F",
+      "name": "LilycoveCity_GTS_1F_Layout",
+      "width": 15,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFactory",
+      "border_filepath": "data/layouts/LilycoveCity_GTS_1F/border.bin",
+      "blockdata_filepath": "data/layouts/LilycoveCity_GTS_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_LILYCOVE_CITY_GTS_2F",
+      "name": "LilycoveCity_GTS_2F_Layout",
+      "width": 13,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFactory",
+      "border_filepath": "data/layouts/LilycoveCity_GTS_2F/border.bin",
+      "blockdata_filepath": "data/layouts/LilycoveCity_GTS_2F/map.bin"
     }
   ]
 }

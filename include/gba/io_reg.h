@@ -493,6 +493,12 @@
 
 #define REG_RCNT        (*(vu16 *)REG_ADDR_RCNT)
 
+#define JOY_CNT         (*(vu16 *)REG_ADDR_JOYCNT)
+#define JOY_TRANS	    (*(vu32*)(REG_ADDR_JOY_TRANS))
+#define JOY_TRANS_L     (*(vu16 *)REG_ADDR_JOY_TRANS_L)
+#define JOY_TRANS_H     (*(vu16 *)REG_ADDR_JOY_TRANS_H)
+#define JOY_RECV        (*(vu32 *)REG_ADDR_JOY_RECV) 
+
 #define REG_IME         (*(vu16 *)REG_ADDR_IME)
 #define REG_IE          (*(vu16 *)REG_ADDR_IE)
 #define REG_IF          (*(vu16 *)REG_ADDR_IF)
@@ -599,6 +605,7 @@
 #define BLDCNT_EFFECT_BLEND     (1 << 6)   // 1st+2nd targets mixed (controlled by BLDALPHA)
 #define BLDCNT_EFFECT_LIGHTEN   (2 << 6)   // 1st target becomes whiter (controlled by BLDY)
 #define BLDCNT_EFFECT_DARKEN    (3 << 6)   // 1st target becomes blacker (controlled by BLDY)
+#define BLDCNT_EFFECT_EFF_MASK  (3 << 6)    // mask to check effect
 // Bits 8-13 select layers for the 2nd target
 #define BLDCNT_TGT2_BG0      (1 << 8)
 #define BLDCNT_TGT2_BG1      (1 << 9)
@@ -611,6 +618,8 @@
 
 // BLDALPHA
 #define BLDALPHA_BLEND(target1, target2) (((target2) << 8) | (target1))
+#define BLDALPHA_TGT1(bld) ((bld) & 0x1F)
+#define BLDALPHA_TGT2(bld) (((bld) >> 8) & 0x1F)
 
 // SOUNDCNT_H
 #define SOUND_CGB_MIX_QUARTER 0x0000
@@ -707,7 +716,7 @@
 #define R_BUTTON        0x0100
 #define L_BUTTON        0x0200
 #define KEYS_MASK       0x03FF
-#define KEY_INTR_ENABLE 0x4000
+#define KEY_INTR_ENABLE 0x0400
 #define KEY_OR_INTR     0x0000
 #define KEY_AND_INTR    0x8000
 #define DPAD_ANY        ((DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN))

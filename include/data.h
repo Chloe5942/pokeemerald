@@ -3,13 +3,29 @@
 
 #include "constants/moves.h"
 
-#define SPECIES_SHINY_TAG 500
+#define N_FOLLOWER_HAPPY_MESSAGES 31
+#define N_FOLLOWER_NEUTRAL_MESSAGES 14
+#define N_FOLLOWER_SAD_MESSAGES 3
+#define N_FOLLOWER_UPSET_MESSAGES 3
+#define N_FOLLOWER_ANGRY_MESSAGES 5
+#define N_FOLLOWER_PENSIVE_MESSAGES 20
+#define N_FOLLOWER_LOVE_MESSAGES 10
+#define N_FOLLOWER_SURPRISE_MESSAGES 20
+#define N_FOLLOWER_CURIOUS_MESSAGES 7
+#define N_FOLLOWER_MUSIC_MESSAGES 14
+#define N_FOLLOWER_POISONED_MESSAGES 1
 
 #define MAX_TRAINER_ITEMS 4
 
 #define TRAINER_PIC_WIDTH 64
 #define TRAINER_PIC_HEIGHT 64
 #define TRAINER_PIC_SIZE (TRAINER_PIC_WIDTH * TRAINER_PIC_HEIGHT / 2)
+
+// 0x7900 chosen to allow 6 palettes @ 32 bytes = 192 bytes,
+// + ~1024 entry palette index array before the stack tip (0x03007E40, see crt0.s)
+// See also the duplicate entry in libgcnmultiboot.s
+#define MON_ICON_PALETTE_IWRAM_START (IWRAM_START + 0x7900)
+#define MON_ICON_INDICES_IWRAM_START (IWRAM_START + 0x79C0)
 
 // Red and Leaf's back pics have 5 frames, but this is presumably irrelevant in the places this is used.
 #define MAX_TRAINER_PIC_FRAMES 4
@@ -93,6 +109,19 @@ struct Trainer
 
 #define TRAINER_ENCOUNTER_MUSIC(trainer) ((gTrainers[trainer].encounterMusic_gender & 0x7F))
 
+struct FollowerMsgInfo {
+    const u8 *text;
+    const u8 *script;
+};
+
+struct FollowerMessagePool
+{
+    const struct FollowerMsgInfo * messages;
+    const u8 * script;
+    u16 length;
+};
+
+
 extern const u16 gMinigameDigits_Pal[];
 extern const u32 gMinigameDigits_Gfx[];
 
@@ -138,5 +167,18 @@ extern const struct Trainer gTrainers[];
 extern const u8 gTrainerClassNames[][13];
 extern const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1];
 extern const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1];
+
+// Follower text messages
+extern const struct FollowerMsgInfo gFollowerHappyMessages[];
+extern const struct FollowerMsgInfo gFollowerNeutralMessages[];
+extern const struct FollowerMsgInfo gFollowerSadMessages[];
+extern const struct FollowerMsgInfo gFollowerUpsetMessages[];
+extern const struct FollowerMsgInfo gFollowerAngryMessages[];
+extern const struct FollowerMsgInfo gFollowerPensiveMessages[];
+extern const struct FollowerMsgInfo gFollowerLoveMessages[];
+extern const struct FollowerMsgInfo gFollowerSurpriseMessages[];
+extern const struct FollowerMsgInfo gFollowerCuriousMessages[];
+extern const struct FollowerMsgInfo gFollowerMusicMessages[];
+extern const struct FollowerMsgInfo gFollowerPoisonedMessages[];
 
 #endif // GUARD_DATA_H

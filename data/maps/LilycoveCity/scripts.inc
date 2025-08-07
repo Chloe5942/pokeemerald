@@ -146,6 +146,10 @@ LilycoveCity_EventScript_CitySign::
 	msgbox LilycoveCity_Text_CitySign, MSGBOX_SIGN
 	end
 
+LilycoveCity_EventScript_GTSSign::
+	msgbox LilycoveCity_Text_GTSSign, MSGBOX_SIGN
+	end
+
 LilycoveCity_EventScript_ContestHallSign::
 	msgbox LilycoveCity_Text_ContestHallSign, MSGBOX_SIGN
 	end
@@ -755,4 +759,37 @@ LilycoveCity_Text_HoneymoonVowToSeeRarePokemon:
 	.string "So we were delighted to see a rare\n"
 	.string "POKéMON as soon as we arrived.\p"
 	.string "I mean, we are totally happy!$"
+
+LilycoveCity_Text_GTSSign:
+	.string "LILYCOVE NETWORK CENTER\p"
+	.string "“Wii connect the world”$"
+
+
+LilycoveCity_EventScript_NormanGoToOldale::
+	lock
+	faceplayer
+	message LilycoveCity_Text_NormanGoToOldale
+	waitmessage
+	multichoicedefault 20, 8, MULTI_YESNO, 1, FALSE
+	switch VAR_RESULT
+	case 1, LilycoveCity_EventScript_DontGoToOldale
+	case 0, LilycoveCity_EventScript_DoGoToOldale
+	case MULTI_B_PRESSED, LilycoveCity_EventScript_DontGoToOldale
+
+LilycoveCity_Text_NormanGoToOldale:
+	.string "DAD: Hey, {PLAYER}{KUN}! I'm done shopping.\n"
+	.string "Are you ready to go back to OLDALE?$"
+
+LilycoveCity_EventScript_DontGoToOldale::
+	msgbox LilycoveCity_Text_NormanDontGoToOldale, MSGBOX_NPC
+	end
+
+LilycoveCity_Text_NormanDontGoToOldale:
+	.string "DAD: Ok, just let me know when you're\n"
+	.string "ready.$"
+
+LilycoveCity_EventScript_DoGoToOldale::
+	warp MAP_OLDALE_TOWN, 10, 13
+	waitstate
+	end
 

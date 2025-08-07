@@ -11,6 +11,7 @@
 #include "field_screen_effect.h"
 #include "field_special_scene.h"
 #include "field_weather.h"
+#include "fishing_game.h"
 #include "gpu_regs.h"
 #include "io_reg.h"
 #include "link.h"
@@ -433,7 +434,7 @@ static void Task_WaitForFadeShowStartMenu(u8 taskId)
 void ReturnToFieldOpenStartMenu(void)
 {
     FadeInFromBlack();
-    CreateTask(Task_WaitForFadeShowStartMenu, 0x50);
+    //CreateTask(Task_WaitForFadeShowStartMenu, 0x50);
     LockPlayerFieldControls();
 }
 
@@ -453,6 +454,14 @@ static void Task_ReturnToFieldNoScript(u8 taskId)
     }
 }
 
+static void Task_ReturnToFieldFishTreasure(u8 taskId)
+{
+    if (WaitForWeatherFadeIn() == 1)
+    {
+        gTasks[taskId].func = Task_DoReturnToFieldFishTreasure;
+    }
+}
+
 void FieldCB_ReturnToFieldNoScript(void)
 {
     LockPlayerFieldControls();
@@ -466,6 +475,15 @@ void FieldCB_ReturnToFieldNoScriptCheckMusic(void)
     Overworld_PlaySpecialMapMusic();
     FadeInFromBlack();
     CreateTask(Task_ReturnToFieldNoScript, 10);
+}
+
+bool8 FieldCB_ReturnToFieldFishTreasure(void)
+{
+    LockPlayerFieldControls();
+    Overworld_PlaySpecialMapMusic();
+    FadeInFromBlack();
+    CreateTask(Task_ReturnToFieldFishTreasure, 10);
+    return TRUE;
 }
 
 static bool32 PaletteFadeActive(void)
@@ -679,6 +697,7 @@ static void Task_DoDoorWarp(u8 taskId)
     struct Task *task = &gTasks[taskId];
     s16 *x = &task->data[2];
     s16 *y = &task->data[3];
+    struct ObjectEvent *followerObject = GetFollowerObject();
 
     switch (task->tState)
     {
@@ -686,6 +705,11 @@ static void Task_DoDoorWarp(u8 taskId)
         FreezeObjectEvents();
         PlayerGetDestCoords(x, y);
         PlaySE(GetDoorSoundEffect(*x, *y - 1));
+        if (followerObject) {
+            // Put follower into pokeball
+            ClearObjectEventMovement(followerObject, &gSprites[followerObject->spriteId]);
+            ObjectEventSetHeldMovement(followerObject, MOVEMENT_ACTION_ENTER_POKEBALL);
+        }
         task->data[1] = FieldAnimateDoorOpen(*x, *y - 1);
         task->tState = 1;
         break;
@@ -1132,6 +1156,7 @@ static void Task_OrbEffect(u8 taskId)
         ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN1_ON);
         SetGpuRegBits(REG_OFFSET_BLDCNT, gOrbEffectBackgroundLayerFlags[0]);
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(12, 7));
+        UpdateShadowColor(0x2109); // force shadows to gray
         SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR);
         SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG1 | WINOUT_WIN01_BG2 | WINOUT_WIN01_BG3 | WINOUT_WIN01_OBJ);
         SetBgTilemapPalette(0, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT, 0xF);
@@ -1162,6 +1187,9 @@ static void Task_OrbEffect(u8 taskId)
         tState = 4;
         break;
     case 4:
+        // If the caller script is delayed after starting the orb effect, a `waitstate` might be reached *after*
+        // we enable the ScriptContext in case 2; enabling it here as well avoids softlocks in this scenario
+        ScriptContext_Enable();
         if (--tShakeDelay == 0)
         {
             s32 panning;
@@ -1196,6 +1224,7 @@ static void Task_OrbEffect(u8 taskId)
         SetGpuReg(REG_OFFSET_DISPCNT, tDispCnt);
         SetGpuReg(REG_OFFSET_BLDCNT, tBldCnt);
         SetGpuReg(REG_OFFSET_BLDALPHA, tBldAlpha);
+        UpdateShadowColor(RGB_BLACK); // force shadows to gray
         SetGpuReg(REG_OFFSET_WININ, tWinIn);
         SetGpuReg(REG_OFFSET_WINOUT, tWinOut);
         ScriptContext_Enable();

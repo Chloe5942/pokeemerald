@@ -24,6 +24,10 @@ u16 GetFrontierBrainMonMove(u8 monId, u8 moveSlotId);
 u8 GetFrontierBrainMonNature(u8 monId);
 u8 GetFrontierBrainMonEvs(u8 monId, u8 evStatId);
 s32 GetFronterBrainSymbol(void);
+u16 GetBattlePoints(void);
+bool8 IsEnoughBattlePoints(u16 cost);
+void SetBattlePoints(u16 pointAmount);
+bool8 RemoveBattlePoints(u16 toSub);
 
 extern const u16 gFrontierBannedSpecies[];
 

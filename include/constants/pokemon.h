@@ -178,7 +178,7 @@
 #define FRIENDSHIP_EVENT_LEARN_TMHM       4
 #define FRIENDSHIP_EVENT_WALKING          5
 #define FRIENDSHIP_EVENT_FAINT_SMALL      6
-#define FRIENDSHIP_EVENT_FAINT_FIELD_PSN  7
+#define FRIENDSHIP_EVENT_FAINT_FIELD_PSN  7 // Removed
 #define FRIENDSHIP_EVENT_FAINT_LARGE      8 // If opponent was >= 30 levels higher. See AdjustFriendshipOnBattleFaint
 
 // Constants for GetLeadMonFriendshipScore
@@ -250,8 +250,9 @@
 #define EVO_LEVEL_NINJASK    13 // Pokémon reaches the specified level (special value for Ninjask)
 #define EVO_LEVEL_SHEDINJA   14 // Pokémon reaches the specified level (special value for Shedinja)
 #define EVO_BEAUTY           15 // Pokémon levels up with beauty ≥ specified value
+#define EVO_LEVEL_ITEM       16 // Pokémon reaches the specified level
 
-#define EVOS_PER_MON 5
+#define EVOS_PER_MON 7
 
 // Evolution 'modes,' for GetEvolutionTargetSpecies
 #define EVO_MODE_NORMAL     0

@@ -224,6 +224,30 @@ static const struct {
         .moves = {MOVE_GROWL, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_ATTRACT},
         .level = 8,
         .location = MAP_NUM(MAP_ROUTE116),
+    },
+    {
+        .species = SPECIES_SURSKIT,
+        .moves = {MOVE_BUBBLE, MOVE_QUICK_ATTACK, MOVE_NONE, MOVE_NONE},
+        .level = 3,
+        .location = MAP_NUM(MAP_ROUTE102),
+    },
+    {
+        .species = SPECIES_SURSKIT,
+        .moves = {MOVE_BUBBLE, MOVE_QUICK_ATTACK, MOVE_NONE, MOVE_NONE},
+        .level = 15,
+        .location = MAP_NUM(MAP_ROUTE114),
+    },
+    {
+        .species = SPECIES_SURSKIT,
+        .moves = {MOVE_BUBBLE, MOVE_QUICK_ATTACK, MOVE_NONE, MOVE_NONE},
+        .level = 15,
+        .location = MAP_NUM(MAP_ROUTE117),
+    },
+    {
+        .species = SPECIES_SURSKIT,
+        .moves = {MOVE_BUBBLE, MOVE_QUICK_ATTACK, MOVE_NONE, MOVE_NONE},
+        .level = 28,
+        .location = MAP_NUM(MAP_ROUTE120),
     }
 };
 
