@@ -1,5 +1,6 @@
 #include "global.h"
 #include "new_game.h"
+#include "derby.h"
 #include "random.h"
 #include "pokemon.h"
 #include "roamer.h"
@@ -17,6 +18,7 @@
 #include "rtc.h"
 #include "easy_chat.h"
 #include "event_data.h"
+#include "constants/flags.h"
 #include "money.h"
 #include "trainer_hill.h"
 #include "tv.h"
@@ -175,7 +177,9 @@ void NewGameInitData(void)
     ClearSecretBases();
     ClearBerryTrees();
     SetMoney(&gSaveBlock1Ptr->money, 3000);
-    SetCoins(0);
+    //SetCoins(0);
+	GetNewDerby();
+	//SetCoins(5000);
     ResetLinkContestBoolean();
     ResetGameStats();
     ClearAllContestWinnerPics();
@@ -190,6 +194,9 @@ void NewGameInitData(void)
     gSaveBlock1Ptr->registeredItemCompat = ITEM_NONE;
     memset(gSaveBlock1Ptr->registeredItems, 0, sizeof(gSaveBlock1Ptr->registeredItems));
     ClearBag();
+	//AddBagItem(ITEM_COIN_CASE, 1);
+	//FlagSet(FLAG_BADGE01_GET);
+	//FlagSet(FLAG_BADGE02_GET);
     NewGameInitPCItems();
     ClearPokeblocks();
     ClearDecorationInventories();

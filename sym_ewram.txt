@@ -151,3 +151,12 @@
 	.include "src/rayquaza_scene.o"
 	.include "src/option_plus_menu.o"
 	.include "src/ui_main_menu.o"
+	.include "src/game_corner_gacha.o"
+	.include "src/rogue_voltorbflip.o"
+	.include "src/pinball.o"
+	.include "src/pachinko.o"
+	.include "src/block_stacker.o"
+	.include "src/derby.o"
+	.include "src/snake.o"
+	.include "src/flappybird.o"
+	
