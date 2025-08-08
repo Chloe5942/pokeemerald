@@ -42,7 +42,7 @@ are actually part of battle_main.c. They needed to be moved to this file in orde
 match the ROM; this is also why sSoundMovesTable's declaration is in the middle of
 functions instead of at the top of the file with the other declarations.
 */
-
+static void TryToSetUpCombinedMove(void);
 extern const u8 *const gBattleScriptsForMoveEffects[];
 extern const u8 *const gBattlescriptsForBallThrow[];
 extern const u8 *const gBattlescriptsForRunningByItem[];
@@ -287,6 +287,23 @@ void HandleAction_UseMove(void)
 
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
         BattleArena_AddMindPoints(gBattlerAttacker);
+
+    // Try to set up a combined move.
+    TryToSetUpCombinedMove();
+    if (gBattleStruct->combinedMoveId)
+    {
+        if (gBattlerAttacker == gBattleStruct->firstCombinedMoveBattlerId)
+        {
+            gCurrentActionFuncId = B_ACTION_FINISHED;
+            return;
+        }
+        else if (gBattlerAttacker == gBattleStruct->secondCombinedMoveBattlerId)
+        {
+            gCurrentMove = gBattleStruct->combinedMoveId;
+            PrepareStringBattle(gBattleStruct->combinedMoveStringId, gBattlerAttacker);
+            gBattleCommunication[MSG_DISPLAY] = TRUE;
+        }
+    }
 
     gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
 }
@@ -4042,6 +4059,44 @@ u8 IsMonDisobedient(void)
             gBattleCommunication[MULTISTRING_CHOOSER] = MOD(Random(), NUM_LOAF_STRINGS);
             gBattlescriptCurrInstr = BattleScript_MoveUsedLoafingAround;
             return 1;
+        }
+    }
+}
+
+static void TryToSetUpCombinedMove(void)
+{
+    int i, j;
+    struct CombinedMove {
+        u16 move1;
+        u16 move2;
+        u16 newMove;
+        u16 stringId;
+    };
+    static const struct CombinedMove sCombinedMoves[] = {
+        {MOVE_EMBER,       MOVE_GUST, MOVE_HEAT_WAVE, STRINGID_WINDBECAMEHEATWAVE},
+        {MOVE_DRAGON_RAGE, MOVE_GUST, MOVE_TWISTER,   STRINGID_WINDBECAMETWISTER},
+        {MOVE_POWDER_SNOW, MOVE_GUST, MOVE_ICY_WIND,  STRINGID_WINDBECAMEICYWIND},
+    };
+
+    if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+    {
+        for (i = 0; i < NELEMS(sCombinedMoves); i++)
+        {
+            if (gCurrentMove != sCombinedMoves[i].newMove)
+            {
+                for (j = 0; j < MAX_BATTLERS_COUNT; j++)
+                {
+                    if (gAbsentBattlerFlags & gBitTable[j])
+                        continue;
+                    if (gChosenMoveByBattler[j] == sCombinedMoves[i].move1 && gChosenMoveByBattler[BATTLE_PARTNER(j)] == sCombinedMoves[i].move2)
+                    {
+                        gBattleStruct->firstCombinedMoveBattlerId = j;
+                        gBattleStruct->secondCombinedMoveBattlerId = BATTLE_PARTNER(j);
+                        gBattleStruct->combinedMoveId = sCombinedMoves[i].newMove;
+                        gBattleStruct->combinedMoveStringId = sCombinedMoves[i].stringId;
+                    }
+                }
+            }
         }
     }
 }

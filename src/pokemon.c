@@ -85,6 +85,7 @@ EWRAM_DATA static struct MonSpritesGfxManager *sMonSpritesGfxManagers[MON_SPR_GF
 
 // Used in an unreferenced function in RS.
 // Unreferenced here and in FRLG.
+/*
 struct CombinedMove
 {
     u16 move1;
@@ -97,7 +98,7 @@ static const struct CombinedMove sCombinedMoves[2] =
     {MOVE_EMBER, MOVE_GUST, MOVE_HEAT_WAVE},
     {0xFFFF, 0xFFFF, 0xFFFF}
 };
-
+*/
 // NOTE: The order of the elements in the 3 arrays below is irrelevant.
 // To reorder the pokedex, see the values in include/constants/pokedex.h.
 

@@ -350,7 +350,6 @@ static const u8 sText_HailContinues[] = _("Hail continues to fall.");
 static const u8 sText_HailStopped[] = _("The hail stopped.");
 static const u8 sText_FailedToSpitUp[] = _("But it failed to SPIT UP\na thing!");
 static const u8 sText_FailedToSwallow[] = _("But it failed to SWALLOW\na thing!");
-static const u8 sText_WindBecameHeatWave[] = _("The wind turned into a\nHEAT WAVE!");
 static const u8 sText_StatChangesGone[] = _("All stat changes were\neliminated!");
 static const u8 sText_CoinsScattered[] = _("Coins scattered everywhere!");
 static const u8 sText_TooWeakForSubstitute[] = _("It was too weak to make\na SUBSTITUTE!");
@@ -497,6 +496,11 @@ static const u8 sText_ItemAllowsOnlyYMove[] = _("{B_LAST_ITEM} allows the\nuse o
 static const u8 sText_PkmnHungOnWithX[] = _("{B_DEF_NAME_WITH_PREFIX} hung on\nusing its {B_LAST_ITEM}!");
 const u8 gText_EmptyString3[] = _("");
 static const u8 sText_YouThrowABallNowRight[] = _("You throw a BALL now, right?\nI… I'll do my best!");
+
+// Combination Moves
+static const u8 sText_WindBecameHeatWave[] = _("EMBER and GUST combined into\nthe move HEAT WAVE{PAUSE 64}!");
+static const u8 sText_WindBecameTwister[] = _("DRAGON RAGE and GUST combined into\nthe move TWISTER{PAUSE 64}!");
+static const u8 sText_WindBecameIcyWind[] = _("POWDER SNOW and GUST combined into\nthe move ICY WIND{PAUSE 64}!");
 
 // early declaration of strings
 static const u8 sText_PkmnIncapableOfPower[];
@@ -885,6 +889,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT - BATTLESTRINGS_TABLE_ST
     [STRINGID_PKMNBOXLANETTESPCFULL - BATTLESTRINGS_TABLE_START] = gText_PkmnTransferredLanettesPCBoxFull,
     [STRINGID_TRAINER1WINTEXT - BATTLESTRINGS_TABLE_START] = sText_Trainer1WinText,
     [STRINGID_TRAINER2WINTEXT - BATTLESTRINGS_TABLE_START] = sText_Trainer2WinText,
+    // Custom
+    [STRINGID_WINDBECAMETWISTER - BATTLESTRINGS_TABLE_START] = sText_WindBecameTwister,
+    [STRINGID_WINDBECAMEICYWIND - BATTLESTRINGS_TABLE_START] = sText_WindBecameIcyWind,
 };
 
 const u16 gMissStringIds[] =
