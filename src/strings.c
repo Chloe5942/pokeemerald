@@ -1867,6 +1867,7 @@ const u8 gText_Answer[] = _("ANSWER");
 const u8 gText_PokeBalls[] = _("POKé BALLS");
 const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
+const u8 gText_StatEditor[] = _("EDIT STATS");
 const u8 gText_NetMailSend[] = _("Send Mail");
 const u8 gText_NetMailRead[] = _("Read Mail");
 

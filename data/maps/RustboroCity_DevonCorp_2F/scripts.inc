@@ -380,3 +380,49 @@ RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext:
 	.string "One couldn't ask for a better\n"
 	.string "environment as an engineer.$"
 
+RustboroCity_DevonCorp_2F_EventScript_PokemonStatEditorScientist::
+	lock
+	faceplayer
+	call_if_eq VAR_FOSSIL_RESURRECTION_STATE, 1, RustboroCity_DevonCorp_2F_EventScript_SetFossilReady
+	goto_if_set FLAG_DELIVERED_STEVEN_LETTER, RustboroCity_DevonCorp_2F_EventScript_GiveStatsEditor
+	msgbox RustboroCity_DevonCorp_2F_Text_WorkingOnStatsEditor, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_EventScript_GiveStatsEditor::
+	goto_if_set FLAG_RECEIVED_STATS_EDITOR, RustboroCity_DevonCorp_2F_EventScript_HasStatsEditor
+	setflag FLAG_RECEIVED_STATS_EDITOR
+	setflag FLAG_SYS_STAT_EDITOR_GET
+	msgbox RustboroCity_DevonCorp_2F_Text_GiveStatsEditor, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_EventScript_HasStatsEditor::
+	msgbox RustboroCity_DevonCorp_2F_Text_HasStatsEditor, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_Text_WorkingOnStatsEditor:
+	.string "I'm working on a STATS EDITOR program.\p"
+	.string "As a programmer, I feel blessed to have\n"
+	.string "the chance to work on something great!$"
+
+RustboroCity_DevonCorp_2F_Text_HasStatsEditor:
+	.string "That's the STATS EDITOR program!\p"
+	.string "It came about as a result of our\n"
+	.string "PRESIDENT's SON's desire to learn about\l"
+	.string "the hidden strength of POKéMON.\p"
+	.string "Would you like me to describe its\n"
+	.string "features in detail?\p"
+	.string "No, no. I think you'll find out just by\n"
+	.string "trying the STATS EDITOR out.$"
+
+RustboroCity_DevonCorp_2F_Text_GiveStatsEditor:
+	.string "This is the STATS EDITOR program!\p"
+	.string "It came about as a result of our\n"
+	.string "PRESIDENT's SON's desire to learn about\l"
+	.string "the hidden strength of POKéMON.\p"
+	.string "Would you like me to describe its\n"
+	.string "features in detail?\p"
+	.string "No, no. I think you'll find out just by\n"
+	.string "trying the STATS EDITOR out.$"
