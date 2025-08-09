@@ -80,5 +80,11 @@ void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elem
 s32 MoveBattleBar(u8 battler, u8 healthboxSpriteId, u8 whichBar, u8 unused);
 u8 GetScaledHPFraction(s16 hp, s16 maxhp, u8 scale);
 u8 GetHPBarLevel(s16 hp, s16 maxhp);
+//BattleInfoSystem
+void BattleInfoSystemLoadGfx(void);
+u8 BattleInfoSystemShowSplitIcon(u32 split);
+void BattleInfoSystemDestroySplitIcon(void);
+void TryHideBattleInfoSystem_ButtonPrompt(void);
+void TryRestoreBattleInfoSystem_ButtonPrompt(void);
 
 #endif // GUARD_BATTLE_INTERFACE_H

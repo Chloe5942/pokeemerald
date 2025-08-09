@@ -243,6 +243,9 @@ EWRAM_DATA struct BattleHealthboxInfo *gBattleControllerOpponentFlankHealthboxDa
 EWRAM_DATA u16 gBattleMovePower = 0;
 EWRAM_DATA u16 gMoveToLearn = 0;
 EWRAM_DATA u8 gBattleMonForms[MAX_BATTLERS_COUNT] = {0};
+EWRAM_DATA u8 gBattleInfoSystemSubmenu = 0;
+EWRAM_DATA u8 gBattleInfoSystemSubmenuSplitIconId = MAX_SPRITES;
+EWRAM_DATA u8 gBattleInfoSystemSubmenuButtonPromptIds[2] = {MAX_SPRITES};
 
 COMMON_DATA void (*gPreBattleCallback1)(void) = NULL;
 COMMON_DATA void (*gBattleMainFunc)(void) = NULL;

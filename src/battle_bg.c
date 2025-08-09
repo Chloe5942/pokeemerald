@@ -405,6 +405,15 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .paletteNum = 5,
         .baseBlock = 0x02a0,
     },
+    [B_WIN_MOVE_DESCRIPTION] = {
+        .bg = 0,
+        .tilemapLeft = 1,
+        .tilemapTop = 49,
+        .width = 16,
+        .height = 4,
+        .paletteNum = 5,
+        .baseBlock = 0x0350,
+    },
     DUMMY_WIN_TEMPLATE
 };
 
