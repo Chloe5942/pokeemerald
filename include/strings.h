@@ -331,6 +331,7 @@ extern const u8 gText_Font[];               //tx_optionsPlus
 extern const u8 gText_OptionFontFireRed[];  //tx_optionsPlus
 extern const u8 gText_OptionFontEmerald[];  //tx_optionsPlus
 extern const u8 gText_OptionMatchCalls[];   //tx_optionsPlus
+extern const u8 gText_OptionTypeDisplay[];   //tx_optionsPlus
 extern const u8 gText_OptionMenuSave[];
 extern const u8 gText_ButtonMode[];
 
@@ -3083,5 +3084,9 @@ extern const u8 gText_NoRoomForTreasure[];
 // Custom
 extern const u8 gText_YouAlreadyHaveThis[];
 extern const u8 gText_AshQty[];
+extern const u8 gMenuText_Move[];
+extern const u8 gText_MoveItemWhere[];
+extern const u8 gText_XsYAnd[];
+extern const u8 gText_XsYWereSwapped[];
 
 #endif // GUARD_STRINGS_H
