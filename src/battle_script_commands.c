@@ -10220,9 +10220,15 @@ static void Cmd_displaydexinfo(void)
             gBattle_BG2_Y = 0;
             gBattle_BG3_X = 0;
             gBattle_BG3_Y = 0;
-            gBattleCommunication[TASK_ID] = DisplayCaughtMonDexPage(SpeciesToNationalPokedexNum(species),
+            #ifndef BATTLE_ENGINE
+            gBattleCommunication[TASK_ID] = DisplayCaughtMonDexPage(species,
                                                                         gBattleMons[gBattlerTarget].otId,
                                                                         gBattleMons[gBattlerTarget].personality);
+            #else
+            gBattleCommunication[TASK_ID] = DisplayCaughtMonDexPage(species,
+                                                                        gBattleMons[GetCatchingBattler()].otId,
+                                                                        gBattleMons[GetCatchingBattler()].personality);
+            #endif
             gBattleCommunication[0]++;
         }
         break;
