@@ -498,9 +498,12 @@ const u8 gText_EmptyString3[] = _("");
 static const u8 sText_YouThrowABallNowRight[] = _("You throw a BALL now, right?\nI… I'll do my best!");
 
 // Combination Moves
-static const u8 sText_WindBecameHeatWave[] = _("EMBER and GUST combined into\nthe move HEAT WAVE{PAUSE 64}!");
-static const u8 sText_WindBecameTwister[] = _("DRAGON RAGE and GUST combined into\nthe move TWISTER{PAUSE 64}!");
-static const u8 sText_WindBecameIcyWind[] = _("POWDER SNOW and GUST combined into\nthe move ICY WIND{PAUSE 64}!");
+static const u8 sText_WindBecameHeatWave[] = _("The wind turned into a HEAT WAVE{PAUSE 64}!");
+static const u8 sText_WindBecameTwister[] = _("The wind turned into a TWISTER{PAUSE 64}!");
+static const u8 sText_WindBecameIcyWind[] = _("The wind turned into an ICY WIND{PAUSE 64}!");
+static const u8 sText_WaterTurnedMuddy[] = _("The water turned into MUDDY WATER{PAUSE 64}!");
+static const u8 sText_VoicesGotLoud[] = _("The sounds merged into a HYPER VOICE{PAUSE 64}!");
+static const u8 sText_IcyWindBecameBlizzard[] = _("The ICY WIND turned into a BLIZZARD{PAUSE 64}!");
 
 // early declaration of strings
 static const u8 sText_PkmnIncapableOfPower[];
@@ -892,6 +895,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT - BATTLESTRINGS_TABLE_ST
     // Custom
     [STRINGID_WINDBECAMETWISTER - BATTLESTRINGS_TABLE_START] = sText_WindBecameTwister,
     [STRINGID_WINDBECAMEICYWIND - BATTLESTRINGS_TABLE_START] = sText_WindBecameIcyWind,
+    [STRINGID_WATERTURNEDMUDDY - BATTLESTRINGS_TABLE_START] = sText_WaterTurnedMuddy,
+    [STRINGID_VOICESGOTLOUD - BATTLESTRINGS_TABLE_START] = sText_VoicesGotLoud,
+    [STRINGID_ICYWINDBECAMEBLIZZARD - BATTLESTRINGS_TABLE_START] = sText_IcyWindBecameBlizzard,
 };
 
 const u16 gMissStringIds[] =
@@ -1564,7 +1570,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .bgColor = 14,
         .shadowColor = 11,
     },
-    [B_WIN_DUMMY] = {
+    [B_WIN_PSS_ICON] = {
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_NORMAL,
         .x = 0,
@@ -1852,7 +1858,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
         .bgColor = 14,
         .shadowColor = 11,
     },
-    [B_WIN_DUMMY] = {
+    [B_WIN_PSS_ICON] = {
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_NORMAL,
         .x = 0,
@@ -2036,6 +2042,18 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
         .fgColor = 7,
         .bgColor = 14,
         .shadowColor = 15,
+    },
+    [B_WIN_MOVE_DESCRIPTION] = {
+        .fillValue = PIXEL_FILL(0xE),
+        .fontId = FONT_NARROW,
+        .x = 0,
+        .y = 1,
+        .letterSpacing = 0,
+        .lineSpacing = 0,
+        .speed = 0,
+        .fgColor = TEXT_DYNAMIC_COLOR_4,
+        .bgColor = TEXT_DYNAMIC_COLOR_5,
+        .shadowColor = TEXT_DYNAMIC_COLOR_6,
     },
 };
 

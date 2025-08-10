@@ -4487,7 +4487,7 @@ static void ShowCategoryIcon(u16 move)
 
     if (gBattleMoves[move].power == 0)
         StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY]], CATEGORY_ICON_STATUS);
-    else if (IS_TYPE_PHYSICAL(gBattleMoves[move].type))
+    else if (gBattleMoves[move].category == MOVE_CATEGORY_PHYSICAL)
         StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY]], CATEGORY_ICON_PHYSICAL);
     else
         StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY]], CATEGORY_ICON_SPECIAL);
