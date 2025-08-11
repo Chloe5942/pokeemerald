@@ -1104,7 +1104,7 @@ void LoadMonIconPalettesTinted(void)
     for (i = 0; i < ARRAY_COUNT(gMonIconPaletteTable); i++)
     {
         LoadSpritePalette(&gMonIconPaletteTable[i]);
-        TintPalette_GrayScale2(&gPlttBufferUnfaded[0x170 + i*16], 16);
+        TintPalette_CustomTone(&gPlttBufferUnfaded[0x170 + i*16], 16, 0, 0, 0);
     }
 }
         
@@ -1172,7 +1172,7 @@ static void TintPartyMonIcons(u8 tm)
         species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
         if (!CanSpeciesLearnTMHM(species, tm))
         {
-            gSprites[spriteIdData[i]].oam.paletteNum = 12 + spriteIdPalette[i];
+            gSprites[spriteIdData[i]].oam.paletteNum = 7 + spriteIdPalette[i];
         }
         else
         {

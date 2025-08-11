@@ -46,7 +46,7 @@
 #define FLAG_RESET_BJ	              0x21 // Unused Flag
 #define FLAG_BLACKJACK	              0x22 // Unused Flag
 #define FLAG_RECEIVED_STATS_EDITOR    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
+#define FLAG_SHINY_CREATION           0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag

@@ -53,6 +53,7 @@ MossdeepCity_EventScript_Woman::
 	end
 
 MossdeepCity_EventScript_WhiteRock::
+	goto_if_set FLAG_RECEIVED_TM_RETURN, MossdeepCity_EventScript_ShinyWhiteRock
 	msgbox MossdeepCity_Text_ItsAWhiteRock, MSGBOX_SIGN
 	end
 
@@ -425,4 +426,32 @@ MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "LEADER come in.\p"
 	.string "People tell me the new LEADER once\n"
 	.string "mentored WALLACE.$"
+
+MossdeepCity_EventScript_ShinyWhiteRock::
+	call_if_set FLAG_SHINY_CREATION, MossdeepCity_EventScript_DeactivateShiny
+	msgbox MossdeepCity_Text_ItsAWhiteRock, MSGBOX_SIGN
+	delay 5
+	msgbox MossdeepCity_Text_ItStartedShining, MSGBOX_SIGN
+	delay 5
+	setflag FLAG_SHINY_CREATION
+	msgbox MossdeepCity_Text_MoreShinyPkmn, MSGBOX_SIGN
+	end
+
+MossdeepCity_EventScript_DeactivateShiny::
+	msgbox MossdeepCity_Text_ItsAWhiteRock, MSGBOX_SIGN
+	delay 5
+	msgbox MossdeepCity_Text_ItStartedShining, MSGBOX_SIGN
+	delay 5
+	clearflag FLAG_SHINY_CREATION
+	msgbox MossdeepCity_Text_LessShinyPkmn, MSGBOX_SIGN
+	end
+
+MossdeepCity_Text_ItStartedShining:
+	.string "It starting shining!$"
+
+MossdeepCity_Text_MoreShinyPkmn:
+	.string "More POKéMON are shiny!$"
+
+MossdeepCity_Text_LessShinyPkmn:
+	.string "Less POKéMON are shiny!$"
 
