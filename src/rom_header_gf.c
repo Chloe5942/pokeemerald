@@ -105,10 +105,8 @@ static const struct GFRomHeader sGFRomHeader = {
     .monNormalPalettes = gMonPaletteTable,
     .monShinyPalettes = gMonShinyPaletteTable,
     .monIcons = gMonIconTable,
-    // Icon compatibility with Colosseum/XD;
-    // Mon icons are loaded into IWRAM before multiboot
-    .monIconPaletteIds = (const u8*)MON_ICON_INDICES_IWRAM_START,
-    .monIconPalettes = gMonIconIwramPaletteTable,
+    .monIconPaletteIds = gMonIconPaletteIndices,
+    .monIconPalettes = gMonIconPaletteTable,
     .monSpeciesNames = gSpeciesNames,
     .moveNames = gMoveNames,
     .decorations = gDecorations,
