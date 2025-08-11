@@ -465,6 +465,10 @@
 #define MACH_BIKE 0
 #define ACRO_BIKE 1
 
+// Secondary IDs for HMs
+#define TM 0
+#define HM 1
+
 // Item type IDs (used to determine the exit callback)
 #define ITEM_USE_MAIL        0
 #define ITEM_USE_PARTY_MENU  1
