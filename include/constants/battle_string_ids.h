@@ -378,14 +378,15 @@
 #define STRINGID_PKMNBOXLANETTESPCFULL      378
 #define STRINGID_TRAINER1WINTEXT            379
 #define STRINGID_TRAINER2WINTEXT            380
+#define STRINGID_PLAYERWHITEOUT3            381
 // Combination Moves
-#define STRINGID_WINDBECAMETWISTER          381
-#define STRINGID_WINDBECAMEICYWIND          382
-#define STRINGID_WATERTURNEDMUDDY           383
-#define STRINGID_VOICESGOTLOUD              384
-#define STRINGID_ICYWINDBECAMEBLIZZARD      385
+#define STRINGID_WINDBECAMETWISTER          382
+#define STRINGID_WINDBECAMEICYWIND          383
+#define STRINGID_WATERTURNEDMUDDY           384
+#define STRINGID_VOICESGOTLOUD              385
+#define STRINGID_ICYWINDBECAMEBLIZZARD      386
 
-#define BATTLESTRINGS_COUNT                 386
+#define BATTLESTRINGS_COUNT                 387
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
