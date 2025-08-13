@@ -428,6 +428,13 @@ MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "mentored WALLACE.$"
 
 MossdeepCity_EventScript_ShinyWhiteRock::
+	setflag FLAG_SYS_QUEST_MENU_GET
+	questmenu QUEST_MENU_SET_ACTIVE QUEST_MAIN_STORY
+	questmenu QUEST_MENU_SET_ACTIVE QUEST_CONTEST_STAR_COOL
+	questmenu QUEST_MENU_SET_ACTIVE QUEST_CONTEST_STAR_CUTE
+	questmenu QUEST_MENU_SET_ACTIVE QUEST_CONTEST_STAR_BEAUTY
+	questmenu QUEST_MENU_SET_ACTIVE QUEST_CONTEST_STAR_SMART
+	questmenu QUEST_MENU_SET_ACTIVE QUEST_CONTEST_STAR_TOUGH
 	call_if_set FLAG_SHINY_CREATION, MossdeepCity_EventScript_DeactivateShiny
 	msgbox MossdeepCity_Text_ItsAWhiteRock, MSGBOX_SIGN
 	delay 5

@@ -338,6 +338,7 @@ SECTIONS {
         src/gym_leader_rematch.o(.text);
         src/battle_transition_frontier.o(.text);
         src/international_string_util.o(.text);
+        src/quests.o(.text);
         src/tm_case.o(.text);
 		src/ui_stat_editor.o(.text);
         src/ui_main_menu.o(.text);
@@ -713,6 +714,7 @@ SECTIONS {
         data/mystery_gift.o(.rodata);
         src/m4a_tables.o(.rodata);
         data/sound_data.o(.rodata);
+        src/quests.o(.rodata);
         src/tm_case.o(.rodata);
 		src/ui_stat_editor.o(.rodata);
         src/ui_main_menu.o(.rodata);

@@ -3133,6 +3133,105 @@ extern const u8 gText_Smartness[];
 extern const u8 gText_Cuteness[];
 extern const u8 gText_Beauty3[];
 
+////side quests
+//generic strings
+extern const u8 gText_QuestAnnounce[];
+extern const u8 gText_QuestComplete[];
+extern const u8 gText_QuestActive[];
+
+//names
+extern const u8 gText_SideQuestName_MainStory[];
+
+extern const u8 gText_SideQuestName_CoolStar[];
+extern const u8 gText_SideQuestName_CuteStar[];
+extern const u8 gText_SideQuestName_BeautyStar[];
+extern const u8 gText_SideQuestName_SmartStar[];
+extern const u8 gText_SideQuestName_ToughStar[];
+
+extern const u8 gText_SideQuestName_Welcome[];
+extern const u8 gText_SideQuestName_Silver[];
+extern const u8 gText_SideQuestName_Gold[];
+
+//descriptions
+extern const u8 gText_SideQuestDesc_MainStory[];
+
+extern const u8 gText_SideQuestDesc_Cool[];
+extern const u8 gText_SideQuestDesc_Cute[];
+extern const u8 gText_SideQuestDesc_Beauty[];
+extern const u8 gText_SideQuestDesc_Smart[];
+extern const u8 gText_SideQuestDesc_Tough[];
+
+extern const u8 gText_SideQuestDesc_Welcome[];
+extern const u8 gText_SideQuestDesc_Silver[];
+extern const u8 gText_SideQuestDesc_Gold[];
+
+//completed quest description
+extern const u8 gText_SideQuestDoneDesc_MainStory[];
+
+extern const u8 gText_SideQuestDoneDesc_Cool[];
+extern const u8 gText_SideQuestDoneDesc_Cute[];
+extern const u8 gText_SideQuestDoneDesc_Beauty[];
+extern const u8 gText_SideQuestDoneDesc_Smart[];
+extern const u8 gText_SideQuestDoneDesc_Tough[];
+
+extern const u8 gText_SideQuestDoneDesc_Welcome[];
+extern const u8 gText_SideQuestDoneDesc_Silver[];
+extern const u8 gText_SideQuestDoneDesc_Gold[];
+
+//map
+extern const u8 gText_SideQuestMap_Hoenn[];
+extern const u8 gText_SideQuestMap_Lilycove[];
+extern const u8 gText_SideQuestMap_BatFron[];
+
+//subquests
+extern const u8 gText_SubQuest1_Name1[];
+extern const u8 gText_SubQuest1_Name2[];
+extern const u8 gText_SubQuest1_Name3[];
+extern const u8 gText_SubQuest1_Name4[];
+extern const u8 gText_SubQuest1_Name5[];
+extern const u8 gText_SubQuest1_Name6[];
+extern const u8 gText_SubQuest1_Name7[];
+extern const u8 gText_SubQuest1_Name8[];
+extern const u8 gText_SubQuest1_Name9[];
+extern const u8 gText_SubQuest1_Name10[];
+
+extern const u8 gText_SubQuest2_Name_Normal[];
+extern const u8 gText_SubQuest2_Name_Super[];
+extern const u8 gText_SubQuest2_Name_Hyper[];
+extern const u8 gText_SubQuest2_Name_Master[];
+
+extern const u8 gText_SubQuest7_Name_BatFac[];
+extern const u8 gText_SubQuest7_Name_BatAre[];
+extern const u8 gText_SubQuest7_Name_BatDom[];
+extern const u8 gText_SubQuest7_Name_BatPik[];
+extern const u8 gText_SubQuest7_Name_BatPal[];
+extern const u8 gText_SubQuest7_Name_BatPyr[];
+extern const u8 gText_SubQuest7_Name_BatTow[];
+
+extern const u8 gText_SubQuest1_Desc1[];
+extern const u8 gText_SubQuest1_Desc2[];
+extern const u8 gText_SubQuest1_Desc3[];
+extern const u8 gText_SubQuest1_Desc4[];
+extern const u8 gText_SubQuest1_Desc5[];
+extern const u8 gText_SubQuest1_Desc6[];
+extern const u8 gText_SubQuest1_Desc7[];
+extern const u8 gText_SubQuest1_Desc8[];
+extern const u8 gText_SubQuest1_Desc9[];
+extern const u8 gText_SubQuest1_Desc10[];
+
+extern const u8 gText_SubQuest2_Desc_Normal[];
+extern const u8 gText_SubQuest2_Desc_Super[];
+extern const u8 gText_SubQuest2_Desc_Hyper[];
+extern const u8 gText_SubQuest2_Desc_Master[];
+
+extern const u8 gText_SubQuest7_Desc_Knowledge[];
+extern const u8 gText_SubQuest7_Desc_Guts[];
+extern const u8 gText_SubQuest7_Desc_Tactics[];
+extern const u8 gText_SubQuest7_Desc_Luck[];
+extern const u8 gText_SubQuest7_Desc_Spirits[];
+extern const u8 gText_SubQuest7_Desc_Brave[];
+extern const u8 gText_SubQuest7_Desc_Ability[];
+
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];
 extern const u8 gText_BlenderMaxSpeedRecord[];

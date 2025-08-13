@@ -2005,3 +2005,102 @@ const u8 gText_FontSmall[] =            _("{FONT_SMALL}");
 const u8 gText_FontShort[] =            _("{FONT_SHORT}");
 const u8 gText_TMCase_Blue[] =          _("{COLOR_HIGHLIGHT_SHADOW BLUE TRANSPARENT LIGHT_BLUE}{STR_VAR_2}");
 
+//// side quest data
+//generic strings
+const u8 gText_QuestAnnounce[] = _("The quest '{STR_VAR_1}'\nis now {STR_VAR_2}.");
+const u8 gText_QuestComplete[] =_("Complete");
+const u8 gText_QuestActive[] =_("Active");
+
+//names
+const u8 gText_SideQuestName_MainStory[] = _("Main Story");
+
+const u8 gText_SideQuestName_CoolStar[] = _("Contest Star - Cool");
+const u8 gText_SideQuestName_CuteStar[] = _("Contest Star - Cute");
+const u8 gText_SideQuestName_BeautyStar[] = _("Contest Star - Beauty");
+const u8 gText_SideQuestName_SmartStar[] = _("Contest Star - Smart");
+const u8 gText_SideQuestName_ToughStar[] = _("Contest Star - Tough");
+
+const u8 gText_SideQuestName_Welcome[] = _("Frontier Welcome");
+const u8 gText_SideQuestName_Silver[] = _("Frontier Silver");
+const u8 gText_SideQuestName_Gold[] = _("Frontier Gold");
+
+//descriptions
+const u8 gText_SideQuestDesc_MainStory[] = _("The events of the Hoenn Region");
+
+const u8 gText_SideQuestDesc_Cool[] = _("Compete in Cool Contests");
+const u8 gText_SideQuestDesc_Cute[] = _("Compete in Cute Contests");
+const u8 gText_SideQuestDesc_Beauty[] = _("Compete in Beauty Contests");
+const u8 gText_SideQuestDesc_Smart[] = _("Compete in Smart Contests");
+const u8 gText_SideQuestDesc_Tough[] = _("Compete in Tough Contests");
+
+const u8 gText_SideQuestDesc_Welcome[] = _("Welcome to the Battle Frontier!\nGo to SCOTT's HOUSE.");
+const u8 gText_SideQuestDesc_Silver[] = _("Challenge the Battle Frontier - Silver");
+const u8 gText_SideQuestDesc_Gold[] = _("Challenge the Battle Frontier - Gold");
+
+//completed quest description
+const u8 gText_SideQuestDoneDesc_MainStory[] = _("Completed the Main Story");
+
+const u8 gText_SideQuestDoneDesc_Cool[] = _("Completed Contest Star - Cool");
+const u8 gText_SideQuestDoneDesc_Cute[] = _("Completed Contest Star - Cute");
+const u8 gText_SideQuestDoneDesc_Beauty[] = _("Completed Contest Star - Beauty");
+const u8 gText_SideQuestDoneDesc_Smart[] = _("Completed Contest Star - Smart");
+const u8 gText_SideQuestDoneDesc_Tough[] = _("Completed Contest Star - Tough");
+
+const u8 gText_SideQuestDoneDesc_Welcome[] = _("Completed Frontier Welcome");
+const u8 gText_SideQuestDoneDesc_Silver[] = _("Completed Frontier Silver");
+const u8 gText_SideQuestDoneDesc_Gold[] = _("Completed Frontier Gold");
+
+//map
+const u8 gText_SideQuestMap_Hoenn[] = _("Hoenn");
+const u8 gText_SideQuestMap_Lilycove[] = _("Lilycove City");
+const u8 gText_SideQuestMap_BatFron[] = _("Battle Frontier");
+
+//subquests
+const u8 gText_SubQuest1_Name1[] = _("Part 1");
+const u8 gText_SubQuest1_Name2[] = _("Part 2");
+const u8 gText_SubQuest1_Name3[] = _("Part 3");
+const u8 gText_SubQuest1_Name4[] = _("Part 4");
+const u8 gText_SubQuest1_Name5[] = _("Part 5");
+const u8 gText_SubQuest1_Name6[] = _("Part 6");
+const u8 gText_SubQuest1_Name7[] = _("Part 7");
+const u8 gText_SubQuest1_Name8[] = _("Part 8");
+const u8 gText_SubQuest1_Name9[] = _("Part 9");
+const u8 gText_SubQuest1_Name10[] = _("Part 10");
+
+const u8 gText_SubQuest2_Name_Normal[] = _("Normal Rank");
+const u8 gText_SubQuest2_Name_Super[] = _("Super Rank");
+const u8 gText_SubQuest2_Name_Hyper[] = _("Hyper Rank");
+const u8 gText_SubQuest2_Name_Master[] = _("Master Rank");
+
+const u8 gText_SubQuest7_Name_BatFac[] = _("Challenge the Battle Factory");
+const u8 gText_SubQuest7_Name_BatAre[] = _("Challenge the Battle Arena");
+const u8 gText_SubQuest7_Name_BatDom[] = _("Challenge the Battle Dome");
+const u8 gText_SubQuest7_Name_BatPik[] = _("Challenge the Battle Pike");
+const u8 gText_SubQuest7_Name_BatPal[] = _("Challenge the Battle Palace");
+const u8 gText_SubQuest7_Name_BatPyr[] = _("Challenge the Battle Pyramid");
+const u8 gText_SubQuest7_Name_BatTow[] = _("Challenge the Battle Tower");
+
+// Descriptions
+const u8 gText_SubQuest1_Desc1[] = _("Description Sub 1");
+const u8 gText_SubQuest1_Desc2[] = _("Description Sub 2");
+const u8 gText_SubQuest1_Desc3[] = _("Description Sub 3");
+const u8 gText_SubQuest1_Desc4[] = _("Description Sub 4");
+const u8 gText_SubQuest1_Desc5[] = _("Description Sub 5");
+const u8 gText_SubQuest1_Desc6[] = _("Description Sub 6");
+const u8 gText_SubQuest1_Desc7[] = _("Description Sub 7");
+const u8 gText_SubQuest1_Desc8[] = _("Description Sub 8");
+const u8 gText_SubQuest1_Desc9[] = _("Description Sub 9");
+const u8 gText_SubQuest1_Desc10[] = _("Description Sub 10");
+
+const u8 gText_SubQuest2_Desc_Normal[] = _("Win a Normal Rank Contest");
+const u8 gText_SubQuest2_Desc_Super[] = _("Win a Super Rank Contest");
+const u8 gText_SubQuest2_Desc_Hyper[] = _("Win a Hyper Rank Contest");
+const u8 gText_SubQuest2_Desc_Master[] = _("Win a Master Rank Contest");
+
+const u8 gText_SubQuest7_Desc_Knowledge[] = _("Obtain the Knowledge Symbol");
+const u8 gText_SubQuest7_Desc_Guts[] = _("Obtain the Guts Symbol");
+const u8 gText_SubQuest7_Desc_Tactics[] = _("Obtain the Tactics Symbol");
+const u8 gText_SubQuest7_Desc_Luck[] = _("Obtain the Luck Symbol");
+const u8 gText_SubQuest7_Desc_Spirits[] = _("Obtain the Spirits Symbol");
+const u8 gText_SubQuest7_Desc_Brave[] = _("Obtain the Brave Symbol");
+const u8 gText_SubQuest7_Desc_Ability[] = _("Obtain the Ability Symbol");
