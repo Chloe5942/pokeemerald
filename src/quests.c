@@ -235,396 +235,392 @@ static const u8 sText_AZ[] = _(" A-Z");
 
 //Declaration of subquest structures. Edits to subquests are made here.
 #define sub_quest(i, n, d, m, s, st, t) {.id = i, .name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
-static const struct SubQuest sSubQuests1[QUEST_MAIN_STORY_SUB_COUNT] =
+static const struct SubQuest sRivalNextDoor[QUEST_RIVAL_NEXT_DOOR_SUB_COUNT] =
 {
 	sub_quest(
 	      0,
-	      gText_SubQuest1_Name1,
-	      gText_SubQuest1_Desc1,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_RivalNextDoor_Name_FirstBattle,
+	      gText_RivalNextDoor_Desc_FirstBattle,
+	      gText_SideQuestMap_Route103,
+		  ITEM_ORAN_BERRY,
+	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      1,
-	      gText_SubQuest1_Name2,
-	      gText_SubQuest1_Desc2,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_RivalNextDoor_Name_SecondBattle,
+	      gText_RivalNextDoor_Desc_SecondBattle,
+	      gText_SideQuestMap_Rust104,
+	      ITEM_GREAT_BALL,
+	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      2,
-	      gText_SubQuest1_Name3,
-	      gText_SubQuest1_Desc3,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_RivalNextDoor_Name_ThirdBattle,
+	      gText_RivalNextDoor_Desc_ThirdBattle,
+	      gText_SideQuestMap_Route110,
+	      ITEM_ITEMFINDER,
+	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      3,
-	      gText_SubQuest1_Name4,
-	      gText_SubQuest1_Desc4,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_RivalNextDoor_Name_FourthBattle,
+	      gText_RivalNextDoor_Desc_FourthBattle,
+	      gText_SideQuestMap_Route119,
+	      ITEM_HM_FLY,
+	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      4,
-	      gText_SubQuest1_Name5,
-	      gText_SubQuest1_Desc5,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_RivalNextDoor_Name_FifthBattle,
+	      gText_RivalNextDoor_Desc_FifthBattle,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_ULTRA_BALL,
+	      ITEM,
 	      sText_Found
 	),
+};
 
+static const struct SubQuest sScoutingScott[QUEST_SCOUTING_SCOTT_SUB_COUNT] =
+{
 	sub_quest(
 	      5,
-	      gText_SubQuest1_Name6,
-	      gText_SubQuest1_Desc6,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_ScoutingScott_Name_GradClass,
+	      gText_ScoutingScott_Desc_GradClass,
+	      gText_SideQuestMap_Rustboro,
+	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
 	      sText_Found
 	),
-
 	sub_quest(
 	      6,
-	      gText_SubQuest1_Name7,
-	      gText_SubQuest1_Desc7,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_ScoutingScott_Name_ClassReuin,
+	      gText_ScoutingScott_Desc_ClassReuin,
+	      gText_SideQuestMap_Rustboro,
+	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
 	      sText_Found
 	),
-
 	sub_quest(
 	      7,
-	      gText_SubQuest1_Name8,
-	      gText_SubQuest1_Desc8,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_ScoutingScott_Name_SlateBattles,
+	      gText_ScoutingScott_Desc_SlateBattles,
+	      gText_SideQuestMap_Slateport,
+	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
 	      sText_Found
 	),
-
 	sub_quest(
 	      8,
-	      gText_SubQuest1_Name9,
-	      gText_SubQuest1_Desc9,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_ScoutingScott_Name_VerdanBattles,
+	      gText_ScoutingScott_Desc_VerdanBattles,
+	      gText_SideQuestMap_Verdanturf,
+	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
 	      sText_Found
 	),
-
 	sub_quest(
 	      9,
-	      gText_SubQuest1_Name10,
-	      gText_SubQuest1_Desc10,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_ScoutingScott_Name_FallaborBattles,
+	      gText_ScoutingScott_Desc_FallaborBattles,
+	      gText_SideQuestMap_Fallabor,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      10,
+	      gText_ScoutingScott_Name_LilyVaca,
+	      gText_ScoutingScott_Desc_LilyVaca,
+	      gText_SideQuestMap_Lilycove,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      11,
+	      gText_ScoutingScott_Name_StarGazer,
+	      gText_ScoutingScott_Desc_StarGazer,
+	      gText_SideQuestMap_Mossdeep,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      12,
+	      gText_ScoutingScott_Name_ChampRoad,
+	      gText_ScoutingScott_Desc_ChampRoad,
+	      gText_SideQuestMap_EverGrande,
+	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
 	      sText_Found
 	),
 };
 
-static const struct SubQuest sSubQuests2[QUEST_CONTEST_STAR_COOL_SUB_COUNT] =
+static const struct SubQuest sContestStarCool[QUEST_CONTEST_STAR_COOL_SUB_COUNT] =
 {
-	sub_quest(
-	      10,
-	      gText_SubQuest2_Name_Normal,
-	      gText_SubQuest2_Desc_Normal,
-	      gText_SideQuestMap_Lilycove,
-	      ITEM_RED_SCARF,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      11,
-	      gText_SubQuest2_Name_Super,
-	      gText_SubQuest2_Desc_Super,
-	      gText_SideQuestMap_Lilycove,
-	      ITEM_RED_SCARF,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      12,
-	      gText_SubQuest2_Name_Hyper,
-	      gText_SubQuest2_Desc_Hyper,
-	      gText_SideQuestMap_Lilycove,
-	      ITEM_RED_SCARF,
-	      ITEM,
-	      sText_Found
-	),
-
 	sub_quest(
 	      13,
-	      gText_SubQuest2_Name_Master,
-	      gText_SubQuest2_Desc_Master,
+	      gText_ContestStar_Name_Normal,
+	      gText_ContestStar_Desc_Normal,
 	      gText_SideQuestMap_Lilycove,
 	      ITEM_RED_SCARF,
 	      ITEM,
 	      sText_Found
 	),
-
-};
-
-static const struct SubQuest sSubQuests3[QUEST_CONTEST_STAR_CUTE_SUB_COUNT] =
-{
 	sub_quest(
 	      14,
-	      gText_SubQuest2_Name_Normal,
-	      gText_SubQuest2_Desc_Normal,
+	      gText_ContestStar_Name_Super,
+	      gText_ContestStar_Desc_Super,
 	      gText_SideQuestMap_Lilycove,
-	      ITEM_PINK_SCARF,
+	      ITEM_RED_SCARF,
 	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      15,
-	      gText_SubQuest2_Name_Super,
-	      gText_SubQuest2_Desc_Super,
+	      gText_ContestStar_Name_Hyper,
+	      gText_ContestStar_Desc_Hyper,
 	      gText_SideQuestMap_Lilycove,
-	      ITEM_PINK_SCARF,
+	      ITEM_RED_SCARF,
 	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      16,
-	      gText_SubQuest2_Name_Hyper,
-	      gText_SubQuest2_Desc_Hyper,
+	      gText_ContestStar_Name_Master,
+	      gText_ContestStar_Desc_Master,
 	      gText_SideQuestMap_Lilycove,
-	      ITEM_PINK_SCARF,
+	      ITEM_RED_SCARF,
 	      ITEM,
 	      sText_Found
 	),
-
-	sub_quest(
-	      17,
-	      gText_SubQuest2_Name_Master,
-	      gText_SubQuest2_Desc_Master,
-	      gText_SideQuestMap_Lilycove,
-	      ITEM_PINK_SCARF,
-	      ITEM,
-	      sText_Found
-	),
-
 };
 
-static const struct SubQuest sSubQuests4[QUEST_CONTEST_STAR_BEAUTY_SUB_COUNT] =
+static const struct SubQuest sContestStarCute[QUEST_CONTEST_STAR_CUTE_SUB_COUNT] =
 {
 	sub_quest(
+	      17,
+	      gText_ContestStar_Name_Normal,
+	      gText_ContestStar_Desc_Normal,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_PINK_SCARF,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
 	      18,
-	      gText_SubQuest2_Name_Normal,
-	      gText_SubQuest2_Desc_Normal,
+	      gText_ContestStar_Name_Super,
+	      gText_ContestStar_Desc_Super,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_PINK_SCARF,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      19,
+	      gText_ContestStar_Name_Hyper,
+	      gText_ContestStar_Desc_Hyper,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_PINK_SCARF,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      20,
+	      gText_ContestStar_Name_Master,
+	      gText_ContestStar_Desc_Master,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_PINK_SCARF,
+	      ITEM,
+	      sText_Found
+	),
+};
+
+static const struct SubQuest sContestStarBeauty[QUEST_CONTEST_STAR_BEAUTY_SUB_COUNT] =
+{
+	sub_quest(
+	      21,
+	      gText_ContestStar_Name_Normal,
+	      gText_ContestStar_Desc_Normal,
 	      gText_SideQuestMap_Lilycove,
 	      ITEM_BLUE_SCARF,
 	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
-	      19,
-	      gText_SubQuest2_Name_Super,
-	      gText_SubQuest2_Desc_Super,
+	      22,
+	      gText_ContestStar_Name_Super,
+	      gText_ContestStar_Desc_Super,
 	      gText_SideQuestMap_Lilycove,
 	      ITEM_BLUE_SCARF,
 	      ITEM,
 	      sText_Caught
 
 	),
-
-	sub_quest(
-	      20,
-	      gText_SubQuest2_Name_Hyper,
-	      gText_SubQuest2_Desc_Hyper,
-	      gText_SideQuestMap_Lilycove,
-	      ITEM_BLUE_SCARF,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      21,
-	      gText_SubQuest2_Name_Master,
-	      gText_SubQuest2_Desc_Master,
-	      gText_SideQuestMap_Lilycove,
-	      ITEM_BLUE_SCARF,
-	      ITEM,
-	      sText_Found
-	),
-
-};
-
-static const struct SubQuest sSubQuests5[QUEST_CONTEST_STAR_SMART_SUB_COUNT] =
-{
-	sub_quest(
-	      22,
-	      gText_SubQuest2_Name_Normal,
-	      gText_SubQuest2_Desc_Normal,
-	      gText_SideQuestMap_Lilycove,
-	      ITEM_GREEN_SCARF,
-	      ITEM,
-	      sText_Found
-	),
-
 	sub_quest(
 	      23,
-	      gText_SubQuest2_Name_Super,
-	      gText_SubQuest2_Desc_Super,
+	      gText_ContestStar_Name_Hyper,
+	      gText_ContestStar_Desc_Hyper,
 	      gText_SideQuestMap_Lilycove,
-	      ITEM_GREEN_SCARF,
+	      ITEM_BLUE_SCARF,
 	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      24,
-	      gText_SubQuest2_Name_Hyper,
-	      gText_SubQuest2_Desc_Hyper,
+	      gText_ContestStar_Name_Master,
+	      gText_ContestStar_Desc_Master,
 	      gText_SideQuestMap_Lilycove,
-	      ITEM_GREEN_SCARF,
+	      ITEM_BLUE_SCARF,
 	      ITEM,
 	      sText_Found
 	),
+};
 
+static const struct SubQuest sContestStarSmart[QUEST_CONTEST_STAR_SMART_SUB_COUNT] =
+{
 	sub_quest(
 	      25,
-	      gText_SubQuest2_Name_Master,
-	      gText_SubQuest2_Desc_Master,
+	      gText_ContestStar_Name_Normal,
+	      gText_ContestStar_Desc_Normal,
 	      gText_SideQuestMap_Lilycove,
 	      ITEM_GREEN_SCARF,
 	      ITEM,
 	      sText_Found
 	),
-
-};
-
-static const struct SubQuest sSubQuests6[QUEST_CONTEST_STAR_TOUGH_SUB_COUNT] =
-{
 	sub_quest(
 	      26,
-	      gText_SubQuest2_Name_Normal,
-	      gText_SubQuest2_Desc_Normal,
+	      gText_ContestStar_Name_Super,
+	      gText_ContestStar_Desc_Super,
 	      gText_SideQuestMap_Lilycove,
-	      ITEM_YELLOW_SCARF,
+	      ITEM_GREEN_SCARF,
 	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      27,
-	      gText_SubQuest2_Name_Super,
-	      gText_SubQuest2_Desc_Super,
+	      gText_ContestStar_Name_Hyper,
+	      gText_ContestStar_Desc_Hyper,
 	      gText_SideQuestMap_Lilycove,
-	      ITEM_YELLOW_SCARF,
+	      ITEM_GREEN_SCARF,
 	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      28,
-	      gText_SubQuest2_Name_Hyper,
-	      gText_SubQuest2_Desc_Hyper,
+	      gText_ContestStar_Name_Master,
+	      gText_ContestStar_Desc_Master,
 	      gText_SideQuestMap_Lilycove,
-	      ITEM_YELLOW_SCARF,
+	      ITEM_GREEN_SCARF,
 	      ITEM,
 	      sText_Found
 	),
+};
 
+static const struct SubQuest sContestStarTough[QUEST_CONTEST_STAR_TOUGH_SUB_COUNT] =
+{
 	sub_quest(
 	      29,
-	      gText_SubQuest2_Name_Master,
-	      gText_SubQuest2_Desc_Master,
+	      gText_ContestStar_Name_Normal,
+	      gText_ContestStar_Desc_Normal,
 	      gText_SideQuestMap_Lilycove,
 	      ITEM_YELLOW_SCARF,
 	      ITEM,
 	      sText_Found
 	),
-
-};
-
-static const struct SubQuest sSubQuests7[QUEST_FRONTIER_SILVER_SUB_COUNT] =
-{
 	sub_quest(
 	      30,
-	      gText_SubQuest7_Name_BatFac,
-	      gText_SubQuest7_Desc_Knowledge,
-	      gText_SideQuestMap_BatFron,
-	      OBJ_EVENT_GFX_SCOTT,
-	      OBJECT,
+	      gText_ContestStar_Name_Super,
+	      gText_ContestStar_Desc_Super,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_YELLOW_SCARF,
+	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      31,
-	      gText_SubQuest7_Name_BatAre,
-	      gText_SubQuest7_Desc_Guts,
-	      gText_SideQuestMap_BatFron,
-	      OBJ_EVENT_GFX_SCOTT,
-	      OBJECT,
+	      gText_ContestStar_Name_Hyper,
+	      gText_ContestStar_Desc_Hyper,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_YELLOW_SCARF,
+	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      32,
-	      gText_SubQuest7_Name_BatDom,
-	      gText_SubQuest7_Desc_Tactics,
-	      gText_SideQuestMap_BatFron,
-	      OBJ_EVENT_GFX_SCOTT,
-	      OBJECT,
+	      gText_ContestStar_Name_Master,
+	      gText_ContestStar_Desc_Master,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_YELLOW_SCARF,
+	      ITEM,
 	      sText_Found
 	),
+};
 
+static const struct SubQuest sSilverSymbols[QUEST_FRONTIER_SILVER_SUB_COUNT] =
+{
 	sub_quest(
 	      33,
-	      gText_SubQuest7_Name_BatPik,
-	      gText_SubQuest7_Desc_Luck,
+	      gText_BattleFrontier_Name_BatFac,
+	      gText_BattleFrontier_Desc_Knowledge,
 	      gText_SideQuestMap_BatFron,
 	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
 	      sText_Found
 	),
-
 	sub_quest(
 	      34,
-	      gText_SubQuest7_Name_BatPal,
-	      gText_SubQuest7_Desc_Spirits,
+	      gText_BattleFrontier_Name_BatAre,
+	      gText_BattleFrontier_Desc_Guts,
 	      gText_SideQuestMap_BatFron,
 	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
 	      sText_Found
 	),
-
 	sub_quest(
 	      35,
-	      gText_SubQuest7_Name_BatPyr,
-	      gText_SubQuest7_Desc_Brave,
+	      gText_BattleFrontier_Name_BatDom,
+	      gText_BattleFrontier_Desc_Tactics,
 	      gText_SideQuestMap_BatFron,
 	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
 	      sText_Found
 	),
-
 	sub_quest(
 	      36,
-	      gText_SubQuest7_Name_BatTow,
-	      gText_SubQuest7_Desc_Ability,
+	      gText_BattleFrontier_Name_BatPik,
+	      gText_BattleFrontier_Desc_Luck,
+	      gText_SideQuestMap_BatFron,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      37,
+	      gText_BattleFrontier_Name_BatPal,
+	      gText_BattleFrontier_Desc_Spirits,
+	      gText_SideQuestMap_BatFron,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      38,
+	      gText_BattleFrontier_Name_BatPyr,
+	      gText_BattleFrontier_Desc_Brave,
+	      gText_SideQuestMap_BatFron,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      39,
+	      gText_BattleFrontier_Name_BatTow,
+	      gText_BattleFrontier_Desc_Ability,
 	      gText_SideQuestMap_BatFron,
 	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
@@ -632,75 +628,109 @@ static const struct SubQuest sSubQuests7[QUEST_FRONTIER_SILVER_SUB_COUNT] =
 	),
 };
 
-static const struct SubQuest sSubQuests8[QUEST_FRONTIER_GOLD_SUB_COUNT] =
+static const struct SubQuest sGoldSymbols[QUEST_FRONTIER_GOLD_SUB_COUNT] =
 {
 	sub_quest(
-	      37,
-	      gText_SubQuest7_Name_BatFac,
-	      gText_SubQuest7_Desc_Knowledge,
-	      gText_SideQuestMap_BatFron,
-	      OBJ_EVENT_GFX_SCOTT,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      38,
-	      gText_SubQuest7_Name_BatAre,
-	      gText_SubQuest7_Desc_Guts,
-	      gText_SideQuestMap_BatFron,
-	      OBJ_EVENT_GFX_SCOTT,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      39,
-	      gText_SubQuest7_Name_BatDom,
-	      gText_SubQuest7_Desc_Tactics,
-	      gText_SideQuestMap_BatFron,
-	      OBJ_EVENT_GFX_SCOTT,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
 	      40,
-	      gText_SubQuest7_Name_BatPik,
-	      gText_SubQuest7_Desc_Luck,
+	      gText_BattleFrontier_Name_BatFac,
+	      gText_BattleFrontier_Desc_Knowledge,
 	      gText_SideQuestMap_BatFron,
 	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
 	      sText_Found
 	),
-
 	sub_quest(
 	      41,
-	      gText_SubQuest7_Name_BatPal,
-	      gText_SubQuest7_Desc_Spirits,
+	      gText_BattleFrontier_Name_BatAre,
+	      gText_BattleFrontier_Desc_Guts,
 	      gText_SideQuestMap_BatFron,
 	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
 	      sText_Found
 	),
-
 	sub_quest(
 	      42,
-	      gText_SubQuest7_Name_BatPyr,
-	      gText_SubQuest7_Desc_Brave,
+	      gText_BattleFrontier_Name_BatDom,
+	      gText_BattleFrontier_Desc_Tactics,
 	      gText_SideQuestMap_BatFron,
 	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
 	      sText_Found
 	),
-
 	sub_quest(
 	      43,
-	      gText_SubQuest7_Name_BatTow,
-	      gText_SubQuest7_Desc_Ability,
+	      gText_BattleFrontier_Name_BatPik,
+	      gText_BattleFrontier_Desc_Luck,
 	      gText_SideQuestMap_BatFron,
 	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      44,
+	      gText_BattleFrontier_Name_BatPal,
+	      gText_BattleFrontier_Desc_Spirits,
+	      gText_SideQuestMap_BatFron,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      45,
+	      gText_BattleFrontier_Name_BatPyr,
+	      gText_BattleFrontier_Desc_Brave,
+	      gText_SideQuestMap_BatFron,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      46,
+	      gText_BattleFrontier_Name_BatTow,
+	      gText_BattleFrontier_Desc_Ability,
+	      gText_SideQuestMap_BatFron,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      sText_Found
+	),
+};
+
+static const struct SubQuest sSeafarer[QUEST_SEAFARER_SUB_COUNT] =
+{
+	sub_quest(
+	      47,
+	      gText_Seafarer_Name_BirthIsland,
+	      gText_Seafarer_Desc_BirthIsland,
+	      gText_SideQuestMap_Hoenn,
+	      ITEM_AURORA_TICKET,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      48,
+	      gText_Seafarer_Name_SouthernIsland,
+	      gText_Seafarer_Desc_SouthernIsland,
+	      gText_SideQuestMap_Hoenn,
+	      ITEM_EON_TICKET,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      49,
+	      gText_Seafarer_Name_NavalRock,
+	      gText_Seafarer_Desc_NavalRock,
+	      gText_SideQuestMap_Hoenn,
+	      ITEM_MYSTIC_TICKET,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      50,
+	      gText_Seafarer_Name_FarawayIsland,
+	      gText_Seafarer_Desc_FarawayIsland,
+	      gText_SideQuestMap_Hoenn,
+	      ITEM_OLD_SEA_MAP,
+	      ITEM,
 	      sText_Found
 	),
 };
@@ -716,14 +746,24 @@ static const struct SubQuest sSubQuests8[QUEST_FRONTIER_GOLD_SUB_COUNT] =
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
 	side_quest(
-	      gText_SideQuestName_MainStory,
-	      gText_SideQuestDesc_MainStory,
-	      gText_SideQuestDoneDesc_MainStory,
+	      gText_SideQuestName_RivalNextDoor,
+	      gText_SideQuestDesc_RivalNextDoor,
+	      gText_SideQuestDoneDesc_RivalNextDoor,
 	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_WALLY,
+	      ITEM_VS_SEEKER,
+	      ITEM,
+	      sRivalNextDoor,
+	      QUEST_RIVAL_NEXT_DOOR_SUB_COUNT
+	),
+	side_quest(
+	      gText_SideQuestName_ScoutingScott,
+	      gText_SideQuestDesc_ScoutingScott,
+	      gText_SideQuestDoneDesc_ScoutingScott,
+	      gText_SideQuestMap_Hoenn,
+	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
-	      sSubQuests1,
-	      QUEST_MAIN_STORY_SUB_COUNT
+	      sScoutingScott,
+	      QUEST_SCOUTING_SCOTT_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_CoolStar,
@@ -732,7 +772,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap_Lilycove,
 	      ITEM_RED_SCARF,
 	      ITEM,
-	      sSubQuests2,
+	      sContestStarCool,
 	      QUEST_CONTEST_STAR_COOL_SUB_COUNT
 	),
 	side_quest(
@@ -742,7 +782,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap_Lilycove,
 	      ITEM_PINK_SCARF,
 	      ITEM,
-	      sSubQuests3,
+	      sContestStarCute,
 	      QUEST_CONTEST_STAR_CUTE_SUB_COUNT
 	),
 	side_quest(
@@ -752,7 +792,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap_Lilycove,
 	      ITEM_BLUE_SCARF,
 	      ITEM,
-	      sSubQuests4,
+	      sContestStarBeauty,
 	      QUEST_CONTEST_STAR_BEAUTY_SUB_COUNT
 	),
 	side_quest(
@@ -762,7 +802,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap_Lilycove,
 	      ITEM_GREEN_SCARF,
 	      ITEM,
-	      sSubQuests5,
+	      sContestStarSmart,
 	      QUEST_CONTEST_STAR_SMART_SUB_COUNT
 	),
 	side_quest(
@@ -772,7 +812,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap_Lilycove,
 	      ITEM_YELLOW_SCARF,
 	      ITEM,
-	      sSubQuests6,
+	      sContestStarTough,
 	      QUEST_CONTEST_STAR_TOUGH_SUB_COUNT
 	),
 	side_quest(
@@ -792,7 +832,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap_BatFron,
 	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
-	      sSubQuests7,
+	      sSilverSymbols,
 	      QUEST_FRONTIER_SILVER_SUB_COUNT
 	),
 	side_quest(
@@ -802,8 +842,18 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap_BatFron,
 	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
-	      sSubQuests8,
+	      sGoldSymbols,
 	      QUEST_FRONTIER_GOLD_SUB_COUNT
+	),
+	side_quest(
+	      gText_SideQuestName_Seafarer,
+	      gText_SideQuestDesc_Seafarer,
+	      gText_SideQuestDoneDesc_Seafarer,
+	      gText_SideQuestMap_Hoenn,
+	      OBJ_EVENT_GFX_EXPERT_M,
+	      OBJECT,
+	      sSeafarer,
+	      QUEST_SEAFARER_SUB_COUNT
 	),
 };
 ////////////////////////END QUEST CUSTOMIZATION////////////////////////////////

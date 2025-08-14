@@ -16,7 +16,6 @@ InsideOfTruck_OnResume:
 InsideOfTruck_EventScript_SetIntroFlags::
 	lockall
 	setflag FLAG_SYS_QUEST_MENU_GET
-	questmenu QUEST_MENU_SET_ACTIVE QUEST_MAIN_STORY
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, InsideOfTruck_EventScript_SetIntroFlagsMale
