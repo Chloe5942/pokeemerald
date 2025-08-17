@@ -20,7 +20,7 @@
       "y": 11,
       "elevation": 3,
       "dest_map": "MAP_RESEARCH_SHIP_DECK",
-      "dest_warp_id": "3"
+      "dest_warp_id": "2"
     },
     {
       "x": 4,
@@ -77,6 +77,13 @@
       "elevation": 3,
       "dest_map": "MAP_RESEARCH_SHIP_ROOMS",
       "dest_warp_id": "7"
+    },
+    {
+      "x": 16,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_RESEARCH_SHIP_LOWER_DECK",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

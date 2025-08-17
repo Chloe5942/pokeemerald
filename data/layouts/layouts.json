@@ -4435,7 +4435,7 @@
       "id": "LAYOUT_RESEARCH_SHIP_DECK",
       "name": "ResearchShip_Deck_Layout",
       "width": 40,
-      "height": 22,
+      "height": 23,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/ResearchShip_Deck/border.bin",
@@ -4454,7 +4454,7 @@
     {
       "id": "LAYOUT_RESEARCH_SHIP_LOWER_DECK",
       "name": "ResearchShip_LowerDeck_Layout",
-      "width": 17,
+      "width": 23,
       "height": 13,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_InsideShip",

@@ -34,14 +34,14 @@
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_RESEARCH_SHIP_DECK",
-      "dest_warp_id": "5"
+      "dest_warp_id": "4"
     },
     {
       "x": 8,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_RESEARCH_SHIP_DECK",
-      "dest_warp_id": "5"
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],
