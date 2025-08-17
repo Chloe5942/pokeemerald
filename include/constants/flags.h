@@ -42,13 +42,13 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_INSURANCE	              0x20 // Unused Flag
-#define FLAG_RESET_BJ	              0x21 // Unused Flag
-#define FLAG_BLACKJACK	              0x22 // Unused Flag
-#define FLAG_RECEIVED_STATS_EDITOR    0x23 // Unused Flag
-#define FLAG_SHINY_CREATION           0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
+#define FLAG_INSURANCE	                 0x20 // Blackjack Insurance Flag
+#define FLAG_RESET_BJ	                 0x21 // Blackjack Reset Flag
+#define FLAG_BLACKJACK	                 0x22 // Blackjack In Play Flag
+#define FLAG_SHINY_CREATION              0x23 // Force Shiny Flag
+#define FLAG_HIDE_BAD_LUCK_MAN           0x24 // Mauville City Bad Luck Man Flag
+#define FLAG_RECIEVED_BRAILLE_DECODER    0x25 // Recieved Braille Decoder Flag
+#define FLAG_RETURNED_SEALED_CHAMBER     0x26 // Returned from Sealed Chamber Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
@@ -1399,8 +1399,8 @@
 #define FLAG_SYS_SAFARI_MODE                        (SYSTEM_FLAGS + 0x2C)
 #define FLAG_SYS_CRUISE_MODE                        (SYSTEM_FLAGS + 0x2D)
 
-#define FLAG_SYS_QUEST_MENU_GET                     (SYSTEM_FLAGS + 0x2E) // Unused Flag
-#define FLAG_UNUSED_0x88F                           (SYSTEM_FLAGS + 0x2F) // Unused Flag
+#define FLAG_SYS_QUEST_MENU_GET                     (SYSTEM_FLAGS + 0x2E) // Quest Menu Unlocked Flag
+#define FLAG_SYS_STATS_EDITOR_GET                   (SYSTEM_FLAGS + 0x2F) // Stats Editor Unlocked Flag
 
 #define FLAG_SYS_TV_HOME                            (SYSTEM_FLAGS + 0x30)
 #define FLAG_SYS_TV_WATCH                           (SYSTEM_FLAGS + 0x31)

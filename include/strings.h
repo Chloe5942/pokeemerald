@@ -3020,55 +3020,55 @@ extern const u8 gText_QuestAnnounce[];
 extern const u8 gText_QuestComplete[];
 extern const u8 gText_QuestActive[];
 
-//names
+// Names
 extern const u8 gText_SideQuestName_RivalNextDoor[];
 extern const u8 gText_SideQuestName_ScoutingScott[];
-
-extern const u8 gText_SideQuestName_CoolStar[];
-extern const u8 gText_SideQuestName_CuteStar[];
-extern const u8 gText_SideQuestName_BeautyStar[];
-extern const u8 gText_SideQuestName_SmartStar[];
-extern const u8 gText_SideQuestName_ToughStar[];
+extern const u8 gText_SideQuestName_SpecialDelivery[];
+extern const u8 gText_SideQuestName_TrendSetter[];
+extern const u8 gText_SideQuestName_PuzzleSolver[];
+extern const u8 gText_SideQuestName_MailRun[];
+extern const u8 gText_SideQuestName_CoinCollector[];
+extern const u8 gText_SideQuestName_ContestStar[];
 
 extern const u8 gText_SideQuestName_Welcome[];
-extern const u8 gText_SideQuestName_Silver[];
-extern const u8 gText_SideQuestName_Gold[];
+extern const u8 gText_SideQuestName_Explorer[];
+extern const u8 gText_SideQuestName_GiganticFindings[];
 extern const u8 gText_SideQuestName_Seafarer[];
 
-//descriptions
+// Descriptions
 extern const u8 gText_SideQuestDesc_RivalNextDoor[];
 extern const u8 gText_SideQuestDesc_ScoutingScott[];
-
-extern const u8 gText_SideQuestDesc_Cool[];
-extern const u8 gText_SideQuestDesc_Cute[];
-extern const u8 gText_SideQuestDesc_Beauty[];
-extern const u8 gText_SideQuestDesc_Smart[];
-extern const u8 gText_SideQuestDesc_Tough[];
+extern const u8 gText_SideQuestDesc_SpecialDelivery[];
+extern const u8 gText_SideQuestDesc_TrendSetter[];
+extern const u8 gText_SideQuestDesc_PuzzleSolver[];
+extern const u8 gText_SideQuestDesc_MailRun[];
+extern const u8 gText_SideQuestDesc_CoinCollector[];
+extern const u8 gText_SideQuestDesc_ContestStar[];
 
 extern const u8 gText_SideQuestDesc_Welcome[];
-extern const u8 gText_SideQuestDesc_Silver[];
-extern const u8 gText_SideQuestDesc_Gold[];
+extern const u8 gText_SideQuestDesc_Explorer[];
+extern const u8 gText_SideQuestDesc_GiganticFindings[];
 extern const u8 gText_SideQuestDesc_Seafarer[];
 
-//completed quest description
+// Completed Quest Descriptions
 extern const u8 gText_SideQuestDoneDesc_RivalNextDoor[];
 extern const u8 gText_SideQuestDoneDesc_ScoutingScott[];
-
-extern const u8 gText_SideQuestDoneDesc_Cool[];
-extern const u8 gText_SideQuestDoneDesc_Cute[];
-extern const u8 gText_SideQuestDoneDesc_Beauty[];
-extern const u8 gText_SideQuestDoneDesc_Smart[];
-extern const u8 gText_SideQuestDoneDesc_Tough[];
+extern const u8 gText_SideQuestDoneDesc_SpecialDelivery[];
+extern const u8 gText_SideQuestDoneDesc_TrendSetter[];
+extern const u8 gText_SideQuestDoneDesc_PuzzleSolver[];
+extern const u8 gText_SideQuestDoneDesc_MailRun[];
+extern const u8 gText_SideQuestDoneDesc_CoinCollector[];
+extern const u8 gText_SideQuestDoneDesc_ContestStar[];
 
 extern const u8 gText_SideQuestDoneDesc_Welcome[];
-extern const u8 gText_SideQuestDoneDesc_Silver[];
-extern const u8 gText_SideQuestDoneDesc_Gold[];
+extern const u8 gText_SideQuestDoneDesc_Explorer[];
+extern const u8 gText_SideQuestDoneDesc_GiganticFindings[];
 extern const u8 gText_SideQuestDoneDesc_Seafarer[];
 
-//map
+// Maps
 extern const u8 gText_SideQuestMap_Hoenn[];
 extern const u8 gText_SideQuestMap_Lilycove[];
-extern const u8 gText_SideQuestMap_BatFron[];
+extern const u8 gText_SideQuestMap_BattleFrontier[];
 extern const u8 gText_SideQuestMap_Slateport[];
 extern const u8 gText_SideQuestMap_Verdanturf[];
 extern const u8 gText_SideQuestMap_EverGrande[];
@@ -3079,8 +3079,15 @@ extern const u8 gText_SideQuestMap_Route110[];
 extern const u8 gText_SideQuestMap_Route119[];
 extern const u8 gText_SideQuestMap_Rustboro[];
 extern const u8 gText_SideQuestMap_Rust104[];
+extern const u8 gText_SideQuestMap_Mauville[];
+extern const u8 gText_SideQuestMap_Dewford[];
+extern const u8 gText_SideQuestMap_Route134[];
+extern const u8 gText_SideQuestMap_DesertRuins[];
+extern const u8 gText_SideQuestMap_IslandCave[];
+extern const u8 gText_SideQuestMap_AncientTomb[];
+extern const u8 gText_SideQuestMap_Littleroot[];
 
-//subquests
+// Subquests
 extern const u8 gText_RivalNextDoor_Name_FirstBattle[];
 extern const u8 gText_RivalNextDoor_Name_SecondBattle[];
 extern const u8 gText_RivalNextDoor_Name_ThirdBattle[];
@@ -3096,18 +3103,33 @@ extern const u8 gText_ScoutingScott_Name_LilyVaca[];
 extern const u8 gText_ScoutingScott_Name_StarGazer[];
 extern const u8 gText_ScoutingScott_Name_ChampRoad[];
 
-extern const u8 gText_ContestStar_Name_Normal[];
-extern const u8 gText_ContestStar_Name_Super[];
-extern const u8 gText_ContestStar_Name_Hyper[];
-extern const u8 gText_ContestStar_Name_Master[];
+extern const u8 gText_PuzzleSolver_Name_Puzzle1[];
+extern const u8 gText_PuzzleSolver_Name_Puzzle2[];
+extern const u8 gText_PuzzleSolver_Name_Puzzle3[];
+extern const u8 gText_PuzzleSolver_Name_Puzzle4[];
+extern const u8 gText_PuzzleSolver_Name_Puzzle5[];
+extern const u8 gText_PuzzleSolver_Name_Puzzle6[];
+extern const u8 gText_PuzzleSolver_Name_Puzzle7[];
+extern const u8 gText_PuzzleSolver_Name_Puzzle8[];
 
-extern const u8 gText_BattleFrontier_Name_BatFac[];
-extern const u8 gText_BattleFrontier_Name_BatAre[];
-extern const u8 gText_BattleFrontier_Name_BatDom[];
-extern const u8 gText_BattleFrontier_Name_BatPik[];
-extern const u8 gText_BattleFrontier_Name_BatPal[];
-extern const u8 gText_BattleFrontier_Name_BatPyr[];
-extern const u8 gText_BattleFrontier_Name_BatTow[];
+extern const u8 gText_ContestStar_Name_Cool[];
+extern const u8 gText_ContestStar_Name_Cute[];
+extern const u8 gText_ContestStar_Name_Beauty[];
+extern const u8 gText_ContestStar_Name_Smart[];
+extern const u8 gText_ContestStar_Name_Tough[];
+
+extern const u8 gText_BattleFrontier_Name_BattleFactory[];
+extern const u8 gText_BattleFrontier_Name_BattleArena[];
+extern const u8 gText_BattleFrontier_Name_BattleDome[];
+extern const u8 gText_BattleFrontier_Name_BattlePike[];
+extern const u8 gText_BattleFrontier_Name_BattlePalace[];
+extern const u8 gText_BattleFrontier_Name_BattlePyramid[];
+extern const u8 gText_BattleFrontier_Name_BattleTower[];
+
+extern const u8 gText_GiganticFindings_Name_SealedChamber[];
+extern const u8 gText_GiganticFindings_Name_AncientTomb[];
+extern const u8 gText_GiganticFindings_Name_DesertRuins[];
+extern const u8 gText_GiganticFindings_Name_IslandCave[];
 
 extern const u8 gText_Seafarer_Name_BirthIsland[];
 extern const u8 gText_Seafarer_Name_SouthernIsland[];
@@ -3129,18 +3151,26 @@ extern const u8 gText_ScoutingScott_Desc_LilyVaca[];
 extern const u8 gText_ScoutingScott_Desc_StarGazer[];
 extern const u8 gText_ScoutingScott_Desc_ChampRoad[];
 
-extern const u8 gText_ContestStar_Desc_Normal[];
-extern const u8 gText_ContestStar_Desc_Super[];
-extern const u8 gText_ContestStar_Desc_Hyper[];
-extern const u8 gText_ContestStar_Desc_Master[];
+extern const u8 gText_PuzzleSolver_Desc[];
 
-extern const u8 gText_BattleFrontier_Desc_Knowledge[];
-extern const u8 gText_BattleFrontier_Desc_Guts[];
-extern const u8 gText_BattleFrontier_Desc_Tactics[];
-extern const u8 gText_BattleFrontier_Desc_Luck[];
-extern const u8 gText_BattleFrontier_Desc_Spirits[];
-extern const u8 gText_BattleFrontier_Desc_Brave[];
-extern const u8 gText_BattleFrontier_Desc_Ability[];
+extern const u8 gText_ContestStar_Desc_Cool[];
+extern const u8 gText_ContestStar_Desc_Cute[];
+extern const u8 gText_ContestStar_Desc_Beauty[];
+extern const u8 gText_ContestStar_Desc_Smart[];
+extern const u8 gText_ContestStar_Desc_Tough[];
+
+extern const u8 gText_BattleFrontier_Desc_BattleFactory[];
+extern const u8 gText_BattleFrontier_Desc_BattleArena[];
+extern const u8 gText_BattleFrontier_Desc_BattleDome[];
+extern const u8 gText_BattleFrontier_Desc_BattlePike[];
+extern const u8 gText_BattleFrontier_Desc_BattlePalace[];
+extern const u8 gText_BattleFrontier_Desc_BattlePyramid[];
+extern const u8 gText_BattleFrontier_Desc_BattleTower[];
+
+extern const u8 gText_GiganticFindings_Desc_SealedChamber[];
+extern const u8 gText_GiganticFindings_Desc_AncientTomb[];
+extern const u8 gText_GiganticFindings_Desc_DesertRuins[];
+extern const u8 gText_GiganticFindings_Desc_IslandCave[];
 
 extern const u8 gText_Seafarer_Desc_BirthIsland[];
 extern const u8 gText_Seafarer_Desc_SouthernIsland[];

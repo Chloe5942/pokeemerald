@@ -18,17 +18,18 @@
 // Main Game 
 #define QUEST_RIVAL_NEXT_DOOR                0
 #define QUEST_SCOUTING_SCOTT                 1
-#define QUEST_CONTEST_STAR_COOL              2
-#define QUEST_CONTEST_STAR_CUTE              3
-#define QUEST_CONTEST_STAR_BEAUTY            4
-#define QUEST_CONTEST_STAR_SMART             5
-#define QUEST_CONTEST_STAR_TOUGH             6
+#define QUEST_SPECIAL_DELIVERY               2
+#define QUEST_TREND_SETTER                   3
+#define QUEST_PUZZLE_SOLVER                  4
+#define QUEST_MAIL_RUN                       5
+#define QUEST_COIN_COLLECTOR                 6
+#define QUEST_CONTEST_STAR                   7
 // Post Game
-#define QUEST_FRONTIER_WELCOME               7
-#define QUEST_FRONTIER_SILVER                8
-#define QUEST_FRONTIER_GOLD                  9
-#define QUEST_SEAFARER                      10
-#define QUEST_COUNT                         (QUEST_SEAFARER + 1) // 11/100 89 Free Spaces Left
+#define QUEST_FRONTIER_WELCOME               8
+#define QUEST_FRONTIER_EXPLORER              9
+#define QUEST_GIGANTIC_FINDINGS             10
+#define QUEST_SEAFARER                      11
+#define QUEST_COUNT                         (QUEST_SEAFARER + 1) // 12/100 88 Free Spaces Left
 
 // Rival Next Door
 #define SUB_QUEST_FIRST_BATTLE               0
@@ -45,65 +46,53 @@
 #define SUB_QUEST_LILYCOVE_MOTEL            10
 #define SUB_QUEST_SPACEGAZER                11
 #define SUB_QUEST_GRAND_BATTLES             12
-// Cool Contests
-#define SUB_QUEST_NORMAL_RANK_COOL          13
-#define SUB_QUEST_SUPER_RANK_COOL           14
-#define SUB_QUEST_HYPER_RANK_COOL           15
-#define SUB_QUEST_MASTER_RANK_COOL          16
-// Cute Contests
-#define SUB_QUEST_NORMAL_RANK_CUTE          17
-#define SUB_QUEST_SUPER_RANK_CUTE           18
-#define SUB_QUEST_HYPER_RANK_CUTE           19
-#define SUB_QUEST_MASTER_RANK_CUTE          20
-// Beauty Contests
-#define SUB_QUEST_NORMAL_RANK_BEAUTY        21
-#define SUB_QUEST_SUPER_RANK_BEAUTY         22
-#define SUB_QUEST_HYPER_RANK_BEAUTY         23
-#define SUB_QUEST_MASTER_RANK_BEAUTY        24
-// Smart Contests
-#define SUB_QUEST_NORMAL_RANK_SMART         25
-#define SUB_QUEST_SUPER_RANK_SMART          26
-#define SUB_QUEST_HYPER_RANK_SMART          27
-#define SUB_QUEST_MASTER_RANK_SMART         28
-// Tough Contests
-#define SUB_QUEST_NORMAL_RANK_TOUGH         29
-#define SUB_QUEST_SUPER_RANK_TOUGH          30
-#define SUB_QUEST_HYPER_RANK_TOUGH          31
-#define SUB_QUEST_MASTER_RANK_TOUGH         32
-// Silver Frontier Symbols
-#define SUB_QUEST_KNOWLEDGE_SYMBOL_SILVER   33
-#define SUB_QUEST_GUTS_SYMBOL_SILVER        34
-#define SUB_QUEST_TACTICS_SYMBOL_SILVER     35
-#define SUB_QUEST_LUCK_SYMBOL_SILVER        36
-#define SUB_QUEST_SPIRITS_SYMBOL_SILVER     37
-#define SUB_QUEST_BRAVE_SYMBOL_SILVER       38
-#define SUB_QUEST_ABILITY_SYMBOL_SILVER     39
-// Gold Frontier Symbols
-#define SUB_QUEST_KNOWLEDGE_SYMBOL_GOLD     40
-#define SUB_QUEST_GUTS_SYMBOL_GOLD          41
-#define SUB_QUEST_TACTICS_SYMBOL_GOLD       42
-#define SUB_QUEST_LUCK_SYMBOL_GOLD          43
-#define SUB_QUEST_SPIRITS_SYMBOL_GOLD       44
-#define SUB_QUEST_BRAVE_SYMBOL_GOLD         45
-#define SUB_QUEST_ABILITY_SYMBOL_GOLD       46
+// Puzzle Solver
+#define SUB_QUEST_FIRST_PUZZLE              13
+#define SUB_QUEST_SECOND_PUZZLE             14
+#define SUB_QUEST_THIRD_PUZZLE              15
+#define SUB_QUEST_FOURTH_PUZZLE             16
+#define SUB_QUEST_FIFTH_PUZZLE              17
+#define SUB_QUEST_SIXTH_PUZZLE              18
+#define SUB_QUEST_SEVENTH_PUZZLE            19
+#define SUB_QUEST_EIGHTH_PUZZLE             20
+// Contest Star
+#define SUB_QUEST_CONTEST_COOL              21
+#define SUB_QUEST_CONTEST_CUTE              22
+#define SUB_QUEST_CONTEST_BEAUTY            23
+#define SUB_QUEST_CONTEST_SMART             24
+#define SUB_QUEST_CONTEST_TOUGH             25
+// Frontier Explorer
+#define SUB_QUEST_BATTLE_FACTORY            26
+#define SUB_QUEST_BATTLE_ARENA              27
+#define SUB_QUEST_BATTLE_DOME               28
+#define SUB_QUEST_BATTLE_PIKE               29
+#define SUB_QUEST_BATTLE_PALACE             30
+#define SUB_QUEST_BATTLE_PYRAMID            31
+#define SUB_QUEST_BATTLE_TOWER              32
+// Gigantic Findings
+#define SUB_QUEST_SEALED_DEPTHS             33
+#define SUB_QUEST_RUINS_IN_THE_SANDS        34
+#define SUB_QUEST_CAVE_OF_SOLITUDE          35
+#define SUB_QUEST_TOMB_OF_THE_ANCIENTS      36
 // Seafarer
-#define SUB_QUEST_AURORA_TICKET             47
-#define SUB_QUEST_EON_TICKET                48
-#define SUB_QUEST_MYSTIC_TICKET             49
-#define SUB_QUEST_OLD_SEA_MAP               50
+#define SUB_QUEST_AURORA_TICKET             37
+#define SUB_QUEST_EON_TICKET                38
+#define SUB_QUEST_MYSTIC_TICKET             39
+#define SUB_QUEST_OLD_SEA_MAP               40
 
 #define QUEST_RIVAL_NEXT_DOOR_SUB_COUNT      5
 #define QUEST_SCOUTING_SCOTT_SUB_COUNT       8
-#define QUEST_CONTEST_STAR_COOL_SUB_COUNT    4
-#define QUEST_CONTEST_STAR_CUTE_SUB_COUNT    4
-#define QUEST_CONTEST_STAR_BEAUTY_SUB_COUNT  4
-#define QUEST_CONTEST_STAR_SMART_SUB_COUNT   4
-#define QUEST_CONTEST_STAR_TOUGH_SUB_COUNT   4
-#define QUEST_FRONTIER_SILVER_SUB_COUNT      7
-#define QUEST_FRONTIER_GOLD_SUB_COUNT        7
+#define QUEST_PUZZLE_SOLVER_SUB_COUNT        8
+#define QUEST_CONTEST_STAR_SUB_COUNT         5
+#define QUEST_FRONTIER_EXPLORER_SUB_COUNT    7
+#define QUEST_GIGANTIC_FINDINGS_SUB_COUNT    4
 #define QUEST_SEAFARER_SUB_COUNT             4
+#define QUEST_SPECIAL_DELIVERY_SUB_COUNT     0
+#define QUEST_TREND_SETTER_SUB_COUNT         0
+#define QUEST_MAIL_RUN_SUB_COUNT             0
+#define QUEST_COIN_COLLECTOR_SUB_COUNT       0
 
-#define SUB_QUEST_COUNT (QUEST_RIVAL_NEXT_DOOR_SUB_COUNT + QUEST_SCOUTING_SCOTT_SUB_COUNT + QUEST_CONTEST_STAR_COOL_SUB_COUNT + QUEST_CONTEST_STAR_CUTE_SUB_COUNT + QUEST_CONTEST_STAR_BEAUTY_SUB_COUNT + QUEST_CONTEST_STAR_SMART_SUB_COUNT + QUEST_CONTEST_STAR_TOUGH_SUB_COUNT + QUEST_FRONTIER_SILVER_SUB_COUNT + QUEST_FRONTIER_GOLD_SUB_COUNT + QUEST_SEAFARER_SUB_COUNT) // 51/168 117 Free Spaces Left
+#define SUB_QUEST_COUNT (QUEST_RIVAL_NEXT_DOOR_SUB_COUNT + QUEST_SCOUTING_SCOTT_SUB_COUNT + QUEST_PUZZLE_SOLVER_SUB_COUNT + QUEST_CONTEST_STAR_SUB_COUNT + QUEST_FRONTIER_EXPLORER_SUB_COUNT + QUEST_GIGANTIC_FINDINGS_SUB_COUNT + QUEST_SEAFARER_SUB_COUNT + QUEST_SPECIAL_DELIVERY_SUB_COUNT + QUEST_TREND_SETTER_SUB_COUNT + QUEST_MAIL_RUN_SUB_COUNT + QUEST_COIN_COLLECTOR_SUB_COUNT) // 41/168 127 Free Spaces Left
 
 #define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)
 #endif // GUARD_CONSTANTS_QUESTS_H

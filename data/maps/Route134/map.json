@@ -169,7 +169,22 @@
       "flag": "FLAG_ITEM_ROUTE_134_STAR_PIECE"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 60,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_RESEARCH_SHIP_DECK",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 61,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_RESEARCH_SHIP_DECK",
+      "dest_warp_id": "1"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

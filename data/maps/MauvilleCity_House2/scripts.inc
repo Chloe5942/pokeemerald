@@ -6,10 +6,19 @@ MauvilleCity_House2_EventScript_Woman::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_COIN_CASE, MauvilleCity_House2_EventScript_ReceivedCoinCase
 	msgbox MauvilleCity_House2_Text_BuyHarborMailAtSlateport, MSGBOX_DEFAULT
+	call_if_quest_not_active QUEST_MAIL_RUN, MauvilleCity_House2_EventScript_MailRun
 	checkitem ITEM_HARBOR_MAIL
 	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_House2_EventScript_AskToTradeForHarborMail
 	release
 	end
+
+MauvilleCity_House2_EventScript_MailRun::
+	goto_if_quest_complete QUEST_MAIL_RUN, MauvilleCity_House2_EventScript_Skip
+	startquest QUEST_MAIL_RUN
+	return
+
+MauvilleCity_House2_EventScript_Skip::
+	return
 
 MauvilleCity_House2_EventScript_AskToTradeForHarborMail::
 	playse SE_PIN
@@ -23,6 +32,7 @@ MauvilleCity_House2_EventScript_AskToTradeForHarborMail::
 	end
 
 MauvilleCity_House2_EventScript_AcceptTrade::
+	completequest QUEST_MAIL_RUN
 	msgbox MauvilleCity_House2_Text_IllTradeYouCoinCase, MSGBOX_DEFAULT
 	removeitem ITEM_HARBOR_MAIL
 	giveitem ITEM_COIN_CASE

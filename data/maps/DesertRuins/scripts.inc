@@ -40,6 +40,7 @@ DesertRuins_EventScript_CaveEntranceMiddle::
 	lockall
 	goto_if_set FLAG_SYS_REGIROCK_PUZZLE_COMPLETED, DesertRuins_EventScript_BigHoleInWall
 	braillemsgbox DesertRuins_Braille_UseRockSmash
+	call_if_set FLAG_RECIEVED_BRAILLE_DECODER, DesertRuins_EventScript_DecodeUseRockSmash
 	releaseall
 	end
 
@@ -51,8 +52,14 @@ DesertRuins_EventScript_BigHoleInWall::
 DesertRuins_EventScript_CaveEntranceSide::
 	lockall
 	braillemsgbox DesertRuins_Braille_UseRockSmash
+	call_if_set FLAG_RECIEVED_BRAILLE_DECODER, DesertRuins_EventScript_DecodeUseRockSmash
 	releaseall
 	end
+
+DesertRuins_EventScript_DecodeUseRockSmash::
+	msgbox DesertRuins_Text_UseRockSmash, MSGBOX_DEFAULT
+	waitmessage
+	return
 
 DesertRuins_EventScript_Regirock::
 	bufferspeciesname 0, SPECIES_REGIROCK
@@ -84,4 +91,8 @@ DesertRuins_EventScript_RanFromRegirock::
 	setvar VAR_0x8004, SPECIES_REGIROCK
 	goto Common_EventScript_LegendaryFlewAway
 	end
+
+DesertRuins_Text_UseRockSmash:
+	.string "LEFT, LEFT, DOWN, DOWN,\n"
+	.string "THEN, USE ROCK SMASH.$"
 

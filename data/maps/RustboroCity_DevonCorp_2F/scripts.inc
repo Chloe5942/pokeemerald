@@ -390,8 +390,8 @@ RustboroCity_DevonCorp_2F_EventScript_PokemonStatEditorScientist::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_GiveStatsEditor::
-	goto_if_set FLAG_RECEIVED_STATS_EDITOR, RustboroCity_DevonCorp_2F_EventScript_HasStatsEditor
-	setflag FLAG_RECEIVED_STATS_EDITOR
+	goto_if_set FLAG_SYS_STATS_EDITOR_GET, RustboroCity_DevonCorp_2F_EventScript_HasStatsEditor
+	setflag FLAG_SYS_STATS_EDITOR_GET
 	setflag FLAG_SYS_STAT_EDITOR_GET
 	msgbox RustboroCity_DevonCorp_2F_Text_GiveStatsEditor, MSGBOX_DEFAULT
 	release

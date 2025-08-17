@@ -40,6 +40,7 @@ AncientTomb_EventScript_CaveEntranceMiddle::
 	lockall
 	goto_if_set FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED, AncientTomb_EventScript_BigHoleInWall
 	braillemsgbox AncientTomb_Braille_ShineInTheMiddle
+	call_if_set FLAG_RECIEVED_BRAILLE_DECODER, AncientTomb_EventScript_DecodeShineInTheMiddle
 	releaseall
 	end
 
@@ -51,8 +52,14 @@ AncientTomb_EventScript_BigHoleInWall::
 AncientTomb_EventScript_CaveEntranceSide::
 	lockall
 	braillemsgbox AncientTomb_Braille_ShineInTheMiddle
+	call_if_set FLAG_RECIEVED_BRAILLE_DECODER, AncientTomb_EventScript_DecodeShineInTheMiddle
 	releaseall
 	end
+
+AncientTomb_EventScript_DecodeShineInTheMiddle::
+	msgbox AncientTomb_Text_ShineInTheMiddle, MSGBOX_DEFAULT
+	waitmessage
+	return
 
 AncientTomb_EventScript_Registeel::
 	bufferspeciesname 0, SPECIES_REGISTEEL
@@ -85,3 +92,6 @@ AncientTomb_EventScript_RanFromRegisteel::
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
+AncientTomb_Text_ShineInTheMiddle:
+	.string "THOSE WHO INHERIT OUR WILL,\n"
+	.string "SHINE IN THE MIDDLE$"

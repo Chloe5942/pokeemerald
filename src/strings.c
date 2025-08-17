@@ -1895,52 +1895,52 @@ const u8 gText_QuestActive[] =_("Active");
 //names
 const u8 gText_SideQuestName_RivalNextDoor[] = _("Rival Next Door");
 const u8 gText_SideQuestName_ScoutingScott[] = _("Scouting Scott");
-
-const u8 gText_SideQuestName_CoolStar[] = _("Contest Star - Cool");
-const u8 gText_SideQuestName_CuteStar[] = _("Contest Star - Cute");
-const u8 gText_SideQuestName_BeautyStar[] = _("Contest Star - Beauty");
-const u8 gText_SideQuestName_SmartStar[] = _("Contest Star - Smart");
-const u8 gText_SideQuestName_ToughStar[] = _("Contest Star - Tough");
+const u8 gText_SideQuestName_SpecialDelivery[] = _("Special Delivery");
+const u8 gText_SideQuestName_TrendSetter[] = _("Trend Setter");
+const u8 gText_SideQuestName_PuzzleSolver[] = _("Puzzle Solver");
+const u8 gText_SideQuestName_MailRun[] = _("Mail Run");
+const u8 gText_SideQuestName_CoinCollector[] = _("Coin Collector");
+const u8 gText_SideQuestName_ContestStar[] = _("Contest Star");
 
 const u8 gText_SideQuestName_Welcome[] = _("Frontier Welcome");
-const u8 gText_SideQuestName_Silver[] = _("Frontier Silver");
-const u8 gText_SideQuestName_Gold[] = _("Frontier Gold");
+const u8 gText_SideQuestName_Explorer[] = _("Frontier Explorer");
+const u8 gText_SideQuestName_GiganticFindings[] = _("Gigantic Findings");
 const u8 gText_SideQuestName_Seafarer[] = _("Seafarer");
 
 //descriptions
-const u8 gText_SideQuestDesc_RivalNextDoor[] = _("Find your neighbor around Hoenn");
-const u8 gText_SideQuestDesc_ScoutingScott[] = _("Find SCOTT around Hoenn");
-
-const u8 gText_SideQuestDesc_Cool[] = _("Compete in Cool Contests");
-const u8 gText_SideQuestDesc_Cute[] = _("Compete in Cute Contests");
-const u8 gText_SideQuestDesc_Beauty[] = _("Compete in Beauty Contests");
-const u8 gText_SideQuestDesc_Smart[] = _("Compete in Smart Contests");
-const u8 gText_SideQuestDesc_Tough[] = _("Compete in Tough Contests");
+const u8 gText_SideQuestDesc_RivalNextDoor[] = _("Find your neighbor around Hoenn!");
+const u8 gText_SideQuestDesc_ScoutingScott[] = _("Find SCOTT around Hoenn!");
+const u8 gText_SideQuestDesc_SpecialDelivery[] = _("Find MR. STONE's son, STEVEN\nsomewhere near DEWFORD TOWN\nand deliver his LETTER.");
+const u8 gText_SideQuestDesc_TrendSetter[] = _("Start a new trend in DEWFORD TOWN.");
+const u8 gText_SideQuestDesc_PuzzleSolver[] = _("Slove all of the\nTRICK MASTER's puzzles.");
+const u8 gText_SideQuestDesc_MailRun[] = _("Bring the woman a HARBOR MAIL.\nThey can be found in SLATEPORT CITY.");
+const u8 gText_SideQuestDesc_CoinCollector[] = _("Collect at least 2000 COINS!");
+const u8 gText_SideQuestDesc_ContestStar[] = _("Compete in all types of Contests!");
 
 const u8 gText_SideQuestDesc_Welcome[] = _("Welcome to the Battle Frontier!\nGo to SCOTT's HOUSE.");
-const u8 gText_SideQuestDesc_Silver[] = _("Challenge the Battle Frontier - Silver");
-const u8 gText_SideQuestDesc_Gold[] = _("Challenge the Battle Frontier - Gold");
+const u8 gText_SideQuestDesc_Explorer[] = _("Explore the Battle Frontier!");
+const u8 gText_SideQuestDesc_GiganticFindings[] = _("Explore the Hoenn Region\nto uncover the truth of the giants!");
 const u8 gText_SideQuestDesc_Seafarer[] = _("Obtain tickets");
 
-//completed quest description
+// Completed Quest Descriptions
 const u8 gText_SideQuestDoneDesc_RivalNextDoor[] = _("Completed Rival Next Door");
 const u8 gText_SideQuestDoneDesc_ScoutingScott[] = _("Completed Scouting Scott");
-
-const u8 gText_SideQuestDoneDesc_Cool[] = _("Completed Contest Star - Cool");
-const u8 gText_SideQuestDoneDesc_Cute[] = _("Completed Contest Star - Cute");
-const u8 gText_SideQuestDoneDesc_Beauty[] = _("Completed Contest Star - Beauty");
-const u8 gText_SideQuestDoneDesc_Smart[] = _("Completed Contest Star - Smart");
-const u8 gText_SideQuestDoneDesc_Tough[] = _("Completed Contest Star - Tough");
+const u8 gText_SideQuestDoneDesc_SpecialDelivery[] = _("Completed Special Delivery");
+const u8 gText_SideQuestDoneDesc_TrendSetter[] = _("Completed Trend Setter");
+const u8 gText_SideQuestDoneDesc_PuzzleSolver[] = _("Completed Puzzle Solver");
+const u8 gText_SideQuestDoneDesc_MailRun[] = _("Completed Mail Run");
+const u8 gText_SideQuestDoneDesc_CoinCollector[] = _("Completed Coin Collector");
+const u8 gText_SideQuestDoneDesc_ContestStar[] = _("Completed Contest Star");
 
 const u8 gText_SideQuestDoneDesc_Welcome[] = _("Completed Frontier Welcome");
-const u8 gText_SideQuestDoneDesc_Silver[] = _("Completed Frontier Silver");
-const u8 gText_SideQuestDoneDesc_Gold[] = _("Completed Frontier Gold");
+const u8 gText_SideQuestDoneDesc_Explorer[] = _("Completed Frontier Explorer");
+const u8 gText_SideQuestDoneDesc_GiganticFindings[] = _("Completed Gigantic Findings");
 const u8 gText_SideQuestDoneDesc_Seafarer[] = _("Completed Seafarer");
 
-//map
+// Map
 const u8 gText_SideQuestMap_Hoenn[] = _("Hoenn");
 const u8 gText_SideQuestMap_Lilycove[] = _("Lilycove City");
-const u8 gText_SideQuestMap_BatFron[] = _("Battle Frontier");
+const u8 gText_SideQuestMap_BattleFrontier[] = _("Battle Frontier");
 const u8 gText_SideQuestMap_Slateport[] = _("Slateport City");
 const u8 gText_SideQuestMap_Verdanturf[] = _("Verdanturf Town");
 const u8 gText_SideQuestMap_Fallabor[] = _("Fallabor Town");
@@ -1951,13 +1951,20 @@ const u8 gText_SideQuestMap_Rustboro[] = _("Rustboro City");
 const u8 gText_SideQuestMap_Rust104[] = _("Rustboro City / Route 104");
 const u8 gText_SideQuestMap_Mossdeep[] = _("Mossdeep City");
 const u8 gText_SideQuestMap_EverGrande[] = _("Ever Grande City");
+const u8 gText_SideQuestMap_Mauville[] = _("Mauville City");
+const u8 gText_SideQuestMap_Dewford[] = _("Dewford Town");
+const u8 gText_SideQuestMap_Route134[] = _("Route 134");
+const u8 gText_SideQuestMap_DesertRuins[] = _("Desert Ruins");
+const u8 gText_SideQuestMap_IslandCave[] = _("Island Cave");
+const u8 gText_SideQuestMap_AncientTomb[] = _("Ancient Tomb");
+const u8 gText_SideQuestMap_Littleroot[] = _("Littleroot Town");
 
-//subquests
-const u8 gText_RivalNextDoor_Name_FirstBattle[] = _("First Battle - Rival Introduction");
-const u8 gText_RivalNextDoor_Name_SecondBattle[] = _("Second Battle - Post Gym Match");
-const u8 gText_RivalNextDoor_Name_ThirdBattle[] = _("Third Battle - Seaside");
-const u8 gText_RivalNextDoor_Name_FourthBattle[] = _("Fourth Battle - In the Rain");
-const u8 gText_RivalNextDoor_Name_FifthBattle[] = _("Fifth Battle - Final Showdown");
+// Subquests
+const u8 gText_RivalNextDoor_Name_FirstBattle[] = _("1st Battle - Introductions");
+const u8 gText_RivalNextDoor_Name_SecondBattle[] = _("2nd Battle - Post Gym Match");
+const u8 gText_RivalNextDoor_Name_ThirdBattle[] = _("3rd Battle - Seaside");
+const u8 gText_RivalNextDoor_Name_FourthBattle[] = _("4th Battle - In the Rain");
+const u8 gText_RivalNextDoor_Name_FifthBattle[] = _("5th Battle - Final Showdown");
 
 const u8 gText_ScoutingScott_Name_GradClass[] = _("Graduating Class");
 const u8 gText_ScoutingScott_Name_ClassReuin[] = _("Class Reunion");
@@ -1968,18 +1975,33 @@ const u8 gText_ScoutingScott_Name_LilyVaca[] = _("Lilycove Vacation");
 const u8 gText_ScoutingScott_Name_StarGazer[] = _("Gazing at the Stars");
 const u8 gText_ScoutingScott_Name_ChampRoad[] = _("Road to Champion");
 
-const u8 gText_ContestStar_Name_Normal[] = _("Normal Rank");
-const u8 gText_ContestStar_Name_Super[] = _("Super Rank");
-const u8 gText_ContestStar_Name_Hyper[] = _("Hyper Rank");
-const u8 gText_ContestStar_Name_Master[] = _("Master Rank");
+const u8 gText_PuzzleSolver_Name_Puzzle1[] = _("Maze of Trees");
+const u8 gText_PuzzleSolver_Name_Puzzle2[] = _("Switchy Situation");
+const u8 gText_PuzzleSolver_Name_Puzzle3[] = _("Maze of Doors");
+const u8 gText_PuzzleSolver_Name_Puzzle4[] = _("Bouldering Boulders");
+const u8 gText_PuzzleSolver_Name_Puzzle5[] = _("Mind Games");
+const u8 gText_PuzzleSolver_Name_Puzzle6[] = _("Gated Path");
+const u8 gText_PuzzleSolver_Name_Puzzle7[] = _("Teleport and Spin");
+const u8 gText_PuzzleSolver_Name_Puzzle8[] = _("Slippery Floor");
 
-const u8 gText_BattleFrontier_Name_BatFac[] = _("Challenge the Battle Factory");
-const u8 gText_BattleFrontier_Name_BatAre[] = _("Challenge the Battle Arena");
-const u8 gText_BattleFrontier_Name_BatDom[] = _("Challenge the Battle Dome");
-const u8 gText_BattleFrontier_Name_BatPik[] = _("Challenge the Battle Pike");
-const u8 gText_BattleFrontier_Name_BatPal[] = _("Challenge the Battle Palace");
-const u8 gText_BattleFrontier_Name_BatPyr[] = _("Challenge the Battle Pyramid");
-const u8 gText_BattleFrontier_Name_BatTow[] = _("Challenge the Battle Tower");
+const u8 gText_ContestStar_Name_Cool[] = _("Cool Contest");
+const u8 gText_ContestStar_Name_Cute[] = _("Cute Contest");
+const u8 gText_ContestStar_Name_Beauty[] = _("Beauty Contest");
+const u8 gText_ContestStar_Name_Smart[] = _("Smart Contest");
+const u8 gText_ContestStar_Name_Tough[] = _("Tough Contest");
+
+const u8 gText_BattleFrontier_Name_BattleFactory[] = _("Battle Factory");
+const u8 gText_BattleFrontier_Name_BattleArena[] = _("Battle Arena");
+const u8 gText_BattleFrontier_Name_BattleDome[] = _("Battle Dome");
+const u8 gText_BattleFrontier_Name_BattlePike[] = _("Battle Pike");
+const u8 gText_BattleFrontier_Name_BattlePalace[] = _("Battle Palace");
+const u8 gText_BattleFrontier_Name_BattlePyramid[] = _("Battle Pyramid");
+const u8 gText_BattleFrontier_Name_BattleTower[] = _("Battle Tower");
+
+const u8 gText_GiganticFindings_Name_SealedChamber[] = _("Sealed in the Depths");
+const u8 gText_GiganticFindings_Name_DesertRuins[] = _("Ruins in the Sands");
+const u8 gText_GiganticFindings_Name_IslandCave[] = _("Cave of Solitude");
+const u8 gText_GiganticFindings_Name_AncientTomb[] = _("Tomb of the Ancients");
 
 const u8 gText_Seafarer_Name_BirthIsland[] = _("Birth of a Meteorite");
 const u8 gText_Seafarer_Name_SouthernIsland[] = _("Southern Island Vacation");
@@ -1987,35 +2009,43 @@ const u8 gText_Seafarer_Name_NavalRock[] = _("Naval Rocky Seas");
 const u8 gText_Seafarer_Name_FarawayIsland[] = _("Old Sea Travels");
 
 // Descriptions
-const u8 gText_RivalNextDoor_Desc_FirstBattle[] = _("Battle your rival on ROUTE 103");
-const u8 gText_RivalNextDoor_Desc_SecondBattle[] = _("Battle your rival in RUSTBORO CITY\nor ROUTE 104 in the case of whiting out");
-const u8 gText_RivalNextDoor_Desc_ThirdBattle[] = _("Battle your rival on ROUTE 110");
-const u8 gText_RivalNextDoor_Desc_FourthBattle[] = _("Battle your rival on ROUTE 119");
-const u8 gText_RivalNextDoor_Desc_FifthBattle[] = _("Battle your rival in LILYCOVE CITY");
+const u8 gText_RivalNextDoor_Desc_FirstBattle[] = _("Battle your rival on ROUTE 103!");
+const u8 gText_RivalNextDoor_Desc_SecondBattle[] = _("Battle your rival in RUSTBORO CITY!\nor on ROUTE 104 after an accident.");
+const u8 gText_RivalNextDoor_Desc_ThirdBattle[] = _("Battle your rival on ROUTE 110!");
+const u8 gText_RivalNextDoor_Desc_FourthBattle[] = _("Battle your rival on ROUTE 119!");
+const u8 gText_RivalNextDoor_Desc_FifthBattle[] = _("Battle your rival in LILYCOVE CITY!");
 
-const u8 gText_ScoutingScott_Desc_GradClass[] = _("Find SCOTT in RUSTBURO CITY\nbefore challenging the GYM");
-const u8 gText_ScoutingScott_Desc_ClassReuin[] = _("Find SCOTT in RUSTBURO CITY\nbefore leaving the City");
-const u8 gText_ScoutingScott_Desc_SlateBattles[] = _("Find SCOTT in SLATEPORT CITY");
-const u8 gText_ScoutingScott_Desc_VerdanBattles[] = _("Find SCOTT in VERDANTURF TOWN\nafter getting MAUVILLE CITY's GYM BADGE");
-const u8 gText_ScoutingScott_Desc_FallaborBattles[] = _("Find SCOTT in FALLABOR TOWN\nbefore going to METEOR FALLS");
-const u8 gText_ScoutingScott_Desc_LilyVaca[] = _("Find SCOTT in LILYCOVE CITY\nbefore finding TEAM AQUA");
-const u8 gText_ScoutingScott_Desc_StarGazer[] = _("Find SCOTT in MOSSDEEP CITY\nbefore finding TEAM MAGMA");
-const u8 gText_ScoutingScott_Desc_ChampRoad[] = _("Find SCOTT in EVER GRANDE CITY\nbefore challenging the ELITE 4");
+const u8 gText_ScoutingScott_Desc_GradClass[] = _("Find SCOTT in RUSTBURO CITY\nbefore challenging the GYM.");
+const u8 gText_ScoutingScott_Desc_ClassReuin[] = _("Find SCOTT in RUSTBURO CITY\nbefore leaving the City.");
+const u8 gText_ScoutingScott_Desc_SlateBattles[] = _("Find SCOTT in SLATEPORT CITY.");
+const u8 gText_ScoutingScott_Desc_VerdanBattles[] = _("Find SCOTT in VERDANTURF TOWN\nafter getting MAUVILLE CITY's GYM BADGE.");
+const u8 gText_ScoutingScott_Desc_FallaborBattles[] = _("Find SCOTT in FALLABOR TOWN\nbefore going to METEOR FALLS.");
+const u8 gText_ScoutingScott_Desc_LilyVaca[] = _("Find SCOTT in LILYCOVE CITY\nbefore finding TEAM AQUA.");
+const u8 gText_ScoutingScott_Desc_StarGazer[] = _("Find SCOTT in MOSSDEEP CITY\nbefore finding TEAM MAGMA.");
+const u8 gText_ScoutingScott_Desc_ChampRoad[] = _("Find SCOTT in EVER GRANDE CITY\nbefore challenging the ELITE 4.");
 
-const u8 gText_ContestStar_Desc_Normal[] = _("Win a Normal Rank Contest");
-const u8 gText_ContestStar_Desc_Super[] = _("Win a Super Rank Contest");
-const u8 gText_ContestStar_Desc_Hyper[] = _("Win a Hyper Rank Contest");
-const u8 gText_ContestStar_Desc_Master[] = _("Win a Master Rank Contest");
+const u8 gText_PuzzleSolver_Desc[] = _("Solve the TRICK MASTER's puzzle.");
 
-const u8 gText_BattleFrontier_Desc_Knowledge[] = _("Obtain the Knowledge Symbol");
-const u8 gText_BattleFrontier_Desc_Guts[] = _("Obtain the Guts Symbol");
-const u8 gText_BattleFrontier_Desc_Tactics[] = _("Obtain the Tactics Symbol");
-const u8 gText_BattleFrontier_Desc_Luck[] = _("Obtain the Luck Symbol");
-const u8 gText_BattleFrontier_Desc_Spirits[] = _("Obtain the Spirits Symbol");
-const u8 gText_BattleFrontier_Desc_Brave[] = _("Obtain the Brave Symbol");
-const u8 gText_BattleFrontier_Desc_Ability[] = _("Obtain the Ability Symbol");
+const u8 gText_ContestStar_Desc_Cool[] = _("Win a Cool Contest.");
+const u8 gText_ContestStar_Desc_Cute[] = _("Win a Cute Contest.");
+const u8 gText_ContestStar_Desc_Beauty[] = _("Win a Beauty Contest.");
+const u8 gText_ContestStar_Desc_Smart[] = _("Win a Smart Contest.");
+const u8 gText_ContestStar_Desc_Tough[] = _("Win a Tough Contest.");
 
-const u8 gText_Seafarer_Desc_BirthIsland[] = _("Show the SAILOR a METEORITE");
-const u8 gText_Seafarer_Desc_SouthernIsland[] = _("Show the SAILOR the EON POKéMON");
-const u8 gText_Seafarer_Desc_NavalRock[] = _("Show the SAILOR a sign");
-const u8 gText_Seafarer_Desc_FarawayIsland[] = _("Show the SAILOR a sign");
+const u8 gText_BattleFrontier_Desc_BattleFactory[] = _("Explore the Battle Factory.");
+const u8 gText_BattleFrontier_Desc_BattleArena[] = _("Explore the Battle Arena.");
+const u8 gText_BattleFrontier_Desc_BattleDome[] = _("Explore the Battle Dome.");
+const u8 gText_BattleFrontier_Desc_BattlePike[] = _("Explore the Battle Pike.");
+const u8 gText_BattleFrontier_Desc_BattlePalace[] = _("Explore the Battle Palace.");
+const u8 gText_BattleFrontier_Desc_BattlePyramid[] = _("Explore the Battle Pyramid.");
+const u8 gText_BattleFrontier_Desc_BattleTower[] = _("Explore the Battle Tower.");
+
+const u8 gText_GiganticFindings_Desc_SealedChamber[] = _("Find the SEALED CHAMBER.");
+const u8 gText_GiganticFindings_Desc_DesertRuins[] = _("Find the DEAERT RUINS.");
+const u8 gText_GiganticFindings_Desc_IslandCave[] = _("Find the ISLAND CAVE.");
+const u8 gText_GiganticFindings_Desc_AncientTomb[] = _("Find the ANCIENT TOMB.");
+
+const u8 gText_Seafarer_Desc_BirthIsland[] = _("Show the SAILOR a METEORITE.");
+const u8 gText_Seafarer_Desc_SouthernIsland[] = _("Show the SAILOR one of\nthe EON POKéMON.");
+const u8 gText_Seafarer_Desc_NavalRock[] = _("Show the SAILOR a POKéMON from JHOTO.");
+const u8 gText_Seafarer_Desc_FarawayIsland[] = _("Show the SAILOR a POKéMON from KANTO.");

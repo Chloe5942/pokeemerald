@@ -1067,3 +1067,15 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 	.include "data/maps/LilycoveCity_GTS_1F/scripts.inc"
 	.include "data/maps/LilycoveCity_GTS_2F/scripts.inc"
+
+	.include "data/maps/ResearchShip_Deck/scripts.inc"
+
+	.include "data/maps/ResearchShip_CaptainOffice/scripts.inc"
+
+	.include "data/maps/ResearchShip_LowerDeck/scripts.inc"
+
+	.include "data/maps/ResearchShip_Quarters/scripts.inc"
+
+	.include "data/maps/ResearchShip_Rooms/scripts.inc"
+
+	.include "data/maps/ResearchShip_Lab/scripts.inc"

@@ -661,3 +661,118 @@ MauvilleCity_Text_ExplainTV:
 
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Hi, have you been checking out TVs?$"
+
+MauvilleCity_Movement_LookAround:
+	emote_question_mark
+	delay_16
+	face_left
+	face_right
+	face_down
+	face_up
+	delay_16
+	emote_exclamation_mark
+	delay_16
+	face_player
+	step_end
+
+MauvilleCity_EventScript_UnluckyMan::
+	lockall
+	faceplayer
+	goto_if_quest_active QUEST_COIN_COLLECTOR, MauvilleCity_EventScript_CoinCollector_Check
+	goto_if_quest_complete QUEST_COIN_COLLECTOR, MauvilleCity_EventScript_CoinCollector_Done
+	msgbox MauvilleCity_Text_BadLuck, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	applymovement VAR_LAST_TALKED, MauvilleCity_Movement_LookAround
+	waitmovement
+	msgbox MauvilleCity_Text_Idea, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	checkitem ITEM_COIN_CASE
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_EventScript_NoCoinCase
+	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_EventScript_HasCoinCase
+	releaseall
+	end
+
+MauvilleCity_EventScript_NoCoinCase::
+	msgbox MauvilleCity_Text_DontHaveCoinCase, MSGBOX_DEFAULT
+	releaseall
+	end
+
+MauvilleCity_EventScript_HasCoinCase::
+	call_if_quest_not_active QUEST_COIN_COLLECTOR, MauvilleCity_EventScript_CoinCollector_Start
+	addcoins 100
+	releaseall
+	end
+
+MauvilleCity_EventScript_CoinCollector_Start::
+	startquest QUEST_COIN_COLLECTOR
+	return
+
+MauvilleCity_EventScript_CoinCollector_Check::
+	lockall
+	checkcoins VAR_TEMP_1
+	buffernumberstring STR_VAR_1, VAR_TEMP_1
+	goto_if_ge VAR_TEMP_1, 2000, MauvilleCity_EventScript_CoinCollector_Complete
+	msgbox MauvilleCity_Text_NotEnoughCoins, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
+
+MauvilleCity_EventScript_CoinCollector_Complete::
+	lockall
+	completequest QUEST_COIN_COLLECTOR
+	goto MauvilleCity_EventScript_CoinCollector_Done
+	releaseall
+	end
+
+MauvilleCity_EventScript_CoinCollector_Done::
+	lockall
+	faceplayer
+	bufferdecorationname STR_VAR_2, DECOR_SEEDOT_DOLL
+	checkdecorspace DECOR_SEEDOT_DOLL
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_EventScript_NoRoomForDoll
+	removecoins 2000
+	msgbox MauvilleCity_Text_ThankYou, MSGBOX_DEFAULT
+	adddecoration DECOR_SEEDOT_DOLL
+	fadescreen FADE_TO_BLACK
+	setflag FLAG_HIDE_BAD_LUCK_MAN
+	removeobject VAR_LAST_TALKED
+	delay 5
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	end
+
+MauvilleCity_EventScript_NoRoomForDoll::
+	call Common_EventScript_NoRoomForDecor
+	end
+
+MauvilleCity_Text_BadLuck:
+	.string "Man, my luck has been in the dumps for\n"
+	.string "days now. And I only have 100 COINS left.$"
+
+MauvilleCity_Text_Idea:
+	.string "Oh, you heard that didn't you?\n"
+	.string "… … …Hmmm,\p"
+	.string "I have an idea. How about you\n"
+	.string "take these 100 COINS and bring me back\p"
+	.string "2000 COINS in return?\n"
+	.string "I'll make it worth your time.$"
+
+MauvilleCity_Text_ThankYou:
+	.string "Thank you for your donation!\n"
+	.string "Here's a {STR_VAR_2}, consider it a\p"
+	.string "thank you gift.$"
+
+MauvilleCity_Text_DontHaveCoinCase:
+	.string "Oh, you don't have a COIN CASE.$"
+
+MauvilleCity_Text_NotEnoughCoins:
+	.string "You don't have enough COINS.\n"
+	.string "You have {STR_VAR_1} out of 2000 COINS.$"
+
+MauvilleCity_EventScript_DevPort::
+	warpspinenter MAP_INSIDE_OF_TRUCK, 1, 1
+	end
+

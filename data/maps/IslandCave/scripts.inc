@@ -54,6 +54,7 @@ IslandCave_EventScript_CaveEntranceMiddle::
 	call_if_set FLAG_TEMP_REGICE_PUZZLE_FAILED, IslandCave_EventScript_ClearSteps
 	goto_if_set FLAG_SYS_BRAILLE_REGICE_COMPLETED, IslandCave_EventScript_BigHoleInWall
 	braillemessage IslandCave_Braille_RunLapAroundWall
+	call_if_set FLAG_RECIEVED_BRAILLE_DECODER, IslandCave_EventScript_DecodeRunLapAroundWall
 	setflag FLAG_TEMP_REGICE_PUZZLE_STARTED
 	special ShouldDoBrailleRegicePuzzle
 	goto IslandCave_EventScript_CloseBrailleMsg
@@ -68,11 +69,17 @@ IslandCave_EventScript_CaveEntranceSide::
 	lockall
 	call_if_set FLAG_TEMP_REGICE_PUZZLE_FAILED, IslandCave_EventScript_ClearSteps
 	braillemessage IslandCave_Braille_RunLapAroundWall
+	call_if_set FLAG_RECIEVED_BRAILLE_DECODER, IslandCave_EventScript_DecodeRunLapAroundWall
 	goto_if_set FLAG_SYS_BRAILLE_REGICE_COMPLETED, IslandCave_EventScript_CloseBrailleMsg
 	setflag FLAG_TEMP_REGICE_PUZZLE_STARTED
 	special ShouldDoBrailleRegicePuzzle
 	goto IslandCave_EventScript_CloseBrailleMsg
 	end
+
+IslandCave_EventScript_DecodeRunLapAroundWall::
+	msgbox IslandCave_Text_RunLapAroundWall, MSGBOX_DEFAULT
+	waitmessage
+	return
 
 IslandCave_EventScript_CloseBrailleMsg::
 	waitbuttonpress
@@ -117,3 +124,7 @@ IslandCave_EventScript_RanFromRegice::
 	setvar VAR_0x8004, SPECIES_REGICE
 	goto Common_EventScript_LegendaryFlewAway
 	end
+
+IslandCave_Text_RunLapAroundWall:
+	.string "STAY CLOSE TO THE WALL.\n"
+	.string "RUN AROUND ONE LAP.$"

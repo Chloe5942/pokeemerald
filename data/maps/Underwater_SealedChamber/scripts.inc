@@ -19,6 +19,14 @@ Underwater_SealedChamber_EventScript_SurfaceSealedChamber::
 Underwater_SealedChamber_EventScript_Braille::
 	lockall
 	braillemsgbox Underwater_SealedChamber_Braille_GoUpHere
+	call_if_set FLAG_RECIEVED_BRAILLE_DECODER, Underwater_SealedChamber_EventScript_DecodeGoUpHere
 	releaseall
 	end
 
+Underwater_SealedChamber_EventScript_DecodeGoUpHere::
+	msgbox Underwater_SealedChamber_Text_GoUpHere, MSGBOX_DEFAULT
+	waitmessage
+	return
+
+Underwater_SealedChamber_Text_GoUpHere:
+	.string "GO UP HERE.$"

@@ -586,6 +586,7 @@ DewfordTown_Movement_BrineyExitBoat:
 	step_end
 
 DewfordTown_EventScript_TrendyPhraseBoy::
+	call_if_quest_not_active QUEST_TREND_SETTER, DewfordTown_EventScript_TrendSetter
 	lock
 	faceplayer
 	call Common_EventScript_BufferTrendyPhrase
@@ -593,6 +594,14 @@ DewfordTown_EventScript_TrendyPhraseBoy::
 	goto_if_eq VAR_RESULT, YES, DewfordTown_EventScript_ConfirmTrendyPhrase
 	goto_if_eq VAR_RESULT, NO, DewfordTown_EventScript_RejectTrendyPhrase
 	end
+
+DewfordTown_EventScript_TrendSetter::
+	goto_if_quest_complete QUEST_TREND_SETTER, DewfordTown_EventScript_TrendSetter_AlreadyDone
+	startquest QUEST_TREND_SETTER
+	return
+
+DewfordTown_EventScript_TrendSetter_AlreadyDone::
+	return
 
 DewfordTown_EventScript_ConfirmTrendyPhrase::
 	msgbox DewfordTown_Text_YeahDefinitionOfInRightNow, MSGBOX_DEFAULT
@@ -612,9 +621,14 @@ DewfordTown_EventScript_RejectTrendyPhrase::
 DewfordTown_EventScript_GiveNewTrendyPhrase::
 	incrementgamestat GAME_STAT_STARTED_TRENDS
 	goto_if_eq VAR_0x8004, FALSE, DewfordTown_EventScript_PhraseNotTrendyEnough
+	call_if_eq VAR_0x8004, TRUE, DewfordTown_EventScript_PhraseTrendy
 	msgbox DewfordTown_Text_OfCourseIKnowAboutThat, MSGBOX_DEFAULT
 	release
 	end
+
+DewfordTown_EventScript_PhraseTrendy::
+	completequest QUEST_TREND_SETTER
+	return
 
 DewfordTown_EventScript_CancelNewTrendyPhrase::
 	msgbox DewfordTown_Text_HearOfAnyTrendsComeShareWithMe, MSGBOX_DEFAULT
