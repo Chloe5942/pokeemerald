@@ -91,6 +91,7 @@ Route119_EventScript_BattleMayMudkip::
 	end
 
 Route119_EventScript_DefeatedMay::
+	completequest QUEST_FOURTH_BATTLE
 	msgbox Route119_Text_MayPresentForYou, MSGBOX_DEFAULT
 	call Route119_EventScript_GiveFlyHM
 	msgbox Route119_Text_MayExplainFly, MSGBOX_DEFAULT
@@ -121,6 +122,7 @@ Route119_EventScript_BattleBrendanMudkip::
 	end
 
 Route119_EventScript_DefeatedBrendan::
+	completequest QUEST_FOURTH_BATTLE
 	msgbox Route119_Text_BrendanIllGiveYouThis, MSGBOX_DEFAULT
 	call Route119_EventScript_GiveFlyHM
 	msgbox Route119_Text_BrendanExplainFly, MSGBOX_DEFAULT

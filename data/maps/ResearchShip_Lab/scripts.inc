@@ -64,16 +64,16 @@ ResearchShip_Lab_EventScript_Machine2_Scientist2::
 	end
 
 ResearchShip_Lab_EventScript_PC_Scientist1::
-	goto_if_subquest_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchShip_Lab_EventScript_PC_Scientist1_DecoderUse
+	goto_if_quest_complete QUEST_SEALED_DEPTHS, ResearchShip_Lab_EventScript_PC_Scientist1_DecoderUse
 	lock
 	faceplayer
 	msgbox ResearchShip_Lab_Text_Pc_Work1, MSGBOX_DEFAULT
-	goto_if_quest_active QUEST_GIGANTIC_FINDINGS, ResearchShip_Lab_EventScript_PC_Scientist1_Decoder
+	goto_if_set FLAG_GIGANTIC_FINDINGS_STARTED, ResearchShip_Lab_EventScript_PC_Scientist1_Decoder
 	release
 	end
 
 ResearchShip_Lab_EventScript_PC_Scientist1_Decoder::
-	goto_if_subquest_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchShip_Lab_EventScript_PC_Scientist1_DecoderUse
+	goto_if_quest_complete QUEST_SEALED_DEPTHS, ResearchShip_Lab_EventScript_PC_Scientist1_DecoderUse
 	lock
 	faceplayer
 	msgbox ResearchShip_Lab_Text_Pc_GiveDecoder, MSGBOX_DEFAULT
@@ -96,8 +96,8 @@ ResearchShip_Lab_EventScript_PC_Scientist2::
 
 ResearchShip_Lab_EventScript_Head_Scientist::
 	lock
-	goto_if_quest_active QUEST_GIGANTIC_FINDINGS, ResearchShip_Lab_EventScript_Progress
-	goto_if_quest_complete QUEST_GIGANTIC_FINDINGS, ResearchShip_Lab_EventScript_GreatThanks
+	goto_if_set FLAG_GIGANTIC_FINDINGS_STARTED, ResearchShip_Lab_EventScript_Progress
+	goto_if_set FLAG_GIGANTIC_FINDINGS_FINISHED, ResearchShip_Lab_EventScript_GreatThanks
 	msgbox ResearchShip_Lab_Text_NeedAid, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
@@ -114,8 +114,8 @@ ResearchShip_Lab_EventScript_StartHelping::
 	msgbox ResearchShip_Lab_Text_ManyThanks, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	startquest QUEST_GIGANTIC_FINDINGS
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_GIGANTIC_FINDINGS SUB_QUEST_SEALED_DEPTHS
+	startquest QUEST_SEALED_DEPTHS
+	setflag FLAG_GIGANTIC_FINDINGS_STARTED
 	release
 	end
 
@@ -128,9 +128,9 @@ ResearchShip_Lab_EventScript_Progress::
 	call_if_unset FLAG_RETURNED_SEALED_CHAMBER, ResearchShip_Lab_Quest_SealedChamber_State
 	special ChoosePartyMon
 	waitstate
-	copyvar VAR_RESULT, VAR_TEMP_E
-	goto_if_ne VAR_RESULT, PARTY_NOTHING_CHOSEN, ResearchShip_Lab_Quest_RegiCheck
-	goto_if_eq VAR_RESULT, PARTY_NOTHING_CHOSEN, ResearchShip_Lab_Quest_NotingSelected
+	copyvar VAR_0x8004, VAR_TEMP_E
+	goto_if_ne VAR_0x8004, PARTY_NOTHING_CHOSEN, ResearchShip_Lab_Quest_RegiCheck
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, ResearchShip_Lab_Quest_NotingSelected
 	release
 	end
 
@@ -143,8 +143,8 @@ ResearchShip_Lab_Quest_RegiCheck::
 	end
 
 ResearchShip_Lab_Quest_SealedChamber_State::
-	goto_if_subquest_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchShip_Lab_Quest_SealedChamber_Seen
-	goto_if_subquest_not_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchShip_Lab_Quest_SealedChamber_Unseen
+	goto_if_quest_complete QUEST_SEALED_DEPTHS, ResearchShip_Lab_Quest_SealedChamber_Seen
+	goto_if_quest_not_complete QUEST_SEALED_DEPTHS, ResearchShip_Lab_Quest_SealedChamber_Unseen
 	return
 
 ResearchShip_Lab_Quest_SealedChamber_Unseen::
@@ -169,9 +169,9 @@ ResearchShip_Lab_Quest_SealedChamber_Seen::
 	waitmessage
 	closemessage
 	setflag FLAG_RETURNED_SEALED_CHAMBER
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_GIGANTIC_FINDINGS SUB_QUEST_RUINS_IN_THE_SANDS
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_GIGANTIC_FINDINGS SUB_QUEST_CAVE_OF_SOLITUDE
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_GIGANTIC_FINDINGS SUB_QUEST_TOMB_OF_THE_ANCIENTS
+	startquest QUEST_RUINS_IN_THE_SANDS
+	startquest QUEST_CAVE_OF_SOLITUDE
+	startquest QUEST_TOMB_OF_THE_ANCIENTS
 	release
 	end
 
@@ -186,7 +186,7 @@ ResearchShip_Lab_Quest_DesertRuins::
 	msgbox ResearchShip_Lab_Text_ThatPokemon, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	completesubquest QUEST_GIGANTIC_FINDINGS SUB_QUEST_RUINS_IN_THE_SANDS
+	completequest QUEST_RUINS_IN_THE_SANDS
 	release
 	end
 
@@ -201,7 +201,7 @@ ResearchShip_Lab_Quest_IslandCave::
 	msgbox ResearchShip_Lab_Text_ThatPokemon, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	completesubquest QUEST_GIGANTIC_FINDINGS SUB_QUEST_CAVE_OF_SOLITUDE
+	completequest QUEST_CAVE_OF_SOLITUDE
 	release
 	end
 
@@ -216,7 +216,7 @@ ResearchShip_Lab_Quest_AncientTomb::
 	msgbox ResearchShip_Lab_Text_ThatPokemon, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	completesubquest QUEST_GIGANTIC_FINDINGS SUB_QUEST_TOMB_OF_THE_ANCIENTS
+	completequest QUEST_TOMB_OF_THE_ANCIENTS
 	release
 	end
 

@@ -643,6 +643,7 @@ static const struct SubQuest sSeafarer[QUEST_SEAFARER_SUB_COUNT] =
 #define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
+	/*
 	side_quest(
 	      gText_SideQuestName_RivalNextDoor,
 	      gText_SideQuestDesc_RivalNextDoor,
@@ -662,6 +663,137 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      sScoutingScott,
 	      QUEST_SCOUTING_SCOTT_SUB_COUNT
+	),
+	*/
+	side_quest(
+	      gText_RivalNextDoor_Name_FirstBattle,
+	      gText_RivalNextDoor_Desc_FirstBattle,
+	      gText_SideQuestDoneDesc_RivalNextDoorP1,
+	      gText_SideQuestMap_Route103,
+		  ITEM_ORAN_BERRY,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_RivalNextDoor_Name_SecondBattle,
+	      gText_RivalNextDoor_Desc_SecondBattle,
+	      gText_SideQuestDoneDesc_RivalNextDoorP2,
+	      gText_SideQuestMap_Rust104,
+	      ITEM_GREAT_BALL,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_RivalNextDoor_Name_ThirdBattle,
+	      gText_RivalNextDoor_Desc_ThirdBattle,
+	      gText_SideQuestDoneDesc_RivalNextDoorP3,
+	      gText_SideQuestMap_Route110,
+	      ITEM_ITEMFINDER,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_RivalNextDoor_Name_FourthBattle,
+	      gText_RivalNextDoor_Desc_FourthBattle,
+	      gText_SideQuestDoneDesc_RivalNextDoorP4,
+	      gText_SideQuestMap_Route119,
+	      ITEM_HM_FLY,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_RivalNextDoor_Name_FifthBattle,
+	      gText_RivalNextDoor_Desc_FifthBattle,
+	      gText_SideQuestDoneDesc_RivalNextDoorP5,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_ULTRA_BALL,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_ScoutingScott_Name_GradClass,
+	      gText_ScoutingScott_Desc_GradClass,
+	      gText_SideQuestDoneDesc_ScoutingScottP1,
+	      gText_SideQuestMap_Rustboro,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_ScoutingScott_Name_ClassReuin,
+	      gText_ScoutingScott_Desc_ClassReuin,
+	      gText_SideQuestDoneDesc_ScoutingScottP2,
+	      gText_SideQuestMap_Rustboro,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_ScoutingScott_Name_SlateBattles,
+	      gText_ScoutingScott_Desc_SlateBattles,
+	      gText_SideQuestDoneDesc_ScoutingScottP3,
+	      gText_SideQuestMap_Slateport,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_ScoutingScott_Name_VerdanBattles,
+	      gText_ScoutingScott_Desc_VerdanBattles,
+	      gText_SideQuestDoneDesc_ScoutingScottP4,
+	      gText_SideQuestMap_Verdanturf,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_ScoutingScott_Name_FallaborBattles,
+	      gText_ScoutingScott_Desc_FallaborBattles,
+	      gText_SideQuestDoneDesc_ScoutingScottP5,
+	      gText_SideQuestMap_Fallabor,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_ScoutingScott_Name_LilyVaca,
+	      gText_ScoutingScott_Desc_LilyVaca,
+	      gText_SideQuestDoneDesc_ScoutingScottP6,
+	      gText_SideQuestMap_Lilycove,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_ScoutingScott_Name_StarGazer,
+	      gText_ScoutingScott_Desc_StarGazer,
+	      gText_SideQuestDoneDesc_ScoutingScottP7,
+	      gText_SideQuestMap_Mossdeep,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_ScoutingScott_Name_ChampRoad,
+	      gText_ScoutingScott_Desc_ChampRoad,
+	      gText_SideQuestDoneDesc_ScoutingScottP8,
+	      gText_SideQuestMap_EverGrande,
+	      OBJ_EVENT_GFX_SCOTT,
+	      OBJECT,
+	      NULL,
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_SpecialDelivery,
@@ -683,6 +815,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
+	/*
 	side_quest(
 	      gText_SideQuestName_PuzzleSolver,
 	      gText_SideQuestDesc_PuzzleSolver,
@@ -692,6 +825,87 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      sPuzzleSolver,
 	      QUEST_PUZZLE_SOLVER_SUB_COUNT
+	),
+	*/
+	side_quest(
+	      gText_PuzzleSolver_Name_Puzzle1,
+	      gText_PuzzleSolver_Desc,
+	      gText_SideQuestDoneDesc_PuzzleSolverP1,
+	      gText_SideQuestMap_Route110,
+	      ITEM_RARE_CANDY,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_PuzzleSolver_Name_Puzzle2,
+	      gText_PuzzleSolver_Desc,
+	      gText_SideQuestDoneDesc_PuzzleSolverP2,
+	      gText_SideQuestMap_Route110,
+	      ITEM_TIMER_BALL,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_PuzzleSolver_Name_Puzzle3,
+	      gText_PuzzleSolver_Desc,
+	      gText_SideQuestDoneDesc_PuzzleSolverP3,
+	      gText_SideQuestMap_Route110,
+	      ITEM_HARD_STONE,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_PuzzleSolver_Name_Puzzle4,
+	      gText_PuzzleSolver_Desc,
+	      gText_SideQuestDoneDesc_PuzzleSolverP4,
+	      gText_SideQuestMap_Route110,
+	      ITEM_SMOKE_BALL,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_PuzzleSolver_Name_Puzzle5,
+	      gText_PuzzleSolver_Desc,
+	      gText_SideQuestDoneDesc_PuzzleSolverP5,
+	      gText_SideQuestMap_Route110,
+	      ITEM_TM_TAUNT,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_PuzzleSolver_Name_Puzzle6,
+	      gText_PuzzleSolver_Desc,
+	      gText_SideQuestDoneDesc_PuzzleSolverP6,
+	      gText_SideQuestMap_Route110,
+	      ITEM_MAGNET,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_PuzzleSolver_Name_Puzzle7,
+	      gText_PuzzleSolver_Desc,
+	      gText_SideQuestDoneDesc_PuzzleSolverP7,
+	      gText_SideQuestMap_Route110,
+	      ITEM_PP_MAX,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_PuzzleSolver_Name_Puzzle8,
+	      gText_PuzzleSolver_Desc,
+	      gText_SideQuestDoneDesc_PuzzleSolverP8,
+	      gText_SideQuestMap_Route110,
+	      ITEM_NUGGET,
+	      ITEM,
+	      NULL,
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_MailRun,
@@ -713,6 +927,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
+	/*
 	side_quest(
 	      gText_SideQuestName_ContestStar,
 	      gText_SideQuestDesc_ContestStar,
@@ -722,6 +937,58 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      ITEM,
 	      sContestStar,
 	      QUEST_CONTEST_STAR_SUB_COUNT
+	),
+	*/
+	side_quest(
+	      gText_ContestStar_Name_Cool,
+	      gText_ContestStar_Desc_Cool,
+	      gText_SideQuestDoneDesc_ContestStarP1,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_RED_SCARF,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_ContestStar_Name_Cute,
+	      gText_ContestStar_Desc_Cute,
+	      gText_SideQuestDoneDesc_ContestStarP2,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_PINK_SCARF,
+	      ITEM,
+	      NULL,
+	      0
+
+	),
+	side_quest(
+	      gText_ContestStar_Name_Beauty,
+	      gText_ContestStar_Desc_Beauty,
+	      gText_SideQuestDoneDesc_ContestStarP3,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_BLUE_SCARF,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_ContestStar_Name_Smart,
+	      gText_ContestStar_Desc_Smart,
+	      gText_SideQuestDoneDesc_ContestStarP4,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_GREEN_SCARF,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_ContestStar_Name_Tough,
+	      gText_ContestStar_Desc_Tough,
+	      gText_SideQuestDoneDesc_ContestStarP5,
+	      gText_SideQuestMap_Lilycove,
+	      ITEM_YELLOW_SCARF,
+	      ITEM,
+	      NULL,
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_Welcome,
@@ -733,6 +1000,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
+	/*
 	side_quest(
 	      gText_SideQuestName_Explorer,
 	      gText_SideQuestDesc_Explorer,
@@ -762,6 +1030,157 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      sSeafarer,
 	      QUEST_SEAFARER_SUB_COUNT
+	),
+	*/
+	side_quest(
+	      gText_BattleFrontier_Name_BattleFactory,
+	      gText_BattleFrontier_Desc_BattleFactory,
+	      gText_SideQuestDoneDesc_ExplorerP1,
+	      gText_SideQuestMap_BattleFrontier,
+	      OBJ_EVENT_GFX_NOLAND,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_BattleFrontier_Name_BattleArena,
+	      gText_BattleFrontier_Desc_BattleArena,
+	      gText_SideQuestDoneDesc_ExplorerP2,
+	      gText_SideQuestMap_BattleFrontier,
+	      OBJ_EVENT_GFX_GRETA,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_BattleFrontier_Name_BattleDome,
+	      gText_BattleFrontier_Desc_BattleDome,
+	      gText_SideQuestDoneDesc_ExplorerP3,
+	      gText_SideQuestMap_BattleFrontier,
+	      OBJ_EVENT_GFX_TUCKER,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_BattleFrontier_Name_BattlePike,
+	      gText_BattleFrontier_Desc_BattlePike,
+	      gText_SideQuestDoneDesc_ExplorerP4,
+	      gText_SideQuestMap_BattleFrontier,
+	      OBJ_EVENT_GFX_LUCY,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_BattleFrontier_Name_BattlePalace,
+	      gText_BattleFrontier_Desc_BattlePalace,
+	      gText_SideQuestDoneDesc_ExplorerP5,
+	      gText_SideQuestMap_BattleFrontier,
+	      OBJ_EVENT_GFX_SPENSER,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_BattleFrontier_Name_BattlePyramid,
+	      gText_BattleFrontier_Desc_BattlePyramid,
+	      gText_SideQuestDoneDesc_ExplorerP6,
+	      gText_SideQuestMap_BattleFrontier,
+	      OBJ_EVENT_GFX_BRANDON,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_BattleFrontier_Name_BattleTower,
+	      gText_BattleFrontier_Desc_BattleTower,
+	      gText_SideQuestDoneDesc_ExplorerP7,
+	      gText_SideQuestMap_BattleFrontier,
+	      OBJ_EVENT_GFX_ANABEL,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_GiganticFindings_Name_SealedChamber,
+	      gText_GiganticFindings_Desc_SealedChamber,
+	      gText_SideQuestDoneDesc_GiganticFindingsP1,
+	      gText_SideQuestMap_Route134,
+	      ITEM_ULTRA_BALL,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_GiganticFindings_Name_DesertRuins,
+	      gText_GiganticFindings_Desc_DesertRuins,
+	      gText_SideQuestDoneDesc_GiganticFindingsP2,
+	      gText_SideQuestMap_DesertRuins,
+	      SPECIES_REGIROCK,
+	      PKMN,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_GiganticFindings_Name_IslandCave,
+	      gText_GiganticFindings_Desc_IslandCave,
+	      gText_SideQuestDoneDesc_GiganticFindingsP3,
+	      gText_SideQuestMap_IslandCave,
+	      SPECIES_REGICE,
+	      PKMN,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_GiganticFindings_Name_AncientTomb,
+	      gText_GiganticFindings_Desc_AncientTomb,
+	      gText_SideQuestDoneDesc_GiganticFindingsP4,
+	      gText_SideQuestMap_AncientTomb,
+	      SPECIES_REGISTEEL,
+	      PKMN,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_Seafarer_Name_BirthIsland,
+	      gText_Seafarer_Desc_BirthIsland,
+	      gText_SideQuestDoneDesc_SeafarerP1,
+	      gText_SideQuestMap_Hoenn,
+	      ITEM_AURORA_TICKET,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_Seafarer_Name_SouthernIsland,
+	      gText_Seafarer_Desc_SouthernIsland,
+	      gText_SideQuestDoneDesc_SeafarerP2,
+	      gText_SideQuestMap_Hoenn,
+	      ITEM_EON_TICKET,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_Seafarer_Name_NavalRock,
+	      gText_Seafarer_Desc_NavalRock,
+	      gText_SideQuestDoneDesc_SeafarerP3,
+	      gText_SideQuestMap_Hoenn,
+	      ITEM_MYSTIC_TICKET,
+	      ITEM,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_Seafarer_Name_FarawayIsland,
+	      gText_Seafarer_Desc_FarawayIsland,
+	      gText_SideQuestDoneDesc_SeafarerP4,
+	      gText_SideQuestMap_Hoenn,
+	      ITEM_OLD_SEA_MAP,
+	      ITEM,
+	      NULL,
+	      0
 	),
 };
 ////////////////////////END QUEST CUSTOMIZATION////////////////////////////////

@@ -211,14 +211,13 @@ Route110_TrickHouseEntrance_EventScript_BeginChallenge::
 	removeobject LOCALID_TRICK_MASTER
 	setvar VAR_TRICK_HOUSE_ENTRANCE_STATE, 1
 	setvar VAR_TRICK_HOUSE_FOUND_TRICK_MASTER, 0
-	call_if_quest_not_active QUEST_PUZZLE_SOLVER, Route110_TrickHouseEntrance_EventScript_StartQuest
+	call_if_unset FLAG_PUZZLE_SOLVER, Route110_TrickHouseEntrance_EventScript_StartQuest
 	releaseall
 	end
 
 Route110_TrickHouseEntrance_EventScript_StartQuest::
-	goto_if_quest_complete QUEST_PUZZLE_SOLVER, Route110_TrickHouseEntrance_EventScript_Skip
-	startquest QUEST_PUZZLE_SOLVER
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_FIRST_PUZZLE
+	goto_if_set FLAG_PUZZLE_SOLVER, Route110_TrickHouseEntrance_EventScript_Skip
+	startquest QUEST_FIRST_PUZZLE
 	return
 
 Route110_TrickHouseEntrance_EventScript_Skip::

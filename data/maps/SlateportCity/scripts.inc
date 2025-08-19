@@ -8,7 +8,12 @@ SlateportCity_OnTransition:
 	call SlateportCity_EventScript_EnterSlateport
 	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
 	call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
+	call_if_quest_not_complete QUEST_BATTLE_TENT_SLATEPORT, SlateportCity_EventScript_StartQuest
 	end
+
+SlateportCity_EventScript_StartQuest::
+	startquest QUEST_BATTLE_TENT_SLATEPORT
+	return
 
 SlateportCity_EventScript_EnterSlateport::
 	setflag FLAG_VISITED_SLATEPORT_CITY
@@ -888,6 +893,7 @@ SlateportCity_EventScript_ScottBattleTentScene::
 	applymovement LOCALID_SLATEPORT_SCOTT, SlateportCity_Movement_ScottExitAfterBattleTent
 	waitmovement 0
 	removeobject LOCALID_SLATEPORT_SCOTT
+	completequest QUEST_BATTLE_TENT_SLATEPORT
 	addvar VAR_SCOTT_STATE, 1
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
 	releaseall

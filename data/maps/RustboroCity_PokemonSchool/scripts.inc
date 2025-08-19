@@ -169,6 +169,7 @@ RustboroCity_PokemonSchool_EventScript_Scott::
 	msgbox RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut, MSGBOX_DEFAULT
 	addvar VAR_SCOTT_STATE, 1
 	setflag FLAG_MET_SCOTT_RUSTBORO
+	completequest QUEST_GRADUATING_CLASS
 	release
 	end
 
@@ -191,6 +192,7 @@ RustboroCity_PokemonSchool_EventScript_ScottNoticeBadge::
 RustboroCity_PokemonSchool_EventScript_MetScottAfterBadge::
 	addvar VAR_SCOTT_STATE, 1
 	setflag FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE
+	completequest QUEST_CLASS_REUNION
 	release
 	end
 

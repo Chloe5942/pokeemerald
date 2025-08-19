@@ -421,6 +421,7 @@ Route110_EventScript_MayBattleMudkip::
 	end
 
 Route110_EventScript_MayDefeated::
+	completequest QUEST_THIRD_BATTLE
 	msgbox Route110_Text_MayTakeThis, MSGBOX_DEFAULT
 	call Route110_EventScript_GiveItemfinder
 	msgbox Route110_Text_MayExplainItemfinder, MSGBOX_DEFAULT
@@ -451,6 +452,7 @@ Route110_EventScript_BrendanBattleMudkip::
 	end
 
 Route110_EventScript_BrendanDefeated::
+	completequest QUEST_THIRD_BATTLE
 	msgbox Route110_Text_BrendanTakeThis, MSGBOX_DEFAULT
 	call Route110_EventScript_GiveItemfinder
 	msgbox Route110_Text_BrendanExplainItemfinder, MSGBOX_DEFAULT

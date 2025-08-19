@@ -243,6 +243,7 @@ FallarborTown_BattleTentLobby_EventScript_Scott::
 	msgbox FallarborTown_BattleTentLobby_Text_ScottLookingForSomeone, MSGBOX_DEFAULT
 	addvar VAR_SCOTT_STATE, 1
 	setflag FLAG_MET_SCOTT_IN_FALLARBOR
+	completequest QUEST_BATTLE_TENT_FALLARBOR
 	release
 	end
 

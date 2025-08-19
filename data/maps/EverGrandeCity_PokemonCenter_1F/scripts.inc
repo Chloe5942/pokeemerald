@@ -11,6 +11,7 @@ EverGrandeCity_PokemonCenter_1F_OnTransition:
 EverGrandeCity_PokemonCenter_1F_EventScript_TryShowScott::
 	goto_if_unset FLAG_BADGE06_GET, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
+	startquest QUEST_GRAND_BATTLES
 	return
 
 EverGrandeCity_PokemonCenter_1F_EventScript_Nurse::
@@ -39,6 +40,7 @@ EverGrandeCity_PokemonCenter_1F_EventScript_Scott::
 	call_if_eq VAR_FACING, DIR_WEST, EverGrandeCity_PokemonCenter_1F_EventScript_ScottExit
 	addvar VAR_SCOTT_STATE, 1
 	setflag FLAG_MET_SCOTT_IN_EVERGRANDE
+	completequest QUEST_GRAND_BATTLES
 	playse SE_EXIT
 	waitse
 	removeobject LOCALID_EVER_GRANDE_SCOTT

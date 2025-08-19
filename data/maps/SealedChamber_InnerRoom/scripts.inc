@@ -9,7 +9,7 @@ SealedChamber_InnerRoom_EventScript_BrailleBackWall::
 	specialvar VAR_RESULT, CheckRelicanthWailord
 	goto_if_eq VAR_RESULT, FALSE, SealedChamber_InnerRoom_EventScript_NoEffect
 	fadeoutbgm 0
-	completesubquest QUEST_GIGANTIC_FINDINGS SUB_QUEST_SEALED_DEPTHS
+	completequest QUEST_SEALED_DEPTHS
 	playse SE_TRUCK_MOVE
 	special DoSealedChamberShakingEffect_Long
 	waitstate

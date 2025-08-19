@@ -2049,3 +2049,52 @@ const u8 gText_Seafarer_Desc_BirthIsland[] = _("Show the SAILOR a METEORITE.");
 const u8 gText_Seafarer_Desc_SouthernIsland[] = _("Show the SAILOR one of\nthe EON POKéMON.");
 const u8 gText_Seafarer_Desc_NavalRock[] = _("Show the SAILOR a POKéMON from JHOTO.");
 const u8 gText_Seafarer_Desc_FarawayIsland[] = _("Show the SAILOR a POKéMON from KANTO.");
+
+// Completed Quest Descriptions Parts
+const u8 gText_SideQuestDoneDesc_RivalNextDoorP1[] = _("Completed Rival Next Door Part 1");
+const u8 gText_SideQuestDoneDesc_RivalNextDoorP2[] = _("Completed Rival Next Door Part 2");
+const u8 gText_SideQuestDoneDesc_RivalNextDoorP3[] = _("Completed Rival Next Door Part 3");
+const u8 gText_SideQuestDoneDesc_RivalNextDoorP4[] = _("Completed Rival Next Door Part 4");
+const u8 gText_SideQuestDoneDesc_RivalNextDoorP5[] = _("Completed Rival Next Door Part 5");
+
+const u8 gText_SideQuestDoneDesc_ScoutingScottP1[] = _("Completed Scouting Scott Part 1");
+const u8 gText_SideQuestDoneDesc_ScoutingScottP2[] = _("Completed Scouting Scott Part 2");
+const u8 gText_SideQuestDoneDesc_ScoutingScottP3[] = _("Completed Scouting Scott Part 3");
+const u8 gText_SideQuestDoneDesc_ScoutingScottP4[] = _("Completed Scouting Scott Part 4");
+const u8 gText_SideQuestDoneDesc_ScoutingScottP5[] = _("Completed Scouting Scott Part 5");
+const u8 gText_SideQuestDoneDesc_ScoutingScottP6[] = _("Completed Scouting Scott Part 6");
+const u8 gText_SideQuestDoneDesc_ScoutingScottP7[] = _("Completed Scouting Scott Part 7");
+const u8 gText_SideQuestDoneDesc_ScoutingScottP8[] = _("Completed Scouting Scott Part 8");
+
+const u8 gText_SideQuestDoneDesc_PuzzleSolverP1[] = _("Completed Puzzle Solver Part 1");
+const u8 gText_SideQuestDoneDesc_PuzzleSolverP2[] = _("Completed Puzzle Solver Part 2");
+const u8 gText_SideQuestDoneDesc_PuzzleSolverP3[] = _("Completed Puzzle Solver Part 3");
+const u8 gText_SideQuestDoneDesc_PuzzleSolverP4[] = _("Completed Puzzle Solver Part 4");
+const u8 gText_SideQuestDoneDesc_PuzzleSolverP5[] = _("Completed Puzzle Solver Part 5");
+const u8 gText_SideQuestDoneDesc_PuzzleSolverP6[] = _("Completed Puzzle Solver Part 6");
+const u8 gText_SideQuestDoneDesc_PuzzleSolverP7[] = _("Completed Puzzle Solver Part 7");
+const u8 gText_SideQuestDoneDesc_PuzzleSolverP8[] = _("Completed Puzzle Solver Part 8");
+
+const u8 gText_SideQuestDoneDesc_ContestStarP1[] = _("Completed Contest Star Part 1");
+const u8 gText_SideQuestDoneDesc_ContestStarP2[] = _("Completed Contest Star Part 2");
+const u8 gText_SideQuestDoneDesc_ContestStarP3[] = _("Completed Contest Star Part 3");
+const u8 gText_SideQuestDoneDesc_ContestStarP4[] = _("Completed Contest Star Part 4");
+const u8 gText_SideQuestDoneDesc_ContestStarP5[] = _("Completed Contest Star Part 5");
+
+const u8 gText_SideQuestDoneDesc_ExplorerP1[] = _("Completed Frontier Explorer Part 1");
+const u8 gText_SideQuestDoneDesc_ExplorerP2[] = _("Completed Frontier Explorer Part 2");
+const u8 gText_SideQuestDoneDesc_ExplorerP3[] = _("Completed Frontier Explorer Part 3");
+const u8 gText_SideQuestDoneDesc_ExplorerP4[] = _("Completed Frontier Explorer Part 4");
+const u8 gText_SideQuestDoneDesc_ExplorerP5[] = _("Completed Frontier Explorer Part 5");
+const u8 gText_SideQuestDoneDesc_ExplorerP6[] = _("Completed Frontier Explorer Part 6");
+const u8 gText_SideQuestDoneDesc_ExplorerP7[] = _("Completed Frontier Explorer Part 7");
+
+const u8 gText_SideQuestDoneDesc_GiganticFindingsP1[] = _("Completed Gigantic Findings Part 1");
+const u8 gText_SideQuestDoneDesc_GiganticFindingsP2[] = _("Completed Gigantic Findings Part 2");
+const u8 gText_SideQuestDoneDesc_GiganticFindingsP3[] = _("Completed Gigantic Findings Part 3");
+const u8 gText_SideQuestDoneDesc_GiganticFindingsP4[] = _("Completed Gigantic Findings Part 4");
+
+const u8 gText_SideQuestDoneDesc_SeafarerP1[] = _("Completed Seafarer Part 1");
+const u8 gText_SideQuestDoneDesc_SeafarerP2[] = _("Completed Seafarer Part 2");
+const u8 gText_SideQuestDoneDesc_SeafarerP3[] = _("Completed Seafarer Part 3");
+const u8 gText_SideQuestDoneDesc_SeafarerP4[] = _("Completed Seafarer Part 4");

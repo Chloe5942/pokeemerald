@@ -17,12 +17,11 @@ LilycoveCity_ContestLobby_EventScript_GivePokeblockCase::
 	giveitem ITEM_POKEBLOCK_CASE
 	setflag FLAG_RECEIVED_POKEBLOCK_CASE
 	msgbox LilycoveCity_ContestLobby_Text_NowThatWeveClearedThatUp, MSGBOX_DEFAULT
-	startquest QUEST_CONTEST_STAR
-	questmenu QUEST_MENU_SET_ACTIVE SUB_QUEST_CONTEST_COOL
-	questmenu QUEST_MENU_SET_ACTIVE SUB_QUEST_CONTEST_CUTE
-	questmenu QUEST_MENU_SET_ACTIVE SUB_QUEST_CONTEST_BEAUTY
-	questmenu QUEST_MENU_SET_ACTIVE SUB_QUEST_CONTEST_SMART
-	questmenu QUEST_MENU_SET_ACTIVE SUB_QUEST_CONTEST_TOUGH
+	startquest QUEST_CONTEST_COOL
+	startquest QUEST_CONTEST_CUTE
+	startquest QUEST_CONTEST_BEAUTY
+	startquest QUEST_CONTEST_SMART
+	startquest QUEST_CONTEST_TOUGH
 	return
 
 LilycoveCity_ContestLobby_EventScript_PickUpPrize::
