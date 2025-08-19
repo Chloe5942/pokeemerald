@@ -128,16 +128,16 @@ ResearchShip_Lab_EventScript_Progress::
 	call_if_unset FLAG_RETURNED_SEALED_CHAMBER, ResearchShip_Lab_Quest_SealedChamber_State
 	special ChoosePartyMon
 	waitstate
-	copyvar VAR_0x8004, VAR_TEMP_E
-	goto_if_ne VAR_0x8004, PARTY_NOTHING_CHOSEN, ResearchShip_Lab_Quest_RegiCheck
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, ResearchShip_Lab_Quest_NotingSelected
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	goto_if_eq VAR_RESULT, SPECIES_REGIROCK, ResearchShip_Lab_Quest_DesertRuins
+	goto_if_eq VAR_RESULT, SPECIES_REGICE, ResearchShip_Lab_Quest_IslandCave
+	goto_if_eq VAR_RESULT, SPECIES_REGISTEEL, ResearchShip_Lab_Quest_AncientTomb
+	goto ResearchShip_Lab_Quest_NotRight
 	release
 	end
 
-ResearchShip_Lab_Quest_RegiCheck::
-	goto_if_eq VAR_TEMP_E, SPECIES_REGIROCK, ResearchShip_Lab_Quest_DesertRuins
-	goto_if_eq VAR_TEMP_E, SPECIES_REGICE, ResearchShip_Lab_Quest_IslandCave
-	goto_if_eq VAR_TEMP_E, SPECIES_REGISTEEL, ResearchShip_Lab_Quest_AncientTomb
+ResearchShip_Lab_Quest_NotRight::
 	msgbox ResearchShip_Lab_Text_NotRight, MSGBOX_DEFAULT
 	closemessage
 	end
