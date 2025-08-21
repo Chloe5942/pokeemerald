@@ -51,3 +51,11 @@ Route134_EventScript_Kelvin::
 	msgbox Route134_Text_KelvinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route134_EventScript_LabSign::
+	msgbox Route134_Text_LabSign, MSGBOX_SIGN
+	end
+
+Route134_Text_LabSign:
+	.string "RESEARCH LAB\n"
+	.string "“The lab on the ocean”$"
+

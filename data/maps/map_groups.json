@@ -625,12 +625,7 @@
     "Route124_DivingTreasureHuntersHouse"
   ],
   "gMapGroup_IndoorRoute134": [
-    "ResearchShip_Deck",
-    "ResearchShip_CaptainOffice",
-    "ResearchShip_LowerDeck",
-    "ResearchShip_Quarters",
-    "ResearchShip_Rooms",
-    "ResearchShip_Lab"
+    "ResearchLab"
   ],
   "layouts_table_label": "gMapLayouts"
 }

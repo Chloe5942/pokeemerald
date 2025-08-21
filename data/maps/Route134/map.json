@@ -172,19 +172,21 @@
   "warp_events": [
     {
       "x": 60,
-      "y": 26,
+      "y": 27,
       "elevation": 0,
-      "dest_map": "MAP_RESEARCH_SHIP_DECK",
+      "dest_map": "MAP_RESEARCH_LAB",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 61,
-      "y": 26,
-      "elevation": 0,
-      "dest_map": "MAP_RESEARCH_SHIP_DECK",
-      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 62,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route134_EventScript_LabSign"
+    }
+  ]
 }
