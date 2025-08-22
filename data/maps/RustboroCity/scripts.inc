@@ -5,21 +5,11 @@ RustboroCity_MapScripts::
 
 RustboroCity_OnTransition:
 	setflag FLAG_VISITED_RUSTBORO_CITY
-	call_if_unset FLAG_MET_SCOTT_RUSTBORO, RustboroCity_EventScript_StartQuestPreGym
-	call_if_set FLAG_BADGE01_GET, RustboroCity_EventScript_StartQuestPostGym
 	call Common_EventScript_SetupRivalGfxId
 	call_if_eq VAR_RUSTBORO_CITY_STATE, 6, RustboroCity_EventScript_HideMapNamePopup
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	goto_if_eq VAR_RUSTBORO_CITY_STATE, 6, RustboroCity_EventScript_PositionScientistForExit
 	end
-
-RustboroCity_EventScript_StartQuestPreGym::
-	startquest QUEST_GRADUATING_CLASS
-	return
-
-RustboroCity_EventScript_StartQuestPostGym::
-	startquest QUEST_CLASS_REUNION
-	return
 
 RustboroCity_EventScript_PositionScientistForExit::
 	goto_if_eq VAR_TEMP_0, 11, RustboroCity_EventScript_PositionScientistLeftExit
@@ -875,7 +865,6 @@ RustboroCity_EventScript_BattleMay::
 	end
 
 RustboroCity_EventScript_MayBrineyHint::
-	completequest QUEST_SECOND_BATTLE
 	msgbox RustboroCity_Text_MayMrBrineyHint, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
 	releaseall
@@ -942,7 +931,6 @@ RustboroCity_EventScript_BattleBrendan::
 	end
 
 RustboroCity_EventScript_BrendanBrineyHint::
-	completequest QUEST_SECOND_BATTLE
 	msgbox RustboroCity_Text_BrendanMrBrineyHint, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
 	releaseall

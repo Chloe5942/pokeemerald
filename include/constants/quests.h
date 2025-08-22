@@ -15,80 +15,21 @@
 #define QUEST_MENU_BUFFER_QUEST_NAME    10  //buffers a quest name to gStringVar1
 
 // Quest Number Defines
-// Main Game
-
-//#define QUEST_RIVAL_NEXT_DOOR                0
-// Rival Next Door
-#define QUEST_FIRST_BATTLE                   0
-#define QUEST_SECOND_BATTLE                  1
-#define QUEST_THIRD_BATTLE                   2
-#define QUEST_FOURTH_BATTLE                  3
-#define QUEST_FIFTH_BATTLE                   4
-
-//#define QUEST_SCOUTING_SCOTT                 1
-// Scouting Scott
-#define QUEST_GRADUATING_CLASS               5
-#define QUEST_CLASS_REUNION                  6
-#define QUEST_BATTLE_TENT_SLATEPORT          7
-#define QUEST_BATTLE_TENT_VERDANTURF         8
-#define QUEST_BATTLE_TENT_FALLARBOR          9
-#define QUEST_LILYCOVE_MOTEL                10
-#define QUEST_SPACEGAZER                    11
-#define QUEST_GRAND_BATTLES                 12
-
-#define QUEST_SPECIAL_DELIVERY              13
-#define QUEST_TREND_SETTER                  14
-
-//#define QUEST_PUZZLE_SOLVER                  4
-// Puzzle Solver
-#define QUEST_FIRST_PUZZLE                  15
-#define QUEST_SECOND_PUZZLE                 16
-#define QUEST_THIRD_PUZZLE                  17
-#define QUEST_FOURTH_PUZZLE                 18
-#define QUEST_FIFTH_PUZZLE                  19
-#define QUEST_SIXTH_PUZZLE                  20
-#define QUEST_SEVENTH_PUZZLE                21
-#define QUEST_EIGHTH_PUZZLE                 22
-
-#define QUEST_MAIL_RUN                      23
-#define QUEST_COIN_COLLECTOR                24
-
-//#define QUEST_CONTEST_STAR                   7
-// Contest Star
-#define QUEST_CONTEST_COOL                  25
-#define QUEST_CONTEST_CUTE                  26
-#define QUEST_CONTEST_BEAUTY                27
-#define QUEST_CONTEST_SMART                 28
-#define QUEST_CONTEST_TOUGH                 29
-
+// Main Game 
+#define QUEST_RIVAL_NEXT_DOOR                0
+#define QUEST_SCOUTING_SCOTT                 1
+#define QUEST_SPECIAL_DELIVERY               2
+#define QUEST_TREND_SETTER                   3
+#define QUEST_PUZZLE_SOLVER                  4
+#define QUEST_MAIL_RUN                       5
+#define QUEST_COIN_COLLECTOR                 6
+#define QUEST_CONTEST_STAR                   7
 // Post Game
-
-#define QUEST_FRONTIER_WELCOME              30
-
-//#define QUEST_FRONTIER_EXPLORER              9
-// Frontier Explorer
-#define QUEST_BATTLE_FACTORY                31
-#define QUEST_BATTLE_ARENA                  32
-#define QUEST_BATTLE_DOME                   33
-#define QUEST_BATTLE_PIKE                   34
-#define QUEST_BATTLE_PALACE                 35
-#define QUEST_BATTLE_PYRAMID                36
-#define QUEST_BATTLE_TOWER                  37
-
-//#define QUEST_GIGANTIC_FINDINGS             10
-// Gigantic Findings
-#define QUEST_SEALED_DEPTHS                 38
-#define QUEST_RUINS_IN_THE_SANDS            39
-#define QUEST_CAVE_OF_SOLITUDE              40
-#define QUEST_TOMB_OF_THE_ANCIENTS          41
-//#define QUEST_SEAFARER                      11
-// Seafarer
-#define QUEST_AURORA_TICKET                 42
-#define QUEST_EON_TICKET                    43
-#define QUEST_MYSTIC_TICKET                 44
-#define QUEST_OLD_SEA_MAP                   45
-
-#define QUEST_COUNT                         (QUEST_OLD_SEA_MAP + 1) // 46/100 54 Free Spaces Left
+#define QUEST_FRONTIER_WELCOME               8
+#define QUEST_FRONTIER_EXPLORER              9
+#define QUEST_GIGANTIC_FINDINGS             10
+#define QUEST_SEAFARER                      11
+#define QUEST_COUNT                         (QUEST_SEAFARER + 1) // 12/100 88 Free Spaces Left
 
 // Rival Next Door
 #define SUB_QUEST_FIRST_BATTLE               0

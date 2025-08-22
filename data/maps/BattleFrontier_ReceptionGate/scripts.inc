@@ -13,7 +13,7 @@ BattleFrontier_ReceptionGate_OnFrame:
 
 BattleFrontier_ReceptionGate_EventScript_FirstTimeEntering::
 	lockall
-	startquest QUEST_FRONTIER_WELCOME
+	questmenu QUEST_MENU_SET_ACTIVE QUEST_FRONTIER_WELCOME
 	setvar VAR_HAS_ENTERED_BATTLE_FRONTIER, 1
 	playse SE_PIN
 	applymovement LOCALID_FRONTIER_RECEPTION_GREETER, Common_Movement_ExclamationMark

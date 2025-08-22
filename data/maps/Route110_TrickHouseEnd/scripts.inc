@@ -56,8 +56,8 @@ Route110_TrickHouseEnd_EventScript_TrickMaster::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle1::
-	completequest QUEST_FIRST_PUZZLE
-	startquest QUEST_SECOND_PUZZLE
+	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_FIRST_PUZZLE
+	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_SECOND_PUZZLE
 	msgbox Route110_TrickHouseEnd_Text_AllNightToPlantTrees, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -70,8 +70,8 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle1::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle2::
-	completequest QUEST_SECOND_PUZZLE
-	startquest QUEST_THIRD_PUZZLE
+	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_SECOND_PUZZLE
+	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_THIRD_PUZZLE
 	msgbox Route110_TrickHouseEnd_Text_AllNightToMakeMaze, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -84,8 +84,8 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle2::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle3::
-	completequest QUEST_THIRD_PUZZLE
-	startquest QUEST_FOURTH_PUZZLE
+	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_THIRD_PUZZLE
+	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_FOURTH_PUZZLE
 	msgbox Route110_TrickHouseEnd_Text_AllNightToPreparePanels, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -98,8 +98,8 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle3::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle4::
-	completequest QUEST_FOURTH_PUZZLE
-	startquest QUEST_FIFTH_PUZZLE
+	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_FOURTH_PUZZLE
+	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_FIFTH_PUZZLE
 	msgbox Route110_TrickHouseEnd_Text_AllNightToShoveBoulders, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -112,8 +112,8 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle4::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle5::
-	completequest QUEST_FIFTH_PUZZLE
-	startquest QUEST_SIXTH_PUZZLE
+	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_FIFTH_PUZZLE
+	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_SIXTH_PUZZLE
 	msgbox Route110_TrickHouseEnd_Text_AllNightToMakeMechadolls, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -126,8 +126,8 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle5::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle6::
-	completequest QUEST_SIXTH_PUZZLE
-	startquest QUEST_SEVENTH_PUZZLE
+	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_SIXTH_PUZZLE
+	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_SEVENTH_PUZZLE
 	msgbox Route110_TrickHouseEnd_Text_AllNightToInstallDoors, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -140,8 +140,8 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle6::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle7::
-	completequest QUEST_SEVENTH_PUZZLE
-	startquest QUEST_EIGHTH_PUZZLE
+	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_SEVENTH_PUZZLE
+	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_EIGHTH_PUZZLE
 	msgbox Route110_TrickHouseEnd_Text_AllNightSettingUpArrows, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -154,7 +154,8 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle7::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle8::
-	completequest QUEST_EIGHTH_PUZZLE
+	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_EIGHTH_PUZZLE
+	completequest QUEST_PUZZLE_SOLVER
 	msgbox Route110_TrickHouseEnd_Text_AllNightPolishingFloors, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_FACING, DIR_SOUTH, Route110_TrickHouseEnd_EventScript_TrickMasterFaceAwaySouth

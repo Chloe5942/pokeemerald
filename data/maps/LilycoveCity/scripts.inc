@@ -13,12 +13,7 @@ LilycoveCity_OnTransition:
 
 LilycoveCity_OnLoad:
 	call_if_unset FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, LilycoveCity_EventScript_SetWailmerMetatiles
-	call_if_unset FLAG_MET_SCOTT_IN_LILYCOVE, LilycoveCity_EventScript_StartQuest
 	end
-
-LilycoveCity_EventScript_StartQuest::
-	startquest QUEST_LILYCOVE_MOTEL
-	return
 
 LilycoveCity_EventScript_SetWailmerMetatiles::
 	setmetatile 76, 12, METATILE_Lilycove_Wailmer0, TRUE
@@ -330,7 +325,6 @@ LilycoveCity_EventScript_BattleBrendanMudkip::
 	end
 
 LilycoveCity_EventScript_DefeatedMay::
-	completequest QUEST_FIFTH_BATTLE
 	msgbox LilycoveCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge
@@ -363,7 +357,6 @@ LilycoveCity_EventScript_MayBattleFrontier::
 	return
 
 LilycoveCity_EventScript_DefeatedBrendan::
-	completequest QUEST_FIFTH_BATTLE
 	msgbox LilycoveCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge

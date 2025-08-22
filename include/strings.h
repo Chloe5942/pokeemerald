@@ -3177,55 +3177,6 @@ extern const u8 gText_Seafarer_Desc_SouthernIsland[];
 extern const u8 gText_Seafarer_Desc_NavalRock[];
 extern const u8 gText_Seafarer_Desc_FarawayIsland[];
 
-// Completed Quest Descriptions Parts
-extern const u8 gText_SideQuestDoneDesc_RivalNextDoorP1[];
-extern const u8 gText_SideQuestDoneDesc_RivalNextDoorP2[];
-extern const u8 gText_SideQuestDoneDesc_RivalNextDoorP3[];
-extern const u8 gText_SideQuestDoneDesc_RivalNextDoorP4[];
-extern const u8 gText_SideQuestDoneDesc_RivalNextDoorP5[];
-
-extern const u8 gText_SideQuestDoneDesc_ScoutingScottP1[];
-extern const u8 gText_SideQuestDoneDesc_ScoutingScottP2[];
-extern const u8 gText_SideQuestDoneDesc_ScoutingScottP3[];
-extern const u8 gText_SideQuestDoneDesc_ScoutingScottP4[];
-extern const u8 gText_SideQuestDoneDesc_ScoutingScottP5[];
-extern const u8 gText_SideQuestDoneDesc_ScoutingScottP6[];
-extern const u8 gText_SideQuestDoneDesc_ScoutingScottP7[];
-extern const u8 gText_SideQuestDoneDesc_ScoutingScottP8[];
-
-extern const u8 gText_SideQuestDoneDesc_PuzzleSolverP1[];
-extern const u8 gText_SideQuestDoneDesc_PuzzleSolverP2[];
-extern const u8 gText_SideQuestDoneDesc_PuzzleSolverP3[];
-extern const u8 gText_SideQuestDoneDesc_PuzzleSolverP4[];
-extern const u8 gText_SideQuestDoneDesc_PuzzleSolverP5[];
-extern const u8 gText_SideQuestDoneDesc_PuzzleSolverP6[];
-extern const u8 gText_SideQuestDoneDesc_PuzzleSolverP7[];
-extern const u8 gText_SideQuestDoneDesc_PuzzleSolverP8[];
-
-extern const u8 gText_SideQuestDoneDesc_ContestStarP1[];
-extern const u8 gText_SideQuestDoneDesc_ContestStarP2[];
-extern const u8 gText_SideQuestDoneDesc_ContestStarP3[];
-extern const u8 gText_SideQuestDoneDesc_ContestStarP4[];
-extern const u8 gText_SideQuestDoneDesc_ContestStarP5[];
-
-extern const u8 gText_SideQuestDoneDesc_ExplorerP1[];
-extern const u8 gText_SideQuestDoneDesc_ExplorerP2[];
-extern const u8 gText_SideQuestDoneDesc_ExplorerP3[];
-extern const u8 gText_SideQuestDoneDesc_ExplorerP4[];
-extern const u8 gText_SideQuestDoneDesc_ExplorerP5[];
-extern const u8 gText_SideQuestDoneDesc_ExplorerP6[];
-extern const u8 gText_SideQuestDoneDesc_ExplorerP7[];
-
-extern const u8 gText_SideQuestDoneDesc_GiganticFindingsP1[];
-extern const u8 gText_SideQuestDoneDesc_GiganticFindingsP2[];
-extern const u8 gText_SideQuestDoneDesc_GiganticFindingsP3[];
-extern const u8 gText_SideQuestDoneDesc_GiganticFindingsP4[];
-
-extern const u8 gText_SideQuestDoneDesc_SeafarerP1[];
-extern const u8 gText_SideQuestDoneDesc_SeafarerP2[];
-extern const u8 gText_SideQuestDoneDesc_SeafarerP3[];
-extern const u8 gText_SideQuestDoneDesc_SeafarerP4[];
-
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];
 extern const u8 gText_BlenderMaxSpeedRecord[];

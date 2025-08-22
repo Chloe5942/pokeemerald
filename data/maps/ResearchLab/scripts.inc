@@ -64,16 +64,16 @@ ResearchLab_EventScript_Machine2_Scientist2::
 	end
 
 ResearchLab_EventScript_PC_Scientist1::
-	goto_if_quest_complete QUEST_SEALED_DEPTHS, ResearchLab_EventScript_PC_Scientist1_DecoderUse
+	goto_if_subquest_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchLab_EventScript_PC_Scientist1_DecoderUse
 	lock
 	faceplayer
 	msgbox ResearchLab_Text_Pc_Work1, MSGBOX_DEFAULT
-	goto_if_set FLAG_GIGANTIC_FINDINGS_STARTED, ResearchLab_EventScript_PC_Scientist1_Decoder
+	goto_if_quest_active QUEST_GIGANTIC_FINDINGS, ResearchLab_EventScript_PC_Scientist1_Decoder
 	release
 	end
 
 ResearchLab_EventScript_PC_Scientist1_Decoder::
-	goto_if_quest_complete QUEST_SEALED_DEPTHS, ResearchLab_EventScript_PC_Scientist1_DecoderUse
+	goto_if_subquest_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchLab_EventScript_PC_Scientist1_DecoderUse
 	lock
 	faceplayer
 	msgbox ResearchLab_Text_Pc_GiveDecoder, MSGBOX_DEFAULT
@@ -96,8 +96,8 @@ ResearchLab_EventScript_PC_Scientist2::
 
 ResearchLab_EventScript_Head_Scientist::
 	lock
-	goto_if_set FLAG_GIGANTIC_FINDINGS_STARTED, ResearchLab_EventScript_Progress
-	goto_if_set FLAG_GIGANTIC_FINDINGS_FINISHED, ResearchLab_EventScript_GreatThanks
+	goto_if_quest_active QUEST_GIGANTIC_FINDINGS, ResearchLab_EventScript_Progress
+	goto_if_quest_complete QUEST_GIGANTIC_FINDINGS, ResearchLab_EventScript_GreatThanks
 	msgbox ResearchLab_Text_NeedAid, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
@@ -114,8 +114,8 @@ ResearchLab_EventScript_StartHelping::
 	msgbox ResearchLab_Text_ManyThanks, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	startquest QUEST_SEALED_DEPTHS
-	setflag FLAG_GIGANTIC_FINDINGS_STARTED
+	startquest QUEST_GIGANTIC_FINDINGS
+	subquestmenu QUEST_MENU_SET_ACTIVE, QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS
 	release
 	end
 
@@ -143,8 +143,8 @@ ResearchLab_Quest_NotRight::
 	end
 
 ResearchLab_Quest_SealedChamber_State::
-	goto_if_quest_complete QUEST_SEALED_DEPTHS, ResearchLab_Quest_SealedChamber_Seen
-	goto_if_quest_not_complete QUEST_SEALED_DEPTHS, ResearchLab_Quest_SealedChamber_Unseen
+	goto_if_subquest_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchLab_Quest_SealedChamber_Seen
+	goto_if_subquest_not_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchLab_Quest_SealedChamber_Unseen
 	return
 
 ResearchLab_Quest_SealedChamber_Unseen::
@@ -169,9 +169,9 @@ ResearchLab_Quest_SealedChamber_Seen::
 	waitmessage
 	closemessage
 	setflag FLAG_RETURNED_SEALED_CHAMBER
-	startquest QUEST_RUINS_IN_THE_SANDS
-	startquest QUEST_CAVE_OF_SOLITUDE
-	startquest QUEST_TOMB_OF_THE_ANCIENTS
+	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_GIGANTIC_FINDINGS SUB_QUEST_RUINS_IN_THE_SANDS
+	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_GIGANTIC_FINDINGS SUB_QUEST_CAVE_OF_SOLITUDE
+	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_GIGANTIC_FINDINGS SUB_QUEST_TOMB_OF_THE_ANCIENTS
 	release
 	end
 
@@ -186,7 +186,7 @@ ResearchLab_Quest_DesertRuins::
 	msgbox ResearchLab_Text_ThatPokemon, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	completequest QUEST_RUINS_IN_THE_SANDS
+	completesubquest QUEST_GIGANTIC_FINDINGS SUB_QUEST_RUINS_IN_THE_SANDS
 	release
 	end
 
@@ -201,7 +201,7 @@ ResearchLab_Quest_IslandCave::
 	msgbox ResearchLab_Text_ThatPokemon, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	completequest QUEST_CAVE_OF_SOLITUDE
+	completesubquest QUEST_GIGANTIC_FINDINGS SUB_QUEST_CAVE_OF_SOLITUDE
 	release
 	end
 
@@ -216,7 +216,7 @@ ResearchLab_Quest_AncientTomb::
 	msgbox ResearchLab_Text_ThatPokemon, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	completequest QUEST_TOMB_OF_THE_ANCIENTS
+	completesubquest QUEST_GIGANTIC_FINDINGS SUB_QUEST_TOMB_OF_THE_ANCIENTS
 	release
 	end
 

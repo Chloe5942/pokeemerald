@@ -254,7 +254,6 @@ VerdanturfTown_BattleTentLobby_EventScript_Scott::
 	msgbox VerdanturfTown_BattleTentLobby_Text_ScottCanMeetToughTrainers, MSGBOX_DEFAULT
 	addvar VAR_SCOTT_STATE, 1
 	setflag FLAG_MET_SCOTT_IN_VERDANTURF
-	completequest QUEST_BATTLE_TENT_VERDANTURF
 	release
 	end
 
