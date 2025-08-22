@@ -748,8 +748,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_GiganticFindings,
 	      gText_SideQuestDoneDesc_GiganticFindings,
 	      gText_SideQuestMap_Route134,
-	      ITEM_ULTRA_BALL,
-	      ITEM,
+	      OBJ_EVENT_GFX_MAN_2,
+	      OBJECT,
 	      sGiganticFindings,
 	      QUEST_GIGANTIC_FINDINGS_SUB_COUNT
 	),

@@ -4,6 +4,45 @@ BattleFrontier_BattleDomeLobby_MapScripts::
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, BattleFrontier_BattleDomeLobby_OnWarp
 	.byte 0
 
+BattleFrontier_BattleDomeLobby_Movement_MoveRight::
+	walk_right
+	walk_up
+	step_end
+
+BattleFrontier_BattleDomeLobby_Movement_MoveLeft::
+	walk_left
+	face_up
+	step_end
+
+BattleFrontier_BattleDomeLobby_Movement_MoveLeftUp::
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+BattleFrontier_BattleDomeLobby_Trigger::
+	goto_if_eq VAR_TEMP_0, 0, BattleFrontier_BattleDomeLobby_QuestTrigger
+	end
+
+BattleFrontier_BattleDomeLobby_TriggerOffLeft::
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomeLobby_Movement_MoveRight
+	goto_if_eq VAR_TEMP_0, 0, BattleFrontier_BattleDomeLobby_QuestTrigger
+	end
+
+BattleFrontier_BattleDomeLobby_TriggerOffUpR::
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomeLobby_Movement_MoveLeft
+	goto_if_eq VAR_TEMP_0, 0, BattleFrontier_BattleDomeLobby_QuestTrigger
+	end
+
+BattleFrontier_BattleDomeLobby_TriggerOffRight::
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomeLobby_Movement_MoveLeftUp
+	goto_if_eq VAR_TEMP_0, 0, BattleFrontier_BattleDomeLobby_QuestTrigger
+	end
+
+BattleFrontier_BattleDomeLobby_QuestTrigger::
+	goto_if_subquest_not_complete QUEST_FRONTIER_EXPLORER, SUB_QUEST_BATTLE_DOME, BattleFrontier_BattleDomeLobby_EventScript_Tucker
+	end
+
 BattleFrontier_BattleDomeLobby_OnResume:
 	dome_initresultstree
 	end
@@ -680,3 +719,36 @@ BattleFrontier_BattleDomeLobby_Text_ExplainDoubleKORules:
 	.string "time--a double KO--in a tournament\l"
 	.string "match, the REFEREES will review\l"
 	.string "the match and declare the winner.$"
+
+BattleFrontier_BattleDomeLobby_Movement_Approach::
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+BattleFrontier_BattleDomeLobby_Movement_WalkAway::
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+BattleFrontier_BattleDomeLobby_EventScript_Tucker::
+	lockall
+	applymovement LOCALID_TUCKER, BattleFrontier_BattleDomeLobby_Movement_Approach
+	msgbox BattleFrontier_BattleDomeLobby_Text_TuckerWelcome, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	applymovement LOCALID_TUCKER, BattleFrontier_BattleDomeLobby_Movement_WalkAway
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_TUCKER
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	completesubquest QUEST_FRONTIER_EXPLORER SUB_QUEST_BATTLE_DOME
+	end
+
+BattleFrontier_BattleDomeLobby_Text_TuckerWelcome:
+	.string "TUCKER: Ahahah! You must be the new\n"
+	.string "TRAINER that SCOTT told me about!\p"
+	.string "Welcome to the BATTLE DOME!\n"
+	.string "I'm the DOME ACE, TUCKER!\p"
+	.string "It'll be nice to battle you one day.$"
