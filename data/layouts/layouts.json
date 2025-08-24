@@ -4440,6 +4440,16 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/ResearchLab/border.bin",
       "blockdata_filepath": "data/layouts/ResearchLab/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOBILE_LAB",
+      "name": "MobileLab_Layout",
+      "width": 10,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/MobileLab/border.bin",
+      "blockdata_filepath": "data/layouts/MobileLab/map.bin"
     }
   ]
 }

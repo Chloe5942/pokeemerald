@@ -40,7 +40,7 @@ BattleFrontier_BattleDomeLobby_TriggerOffRight::
 	end
 
 BattleFrontier_BattleDomeLobby_QuestTrigger::
-	goto_if_subquest_not_complete QUEST_FRONTIER_EXPLORER, SUB_QUEST_BATTLE_DOME, BattleFrontier_BattleDomeLobby_EventScript_Tucker
+	goto_if_ne VAR_FRONTIER_EXPLORER, 0, BattleFrontier_BattleDomeLobby_EventScript_Tucker
 	end
 
 BattleFrontier_BattleDomeLobby_OnResume:
@@ -743,7 +743,7 @@ BattleFrontier_BattleDomeLobby_EventScript_Tucker::
 	removeobject LOCALID_TUCKER
 	fadescreen FADE_FROM_BLACK
 	releaseall
-	completesubquest QUEST_FRONTIER_EXPLORER SUB_QUEST_BATTLE_DOME
+	updatequest QUEST_FRONTIER_EXPLORER, VAR_FRONTIER_EXPLORER
 	end
 
 BattleFrontier_BattleDomeLobby_Text_TuckerWelcome:

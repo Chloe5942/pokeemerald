@@ -218,7 +218,6 @@ Route110_TrickHouseEntrance_EventScript_BeginChallenge::
 Route110_TrickHouseEntrance_EventScript_StartQuest::
 	goto_if_quest_complete QUEST_PUZZLE_SOLVER, Route110_TrickHouseEntrance_EventScript_Skip
 	startquest QUEST_PUZZLE_SOLVER
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_FIRST_PUZZLE
 	return
 
 Route110_TrickHouseEntrance_EventScript_Skip::

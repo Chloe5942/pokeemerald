@@ -888,3 +888,9 @@ const u16 gObjectEventPal_BeastBall[] = INCBIN_U16("graphics/object_events/pics/
 // Gen VIII
 const u16 gObjectEventPal_StrangeBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_strange.gbapal");
 #endif
+
+// Custom
+const u32 gObjectEventPic_TruckTrailer[] = INCBIN_U32("graphics/object_events/pics/misc/truck_trailer.4bpp");
+const u16 gObjectEventPal_TruckTrailer[] = INCBIN_U16("graphics/object_events/palettes/truck_trailer.gbapal");
+const u32 gObjectEventPic_TruckTrailerAlt[] = INCBIN_U32("graphics/object_events/pics/misc/truck_trailer_alt.4bpp");
+const u16 gObjectEventPal_TruckTrailerAlt[] = INCBIN_U16("graphics/object_events/palettes/truck_trailer_alt.gbapal");

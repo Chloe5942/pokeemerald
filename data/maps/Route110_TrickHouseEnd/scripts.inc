@@ -56,8 +56,7 @@ Route110_TrickHouseEnd_EventScript_TrickMaster::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle1::
-	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_FIRST_PUZZLE
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_SECOND_PUZZLE
+	updatequest QUEST_PUZZLE_SOLVER, VAR_PUZZLE_SOLVER
 	msgbox Route110_TrickHouseEnd_Text_AllNightToPlantTrees, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -70,8 +69,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle1::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle2::
-	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_SECOND_PUZZLE
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_THIRD_PUZZLE
+	updatequest QUEST_PUZZLE_SOLVER, VAR_PUZZLE_SOLVER
 	msgbox Route110_TrickHouseEnd_Text_AllNightToMakeMaze, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -84,8 +82,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle2::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle3::
-	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_THIRD_PUZZLE
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_FOURTH_PUZZLE
+	updatequest QUEST_PUZZLE_SOLVER, VAR_PUZZLE_SOLVER
 	msgbox Route110_TrickHouseEnd_Text_AllNightToPreparePanels, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -98,8 +95,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle3::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle4::
-	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_FOURTH_PUZZLE
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_FIFTH_PUZZLE
+	updatequest QUEST_PUZZLE_SOLVER, VAR_PUZZLE_SOLVER
 	msgbox Route110_TrickHouseEnd_Text_AllNightToShoveBoulders, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -112,8 +108,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle4::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle5::
-	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_FIFTH_PUZZLE
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_SIXTH_PUZZLE
+	updatequest QUEST_PUZZLE_SOLVER, VAR_PUZZLE_SOLVER
 	msgbox Route110_TrickHouseEnd_Text_AllNightToMakeMechadolls, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -126,8 +121,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle5::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle6::
-	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_SIXTH_PUZZLE
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_SEVENTH_PUZZLE
+	updatequest QUEST_PUZZLE_SOLVER, VAR_PUZZLE_SOLVER
 	msgbox Route110_TrickHouseEnd_Text_AllNightToInstallDoors, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -140,8 +134,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle6::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle7::
-	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_SEVENTH_PUZZLE
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_PUZZLE_SOLVER SUB_QUEST_EIGHTH_PUZZLE
+	updatequest QUEST_PUZZLE_SOLVER, VAR_PUZZLE_SOLVER
 	msgbox Route110_TrickHouseEnd_Text_AllNightSettingUpArrows, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
@@ -154,7 +147,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle7::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle8::
-	completesubquest QUEST_PUZZLE_SOLVER SUB_QUEST_EIGHTH_PUZZLE
+	updatequest QUEST_PUZZLE_SOLVER, VAR_PUZZLE_SOLVER
 	completequest QUEST_PUZZLE_SOLVER
 	msgbox Route110_TrickHouseEnd_Text_AllNightPolishingFloors, MSGBOX_DEFAULT
 	closemessage

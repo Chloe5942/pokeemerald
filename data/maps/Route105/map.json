@@ -133,6 +133,19 @@
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route105_EventScript_Andres",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_ABRA",
+      "x": 11,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MobileLab_EventScript_Abra",
+      "flag": "FLAG_HIDE_ABRA_ROUTE105"
     }
   ],
   "warp_events": [
@@ -152,7 +165,9 @@
       "y": 68,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_105_HEART_SCALE"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_105_HEART_SCALE",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -160,7 +175,9 @@
       "y": 56,
       "elevation": 3,
       "item": "ITEM_BIG_PEARL",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL",
+      "quantity": 0,
+      "underfoot": false
     }
   ]
 }

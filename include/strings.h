@@ -3095,7 +3095,7 @@ extern const u8 gText_RivalNextDoor_Name_FourthBattle[];
 extern const u8 gText_RivalNextDoor_Name_FifthBattle[];
 
 extern const u8 gText_ScoutingScott_Name_GradClass[];
-extern const u8 gText_ScoutingScott_Name_ClassReuin[];
+extern const u8 gText_ScoutingScott_Name_ClassReunion[];
 extern const u8 gText_ScoutingScott_Name_SlateBattles[];
 extern const u8 gText_ScoutingScott_Name_VerdanBattles[];
 extern const u8 gText_ScoutingScott_Name_FallaborBattles[];
@@ -3143,7 +3143,7 @@ extern const u8 gText_RivalNextDoor_Desc_FourthBattle[];
 extern const u8 gText_RivalNextDoor_Desc_FifthBattle[];
 
 extern const u8 gText_ScoutingScott_Desc_GradClass[];
-extern const u8 gText_ScoutingScott_Desc_ClassReuin[];
+extern const u8 gText_ScoutingScott_Desc_ClassReunion[];
 extern const u8 gText_ScoutingScott_Desc_SlateBattles[];
 extern const u8 gText_ScoutingScott_Desc_VerdanBattles[];
 extern const u8 gText_ScoutingScott_Desc_FallaborBattles[];
@@ -3168,6 +3168,7 @@ extern const u8 gText_BattleFrontier_Desc_BattlePyramid[];
 extern const u8 gText_BattleFrontier_Desc_BattleTower[];
 
 extern const u8 gText_GiganticFindings_Desc_SealedChamber[];
+extern const u8 gText_GiganticFindings_Desc_ReturnToLab[];
 extern const u8 gText_GiganticFindings_Desc_AncientTomb[];
 extern const u8 gText_GiganticFindings_Desc_DesertRuins[];
 extern const u8 gText_GiganticFindings_Desc_IslandCave[];

@@ -9,7 +9,7 @@ SealedChamber_InnerRoom_EventScript_BrailleBackWall::
 	specialvar VAR_RESULT, CheckRelicanthWailord
 	goto_if_eq VAR_RESULT, FALSE, SealedChamber_InnerRoom_EventScript_NoEffect
 	fadeoutbgm 0
-	completesubquest QUEST_GIGANTIC_FINDINGS SUB_QUEST_SEALED_DEPTHS
+	updatequest QUEST_GIGANTIC_FINDINGS, VAR_GIGANTIC_FINDINGS
 	playse SE_TRUCK_MOVE
 	special DoSealedChamberShakingEffect_Long
 	waitstate
@@ -30,6 +30,9 @@ SealedChamber_InnerRoom_EventScript_BrailleBackWall::
 	closemessage
 	fadeinbgm 0
 	setflag FLAG_REGI_DOORS_OPENED
+	clearflag FLAG_HIDE_ABRA_ROUTE105
+	clearflag FLAG_HIDE_MOBILE_LAB_ROUTE111
+	clearflag FLAG_HIDE_MOBILE_LAB_ROUTE120
 	releaseall
 	end
 

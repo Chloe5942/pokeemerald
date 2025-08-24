@@ -5643,3 +5643,11 @@ static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
     overworld_frame(gObjectEventPic_RubySapphireMayNormal, 2, 4, 7),
     overworld_frame(gObjectEventPic_RubySapphireMayNormal, 2, 4, 8),
 };
+
+static const struct SpriteFrameImage sPicTable_TruckTrailer[] = {
+    obj_frame_tiles(gObjectEventPic_TruckTrailer),
+};
+
+static const struct SpriteFrameImage sPicTable_TruckTrailerAlt[] = {
+    obj_frame_tiles(gObjectEventPic_TruckTrailerAlt),
+};

@@ -11,11 +11,13 @@ Route105_OnLoad:
 	end
 
 Route105_CloseRegiEntrance::
+	setflag FLAG_HIDE_ABRA_ROUTE105
 	setmetatile 9, 19, METATILE_General_RockWall_RockBase, TRUE
 	setmetatile 9, 20, METATILE_General_RockWall_SandBase, TRUE
 	return
 
 Route105_OnTransition:
+	setvar VAR_LAST_LOCATION, MAP_ROUTE105
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_StartKyogreWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_SOUTH, AbnormalWeather_StartKyogreWeather

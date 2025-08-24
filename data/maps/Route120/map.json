@@ -262,7 +262,7 @@
       "flag": "FLAG_HIDE_ROUTE_120_GABBY_AND_TY_1"
     },
     {
-       "local_id": "LOCALID_ROUTE120_GABBY_2",
+      "local_id": "LOCALID_ROUTE120_GABBY_2",
       "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
       "x": 36,
       "y": 5,
@@ -603,6 +603,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route120_EventScript_ItemRevive",
       "flag": "FLAG_ITEM_ROUTE_120_REVIVE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TRUCK_TRAILER_ALT",
+      "x": 2,
+      "y": 61,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MobileLab_EventScript_Interact",
+      "flag": "FLAG_HIDE_MOBILE_LAB_ROUTE120"
     }
   ],
   "warp_events": [
@@ -618,6 +631,13 @@
       "y": 23,
       "elevation": 1,
       "dest_map": "MAP_SCORCHED_SLAB",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 62,
+      "elevation": 0,
+      "dest_map": "MAP_MOBILE_LAB",
       "dest_warp_id": "0"
     }
   ],
@@ -828,7 +848,9 @@
       "y": 1,
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_1"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_1",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -836,7 +858,9 @@
       "y": 11,
       "elevation": 3,
       "item": "ITEM_REVIVE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_REVIVE"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_REVIVE",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -844,7 +868,9 @@
       "y": 86,
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_2"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_2",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -852,7 +878,9 @@
       "y": 42,
       "elevation": 3,
       "item": "ITEM_ZINC",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_ZINC"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_ZINC",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "secret_base",

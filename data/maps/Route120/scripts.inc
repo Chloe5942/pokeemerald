@@ -38,6 +38,22 @@ Route120_OnLoad:
 	end
 
 Route120_EventScript_CloseAncientTomb::
+	setflag FLAG_HIDE_MOBILE_LAB_ROUTE120
+	setmetatile 0, 60, METATILE_General_Grass, FALSE
+	setmetatile 1, 60, METATILE_General_Grass, FALSE
+	setmetatile 2, 60, METATILE_General_Grass, FALSE
+	setmetatile 3, 60, METATILE_General_Grass, FALSE
+	setmetatile 4, 60, METATILE_General_Grass, FALSE
+	setmetatile 0, 61, METATILE_General_Grass, FALSE
+	setmetatile 1, 61, METATILE_General_Grass, FALSE
+	setmetatile 2, 61, METATILE_General_Grass, FALSE
+	setmetatile 3, 61, METATILE_General_Grass, FALSE
+	setmetatile 4, 61, METATILE_General_Grass, FALSE
+	setmetatile 0, 62, METATILE_General_Grass, FALSE
+	setmetatile 1, 62, METATILE_General_Grass, FALSE
+	setmetatile 2, 62, METATILE_General_Grass, FALSE
+	setmetatile 3, 62, METATILE_General_Grass, FALSE
+	setmetatile 4, 62, METATILE_General_Grass, FALSE
 	setmetatile 7, 54, METATILE_General_RockWall_RockBase, TRUE
 	setmetatile 7, 55, METATILE_General_RockWall_SandBase, TRUE
 	return
@@ -56,6 +72,7 @@ Route120_EventScript_SetBridgeKecleonMovement::
 Route120_OnTransition:
 	call GabbyAndTy_EventScript_UpdateLocation
 	call Route120_EventScript_SetWeather
+	setvar VAR_LAST_LOCATION, MAP_ROUTE120
 	end
 
 Route120_EventScript_SetWeather::

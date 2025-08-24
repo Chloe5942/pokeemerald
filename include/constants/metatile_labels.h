@@ -201,6 +201,16 @@
 #define METATILE_Fortree_SecretBase_LongGrass_TopRight     0x27B
 #define METATILE_Fortree_SecretBase_Shrub                  0x271
 #define METATILE_Fortree_SecretBase_ShrubOpen              0x278
+#define METATILE_Fortree_TrampledGrass_BotCenter           0x269
+#define METATILE_Fortree_TrampledGrass_BotCenterWarp       0x318
+#define METATILE_Fortree_TrampledGrass_BotLeft             0x268
+#define METATILE_Fortree_TrampledGrass_BotRight            0x26A
+#define METATILE_Fortree_TrampledGrass_MidCenter           0x261
+#define METATILE_Fortree_TrampledGrass_MidLeft             0x260
+#define METATILE_Fortree_TrampledGrass_MidRight            0x262
+#define METATILE_Fortree_TrampledGrass_TopCenter           0x259
+#define METATILE_Fortree_TrampledGrass_TopLeft             0x258
+#define METATILE_Fortree_TrampledGrass_TopRight            0x25A
 #define METATILE_Fortree_WoodBridge1_Bottom                0x29F
 #define METATILE_Fortree_WoodBridge1_Top                   0x297
 
@@ -297,6 +307,8 @@
 #define METATILE_LilycoveMuseum_Painting4_Right  0x263
 
 // gTileset_Mauville
+#define METATILE_Mauville_DeepSand_BotLeft    0x258
+#define METATILE_Mauville_DeepSand_BotRight   0x25A
 #define METATILE_Mauville_DeepSand_BottomMid  0x259
 #define METATILE_Mauville_DeepSand_Center     0x251
 #define METATILE_Mauville_Door                0x2AC
@@ -321,6 +333,7 @@
 #define METATILE_Mauville_MirageTower_TileD   0x3DC
 #define METATILE_Mauville_MirageTower_TileE   0x3DD
 #define METATILE_Mauville_MirageTower_TileF   0x3E3
+#define METATILE_Mauville_SandPit_Warp        0x38E
 
 // gTileset_MauvilleGym
 #define METATILE_MauvilleGym_FloorTile        0x21A

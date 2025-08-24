@@ -35,6 +35,7 @@
 #include "pokemon_icon.h"
 
 #include "random.h"
+#include "complex_quests.h"
 
 #define tPageItems      data[4]
 #define tItemPcParam    data[6]
@@ -143,6 +144,8 @@ static void PrintQuestLocation(s32 questId);
 static void GenerateQuestFlavorText(s32 questId);
 static void UpdateQuestFlavorText(s32 questId);
 static void PrintQuestFlavorText(s32 questId);
+static const u8 *GetQuestDesc(s32 questId);
+static const u8 *GetQuestLocation(s32 questId);
 
 static bool8 IsQuestUnlocked(s32 questId);
 static bool8 IsQuestActiveState(s32 questId);
@@ -155,6 +158,8 @@ static void DetermineSpriteType(s32 questId);
 static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType);
 static void ResetSpriteState(void);
 static void QuestMenu_DestroySprite(u8 idx);
+static u32 GetQuestSprite(s32 questId);
+static u32 GetQuestSpriteType(s32 questId);
 
 static void GenerateStateAndPrint(u8 windowId, u32 itemId, u8 y);
 static u8 GenerateSubquestState(u8 questId);
@@ -235,6 +240,19 @@ static const u8 sText_AZ[] = _(" A-Z");
 
 //Declaration of subquest structures. Edits to subquests are made here.
 #define sub_quest(i, n, d, m, s, st, t) {.id = i, .name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
+static const struct SubQuest sRivalNextDoor[QUEST_DUMMY_SUB_COUNT] =
+{
+	sub_quest(
+	      0,
+	      gText_RivalNextDoor_Name_FirstBattle,
+	      gText_RivalNextDoor_Desc_FirstBattle,
+	      gText_SideQuestMap_Route103,
+		  ITEM_ORAN_BERRY,
+	      ITEM,
+	      sText_Found
+	)
+};
+/*
 static const struct SubQuest sRivalNextDoor[QUEST_RIVAL_NEXT_DOOR_SUB_COUNT] =
 {
 	sub_quest(
@@ -297,8 +315,8 @@ static const struct SubQuest sScoutingScott[QUEST_SCOUTING_SCOTT_SUB_COUNT] =
 	),
 	sub_quest(
 	      6,
-	      gText_ScoutingScott_Name_ClassReuin,
-	      gText_ScoutingScott_Desc_ClassReuin,
+	      gText_ScoutingScott_Name_ClassReunion,
+	      gText_ScoutingScott_Desc_ClassReunion,
 	      gText_SideQuestMap_Rustboro,
 	      OBJ_EVENT_GFX_SCOTT,
 	      OBJECT,
@@ -632,7 +650,7 @@ static const struct SubQuest sSeafarer[QUEST_SEAFARER_SUB_COUNT] =
 	      sText_Found
 	),
 };
-
+*/
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -643,126 +661,358 @@ static const struct SubQuest sSeafarer[QUEST_SEAFARER_SUB_COUNT] =
 #define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
-	side_quest(
-	      gText_SideQuestName_RivalNextDoor,
-	      gText_SideQuestDesc_RivalNextDoor,
-	      gText_SideQuestDoneDesc_RivalNextDoor,
-	      gText_SideQuestMap_Littleroot,
-	      ITEM_VS_SEEKER,
-	      ITEM,
-	      sRivalNextDoor,
-	      QUEST_RIVAL_NEXT_DOOR_SUB_COUNT
-	),
-	side_quest(
-	      gText_SideQuestName_ScoutingScott,
-	      gText_SideQuestDesc_ScoutingScott,
-	      gText_SideQuestDoneDesc_ScoutingScott,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_SCOTT,
-	      OBJECT,
-	      sScoutingScott,
-	      QUEST_SCOUTING_SCOTT_SUB_COUNT
-	),
-	side_quest(
-	      gText_SideQuestName_SpecialDelivery,
-	      gText_SideQuestDesc_SpecialDelivery,
-	      gText_SideQuestDoneDesc_SpecialDelivery,
-	      gText_SideQuestMap_Rustboro,
-	      OBJ_EVENT_GFX_GENTLEMAN,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_TrendSetter,
-	      gText_SideQuestDesc_TrendSetter,
-	      gText_SideQuestDoneDesc_TrendSetter,
-	      gText_SideQuestMap_Dewford,
-	      OBJ_EVENT_GFX_BOY_1,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_PuzzleSolver,
-	      gText_SideQuestDesc_PuzzleSolver,
-	      gText_SideQuestDoneDesc_PuzzleSolver,
-	      gText_SideQuestMap_Route110,
-	      OBJ_EVENT_GFX_MAN_1,
-	      OBJECT,
-	      sPuzzleSolver,
-	      QUEST_PUZZLE_SOLVER_SUB_COUNT
-	),
-	side_quest(
-	      gText_SideQuestName_MailRun,
-	      gText_SideQuestDesc_MailRun,
-	      gText_SideQuestDoneDesc_MailRun,
-	      gText_SideQuestMap_Mauville,
-	      ITEM_HARBOR_MAIL,
-	      ITEM,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_CoinCollector,
-	      gText_SideQuestDesc_CoinCollector,
-	      gText_SideQuestDoneDesc_CoinCollector,
-	      gText_SideQuestMap_Mauville,
-	      OBJ_EVENT_GFX_PSYCHIC_M,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_ContestStar,
-	      gText_SideQuestDesc_ContestStar,
-	      gText_SideQuestDoneDesc_ContestStar,
-	      gText_SideQuestMap_Lilycove,
-	      ITEM_POKEBLOCK_CASE,
-	      ITEM,
-	      sContestStar,
-	      QUEST_CONTEST_STAR_SUB_COUNT
-	),
-	side_quest(
-	      gText_SideQuestName_Welcome,
-	      gText_SideQuestDesc_Welcome,
-	      gText_SideQuestDoneDesc_Welcome,
-	      gText_SideQuestMap_BattleFrontier,
-	      OBJ_EVENT_GFX_SCOTT,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_Explorer,
-	      gText_SideQuestDesc_Explorer,
-	      gText_SideQuestDoneDesc_Explorer,
-	      gText_SideQuestMap_BattleFrontier,
-	      OBJ_EVENT_GFX_SCOTT,
-	      OBJECT,
-	      sFrontierExplorer,
-	      QUEST_FRONTIER_EXPLORER_SUB_COUNT
-	),
-	side_quest(
-	      gText_SideQuestName_GiganticFindings,
-	      gText_SideQuestDesc_GiganticFindings,
-	      gText_SideQuestDoneDesc_GiganticFindings,
-	      gText_SideQuestMap_Route134,
-	      OBJ_EVENT_GFX_MAN_2,
-	      OBJECT,
-	      sGiganticFindings,
-	      QUEST_GIGANTIC_FINDINGS_SUB_COUNT
-	),
-	side_quest(
-	      gText_SideQuestName_Seafarer,
-	      gText_SideQuestDesc_Seafarer,
-	      gText_SideQuestDoneDesc_Seafarer,
-	      gText_SideQuestMap_Hoenn,
-	      OBJ_EVENT_GFX_SAILOR,
-	      OBJECT,
-	      sSeafarer,
-	      QUEST_SEAFARER_SUB_COUNT
-	),
+	[QUEST_RIVAL_NEXT_DOOR] =
+	{
+	    .name = gText_SideQuestName_RivalNextDoor,
+	    .desc = {
+			gText_RivalNextDoor_Desc_FirstBattle,
+			gText_RivalNextDoor_Desc_SecondBattle,
+			gText_RivalNextDoor_Desc_ThirdBattle,
+			gText_RivalNextDoor_Desc_FourthBattle,
+			gText_RivalNextDoor_Desc_FifthBattle
+		},
+	    .donedesc = gText_SideQuestDoneDesc_RivalNextDoor,
+	    .map = {
+			gText_SideQuestMap_Route103,
+			gText_SideQuestMap_Rust104,
+			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Route119,
+			gText_SideQuestMap_Lilycove
+		},
+	    .sprite = {
+			ITEM_ORAN_BERRY,
+			ITEM_GREAT_BALL,
+			ITEM_ITEMFINDER,
+			ITEM_HM_FLY,
+			ITEM_ULTRA_BALL
+		},
+	    .spritetype = {
+			ITEM,
+			ITEM,
+			ITEM,
+			ITEM,
+			ITEM
+		},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = VAR_RIVAL_NEXT_DOOR,
+	},
+	[QUEST_SCOUTING_SCOTT] =
+	{
+	    .name = gText_SideQuestName_ScoutingScott,
+	    .desc = {
+			gText_ScoutingScott_Desc_GradClass,
+			gText_ScoutingScott_Desc_ClassReunion,
+			gText_ScoutingScott_Desc_SlateBattles,
+			gText_ScoutingScott_Desc_VerdanBattles,
+			gText_ScoutingScott_Desc_FallaborBattles,
+			gText_ScoutingScott_Desc_LilyVaca,
+			gText_ScoutingScott_Desc_StarGazer,
+			gText_ScoutingScott_Desc_ChampRoad
+		},
+	    .donedesc = gText_SideQuestDoneDesc_ScoutingScott,
+	    .map = {
+			gText_SideQuestMap_Rustboro,
+			gText_SideQuestMap_Rustboro,
+			gText_SideQuestMap_Slateport,
+			gText_SideQuestMap_Verdanturf,
+			gText_SideQuestMap_Fallabor,
+			gText_SideQuestMap_Lilycove,
+			gText_SideQuestMap_Mossdeep,
+			gText_SideQuestMap_EverGrande
+		},
+	    .sprite = {
+			OBJ_EVENT_GFX_SCOTT,
+			OBJ_EVENT_GFX_SCOTT,
+			OBJ_EVENT_GFX_SCOTT,
+			OBJ_EVENT_GFX_SCOTT,
+			OBJ_EVENT_GFX_SCOTT,
+			OBJ_EVENT_GFX_SCOTT,
+			OBJ_EVENT_GFX_SCOTT,
+			OBJ_EVENT_GFX_SCOTT
+		},
+	    .spritetype = {
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT
+		},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = VAR_SCOUTING_SCOTT,
+	},
+	[QUEST_SPECIAL_DELIVERY] =
+	{
+	    .name = gText_SideQuestName_SpecialDelivery,
+	    .desc = {gText_SideQuestDesc_SpecialDelivery},
+	    .donedesc = gText_SideQuestDoneDesc_SpecialDelivery,
+	    .map = {gText_SideQuestMap_Rustboro},
+	    .sprite = {OBJ_EVENT_GFX_GENTLEMAN},
+	    .spritetype = {OBJECT},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = 0,
+	},
+	[QUEST_TREND_SETTER] =
+	{
+	    .name = gText_SideQuestName_TrendSetter,
+	    .desc = {gText_SideQuestDesc_TrendSetter},
+	    .donedesc = gText_SideQuestDoneDesc_TrendSetter,
+	    .map = {gText_SideQuestMap_Dewford},
+	    .sprite = {OBJ_EVENT_GFX_BOY_1},
+	    .spritetype = {OBJECT},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = 0,
+	},
+	[QUEST_PUZZLE_SOLVER] =
+	{
+	    .name = gText_SideQuestName_PuzzleSolver,
+	    .desc = {
+			gText_SideQuestDesc_PuzzleSolver,
+			gText_SideQuestDesc_PuzzleSolver,
+			gText_SideQuestDesc_PuzzleSolver,
+			gText_SideQuestDesc_PuzzleSolver,
+			gText_SideQuestDesc_PuzzleSolver,
+			gText_SideQuestDesc_PuzzleSolver,
+			gText_SideQuestDesc_PuzzleSolver,
+			gText_SideQuestDesc_PuzzleSolver
+		},
+	    .donedesc = gText_SideQuestDoneDesc_PuzzleSolver,
+	    .map = {
+			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Route110
+		},
+	    .sprite = {
+			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_MAN_1
+		},
+	    .spritetype = {
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT
+		},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = VAR_PUZZLE_SOLVER,
+	},
+	[QUEST_MAIL_RUN] =
+	{
+	    .name = gText_SideQuestName_MailRun,
+	    .desc = {gText_SideQuestDesc_MailRun},
+	    .donedesc = gText_SideQuestDoneDesc_MailRun,
+	    .map = {gText_SideQuestMap_Mauville},
+	    .sprite = {ITEM_HARBOR_MAIL},
+	    .spritetype = {ITEM},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = 0,
+	},
+	[QUEST_COIN_COLLECTOR] =
+	{
+	    .name = gText_SideQuestName_CoinCollector,
+	    .desc = {gText_SideQuestDesc_CoinCollector},
+	    .donedesc = gText_SideQuestDoneDesc_CoinCollector,
+	    .map = {gText_SideQuestMap_Mauville},
+	    .sprite = {OBJ_EVENT_GFX_PSYCHIC_M},
+	    .spritetype = {OBJECT},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = 0,
+	},
+	[QUEST_CONTEST_STAR] =
+	{
+	    .name = gText_SideQuestName_ContestStar,
+	    .desc = {
+			gText_ContestStar_Desc_Cool,
+			gText_ContestStar_Desc_Cute,
+			gText_ContestStar_Desc_Beauty,
+			gText_ContestStar_Desc_Smart,
+			gText_ContestStar_Desc_Tough
+		},
+	    .donedesc = gText_SideQuestDoneDesc_ContestStar,
+	    .map = {
+			gText_SideQuestMap_Lilycove,
+			gText_SideQuestMap_Lilycove,
+			gText_SideQuestMap_Lilycove,
+			gText_SideQuestMap_Lilycove,
+			gText_SideQuestMap_Lilycove
+		},
+	    .sprite = {
+			ITEM_RED_SCARF,
+			ITEM_PINK_SCARF,
+			ITEM_BLUE_SCARF,
+			ITEM_GREEN_SCARF,
+			ITEM_YELLOW_SCARF
+		},
+	    .spritetype = {
+			ITEM,
+			ITEM,
+			ITEM,
+			ITEM,
+			ITEM
+		},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = VAR_CONTEST_STAR,
+	},
+	[QUEST_FRONTIER_WELCOME] =
+	{
+	    .name = gText_SideQuestName_Welcome,
+	    .desc = {gText_SideQuestDesc_Welcome},
+	    .donedesc = gText_SideQuestDoneDesc_Welcome,
+	    .map = {gText_SideQuestMap_BattleFrontier},
+	    .sprite = {OBJ_EVENT_GFX_SCOTT},
+	    .spritetype = {OBJECT},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = 0,
+	},
+	[QUEST_FRONTIER_EXPLORER] =
+	{
+	    .name = gText_SideQuestName_Explorer,
+	    .desc = {
+			gText_BattleFrontier_Desc_BattleFactory,
+			gText_BattleFrontier_Desc_BattleArena,
+			gText_BattleFrontier_Desc_BattleDome,
+			gText_BattleFrontier_Desc_BattlePike,
+			gText_BattleFrontier_Desc_BattlePalace,
+			gText_BattleFrontier_Desc_BattlePyramid,
+			gText_BattleFrontier_Desc_BattleTower
+		},
+	    .donedesc = gText_SideQuestDoneDesc_Explorer,
+	    .map = {
+			gText_SideQuestMap_BattleFrontier,
+			gText_SideQuestMap_BattleFrontier,
+			gText_SideQuestMap_BattleFrontier,
+			gText_SideQuestMap_BattleFrontier,
+			gText_SideQuestMap_BattleFrontier,
+			gText_SideQuestMap_BattleFrontier,
+			gText_SideQuestMap_BattleFrontier
+		},
+	    .sprite = {
+			OBJ_EVENT_GFX_NOLAND,
+			OBJ_EVENT_GFX_GRETA,
+			OBJ_EVENT_GFX_TUCKER,
+			OBJ_EVENT_GFX_LUCY,
+			OBJ_EVENT_GFX_SPENSER,
+			OBJ_EVENT_GFX_BRANDON,
+			OBJ_EVENT_GFX_ANABEL
+		},
+	    .spritetype = {
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT
+		},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = VAR_FRONTIER_EXPLORER,
+	},
+	[QUEST_GIGANTIC_FINDINGS] =
+	{
+	    .name = gText_SideQuestName_GiganticFindings,
+	    .desc = {
+			gText_GiganticFindings_Desc_SealedChamber,
+			gText_GiganticFindings_Desc_ReturnToLab,
+			gText_GiganticFindings_Desc_DesertRuins,
+			gText_GiganticFindings_Desc_ReturnToLab,
+			gText_GiganticFindings_Desc_IslandCave,
+			gText_GiganticFindings_Desc_ReturnToLab,
+			gText_GiganticFindings_Desc_AncientTomb,
+			gText_GiganticFindings_Desc_ReturnToLab
+		},
+	    .donedesc = gText_SideQuestDoneDesc_GiganticFindings,
+	    .map = {
+			gText_SideQuestMap_Route134,
+			gText_SideQuestMap_Route134,
+			gText_SideQuestMap_DesertRuins,
+			gText_SideQuestMap_Route134,
+			gText_SideQuestMap_IslandCave,
+			gText_SideQuestMap_Route134,
+			gText_SideQuestMap_AncientTomb,
+			gText_SideQuestMap_Route134
+		},
+	    .sprite = {
+			OBJ_EVENT_GFX_MAN_2,
+			OBJ_EVENT_GFX_MAN_2,
+			SPECIES_REGIROCK,
+			OBJ_EVENT_GFX_MAN_2,
+			SPECIES_REGICE,
+			OBJ_EVENT_GFX_MAN_2,
+			SPECIES_REGISTEEL,
+			OBJ_EVENT_GFX_MAN_2
+		},
+	    .spritetype = {
+			OBJECT,
+			OBJECT,
+			PKMN,
+			OBJECT,
+			PKMN,
+			OBJECT,
+			PKMN,
+			OBJECT
+		},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = VAR_GIGANTIC_FINDINGS,
+	},
+	[QUEST_SEAFARER] =
+	{
+	    .name = gText_SideQuestName_Seafarer,
+	    .desc = {
+			gText_Seafarer_Desc_BirthIsland,
+			gText_Seafarer_Desc_SouthernIsland,
+			gText_Seafarer_Desc_NavalRock,
+			gText_Seafarer_Desc_FarawayIsland
+		},
+	    .donedesc = gText_SideQuestDoneDesc_Seafarer,
+	    .map = {
+			gText_SideQuestMap_Hoenn,
+			gText_SideQuestMap_Hoenn,
+			gText_SideQuestMap_Hoenn,
+			gText_SideQuestMap_Hoenn
+		},
+	    .sprite = {
+			ITEM_AURORA_TICKET,
+			ITEM_EON_TICKET,
+			ITEM_MYSTIC_TICKET,
+			ITEM_OLD_SEA_MAP
+		},
+	    .spritetype = {
+			ITEM,
+			ITEM,
+			ITEM,
+			ITEM
+		},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = VAR_SEAFARER,
+	},
 };
 ////////////////////////END QUEST CUSTOMIZATION////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -1907,7 +2157,7 @@ void GenerateQuestLocation(s32 questId)
 {
 	if (!IsSubquestMode())
 	{
-		StringCopy(gStringVar2, sSideQuests[questId].map);
+		StringCopy(gStringVar2, GetQuestLocation(questId));
 	}
 	else
 	{
@@ -1961,13 +2211,34 @@ void GenerateQuestFlavorText(s32 questId)
 }
 void UpdateQuestFlavorText(s32 questId)
 {
-	StringCopy(gStringVar1, sSideQuests[questId].desc);
+	StringExpandPlaceholders(gStringVar1, GetQuestDesc(questId));
 }
 void PrintQuestFlavorText(s32 questId)
 {
 	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 40, 19, 5, 0, 0,
 	                                      4);
 }
+
+static const u8 *GetQuestLocation(s32 questId)
+{
+	u32 qvar = VarGet(sSideQuests[questId].questVariable);
+	
+	if (sSideQuests[questId].map[qvar] == NULL)
+		qvar = 0;
+
+	return sSideQuests[questId].map[qvar];
+}
+
+static const u8 *GetQuestDesc(s32 questId)
+{
+	u32 qvar = VarGet(sSideQuests[questId].questVariable);
+	
+	if (sSideQuests[questId].desc[qvar] == NULL)
+		qvar = 0;
+
+	return sSideQuests[questId].desc[qvar];
+}
+
 
 bool8 IsSubquestCompletedState(s32 questId)
 {
@@ -2049,8 +2320,8 @@ void DetermineSpriteType(s32 questId)
 
 	if (IsSubquestMode() == FALSE)
 	{
-		spriteId = sSideQuests[questId].sprite;
-		spriteType = sSideQuests[questId].spritetype;
+		spriteId = GetQuestSprite(questId);
+		spriteType = GetQuestSpriteType(questId);
 
 		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot,
 		                       spriteType);
@@ -2071,6 +2342,7 @@ void DetermineSpriteType(s32 questId)
 	QuestMenu_DestroySprite(sStateDataPtr->spriteIconSlot ^ 1);
 	sStateDataPtr->spriteIconSlot ^= 1;
 }
+
 static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 {
 	u8 *ptr = &sItemMenuIconSpriteIds[10];
@@ -2143,6 +2415,26 @@ static void QuestMenu_DestroySprite(u8 idx)
 			}
 		}
 	}
+}
+
+static u32 GetQuestSprite(s32 questId)
+{
+	u32 qvar = VarGet(sSideQuests[questId].questVariable);
+	
+	if (sSideQuests[questId].sprite[qvar] == 0)
+		qvar = 0;
+
+	return sSideQuests[questId].sprite[qvar];
+}
+
+static u32 GetQuestSpriteType(s32 questId)
+{
+	u32 qvar = VarGet(sSideQuests[questId].questVariable);
+	
+	if (sSideQuests[questId].spritetype[qvar] == 0)
+		qvar = 0;
+
+	return sSideQuests[questId].spritetype[qvar];
 }
 static void GenerateStateAndPrint(u8 windowId, u32 questId,
                                   u8 y)

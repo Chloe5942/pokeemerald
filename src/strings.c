@@ -1891,6 +1891,7 @@ const u8 gText_TMCase_Blue[] =          _("{COLOR_HIGHLIGHT_SHADOW BLUE TRANSPAR
 const u8 gText_QuestAnnounce[] = _("The quest '{STR_VAR_1}'\nis now {STR_VAR_2}.");
 const u8 gText_QuestComplete[] =_("Complete");
 const u8 gText_QuestActive[] =_("Active");
+const u8 gText_QuestUpdate[] = _("The quest '{STR_VAR_1}'\nhas been updated!");
 
 //names
 const u8 gText_SideQuestName_RivalNextDoor[] = _("Rival Next Door");
@@ -1912,7 +1913,7 @@ const u8 gText_SideQuestDesc_RivalNextDoor[] = _("Find your neighbor around Hoen
 const u8 gText_SideQuestDesc_ScoutingScott[] = _("Find SCOTT around Hoenn!");
 const u8 gText_SideQuestDesc_SpecialDelivery[] = _("Find MR. STONE's son, STEVEN\nsomewhere near DEWFORD TOWN\nand deliver his LETTER.");
 const u8 gText_SideQuestDesc_TrendSetter[] = _("Start a new trend in DEWFORD TOWN.");
-const u8 gText_SideQuestDesc_PuzzleSolver[] = _("Slove all of the\nTRICK MASTER's puzzles.");
+const u8 gText_SideQuestDesc_PuzzleSolver[] = _("Solve all of the\nTRICK MASTER's puzzles.");
 const u8 gText_SideQuestDesc_MailRun[] = _("Bring the woman a HARBOR MAIL.\nThey can be found in SLATEPORT CITY.");
 const u8 gText_SideQuestDesc_CoinCollector[] = _("Collect at least 2000 COINS!");
 const u8 gText_SideQuestDesc_ContestStar[] = _("Compete in all types of Contests!");
@@ -1967,7 +1968,7 @@ const u8 gText_RivalNextDoor_Name_FourthBattle[] = _("4th Battle - In the Rain")
 const u8 gText_RivalNextDoor_Name_FifthBattle[] = _("5th Battle - Final Showdown");
 
 const u8 gText_ScoutingScott_Name_GradClass[] = _("Graduating Class");
-const u8 gText_ScoutingScott_Name_ClassReuin[] = _("Class Reunion");
+const u8 gText_ScoutingScott_Name_ClassReunion[] = _("Class Reunion");
 const u8 gText_ScoutingScott_Name_SlateBattles[] = _("Slateport Battles");
 const u8 gText_ScoutingScott_Name_VerdanBattles[] = _("Verdanturf Battles");
 const u8 gText_ScoutingScott_Name_FallaborBattles[] = _("Fallabor Battles");
@@ -2016,7 +2017,7 @@ const u8 gText_RivalNextDoor_Desc_FourthBattle[] = _("Battle your rival on ROUTE
 const u8 gText_RivalNextDoor_Desc_FifthBattle[] = _("Battle your rival in LILYCOVE CITY!");
 
 const u8 gText_ScoutingScott_Desc_GradClass[] = _("Find SCOTT in RUSTBURO CITY\nbefore challenging the GYM.");
-const u8 gText_ScoutingScott_Desc_ClassReuin[] = _("Find SCOTT in RUSTBURO CITY\nbefore leaving the City.");
+const u8 gText_ScoutingScott_Desc_ClassReunion[] = _("Find SCOTT in RUSTBURO CITY\nbefore leaving the City.");
 const u8 gText_ScoutingScott_Desc_SlateBattles[] = _("Find SCOTT in SLATEPORT CITY.");
 const u8 gText_ScoutingScott_Desc_VerdanBattles[] = _("Find SCOTT in VERDANTURF TOWN\nafter getting MAUVILLE CITY's GYM BADGE.");
 const u8 gText_ScoutingScott_Desc_FallaborBattles[] = _("Find SCOTT in FALLABOR TOWN\nbefore going to METEOR FALLS.");
@@ -2041,6 +2042,7 @@ const u8 gText_BattleFrontier_Desc_BattlePyramid[] = _("Explore the Battle Pyram
 const u8 gText_BattleFrontier_Desc_BattleTower[] = _("Explore the Battle Tower.");
 
 const u8 gText_GiganticFindings_Desc_SealedChamber[] = _("Find the SEALED CHAMBER.");
+const u8 gText_GiganticFindings_Desc_ReturnToLab[] = _("Return to the RESEARCH LAB.");
 const u8 gText_GiganticFindings_Desc_DesertRuins[] = _("Find the DEAERT RUINS.");
 const u8 gText_GiganticFindings_Desc_IslandCave[] = _("Find the ISLAND CAVE.");
 const u8 gText_GiganticFindings_Desc_AncientTomb[] = _("Find the ANCIENT TOMB.");

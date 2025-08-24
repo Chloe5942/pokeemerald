@@ -11,6 +11,18 @@ Route111_OnLoad:
 	end
 
 Route111_EventScript_CloseDesertRuins::
+	setflag FLAG_HIDE_MOBILE_LAB_ROUTE111
+	setmetatile 31, 88, METATILE_General_SandPit_Center, FALSE
+	setmetatile 32, 88, METATILE_General_SandPit_Center, FALSE
+	setmetatile 33, 88, METATILE_Mauville_DeepSand_BotLeft, FALSE
+	setmetatile 34, 88, METATILE_Mauville_DeepSand_Center, FALSE
+	setmetatile 35, 88, METATILE_Mauville_DeepSand_Center, FALSE
+	setmetatile 31, 89, METATILE_General_SandPit_Center, FALSE
+	setmetatile 32, 89, METATILE_General_SandPit_Center, FALSE
+	setmetatile 33, 89, METATILE_General_SandPit_Center, FALSE
+	setmetatile 34, 89, METATILE_Mauville_DeepSand_BotLeft, FALSE
+	setmetatile 35, 89, METATILE_Mauville_DeepSand_BotRight, FALSE
+	setmetatile 34, 90, METATILE_General_SandPit_Center, FALSE
 	setmetatile 29, 86, METATILE_General_RockWall_RockBase, TRUE
 	setmetatile 29, 87, METATILE_General_RockWall_SandBase, TRUE
 	return
@@ -39,6 +51,7 @@ Route111_EventScript_ShowTemporaryMirageTower::
 
 Route111_OnTransition:
 	setvar VAR_TRAINER_HILL_IS_ACTIVE, 0
+	setvar VAR_LAST_LOCATION, MAP_ROUTE111
 	special SetMirageTowerVisibility
 	call_if_unset FLAG_MIRAGE_TOWER_VISIBLE, Route111_EventScript_SetLayoutNoMirageTower
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_SetFallingPlayerGfx

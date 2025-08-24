@@ -246,3 +246,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall = {TAG_NO
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower = {TAG_NONE, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_Togetic, gDummySpriteAffineAnimTable};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight = {TAG_NONE, OBJ_EVENT_PAL_TAG_LIGHT, OBJ_EVENT_PAL_TAG_LIGHT_2, 512, 32, 32, 2, SHADOW_SIZE_NONE, TRUE, FALSE, TRACKS_NONE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Inanimate, gFieldEffectObjectPicTable_BallLight, gDummySpriteAffineAnimTable};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TruckTrailer = {TAG_NONE, OBJ_EVENT_PAL_TAG_TRUCK_TRAILER, OBJ_EVENT_PAL_TAG_NONE, 1920, 96, 64, 10, SHADOW_SIZE_L, FALSE, FALSE, TRACKS_NONE, &gObjectEventBaseOam_8x8, sOamTables_96x64, sAnimTable_Standard, sPicTable_TruckTrailer, gDummySpriteAffineAnimTable};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TruckTrailerAlt = {TAG_NONE, OBJ_EVENT_PAL_TAG_TRUCK_TRAILER_ALT, OBJ_EVENT_PAL_TAG_NONE, 1920, 96, 40, 10, SHADOW_SIZE_L, FALSE, FALSE, TRACKS_NONE, &gObjectEventBaseOam_8x8, sOamTables_96x40, sAnimTable_Standard, sPicTable_TruckTrailerAlt, gDummySpriteAffineAnimTable};

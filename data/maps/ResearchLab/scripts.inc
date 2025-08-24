@@ -64,7 +64,7 @@ ResearchLab_EventScript_Machine2_Scientist2::
 	end
 
 ResearchLab_EventScript_PC_Scientist1::
-	goto_if_subquest_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchLab_EventScript_PC_Scientist1_DecoderUse
+	goto_if_ge VAR_GIGANTIC_FINDINGS, 1, ResearchLab_EventScript_PC_Scientist1_DecoderUse
 	lock
 	faceplayer
 	msgbox ResearchLab_Text_Pc_Work1, MSGBOX_DEFAULT
@@ -73,7 +73,7 @@ ResearchLab_EventScript_PC_Scientist1::
 	end
 
 ResearchLab_EventScript_PC_Scientist1_Decoder::
-	goto_if_subquest_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchLab_EventScript_PC_Scientist1_DecoderUse
+	goto_if_ge VAR_GIGANTIC_FINDINGS, 1, ResearchLab_EventScript_PC_Scientist1_DecoderUse
 	lock
 	faceplayer
 	msgbox ResearchLab_Text_Pc_GiveDecoder, MSGBOX_DEFAULT
@@ -115,7 +115,6 @@ ResearchLab_EventScript_StartHelping::
 	waitmessage
 	closemessage
 	startquest QUEST_GIGANTIC_FINDINGS
-	subquestmenu QUEST_MENU_SET_ACTIVE, QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS
 	release
 	end
 
@@ -126,6 +125,9 @@ ResearchLab_EventScript_Progress::
 	waitmessage
 	closemessage
 	call_if_unset FLAG_RETURNED_SEALED_CHAMBER, ResearchLab_Quest_SealedChamber_State
+	call_if_ne VAR_GIGANTIC_FINDINGS, 3, ResearchLab_Quest_FieldLab_State
+	call_if_ne VAR_GIGANTIC_FINDINGS, 5, ResearchLab_Quest_FieldLab_State
+	call_if_ne VAR_GIGANTIC_FINDINGS, 7, ResearchLab_Quest_FieldLab_State
 	special ChoosePartyMon
 	waitstate
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, ResearchLab_Quest_NotingSelected
@@ -143,9 +145,42 @@ ResearchLab_Quest_NotRight::
 	end
 
 ResearchLab_Quest_SealedChamber_State::
-	goto_if_subquest_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchLab_Quest_SealedChamber_Seen
-	goto_if_subquest_not_complete QUEST_GIGANTIC_FINDINGS, SUB_QUEST_SEALED_DEPTHS, ResearchLab_Quest_SealedChamber_Unseen
+	goto_if_ge VAR_GIGANTIC_FINDINGS, 1, ResearchLab_Quest_SealedChamber_Seen
+	goto_if_lt VAR_GIGANTIC_FINDINGS, 1, ResearchLab_Quest_SealedChamber_Unseen
 	return
+
+ResearchLab_Quest_FieldLab_State::
+	goto_if_eq VAR_GIGANTIC_FINDINGS, 2, ResearchLab_Quest_DesertRuins_HaventBeen
+	goto_if_eq VAR_GIGANTIC_FINDINGS, 4, ResearchLab_Quest_IslandCave_HaventBeen
+	goto_if_eq VAR_GIGANTIC_FINDINGS, 6, ResearchLab_Quest_AncientTomb_HaventBeen
+	return
+
+ResearchLab_Quest_DesertRuins_HaventBeen::
+	lock
+	faceplayer
+	msgbox ResearchLab_Text_HaventGoneDR, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	release
+	end
+
+ResearchLab_Quest_IslandCave_HaventBeen::
+	lock
+	faceplayer
+	msgbox ResearchLab_Text_HaventGoneIC, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	release
+	end
+
+ResearchLab_Quest_AncientTomb_HaventBeen::
+	lock
+	faceplayer
+	msgbox ResearchLab_Text_HaventGoneAT, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	release
+	end
 
 ResearchLab_Quest_SealedChamber_Unseen::
 	lock
@@ -169,13 +204,12 @@ ResearchLab_Quest_SealedChamber_Seen::
 	waitmessage
 	closemessage
 	setflag FLAG_RETURNED_SEALED_CHAMBER
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_GIGANTIC_FINDINGS SUB_QUEST_RUINS_IN_THE_SANDS
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_GIGANTIC_FINDINGS SUB_QUEST_CAVE_OF_SOLITUDE
-	subquestmenu QUEST_MENU_SET_ACTIVE QUEST_GIGANTIC_FINDINGS SUB_QUEST_TOMB_OF_THE_ANCIENTS
+	updatequest QUEST_GIGANTIC_FINDINGS, VAR_GIGANTIC_FINDINGS
 	release
 	end
 
 ResearchLab_Quest_DesertRuins::
+	goto_if_ne VAR_GIGANTIC_FINDINGS, 3, ResearchLab_Quest_NotRight
 	lock
 	faceplayer
 	bufferspeciesname STR_VAR_1, SPECIES_REGIROCK
@@ -186,11 +220,12 @@ ResearchLab_Quest_DesertRuins::
 	msgbox ResearchLab_Text_ThatPokemon, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	completesubquest QUEST_GIGANTIC_FINDINGS SUB_QUEST_RUINS_IN_THE_SANDS
+	updatequest QUEST_GIGANTIC_FINDINGS, VAR_GIGANTIC_FINDINGS
 	release
 	end
 
 ResearchLab_Quest_IslandCave::
+	goto_if_ne VAR_GIGANTIC_FINDINGS, 5, ResearchLab_Quest_NotRight
 	lock
 	faceplayer
 	bufferspeciesname STR_VAR_1, SPECIES_REGICE
@@ -201,11 +236,12 @@ ResearchLab_Quest_IslandCave::
 	msgbox ResearchLab_Text_ThatPokemon, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	completesubquest QUEST_GIGANTIC_FINDINGS SUB_QUEST_CAVE_OF_SOLITUDE
+	updatequest QUEST_GIGANTIC_FINDINGS, VAR_GIGANTIC_FINDINGS
 	release
 	end
 
 ResearchLab_Quest_AncientTomb::
+	goto_if_ne VAR_GIGANTIC_FINDINGS, 7, ResearchLab_Quest_NotRight
 	lock
 	faceplayer
 	bufferspeciesname STR_VAR_1, SPECIES_REGISTEEL
@@ -216,7 +252,11 @@ ResearchLab_Quest_AncientTomb::
 	msgbox ResearchLab_Text_ThatPokemon, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	completesubquest QUEST_GIGANTIC_FINDINGS SUB_QUEST_TOMB_OF_THE_ANCIENTS
+	updatequest QUEST_GIGANTIC_FINDINGS, VAR_GIGANTIC_FINDINGS
+	completequest QUEST_GIGANTIC_FINDINGS
+	setflag FLAG_HIDE_ABRA_ROUTE105
+	setflag FLAG_HIDE_MOBILE_LAB_ROUTE111
+	setflag FLAG_HIDE_MOBILE_LAB_ROUTE120
 	release
 	end
 
@@ -302,7 +342,7 @@ ResearchLab_Text_HowsLooking:
 	.string "Got anything to share?$"
 
 ResearchLab_Text_HaventGone:
-	.string "{PLAYER}, you haven't been to the\n"
+	.string "{PLAYER}, you haven't gone to the\n"
 	.string "SEALED CHAMBER yet?$"
 
 ResearchLab_Text_YoureBack:
@@ -343,3 +383,15 @@ ResearchLab_Text_NothingToShow:
 
 ResearchLab_Text_NotRight:
 	.string "{PLAYER}, this isn't the right POKéMON.$"
+
+ResearchLab_Text_HaventGoneDR:
+	.string "{PLAYER}, you haven't gone to the\n"
+	.string "DESERT RUINS yet?$"
+
+ResearchLab_Text_HaventGoneIC:
+	.string "{PLAYER}, you haven't gone to the\n"
+	.string "ISLAND CAVE yet?$"
+
+ResearchLab_Text_HaventGoneAT:
+	.string "{PLAYER}, you haven't gone to the\n"
+	.string "ANCIENT TOMB yet?$"

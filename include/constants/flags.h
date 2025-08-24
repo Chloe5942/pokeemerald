@@ -42,19 +42,19 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_INSURANCE	                 0x20 // Blackjack Insurance Flag
-#define FLAG_RESET_BJ	                 0x21 // Blackjack Reset Flag
-#define FLAG_BLACKJACK	                 0x22 // Blackjack In Play Flag
-#define FLAG_SHINY_CREATION              0x23 // Force Shiny Flag
-#define FLAG_HIDE_BAD_LUCK_MAN           0x24 // Mauville City Bad Luck Man Flag
-#define FLAG_RECIEVED_BRAILLE_DECODER    0x25 // Recieved Braille Decoder Flag
-#define FLAG_RETURNED_SEALED_CHAMBER     0x26 // Returned from Sealed Chamber Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
+#define FLAG_INSURANCE	                      0x20 // Blackjack Insurance Flag
+#define FLAG_RESET_BJ	                      0x21 // Blackjack Reset Flag
+#define FLAG_BLACKJACK	                      0x22 // Blackjack In Play Flag
+#define FLAG_SHINY_CREATION                   0x23 // Force Shiny Flag
+#define FLAG_HIDE_BAD_LUCK_MAN                0x24 // Mauville City Bad Luck Man Flag
+#define FLAG_RECIEVED_BRAILLE_DECODER         0x25 // Recieved Braille Decoder Flag
+#define FLAG_RETURNED_SEALED_CHAMBER          0x26 // Returned from Sealed Chamber Flag
+#define FLAG_RECIEVED_TIMER_BALLS_REGIROCK    0x27 // Recieved 10 Timer Balls Regirock Flag
+#define FLAG_RECIEVED_TIMER_BALLS_REGICE      0x28 // Recieved 10 Timer Balls Regice Flag
+#define FLAG_RECIEVED_TIMER_BALLS_REGISTEEL   0x29 // Recieved 10 Timer Balls Registeel Flag
+#define FLAG_HIDE_MOBILE_LAB_ROUTE111         0x2A // Hide the Mobile Lab on Route 111 Flag
+#define FLAG_HIDE_MOBILE_LAB_ROUTE120         0x2B // Hide the Mobile Lab on Route 120 Flag
+#define FLAG_HIDE_ABRA_ROUTE105               0x2C // Hide the Abra on Route 105 Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag

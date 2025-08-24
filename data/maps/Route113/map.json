@@ -443,7 +443,9 @@
       "y": 3,
       "elevation": 3,
       "item": "ITEM_ETHER",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_ETHER"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_ETHER",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -451,7 +453,9 @@
       "y": 5,
       "elevation": 3,
       "item": "ITEM_TM_DOUBLE_TEAM",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_TM_DOUBLE_TEAM"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_TM_DOUBLE_TEAM",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -459,7 +463,9 @@
       "y": 3,
       "elevation": 3,
       "item": "ITEM_NUGGET",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_NUGGET"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_NUGGET",
+      "quantity": 0,
+      "underfoot": false
     }
   ]
 }

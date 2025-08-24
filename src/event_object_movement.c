@@ -509,6 +509,8 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
 #define OBJ_EVENT_PAL_TAG_CASTFORM_SUNNY          0x1125
 #define OBJ_EVENT_PAL_TAG_CASTFORM_RAINY          0x1126
 #define OBJ_EVENT_PAL_TAG_CASTFORM_SNOWY          0x1127
+#define OBJ_EVENT_PAL_TAG_TRUCK_TRAILER           0x1128
+#define OBJ_EVENT_PAL_TAG_TRUCK_TRAILER_ALT       0x1129
 #if OW_MON_POKEBALLS
 // Vanilla
 #define OBJ_EVENT_PAL_TAG_BALL_MASTER             0x1150
@@ -609,6 +611,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_CastformSunny, OBJ_EVENT_PAL_TAG_CASTFORM_SUNNY},
     {gObjectEventPal_CastformRainy, OBJ_EVENT_PAL_TAG_CASTFORM_RAINY},
     {gObjectEventPal_CastformSnowy, OBJ_EVENT_PAL_TAG_CASTFORM_SNOWY},
+    {gObjectEventPal_TruckTrailer,          OBJ_EVENT_PAL_TAG_TRUCK_TRAILER},
+    {gObjectEventPal_TruckTrailerAlt,       OBJ_EVENT_PAL_TAG_TRUCK_TRAILER_ALT},
     #if OW_MON_POKEBALLS
     // Vanilla
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
