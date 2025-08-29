@@ -3033,7 +3033,6 @@ extern const u8 gText_SideQuestName_ContestStar[];
 extern const u8 gText_SideQuestName_Welcome[];
 extern const u8 gText_SideQuestName_Explorer[];
 extern const u8 gText_SideQuestName_GiganticFindings[];
-extern const u8 gText_SideQuestName_Seafarer[];
 
 // Descriptions
 extern const u8 gText_SideQuestDesc_RivalNextDoor[];
@@ -3048,7 +3047,6 @@ extern const u8 gText_SideQuestDesc_ContestStar[];
 extern const u8 gText_SideQuestDesc_Welcome[];
 extern const u8 gText_SideQuestDesc_Explorer[];
 extern const u8 gText_SideQuestDesc_GiganticFindings[];
-extern const u8 gText_SideQuestDesc_Seafarer[];
 
 // Completed Quest Descriptions
 extern const u8 gText_SideQuestDoneDesc_RivalNextDoor[];
@@ -3063,7 +3061,6 @@ extern const u8 gText_SideQuestDoneDesc_ContestStar[];
 extern const u8 gText_SideQuestDoneDesc_Welcome[];
 extern const u8 gText_SideQuestDoneDesc_Explorer[];
 extern const u8 gText_SideQuestDoneDesc_GiganticFindings[];
-extern const u8 gText_SideQuestDoneDesc_Seafarer[];
 
 // Maps
 extern const u8 gText_SideQuestMap_Hoenn[];
@@ -3131,11 +3128,6 @@ extern const u8 gText_GiganticFindings_Name_AncientTomb[];
 extern const u8 gText_GiganticFindings_Name_DesertRuins[];
 extern const u8 gText_GiganticFindings_Name_IslandCave[];
 
-extern const u8 gText_Seafarer_Name_BirthIsland[];
-extern const u8 gText_Seafarer_Name_SouthernIsland[];
-extern const u8 gText_Seafarer_Name_NavalRock[];
-extern const u8 gText_Seafarer_Name_FarawayIsland[];
-
 extern const u8 gText_RivalNextDoor_Desc_FirstBattle[];
 extern const u8 gText_RivalNextDoor_Desc_SecondBattle[];
 extern const u8 gText_RivalNextDoor_Desc_ThirdBattle[];
@@ -3172,11 +3164,6 @@ extern const u8 gText_GiganticFindings_Desc_ReturnToLab[];
 extern const u8 gText_GiganticFindings_Desc_AncientTomb[];
 extern const u8 gText_GiganticFindings_Desc_DesertRuins[];
 extern const u8 gText_GiganticFindings_Desc_IslandCave[];
-
-extern const u8 gText_Seafarer_Desc_BirthIsland[];
-extern const u8 gText_Seafarer_Desc_SouthernIsland[];
-extern const u8 gText_Seafarer_Desc_NavalRock[];
-extern const u8 gText_Seafarer_Desc_FarawayIsland[];
 
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];

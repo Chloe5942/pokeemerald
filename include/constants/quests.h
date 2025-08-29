@@ -28,8 +28,7 @@
 #define QUEST_FRONTIER_WELCOME               8
 #define QUEST_FRONTIER_EXPLORER              9
 #define QUEST_GIGANTIC_FINDINGS             10
-#define QUEST_SEAFARER                      11
-#define QUEST_COUNT                         (QUEST_SEAFARER + 1) // 12/100 88 Free Spaces Left
+#define QUEST_COUNT                         (QUEST_GIGANTIC_FINDINGS + 1) // 11/100 89 Free Spaces Left
 
 #define SUB_QUEST_DUMMY               0
 
@@ -77,11 +76,6 @@
 #define SUB_QUEST_RUINS_IN_THE_SANDS        34
 #define SUB_QUEST_CAVE_OF_SOLITUDE          35
 #define SUB_QUEST_TOMB_OF_THE_ANCIENTS      36
-// Seafarer
-#define SUB_QUEST_AURORA_TICKET             37
-#define SUB_QUEST_EON_TICKET                38
-#define SUB_QUEST_MYSTIC_TICKET             39
-#define SUB_QUEST_OLD_SEA_MAP               40
 */
 
 #define QUEST_DUMMY_SUB_COUNT      1
@@ -92,7 +86,6 @@
 #define QUEST_CONTEST_STAR_SUB_COUNT         5
 #define QUEST_FRONTIER_EXPLORER_SUB_COUNT    7
 #define QUEST_GIGANTIC_FINDINGS_SUB_COUNT    4
-#define QUEST_SEAFARER_SUB_COUNT             4
 */
 #define SUB_QUEST_COUNT (QUEST_DUMMY_SUB_COUNT) // 1/168 167 Free Spaces Left
 

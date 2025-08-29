@@ -7,7 +7,7 @@ MysteryGiftScript_MysticTicket::
 	vgoto_if_set FLAG_CAUGHT_HO_OH, MysticTicket_Obtained
 	checkitem ITEM_MYSTIC_TICKET
 	vgoto_if_eq VAR_RESULT, TRUE, MysticTicket_Obtained
-	vmessage sText_MysticTicketForYou
+	vmessage sText_MysticTicketThankYou
 	waitmessage
 	waitbuttonpress
 	checkitemspace ITEM_MYSTIC_TICKET
@@ -35,12 +35,6 @@ MysticTicket_Obtained:
 	release
 	end
 
-sText_MysticTicketForYou:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
-	.string "You must be {PLAYER}.\n"
-	.string "There is a ticket here for you.$"
-
 sText_MysticTicketUseAtPort:
 	.string "It appears to be for use at the\n"
 	.string "LILYCOVE CITY port.\p"
@@ -52,7 +46,7 @@ sText_MysticTicketThankYou:
 	.string "GIFT System.$"
 
 sText_MysticTicketBagFull:
-	.string "Oh, I'm sorry, {PLAYER}.\n"
+	.string "Oh, I'm sorry,\n"
 	.string "Your BAG's KEY ITEMS POCKET is full.\p"
 	.string "Please store something on your PC,\n"
 	.string "then come back for this.$"

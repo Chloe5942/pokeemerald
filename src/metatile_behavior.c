@@ -1400,3 +1400,11 @@ bool8 MetatileBehavior_IsTrainerHillTimer(u8 metatileBehavior)
     else
         return FALSE;
 }
+
+bool8 MetatileBehavior_IsCodeComputer(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_CODE_COMPUTER)
+        return TRUE;
+    else
+        return FALSE;
+}

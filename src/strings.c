@@ -1906,7 +1906,6 @@ const u8 gText_SideQuestName_ContestStar[] = _("Contest Star");
 const u8 gText_SideQuestName_Welcome[] = _("Frontier Welcome");
 const u8 gText_SideQuestName_Explorer[] = _("Frontier Explorer");
 const u8 gText_SideQuestName_GiganticFindings[] = _("Gigantic Findings");
-const u8 gText_SideQuestName_Seafarer[] = _("Seafarer");
 
 //descriptions
 const u8 gText_SideQuestDesc_RivalNextDoor[] = _("Find your neighbor around Hoenn!");
@@ -1921,7 +1920,6 @@ const u8 gText_SideQuestDesc_ContestStar[] = _("Compete in all types of Contests
 const u8 gText_SideQuestDesc_Welcome[] = _("Welcome to the Battle Frontier!\nGo to SCOTT's HOUSE.");
 const u8 gText_SideQuestDesc_Explorer[] = _("Explore the Battle Frontier!");
 const u8 gText_SideQuestDesc_GiganticFindings[] = _("Explore the Hoenn Region\nto uncover the truth of the giants!");
-const u8 gText_SideQuestDesc_Seafarer[] = _("Obtain tickets");
 
 // Completed Quest Descriptions
 const u8 gText_SideQuestDoneDesc_RivalNextDoor[] = _("Completed Rival Next Door");
@@ -1936,7 +1934,6 @@ const u8 gText_SideQuestDoneDesc_ContestStar[] = _("Completed Contest Star");
 const u8 gText_SideQuestDoneDesc_Welcome[] = _("Completed Frontier Welcome");
 const u8 gText_SideQuestDoneDesc_Explorer[] = _("Completed Frontier Explorer");
 const u8 gText_SideQuestDoneDesc_GiganticFindings[] = _("Completed Gigantic Findings");
-const u8 gText_SideQuestDoneDesc_Seafarer[] = _("Completed Seafarer");
 
 // Map
 const u8 gText_SideQuestMap_Hoenn[] = _("Hoenn");
@@ -2004,11 +2001,6 @@ const u8 gText_GiganticFindings_Name_DesertRuins[] = _("Ruins in the Sands");
 const u8 gText_GiganticFindings_Name_IslandCave[] = _("Cave of Solitude");
 const u8 gText_GiganticFindings_Name_AncientTomb[] = _("Tomb of the Ancients");
 
-const u8 gText_Seafarer_Name_BirthIsland[] = _("Birth of a Meteorite");
-const u8 gText_Seafarer_Name_SouthernIsland[] = _("Southern Island Vacation");
-const u8 gText_Seafarer_Name_NavalRock[] = _("Naval Rocky Seas");
-const u8 gText_Seafarer_Name_FarawayIsland[] = _("Old Sea Travels");
-
 // Descriptions
 const u8 gText_RivalNextDoor_Desc_FirstBattle[] = _("Battle your rival on ROUTE 103!");
 const u8 gText_RivalNextDoor_Desc_SecondBattle[] = _("Battle your rival in RUSTBORO CITY!\nor on ROUTE 104 after an accident.");
@@ -2046,8 +2038,3 @@ const u8 gText_GiganticFindings_Desc_ReturnToLab[] = _("Return to the RESEARCH L
 const u8 gText_GiganticFindings_Desc_DesertRuins[] = _("Find the DEAERT RUINS.");
 const u8 gText_GiganticFindings_Desc_IslandCave[] = _("Find the ISLAND CAVE.");
 const u8 gText_GiganticFindings_Desc_AncientTomb[] = _("Find the ANCIENT TOMB.");
-
-const u8 gText_Seafarer_Desc_BirthIsland[] = _("Show the SAILOR a METEORITE.");
-const u8 gText_Seafarer_Desc_SouthernIsland[] = _("Show the SAILOR one of\nthe EON POKéMON.");
-const u8 gText_Seafarer_Desc_NavalRock[] = _("Show the SAILOR a POKéMON from JHOTO.");
-const u8 gText_Seafarer_Desc_FarawayIsland[] = _("Show the SAILOR a POKéMON from KANTO.");

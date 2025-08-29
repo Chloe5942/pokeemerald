@@ -115,14 +115,6 @@ enum GiganticFindings_States{
     QUEST_GIGANTIC_FINDINGS_TOTAL_STATES,
 };
 
-enum Seafarer_States{
-    QUEST_SEAFARER_STATE_1,
-    QUEST_SEAFARER_STATE_2,
-    QUEST_SEAFARER_STATE_3,
-    QUEST_SEAFARER_STATE_4,
-    QUEST_SEAFARER_TOTAL_STATES,
-};
-
 /////////////END QUEST NUMS/////////////
 ////////////////////////////////////////
 

@@ -24,3 +24,4 @@
 	.include "data/scripts/gift_mystic_ticket.inc"
 	.include "data/scripts/gift_altering_cave.inc"
 	.include "data/scripts/gift_old_sea_map.inc"
+	.include "data/scripts/gift_eon_ticket.inc"

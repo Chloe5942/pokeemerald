@@ -611,45 +611,6 @@ static const struct SubQuest sGiganticFindings[QUEST_GIGANTIC_FINDINGS_SUB_COUNT
 	),
 };
 
-static const struct SubQuest sSeafarer[QUEST_SEAFARER_SUB_COUNT] =
-{
-	sub_quest(
-	      37,
-	      gText_Seafarer_Name_BirthIsland,
-	      gText_Seafarer_Desc_BirthIsland,
-	      gText_SideQuestMap_Hoenn,
-	      ITEM_AURORA_TICKET,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      38,
-	      gText_Seafarer_Name_SouthernIsland,
-	      gText_Seafarer_Desc_SouthernIsland,
-	      gText_SideQuestMap_Hoenn,
-	      ITEM_EON_TICKET,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      39,
-	      gText_Seafarer_Name_NavalRock,
-	      gText_Seafarer_Desc_NavalRock,
-	      gText_SideQuestMap_Hoenn,
-	      ITEM_MYSTIC_TICKET,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      40,
-	      gText_Seafarer_Name_FarawayIsland,
-	      gText_Seafarer_Desc_FarawayIsland,
-	      gText_SideQuestMap_Hoenn,
-	      ITEM_OLD_SEA_MAP,
-	      ITEM,
-	      sText_Found
-	),
-};
 */
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -980,38 +941,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	    .subquests = NULL,
 	    .numSubquests = 0,
 		.questVariable = VAR_GIGANTIC_FINDINGS,
-	},
-	[QUEST_SEAFARER] =
-	{
-	    .name = gText_SideQuestName_Seafarer,
-	    .desc = {
-			gText_Seafarer_Desc_BirthIsland,
-			gText_Seafarer_Desc_SouthernIsland,
-			gText_Seafarer_Desc_NavalRock,
-			gText_Seafarer_Desc_FarawayIsland
-		},
-	    .donedesc = gText_SideQuestDoneDesc_Seafarer,
-	    .map = {
-			gText_SideQuestMap_Hoenn,
-			gText_SideQuestMap_Hoenn,
-			gText_SideQuestMap_Hoenn,
-			gText_SideQuestMap_Hoenn
-		},
-	    .sprite = {
-			ITEM_AURORA_TICKET,
-			ITEM_EON_TICKET,
-			ITEM_MYSTIC_TICKET,
-			ITEM_OLD_SEA_MAP
-		},
-	    .spritetype = {
-			ITEM,
-			ITEM,
-			ITEM,
-			ITEM
-		},
-	    .subquests = NULL,
-	    .numSubquests = 0,
-		.questVariable = VAR_SEAFARER,
 	},
 };
 ////////////////////////END QUEST CUSTOMIZATION////////////////////////////////

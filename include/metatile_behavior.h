@@ -147,5 +147,7 @@ bool8 MetatileBehavior_IsQuestionnaire(u8 metatileBehavior);
 bool8 MetatileBehavior_IsLongGrass_Duplicate(u8 metatileBehavior);
 bool8 MetatileBehavior_IsLongGrassSouthEdge(u8 metatileBehavior);
 bool8 MetatileBehavior_IsTrainerHillTimer(u8 metatileBehavior);
+// Custom
+bool8 MetatileBehavior_IsCodeComputer(u8 metatileBehavior);
 
 #endif // GUARD_METATILE_BEHAVIOR_H

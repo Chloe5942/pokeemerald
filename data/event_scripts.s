@@ -1069,5 +1069,6 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/LilycoveCity_GTS_2F/scripts.inc"
 	.include "data/maps/ResearchLab/scripts.inc"
 	.include "data/scripts/mobile_lab.inc"
+	.include "data/scripts/codes.inc"
 
 	.include "data/maps/MobileLab/scripts.inc"

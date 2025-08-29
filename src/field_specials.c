@@ -68,6 +68,7 @@
 #include "palette.h"
 #include "pokedex.h"
 #include "rogue_voltorbflip.h"
+#include "naming_screen.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4303,4 +4304,44 @@ void SetCaughtMon(void)
 {
     GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_SEEN);
     GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_CAUGHT);
+}
+
+void EnterCode(void)
+{
+    DoNamingScreen(NAMING_SCREEN_CODE, gStringVar2, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+}
+
+void GetCodeFeedback(void)
+{
+    // Items
+    static const u8 sText_CodeEonTicket[] = _("Eon Ticket");
+    static const u8 sText_CodeOldSeaMap[] = _("Old Sea Map");
+    static const u8 sText_CodeAuroraTicket[] = _("Aurora Ticket");
+    static const u8 sText_CodeMysticTicket[] = _("Mystic Ticket");
+    // World
+    static const u8 sText_CodeMirageBreaker[] = _("Mirage Breaker");
+    static const u8 sText_CodeBigSale20XX[] = _("Big Sale 20XX");
+    static const u8 sText_CodeMasterBlender[] = _("Master Blender");
+    static const u8 sText_CodeRouletteLuck[] = _("Roulette Luck!");
+    
+    // Items
+    if (!StringCompare(gStringVar2, sText_CodeEonTicket))
+        gSpecialVar_Result = 1;
+    else if (!StringCompare(gStringVar2, sText_CodeOldSeaMap))
+        gSpecialVar_Result = 2;
+    else if (!StringCompare(gStringVar2, sText_CodeAuroraTicket))
+        gSpecialVar_Result = 3;
+    else if (!StringCompare(gStringVar2, sText_CodeMysticTicket))
+        gSpecialVar_Result = 4;
+    // World
+    else if (!StringCompare(gStringVar2, sText_CodeMirageBreaker))
+        gSpecialVar_Result = 5;
+    else if (!StringCompare(gStringVar2, sText_CodeBigSale20XX))
+        gSpecialVar_Result = 6;
+    else if (!StringCompare(gStringVar2, sText_CodeMasterBlender))
+        gSpecialVar_Result = 7;
+    else if (!StringCompare(gStringVar2, sText_CodeRouletteLuck))
+        gSpecialVar_Result = 8;
+    else
+        gSpecialVar_Result = 0;
 }
