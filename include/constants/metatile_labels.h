@@ -192,6 +192,13 @@
 #define METATILE_Fortree_BridgeOverGrass_Raised            0x24E
 #define METATILE_Fortree_BridgeOverTrees_Lowered           0x257
 #define METATILE_Fortree_BridgeOverTrees_Raised            0x256
+#define METATILE_Fortree_FeebasSpot2_Center                0x31D
+#define METATILE_Fortree_FeebasSpot2_LeftEdge              0x31C
+#define METATILE_Fortree_FeebasSpot2_RightEdge             0x31E
+#define METATILE_Fortree_FeebasSpot2_TopEdge               0x31F
+#define METATILE_Fortree_FeebasSpot_Center                 0x31A
+#define METATILE_Fortree_FeebasSpot_LeftEdge               0x319
+#define METATILE_Fortree_FeebasSpot_RightEdge              0x31B
 #define METATILE_Fortree_LongGrass_Root                    0x208
 #define METATILE_Fortree_SecretBase_LongGrass_BottomLeft   0x281
 #define METATILE_Fortree_SecretBase_LongGrass_BottomMid    0x282

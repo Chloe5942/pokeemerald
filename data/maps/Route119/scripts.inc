@@ -18,7 +18,28 @@ Route119_OnTransition:
 	call Common_EventScript_SetupRivalOnBikeGfxId
 	call_if_eq VAR_WEATHER_INSTITUTE_STATE, 1, Route119_EventScript_MoveInstituteWorkersDownstairs
 	special SetRoute119Weather
+	special GetTimeOfDay
+	call_if_eq VAR_RESULT, 0, Route119_EventScript_FeebasSpotsMorning
+	call_if_eq VAR_RESULT, 1, Route119_EventScript_FeebasSpotsDay
+	call_if_eq VAR_RESULT, 2, Route119_EventScript_FeebasSpotsEvening
+	call_if_eq VAR_RESULT, 3, Route119_EventScript_FeebasSpotsNight
 	end
+
+Route119_EventScript_FeebasSpotsMorning::
+	setmaplayoutindex LAYOUT_ROUTE119_MORNING
+	return
+
+Route119_EventScript_FeebasSpotsDay::
+	setmaplayoutindex LAYOUT_ROUTE119
+	return
+
+Route119_EventScript_FeebasSpotsEvening::
+	setmaplayoutindex LAYOUT_ROUTE119_EVENING
+	return
+
+Route119_EventScript_FeebasSpotsNight::
+	setmaplayoutindex LAYOUT_ROUTE119_NIGHT
+	return
 
 Route119_EventScript_MoveInstituteWorkersDownstairs::
 	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS

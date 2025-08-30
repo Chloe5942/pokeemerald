@@ -149,5 +149,6 @@ bool8 MetatileBehavior_IsLongGrassSouthEdge(u8 metatileBehavior);
 bool8 MetatileBehavior_IsTrainerHillTimer(u8 metatileBehavior);
 // Custom
 bool8 MetatileBehavior_IsCodeComputer(u8 metatileBehavior);
+bool8 MetatileBehavior_HasFeebas(u8);
 
 #endif // GUARD_METATILE_BEHAVIOR_H

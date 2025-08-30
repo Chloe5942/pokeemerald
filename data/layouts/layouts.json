@@ -4450,6 +4450,36 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/MobileLab/border.bin",
       "blockdata_filepath": "data/layouts/MobileLab/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE119_MORNING",
+      "name": "Route119_Morning_Layout",
+      "width": 40,
+      "height": 140,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Route119_Morning/border.bin",
+      "blockdata_filepath": "data/layouts/Route119_Morning/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE119_EVENING",
+      "name": "Route119_Evening_Layout",
+      "width": 40,
+      "height": 140,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Route119_Evening/border.bin",
+      "blockdata_filepath": "data/layouts/Route119_Evening/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE119_NIGHT",
+      "name": "Route119_Night_Layout",
+      "width": 40,
+      "height": 140,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Route119_Night/border.bin",
+      "blockdata_filepath": "data/layouts/Route119_Night/map.bin"
     }
   ]
 }

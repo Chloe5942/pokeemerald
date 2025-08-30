@@ -125,6 +125,7 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_ISOLATED_HORIZONTAL_RAIL]        = TILE_FLAG_UNUSED,
     [MB_VERTICAL_RAIL]                   = TILE_FLAG_UNUSED,
     [MB_HORIZONTAL_RAIL]                 = TILE_FLAG_UNUSED,
+    [MB_FEEBAS]                          = TILE_FLAG_HAS_ENCOUNTERS | TILE_FLAG_SURFABLE,
 };
 
 bool8 MetatileBehavior_IsATile(u8 metatileBehavior)
@@ -238,14 +239,6 @@ bool8 MetatileBehavior_IsEscalator(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_UP_ESCALATOR
      || metatileBehavior == MB_DOWN_ESCALATOR)
-        return TRUE;
-    else
-        return FALSE;
-}
-
-bool8 Unref_MetatileBehavior_IsUnused04(u8 metatileBehavior)
-{
-    if (metatileBehavior == MB_UNUSED_04)
         return TRUE;
     else
         return FALSE;
@@ -1404,6 +1397,14 @@ bool8 MetatileBehavior_IsTrainerHillTimer(u8 metatileBehavior)
 bool8 MetatileBehavior_IsCodeComputer(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_CODE_COMPUTER)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_HasFeebas(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_FEEBAS)
         return TRUE;
     else
         return FALSE;

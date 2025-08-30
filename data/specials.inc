@@ -551,3 +551,4 @@ gSpecials::
 	def_special SetCaughtMon
 	def_special EnterCode
 	def_special GetCodeFeedback
+	def_special GetTimeOfDay

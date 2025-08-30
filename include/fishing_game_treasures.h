@@ -40,7 +40,7 @@ static const u16 sTreasureItems[] =
     ITEM_RARE_CANDY,
     ITEM_KINGS_ROCK,
     ITEM_LEFTOVERS,
-    ITEM_TM_EARTHQUAKE,
+    ITEM_PEARL,
 };
 
 #endif // GUARD_FISHING_GAME_TREASURES_H

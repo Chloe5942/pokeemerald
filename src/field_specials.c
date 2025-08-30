@@ -4345,3 +4345,24 @@ void GetCodeFeedback(void)
     else
         gSpecialVar_Result = 0;
 }
+
+void GetTimeOfDay(void)
+{
+	RtcCalcLocalTime();
+	if (gLocalTime.hours >= 6 && gLocalTime.hours <= 8)
+	{
+		gSpecialVar_Result = 0; //Morning
+	}
+	else if (gLocalTime.hours >= 9 && gLocalTime.hours <= 17)
+	{
+		gSpecialVar_Result = 1; //Day
+	}
+	else if (gLocalTime.hours >= 18 && gLocalTime.hours <= 20)
+	{
+		gSpecialVar_Result = 2; //Evening
+	}
+	else
+    {
+	    gSpecialVar_Result = 3; //Night
+    }
+}
