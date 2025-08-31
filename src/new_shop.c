@@ -1698,7 +1698,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
             {
                 str = Shop_GetSellerMessage(SELLER_MSG_BUY_SUCCESS);
                 // if you have ghoul's item description box branch, uncomment below
-                //GetSetItemObtained(sShopData->currentItemId, FLAG_SET_ITEM_OBTAINED);
+                GetSetItemObtained(sShopData->currentItemId, FLAG_SET_OBTAINED);
                 BuyMenuDisplayMessage(taskId, str, BuyMenuSubtractMoney);
                 RecordItemPurchase(taskId);
             }
