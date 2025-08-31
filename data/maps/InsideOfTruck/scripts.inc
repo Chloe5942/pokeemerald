@@ -70,3 +70,16 @@ InsideOfTruck_EventScript_DevPort::
 	warpspinenter MAP_LITTLEROOT_TOWN, 12, 10
 	end
 
+InsideOfTruck_EventScript_DevPort2::
+	setflag FLAG_SYS_QUEST_MENU_GET
+	fadescreen FADE_TO_BLACK
+	setvar VAR_0x8004, SLIDING_PUZZLE_KABUTO
+	setvar VAR_0x8005, FALSE
+	special DoSlidingPuzzle
+	waitstate
+	goto_if_eq VAR_RESULT, TRUE, InsideOfTruck_EventScript_DevPort2_Exit
+	end
+
+InsideOfTruck_EventScript_DevPort2_Exit::
+	warpspinenter MAP_LITTLEROOT_TOWN, 12, 10
+	end

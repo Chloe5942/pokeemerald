@@ -543,6 +543,7 @@ gSpecials::
 	def_special RemoveRecordsWindow
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
+	def_special DoSlidingPuzzle
 	def_special BufferUnitSystemText
 	def_special CallNetworkFunction
 	def_special GetSeenMon
