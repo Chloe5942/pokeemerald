@@ -51,7 +51,14 @@ EventScript_BufferBerriesPocket::
 	return
 
 EventScript_ObtainedItem::
+	compare VAR_0x8001, 1
+	goto_if_eq EventScript_ObtainedItemMessage
+	buffernumberstring 0, VAR_0x8001
+	message gText_ObtainedTheItems
+	goto EventScript_ContinueObtainedItem
+EventScript_ObtainedItemMessage:
 	message gText_ObtainedTheItem
+EventScript_ContinueObtainedItem:
 	delay 10
 	showitemdesc
 	waitfanfare
