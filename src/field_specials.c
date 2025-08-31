@@ -4323,6 +4323,12 @@ void GetCodeFeedback(void)
     static const u8 sText_CodeBigSale20XX[] = _("Big Sale 20XX");
     static const u8 sText_CodeMasterBlender[] = _("Master Blender");
     static const u8 sText_CodeRouletteLuck[] = _("Roulette Luck!");
+    // Fun
+    static const u8 sText_CodeDevChole[] = _("Chole");
+    static const u8 sText_CodeDevMakell[] = _("Makell");
+    static const u8 sText_CodeDevSpecialVer1[] = _("08/26/24");
+    static const u8 sText_CodeDevSpecialVer2[] = _("08/26/2024");
+    static const u8 sText_CodeDevSpecialVer3[] = _("Aug. 26TH, 2024");
     
     // Items
     if (!StringCompare(gStringVar2, sText_CodeEonTicket))
@@ -4342,6 +4348,29 @@ void GetCodeFeedback(void)
         gSpecialVar_Result = 7;
     else if (!StringCompare(gStringVar2, sText_CodeRouletteLuck))
         gSpecialVar_Result = 8;
+    // Fun
+    else if (!StringCompare(gStringVar2, sText_CodeDevChole))
+        gSpecialVar_Result = 9;
+    else if (!StringCompare(gStringVar2, sText_CodeDevMakell))
+        gSpecialVar_Result = 10;
+    else if (!StringCompare(gStringVar2, sText_CodeDevSpecialVer1) ||
+        !StringCompare(gStringVar2, sText_CodeDevSpecialVer2) ||
+        !StringCompare(gStringVar2, sText_CodeDevSpecialVer3))
+        gSpecialVar_Result = 11;
+    else
+        gSpecialVar_Result = 0;
+}
+
+void GetNameFeedback(void)
+{
+    static const u8 sText_NameChole[] = _("Chole");
+    static const u8 sText_NameMakell[] = _("Makell");
+    
+    // Items
+    if (!StringCompare(gStringVar2, sText_NameChole))
+        gSpecialVar_Result = 1;
+    else if (!StringCompare(gStringVar2, sText_NameMakell))
+        gSpecialVar_Result = 2;
     else
         gSpecialVar_Result = 0;
 }

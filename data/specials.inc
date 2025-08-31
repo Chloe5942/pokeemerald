@@ -553,3 +553,4 @@ gSpecials::
 	def_special EnterCode
 	def_special GetCodeFeedback
 	def_special GetTimeOfDay
+	def_special GetNameFeedback
