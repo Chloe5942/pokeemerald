@@ -53,6 +53,8 @@ MossdeepCity_EventScript_Woman::
 	end
 
 MossdeepCity_EventScript_WhiteRock::
+	checkitem ITEM_AMULET_COIN
+	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_EventScript_WhiteRockUpgrade
 	msgbox MossdeepCity_Text_ItsAWhiteRock, MSGBOX_SIGN
 	end
 
@@ -425,3 +427,18 @@ MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "LEADER come in.\p"
 	.string "People tell me the new LEADER once\n"
 	.string "mentored WALLACE.$"
+
+MossdeepCity_EventScript_WhiteRockUpgrade::
+	goto_if_set FLAG_UPGRADED_AMULET_COIN, MossdeepCity_EventScript_WhiteRockUpgraded
+	msgbox MossdeepCity_Text_ItsAWhiteRock, MSGBOX_SIGN
+	setflag FLAG_UPGRADED_AMULET_COIN
+	msgbox MossdeepCity_Text_WhiteRockUpgrade, MSGBOX_SIGN
+	end
+
+MossdeepCity_EventScript_WhiteRockUpgraded::
+	msgbox MossdeepCity_Text_ItsAWhiteRock, MSGBOX_SIGN
+	end
+
+MossdeepCity_Text_WhiteRockUpgrade:
+	.string "The white rock started glowing!?\n"
+	.string "Your AMULET COIN has been upgraded!$"

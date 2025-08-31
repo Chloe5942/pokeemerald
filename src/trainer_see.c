@@ -45,6 +45,7 @@ static bool8 RevealBuriedTrainer(u8 taskId, struct Task *task, struct ObjectEven
 static bool8 PopOutOfAshBuriedTrainer(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj);
 static bool8 JumpInPlaceBuriedTrainer(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj);
 static bool8 WaitRevealBuriedTrainer(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj);
+static bool8 IgnoreIfPokeDoll(void);
 
 static void SpriteCB_TrainerIcons(struct Sprite *sprite);
 
@@ -334,11 +335,22 @@ static const struct SpriteTemplate sSpriteTemplate_Emote =
     .callback = SpriteCB_TrainerIcons
 };
 
+static bool8 IgnoreIfPokeDoll(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM) == ITEM_POKE_DOLL)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 // code
 bool8 CheckForTrainersWantingBattle(void)
 {
     u8 i;
 
+    if (IgnoreIfPokeDoll())
+        return FALSE;
+    
     gNoOfApproachingTrainers = 0;
     gApproachingTrainerId = 0;
 

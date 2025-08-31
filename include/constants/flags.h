@@ -55,7 +55,7 @@
 #define FLAG_HIDE_MOBILE_LAB_ROUTE111         0x2A // Hide the Mobile Lab on Route 111 Flag
 #define FLAG_HIDE_MOBILE_LAB_ROUTE120         0x2B // Hide the Mobile Lab on Route 120 Flag
 #define FLAG_HIDE_ABRA_ROUTE105               0x2C // Hide the Abra on Route 105 Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
+#define FLAG_HIDE_LILYCOVE_CITY_WAILMER       0x2D // Hide Wailmer in Lilycove City Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
@@ -97,7 +97,7 @@
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_UNUSED_0x054                    0x54  // Unused Flag
+#define FLAG_UPGRADED_AMULET_COIN            0x54  // Unused Flag
 #define FLAG_UNUSED_0x055                    0x55  // Unused Flag
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly

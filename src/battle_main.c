@@ -126,6 +126,7 @@ static void BeginLeftEvoluionAfterFade(void);
 static void BeginRightEvoluionAfterFade(void);
 static void WaitForEvolutionThenTryAnother(void);
 static void CB2_SetUpReshowBattleScreenAfterEvolution(void);
+static bool8 partyMonHoldDoublePrizeEffect(void);
 
 EWRAM_DATA u16 gBattle_BG0_X = 0;
 EWRAM_DATA u16 gBattle_BG0_Y = 0;
@@ -3223,7 +3224,12 @@ static void BattleStartClearSetData(void)
     *(&gBattleStruct->safariCatchFactor) = gSpeciesInfo[GetMonData(&gEnemyParty[0], MON_DATA_SPECIES)].catchRate * 100 / 1275;
     gBattleStruct->safariEscapeFactor = 3;
     gBattleStruct->wildVictorySong = 0;
-    gBattleStruct->moneyMultiplier = 1;
+    if (partyMonHoldDoublePrizeEffect() && FlagGet(FLAG_UPGRADED_AMULET_COIN))
+        gBattleStruct->moneyMultiplier = 4;
+    else if (partyMonHoldDoublePrizeEffect() && !FlagGet(FLAG_UPGRADED_AMULET_COIN))
+        gBattleStruct->moneyMultiplier = 2;
+    else
+        gBattleStruct->moneyMultiplier = 1;
 
     for (i = 0; i < 8; i++)
     {
@@ -5435,4 +5441,15 @@ void RunBattleScriptCommands(void)
 {
     if (gBattleControllerExecFlags == 0)
         gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
+}
+
+static bool8 partyMonHoldDoublePrizeEffect(void){
+    int i;
+    for (i = 0; i < PARTY_SIZE; i++){
+        u8 item = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
+        if (GetItemHoldEffect(item) == HOLD_EFFECT_DOUBLE_PRIZE){
+            return TRUE;
+        }
+    }
+    return FALSE;   
 }

@@ -30,6 +30,8 @@ CodeComputer_EventScript_EnterCode::
     goto_if_eq VAR_RESULT, 9, CodeComputer_EventScript_DeveloperGift1
     goto_if_eq VAR_RESULT, 10, CodeComputer_EventScript_DeveloperGift2
     goto_if_eq VAR_RESULT, 11, CodeComputer_EventScript_DeveloperGift3
+    goto_if_eq VAR_RESULT, 12, CodeComputer_EventScript_DeveloperGift4
+    goto_if_eq VAR_RESULT, 13, CodeComputer_EventScript_DeveloperGift5
 	releaseall
     end
 
@@ -259,7 +261,7 @@ CodeComputer_EventScript_DeveloperGift2::
     end
 
 CodeComputer_EventScript_DeveloperGift3::
-    special EnterCode
+    special EnterName
     waitstate
     special GetNameFeedback
     goto_if_eq VAR_RESULT, 0, CodeComputer_EventScript_CodeFailed
@@ -267,6 +269,20 @@ CodeComputer_EventScript_DeveloperGift3::
     goto_if_eq VAR_RESULT, 2, CodeComputer_EventScript_Name2
     releaseall
     end
+
+CodeComputer_EventScript_DeveloperGift4::
+	msgbox CodeComputer_Text_BDayMessage1, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
+
+CodeComputer_EventScript_DeveloperGift5::
+	msgbox CodeComputer_Text_BDayMessage2, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
 
 CodeComputer_EventScript_Name1::
 	msgbox CodeComputer_Text_DevMessage1, MSGBOX_DEFAULT
@@ -371,3 +387,9 @@ CodeComputer_Text_DevMessage1:
 
 CodeComputer_Text_DevMessage2:
 	.string "Yes I did make this :)$"
+
+CodeComputer_Text_BDayMessage1:
+	.string "Happy Birthday, dear! <333$"
+
+CodeComputer_Text_BDayMessage2:
+	.string "Happy Birthday, me!$"

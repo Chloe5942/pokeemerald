@@ -12,22 +12,11 @@ LilycoveCity_OnTransition:
 	end
 
 LilycoveCity_OnLoad:
-	call_if_unset FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, LilycoveCity_EventScript_SetWailmerMetatiles
+	call_if_unset FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, LilycoveCity_EventScript_SetWailmers
 	end
 
-LilycoveCity_EventScript_SetWailmerMetatiles::
-	setmetatile 76, 12, METATILE_Lilycove_Wailmer0, TRUE
-	setmetatile 77, 12, METATILE_Lilycove_Wailmer1, TRUE
-	setmetatile 76, 13, METATILE_Lilycove_Wailmer2, TRUE
-	setmetatile 77, 13, METATILE_Lilycove_Wailmer3, TRUE
-	setmetatile 76, 14, METATILE_Lilycove_Wailmer0_Alt, TRUE
-	setmetatile 77, 14, METATILE_Lilycove_Wailmer1_Alt, TRUE
-	setmetatile 76, 15, METATILE_Lilycove_Wailmer2, TRUE
-	setmetatile 77, 15, METATILE_Lilycove_Wailmer3, TRUE
-	setmetatile 77, 16, METATILE_Lilycove_Wailmer0_Alt, TRUE
-	setmetatile 78, 16, METATILE_Lilycove_Wailmer1_Alt, TRUE
-	setmetatile 77, 17, METATILE_Lilycove_Wailmer2, TRUE
-	setmetatile 78, 17, METATILE_Lilycove_Wailmer3, TRUE
+LilycoveCity_EventScript_SetWailmers::
+	clearflag FLAG_HIDE_LILYCOVE_CITY_WAILMER
 	return
 
 LilycoveCity_EventScript_BerryGentleman::
@@ -793,3 +782,15 @@ LilycoveCity_EventScript_DoGoToOldale::
 	waitstate
 	end
 
+LilycoveCity_EventScript_Wailmer::
+	playmoncry SPECIES_WAILMER, CRY_MODE_NORMAL
+	waitmoncry
+	msgbox LilycoveCity_Text_Wailmer, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	release
+	end
+
+LilycoveCity_Text_Wailmer:
+	.string "Wail Wailmer\n"
+	.string "Wailmer seems happy.$"

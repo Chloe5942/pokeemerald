@@ -4311,6 +4311,11 @@ void EnterCode(void)
     DoNamingScreen(NAMING_SCREEN_CODE, gStringVar2, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
 
+void EnterName(void)
+{
+    DoNamingScreen(NAMING_SCREEN_PLAYER, gStringVar2, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+}
+
 void GetCodeFeedback(void)
 {
     // Items
@@ -4328,7 +4333,16 @@ void GetCodeFeedback(void)
     static const u8 sText_CodeDevMakell[] = _("Makell");
     static const u8 sText_CodeDevSpecialVer1[] = _("08/26/24");
     static const u8 sText_CodeDevSpecialVer2[] = _("08/26/2024");
-    static const u8 sText_CodeDevSpecialVer3[] = _("Aug. 26TH, 2024");
+    static const u8 sText_CodeDevSpecialVer3[] = _("Aug. 26, 2024");
+    static const u8 sText_CodeDevSpecialVer4[] = _("Aug. 26TH, 2024");
+    static const u8 sText_CodeDev1BirthVer1[] = _("11/10/05");
+    static const u8 sText_CodeDev1BirthVer2[] = _("11/10/2005");
+    static const u8 sText_CodeDev1BirthVer3[] = _("Nov. 10, 2005");
+    static const u8 sText_CodeDev1BirthVer4[] = _("Nov. 10TH, 2005");
+    static const u8 sText_CodeDev2BirthVer1[] = _("01/08/03");
+    static const u8 sText_CodeDev2BirthVer2[] = _("01/08/2003");
+    static const u8 sText_CodeDev2BirthVer3[] = _("Jan. 8, 2003");
+    static const u8 sText_CodeDev2BirthVer4[] = _("Jan. 8TH, 2003");
     
     // Items
     if (!StringCompare(gStringVar2, sText_CodeEonTicket))
@@ -4353,10 +4367,27 @@ void GetCodeFeedback(void)
         gSpecialVar_Result = 9;
     else if (!StringCompare(gStringVar2, sText_CodeDevMakell))
         gSpecialVar_Result = 10;
-    else if (!StringCompare(gStringVar2, sText_CodeDevSpecialVer1) ||
+    else if (
+        !StringCompare(gStringVar2, sText_CodeDevSpecialVer1) ||
         !StringCompare(gStringVar2, sText_CodeDevSpecialVer2) ||
-        !StringCompare(gStringVar2, sText_CodeDevSpecialVer3))
+        !StringCompare(gStringVar2, sText_CodeDevSpecialVer3) ||
+        !StringCompare(gStringVar2, sText_CodeDevSpecialVer4)
+    )
         gSpecialVar_Result = 11;
+    else if (
+        !StringCompare(gStringVar2, sText_CodeDev1BirthVer1) ||
+        !StringCompare(gStringVar2, sText_CodeDev1BirthVer2) ||
+        !StringCompare(gStringVar2, sText_CodeDev1BirthVer3) ||
+        !StringCompare(gStringVar2, sText_CodeDev1BirthVer4)
+    )
+        gSpecialVar_Result = 12;
+    else if (
+        !StringCompare(gStringVar2, sText_CodeDev2BirthVer1) ||
+        !StringCompare(gStringVar2, sText_CodeDev2BirthVer2) ||
+        !StringCompare(gStringVar2, sText_CodeDev2BirthVer3) ||
+        !StringCompare(gStringVar2, sText_CodeDev2BirthVer4)
+    )
+        gSpecialVar_Result = 13;
     else
         gSpecialVar_Result = 0;
 }

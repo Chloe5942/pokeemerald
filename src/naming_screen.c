@@ -2145,7 +2145,7 @@ static const struct NamingScreenTemplate sWaldaWordsScreenTemplate =
     .title = gText_TellHimTheWords,
 };
 
-static const u8 sText_EnterCode[] = _("Enter code:");
+static const u8 sText_EnterCode[] = _("Enter Code:");
 static const struct NamingScreenTemplate sCodeScreenTemplate = 
 {
     .copyExistingString = FALSE,
