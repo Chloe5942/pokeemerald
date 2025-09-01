@@ -327,6 +327,7 @@ PlayersHouse_1F_EventScript_TryRegisterMom::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_MOM_MATCH_CALL
+	goto PlayersHouse_1F_EventScript_CheckGiveAmuletCoin
 	release
 	end
 
@@ -341,6 +342,7 @@ PlayersHouse_1F_EventScript_TryGiveAmuletCoin::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox PlayersHouse_1F_Text_DontPushYourselfTooHard, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_AMULET_COIN
+	completequest QUEST_HOMECOMING
 	release
 	end
 

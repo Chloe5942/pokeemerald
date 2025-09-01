@@ -149,6 +149,7 @@ Route119_EventScript_DefeatedBrendan::
 	end
 
 Route119_EventScript_GiveFlyHM::
+	updatequest QUEST_RIVAL_NEXT_DOOR, VAR_RIVAL_NEXT_DOOR
 	giveitem ITEM_HM_FLY
 	setflag FLAG_RECEIVED_HM_FLY
 	return
@@ -629,3 +630,74 @@ Route119_Text_TrainerTipsDecoration:
 	.string "Pick your favorite items and create\n"
 	.string "your very own SECRET BASE exactly the\l"
 	.string "way you want.$"
+
+Route119_EventScript_FeebasFisher::
+	bufferspeciesname STR_VAR_1, SPECIES_FEEBAS
+	lock
+	faceplayer
+	special GetTimeOfDay
+	goto_if_eq VAR_RESULT, 0, Route119_EventScript_FeebasFisherMorning
+	goto_if_eq VAR_RESULT, 1, Route119_EventScript_FeebasFisherDay
+	goto_if_eq VAR_RESULT, 2, Route119_EventScript_FeebasFisherEvening
+	goto_if_eq VAR_RESULT, 3, Route119_EventScript_FeebasFisherNight
+	release
+	end
+
+Route119_EventScript_FeebasFisherMorning::
+	lock
+	faceplayer
+	msgbox Route119_Text_FeebasSpotMorning, MSGBOX_NPC
+	release
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	end
+
+Route119_EventScript_FeebasFisherDay::
+	lock
+	faceplayer
+	msgbox Route119_Text_FeebasSpotDay, MSGBOX_NPC
+	release
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	end
+
+Route119_EventScript_FeebasFisherEvening::
+	lock
+	faceplayer
+	msgbox Route119_Text_FeebasSpotEvening, MSGBOX_NPC
+	release
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	end
+
+Route119_EventScript_FeebasFisherNight::
+	lock
+	faceplayer
+	msgbox Route119_Text_FeebasSpotNight, MSGBOX_NPC
+	release
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	end
+
+Route119_Text_FeebasSpotMorning:
+	.string "Good morning!\p"
+	.string "Are you here to fish for {STR_VAR_1} too?\p"
+	.string "I hear that around this time of day\p"
+	.string "{STR_VAR_1} can be found up the waterfall\n"
+	.string "if you use SURF from here.$"
+
+Route119_Text_FeebasSpotDay:
+	.string "Hello!\p"
+	.string "Are you here to fish for {STR_VAR_1} too?\p"
+	.string "I hear that around this time of day\p"
+	.string "{STR_VAR_1} can be found under the bridge\n"
+	.string "if you use SURF from here.$"
+
+Route119_Text_FeebasSpotEvening:
+	.string "Good evening!\p"
+	.string "Are you here to fish for {STR_VAR_1} too?\p"
+	.string "Well, you're in luck, because around this\n"
+	.string "time of day {STR_VAR_1} are right here.$"
+
+Route119_Text_FeebasSpotNight:
+	.string "Hello! It's quite late isn't it.\p"
+	.string "Are you here to fish for {STR_VAR_1} too?\p"
+	.string "I hear that around this time of day\p"
+	.string "{STR_VAR_1} can be found by the rock\n"
+	.string "downstream if you use SURF from here.$"

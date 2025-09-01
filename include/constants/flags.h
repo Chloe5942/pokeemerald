@@ -56,13 +56,13 @@
 #define FLAG_HIDE_MOBILE_LAB_ROUTE120         0x2B // Hide the Mobile Lab on Route 120 Flag
 #define FLAG_HIDE_ABRA_ROUTE105               0x2C // Hide the Abra on Route 105 Flag
 #define FLAG_HIDE_LILYCOVE_CITY_WAILMER       0x2D // Hide Wailmer in Lilycove City Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
+#define FLAG_HIDE_LOBBY_TUCKER    0x2E // Unused Flag
+#define FLAG_HIDE_LOBBY_GRETA    0x2F // Unused Flag
+#define FLAG_HIDE_LOBBY_ANABEL    0x30 // Unused Flag
+#define FLAG_HIDE_LOBBY_LUCY    0x31 // Unused Flag
+#define FLAG_HIDE_LOBBY_NOLAND    0x32 // Unused Flag
+#define FLAG_HIDE_LOBBY_BRANDON    0x33 // Unused Flag
+#define FLAG_HIDE_LOBBY_SPENSER    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag

@@ -58,6 +58,7 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_Scott::
 	msgbox LilycoveCity_CoveLilyMotel_2F_Text_SnoozingPreferBattles, MSGBOX_DEFAULT
 	addvar VAR_SCOTT_STATE, 1
 	setflag FLAG_MET_SCOTT_IN_LILYCOVE
+	updatequest QUEST_SCOUTING_SCOTT, VAR_SCOUTING_SCOTT
 	release
 	end
 

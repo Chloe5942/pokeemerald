@@ -314,6 +314,7 @@ LilycoveCity_EventScript_BattleBrendanMudkip::
 	end
 
 LilycoveCity_EventScript_DefeatedMay::
+	completequest QUEST_RIVAL_NEXT_DOOR
 	msgbox LilycoveCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge
@@ -346,6 +347,7 @@ LilycoveCity_EventScript_MayBattleFrontier::
 	return
 
 LilycoveCity_EventScript_DefeatedBrendan::
+	completequest QUEST_RIVAL_NEXT_DOOR
 	msgbox LilycoveCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge

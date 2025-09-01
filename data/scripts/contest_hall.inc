@@ -34,6 +34,10 @@ LilycoveCity_ContestLobby_EventScript_GiveLuxuryBallAtCounter::
 	release
 	end
 
+LilycoveCity_ContestLobby_EventScript_CompleteQuest::
+	completequest QUEST_CONTEST_STAR
+	return
+
 LilycoveCity_ContestLobby_EventScript_NoRoomForLuxuryBallAtCounter::
 	call Common_EventScript_BagIsFull
 	msgbox LilycoveCity_ContestLobby_Text_ComeBackForPrizeLater, MSGBOX_DEFAULT
@@ -1142,6 +1146,7 @@ ContestHall_EventScript_GiveLuxuryBall::
 	return
 
 ContestHall_EventScript_ReceiveContestRibbon::
+	call_if_quest_active QUEST_CONTEST_STAR, LilycoveCity_ContestLobby_EventScript_CompleteQuest
 	special GiveMonContestRibbon
 	incrementgamestat GAME_STAT_RECEIVED_RIBBONS
 	setflag FLAG_SYS_RIBBON_GET

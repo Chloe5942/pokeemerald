@@ -575,3 +575,32 @@ BattleFrontier_BattleArenaLobby_Text_PleaseAcceptBattlePoints:
 	.string "My dear challenger, in recognition of\n"
 	.string "your indefatigable spirit, please\l"
 	.string "accept these Battle Point(s).$"
+
+BattleFrontier_BattleArenaLobby_Movement_WalkAway::
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+BattleFrontier_BattleArenaLobby_EventScript_Greta::
+	lockall
+	faceplayer
+	msgbox BattleFrontier_BattleArenaLobby_Text_GretaWelcome, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	applymovement LOCALID_GRETA, BattleFrontier_BattleArenaLobby_Movement_WalkAway
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_GRETA
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	updatequest QUEST_FRONTIER_EXPLORER, VAR_FRONTIER_EXPLORER
+	setflag FLAG_HIDE_LOBBY_GRETA
+	clearflag FLAG_HIDE_LOBBY_TUCKER
+	end
+
+BattleFrontier_BattleArenaLobby_Text_GretaWelcome:
+	.string "GRETA: Hey! Howdy! You must be the new\n"
+	.string "TRAINER that SCOTT told me about!\p"
+	.string "Welcome to the BATTLE ARENA!\n"
+	.string "I'm the ARENA TYCOON, GRETA!\p"
+	.string "I hope to battle you one day.$"

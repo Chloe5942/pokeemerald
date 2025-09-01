@@ -13,7 +13,14 @@ BattleFrontier_ReceptionGate_OnFrame:
 
 BattleFrontier_ReceptionGate_EventScript_FirstTimeEntering::
 	lockall
-	questmenu QUEST_MENU_SET_ACTIVE QUEST_FRONTIER_WELCOME
+	startquest QUEST_FRONTIER_WELCOME
+	setflag FLAG_HIDE_LOBBY_GRETA
+	setflag FLAG_HIDE_LOBBY_NOLAND
+	setflag FLAG_HIDE_LOBBY_LUCY
+	setflag FLAG_HIDE_LOBBY_ANABEL
+	setflag FLAG_HIDE_LOBBY_BRANDON
+	setflag FLAG_HIDE_LOBBY_SPENSER
+	setflag FLAG_HIDE_LOBBY_TUCKER
 	setvar VAR_HAS_ENTERED_BATTLE_FRONTIER, 1
 	playse SE_PIN
 	applymovement LOCALID_FRONTIER_RECEPTION_GREETER, Common_Movement_ExclamationMark

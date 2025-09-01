@@ -3028,6 +3028,7 @@ extern const u8 gText_SideQuestName_TrendSetter[];
 extern const u8 gText_SideQuestName_PuzzleSolver[];
 extern const u8 gText_SideQuestName_MailRun[];
 extern const u8 gText_SideQuestName_CoinCollector[];
+extern const u8 gText_SideQuestName_Homecoming[];
 extern const u8 gText_SideQuestName_ContestStar[];
 
 extern const u8 gText_SideQuestName_Welcome[];
@@ -3042,6 +3043,7 @@ extern const u8 gText_SideQuestDesc_TrendSetter[];
 extern const u8 gText_SideQuestDesc_PuzzleSolver[];
 extern const u8 gText_SideQuestDesc_MailRun[];
 extern const u8 gText_SideQuestDesc_CoinCollector[];
+extern const u8 gText_SideQuestDesc_Homecoming[];
 extern const u8 gText_SideQuestDesc_ContestStar[];
 
 extern const u8 gText_SideQuestDesc_Welcome[];
@@ -3056,6 +3058,7 @@ extern const u8 gText_SideQuestDoneDesc_TrendSetter[];
 extern const u8 gText_SideQuestDoneDesc_PuzzleSolver[];
 extern const u8 gText_SideQuestDoneDesc_MailRun[];
 extern const u8 gText_SideQuestDoneDesc_CoinCollector[];
+extern const u8 gText_SideQuestDoneDesc_Homecoming[];
 extern const u8 gText_SideQuestDoneDesc_ContestStar[];
 
 extern const u8 gText_SideQuestDoneDesc_Welcome[];
@@ -3083,6 +3086,10 @@ extern const u8 gText_SideQuestMap_DesertRuins[];
 extern const u8 gText_SideQuestMap_IslandCave[];
 extern const u8 gText_SideQuestMap_AncientTomb[];
 extern const u8 gText_SideQuestMap_Littleroot[];
+extern const u8 gText_SideQuestMap_Petalburg[];
+extern const u8 gText_SideQuestMap_Lavaridge[];
+extern const u8 gText_SideQuestMap_Fortree[];
+extern const u8 gText_SideQuestMap_Sootopolis[];
 
 // Subquests
 extern const u8 gText_RivalNextDoor_Name_FirstBattle[];
@@ -3144,12 +3151,32 @@ extern const u8 gText_ScoutingScott_Desc_StarGazer[];
 extern const u8 gText_ScoutingScott_Desc_ChampRoad[];
 
 extern const u8 gText_PuzzleSolver_Desc[];
+extern const u8 gText_PuzzleSolver_Desc_Puzzle1[];
+extern const u8 gText_PuzzleSolver_Desc_Interim1[];
+extern const u8 gText_PuzzleSolver_Desc_Puzzle2[];
+extern const u8 gText_PuzzleSolver_Desc_Interim2[];
+extern const u8 gText_PuzzleSolver_Desc_Puzzle3[];
+extern const u8 gText_PuzzleSolver_Desc_Interim3[];
+extern const u8 gText_PuzzleSolver_Desc_Puzzle4[];
+extern const u8 gText_PuzzleSolver_Desc_Interim4[];
+extern const u8 gText_PuzzleSolver_Desc_Puzzle5[];
+extern const u8 gText_PuzzleSolver_Desc_Interim5[];
+extern const u8 gText_PuzzleSolver_Desc_Puzzle6[];
+extern const u8 gText_PuzzleSolver_Desc_Interim6[];
+extern const u8 gText_PuzzleSolver_Desc_Puzzle7[];
+extern const u8 gText_PuzzleSolver_Desc_Interim7[];
+extern const u8 gText_PuzzleSolver_Desc_Puzzle8[];
 
 extern const u8 gText_ContestStar_Desc_Cool[];
 extern const u8 gText_ContestStar_Desc_Cute[];
 extern const u8 gText_ContestStar_Desc_Beauty[];
 extern const u8 gText_ContestStar_Desc_Smart[];
 extern const u8 gText_ContestStar_Desc_Tough[];
+
+extern const u8 gText_ContestStar_Desc_Normal[];
+extern const u8 gText_ContestStar_Desc_Super[];
+extern const u8 gText_ContestStar_Desc_Hyper[];
+extern const u8 gText_ContestStar_Desc_Master[];
 
 extern const u8 gText_BattleFrontier_Desc_BattleFactory[];
 extern const u8 gText_BattleFrontier_Desc_BattleArena[];

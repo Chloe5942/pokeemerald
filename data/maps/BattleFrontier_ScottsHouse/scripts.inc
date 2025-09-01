@@ -188,7 +188,13 @@ BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints::
 	setflag FLAG_TEMP_2
 	completequest QUEST_FRONTIER_WELCOME
 	startquest QUEST_FRONTIER_EXPLORER
-	updatequest QUEST_FRONTIER_EXPLORER, VAR_FRONTIER_EXPLORER
+	clearflag FLAG_HIDE_LOBBY_GRETA
+	setflag FLAG_HIDE_LOBBY_NOLAND
+	setflag FLAG_HIDE_LOBBY_LUCY
+	setflag FLAG_HIDE_LOBBY_ANABEL
+	setflag FLAG_HIDE_LOBBY_BRANDON
+	setflag FLAG_HIDE_LOBBY_SPENSER
+	setflag FLAG_HIDE_LOBBY_TUCKER
 	release
 	end
 

@@ -734,37 +734,65 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	{
 	    .name = gText_SideQuestName_PuzzleSolver,
 	    .desc = {
-			gText_SideQuestDesc_PuzzleSolver,
-			gText_SideQuestDesc_PuzzleSolver,
-			gText_SideQuestDesc_PuzzleSolver,
-			gText_SideQuestDesc_PuzzleSolver,
-			gText_SideQuestDesc_PuzzleSolver,
-			gText_SideQuestDesc_PuzzleSolver,
-			gText_SideQuestDesc_PuzzleSolver,
-			gText_SideQuestDesc_PuzzleSolver
+			gText_PuzzleSolver_Desc_Puzzle1,
+			gText_PuzzleSolver_Desc_Interim1,
+			gText_PuzzleSolver_Desc_Puzzle2,
+			gText_PuzzleSolver_Desc_Interim2,
+			gText_PuzzleSolver_Desc_Puzzle3,
+			gText_PuzzleSolver_Desc_Interim3,
+			gText_PuzzleSolver_Desc_Puzzle4,
+			gText_PuzzleSolver_Desc_Interim4,
+			gText_PuzzleSolver_Desc_Puzzle5,
+			gText_PuzzleSolver_Desc_Interim5,
+			gText_PuzzleSolver_Desc_Puzzle6,
+			gText_PuzzleSolver_Desc_Interim6,
+			gText_PuzzleSolver_Desc_Puzzle7,
+			gText_PuzzleSolver_Desc_Interim7,
+			gText_PuzzleSolver_Desc_Puzzle8
 		},
 	    .donedesc = gText_SideQuestDoneDesc_PuzzleSolver,
 	    .map = {
 			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Mauville,
 			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Lavaridge,
 			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Petalburg,
 			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Fortree,
 			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Mossdeep,
 			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_Sootopolis,
 			gText_SideQuestMap_Route110,
+			gText_SideQuestMap_EverGrande,
 			gText_SideQuestMap_Route110
 		},
 	    .sprite = {
 			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_WATTSON,
 			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_FLANNERY,
 			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_NORMAN,
 			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_WINONA,
 			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_TATE,
 			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_JUAN,
 			OBJ_EVENT_GFX_MAN_1,
+			OBJ_EVENT_GFX_WALLACE,
 			OBJ_EVENT_GFX_MAN_1
 		},
 	    .spritetype = {
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
+			OBJECT,
 			OBJECT,
 			OBJECT,
 			OBJECT,
@@ -802,41 +830,29 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	    .numSubquests = 0,
 		.questVariable = 0,
 	},
+	[QUEST_HOMECOMING] =
+	{
+	    .name = gText_SideQuestName_Homecoming,
+	    .desc = {gText_SideQuestDesc_Homecoming},
+	    .donedesc = gText_SideQuestDoneDesc_Homecoming,
+	    .map = {gText_SideQuestMap_Petalburg},
+	    .sprite = {OBJ_EVENT_GFX_NORMAN},
+	    .spritetype = {OBJECT},
+	    .subquests = NULL,
+	    .numSubquests = 0,
+		.questVariable = 0,
+	},
 	[QUEST_CONTEST_STAR] =
 	{
 	    .name = gText_SideQuestName_ContestStar,
-	    .desc = {
-			gText_ContestStar_Desc_Cool,
-			gText_ContestStar_Desc_Cute,
-			gText_ContestStar_Desc_Beauty,
-			gText_ContestStar_Desc_Smart,
-			gText_ContestStar_Desc_Tough
-		},
+	    .desc = {gText_SideQuestDesc_ContestStar},
 	    .donedesc = gText_SideQuestDoneDesc_ContestStar,
-	    .map = {
-			gText_SideQuestMap_Lilycove,
-			gText_SideQuestMap_Lilycove,
-			gText_SideQuestMap_Lilycove,
-			gText_SideQuestMap_Lilycove,
-			gText_SideQuestMap_Lilycove
-		},
-	    .sprite = {
-			ITEM_RED_SCARF,
-			ITEM_PINK_SCARF,
-			ITEM_BLUE_SCARF,
-			ITEM_GREEN_SCARF,
-			ITEM_YELLOW_SCARF
-		},
-	    .spritetype = {
-			ITEM,
-			ITEM,
-			ITEM,
-			ITEM,
-			ITEM
-		},
+	    .map = {gText_SideQuestMap_Lilycove},
+	    .sprite = {ITEM_POKEBLOCK_CASE},
+	    .spritetype = {ITEM},
 	    .subquests = NULL,
 	    .numSubquests = 0,
-		.questVariable = VAR_CONTEST_STAR,
+		.questVariable = 0,
 	},
 	[QUEST_FRONTIER_WELCOME] =
 	{
@@ -854,11 +870,11 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	{
 	    .name = gText_SideQuestName_Explorer,
 	    .desc = {
-			gText_BattleFrontier_Desc_BattleFactory,
 			gText_BattleFrontier_Desc_BattleArena,
 			gText_BattleFrontier_Desc_BattleDome,
-			gText_BattleFrontier_Desc_BattlePike,
+			gText_BattleFrontier_Desc_BattleFactory,
 			gText_BattleFrontier_Desc_BattlePalace,
+			gText_BattleFrontier_Desc_BattlePike,
 			gText_BattleFrontier_Desc_BattlePyramid,
 			gText_BattleFrontier_Desc_BattleTower
 		},
@@ -873,11 +889,11 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 			gText_SideQuestMap_BattleFrontier
 		},
 	    .sprite = {
-			OBJ_EVENT_GFX_NOLAND,
 			OBJ_EVENT_GFX_GRETA,
 			OBJ_EVENT_GFX_TUCKER,
-			OBJ_EVENT_GFX_LUCY,
+			OBJ_EVENT_GFX_NOLAND,
 			OBJ_EVENT_GFX_SPENSER,
+			OBJ_EVENT_GFX_LUCY,
 			OBJ_EVENT_GFX_BRANDON,
 			OBJ_EVENT_GFX_ANABEL
 		},

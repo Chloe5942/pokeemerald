@@ -99,6 +99,7 @@ Route103_EventScript_AfterBrendanBattle::
 	end
 
 Route103_EventScript_RivalExit::
+	updatequest QUEST_RIVAL_NEXT_DOOR, VAR_RIVAL_NEXT_DOOR
 	closemessage
 	switch VAR_FACING
 	case DIR_SOUTH, Route103_EventScript_RivalExitFacingSouth

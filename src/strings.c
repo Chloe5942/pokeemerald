@@ -1901,6 +1901,7 @@ const u8 gText_SideQuestName_TrendSetter[] = _("Trend Setter");
 const u8 gText_SideQuestName_PuzzleSolver[] = _("Puzzle Solver");
 const u8 gText_SideQuestName_MailRun[] = _("Mail Run");
 const u8 gText_SideQuestName_CoinCollector[] = _("Coin Collector");
+const u8 gText_SideQuestName_Homecoming[] = _("Homecoming");
 const u8 gText_SideQuestName_ContestStar[] = _("Contest Star");
 
 const u8 gText_SideQuestName_Welcome[] = _("Frontier Welcome");
@@ -1915,7 +1916,8 @@ const u8 gText_SideQuestDesc_TrendSetter[] = _("Start a new trend in DEWFORD TOW
 const u8 gText_SideQuestDesc_PuzzleSolver[] = _("Solve all of the\nTRICK MASTER's puzzles.");
 const u8 gText_SideQuestDesc_MailRun[] = _("Bring the woman a HARBOR MAIL.\nThey can be found in SLATEPORT CITY.");
 const u8 gText_SideQuestDesc_CoinCollector[] = _("Collect at least 2000 COINS!");
-const u8 gText_SideQuestDesc_ContestStar[] = _("Compete in all types of Contests!");
+const u8 gText_SideQuestDesc_Homecoming[] = _("Go home to see your MOM!");
+const u8 gText_SideQuestDesc_ContestStar[] = _("Compete in a Contest!");
 
 const u8 gText_SideQuestDesc_Welcome[] = _("Welcome to the Battle Frontier!\nGo to SCOTT's HOUSE.");
 const u8 gText_SideQuestDesc_Explorer[] = _("Explore the Battle Frontier!");
@@ -1929,6 +1931,7 @@ const u8 gText_SideQuestDoneDesc_TrendSetter[] = _("Completed Trend Setter");
 const u8 gText_SideQuestDoneDesc_PuzzleSolver[] = _("Completed Puzzle Solver");
 const u8 gText_SideQuestDoneDesc_MailRun[] = _("Completed Mail Run");
 const u8 gText_SideQuestDoneDesc_CoinCollector[] = _("Completed Coin Collector");
+const u8 gText_SideQuestDoneDesc_Homecoming[] = _("Completed Homecoming");
 const u8 gText_SideQuestDoneDesc_ContestStar[] = _("Completed Contest Star");
 
 const u8 gText_SideQuestDoneDesc_Welcome[] = _("Completed Frontier Welcome");
@@ -1956,6 +1959,10 @@ const u8 gText_SideQuestMap_DesertRuins[] = _("Desert Ruins");
 const u8 gText_SideQuestMap_IslandCave[] = _("Island Cave");
 const u8 gText_SideQuestMap_AncientTomb[] = _("Ancient Tomb");
 const u8 gText_SideQuestMap_Littleroot[] = _("Littleroot Town");
+const u8 gText_SideQuestMap_Petalburg[] = _("Petalburg City");
+const u8 gText_SideQuestMap_Lavaridge[] = _("Lavaridge Town");
+const u8 gText_SideQuestMap_Fortree[] = _("Fortree City");
+const u8 gText_SideQuestMap_Sootopolis[] = _("Sootopolis City");
 
 // Subquests
 const u8 gText_RivalNextDoor_Name_FirstBattle[] = _("1st Battle - Introductions");
@@ -2011,7 +2018,7 @@ const u8 gText_RivalNextDoor_Desc_FifthBattle[] = _("Battle your rival in LILYCO
 const u8 gText_ScoutingScott_Desc_GradClass[] = _("Find SCOTT in RUSTBURO CITY\nbefore challenging the GYM.");
 const u8 gText_ScoutingScott_Desc_ClassReunion[] = _("Find SCOTT in RUSTBURO CITY\nbefore leaving the City.");
 const u8 gText_ScoutingScott_Desc_SlateBattles[] = _("Find SCOTT in SLATEPORT CITY.");
-const u8 gText_ScoutingScott_Desc_VerdanBattles[] = _("Find SCOTT in VERDANTURF TOWN\nafter getting MAUVILLE CITY's GYM BADGE.");
+const u8 gText_ScoutingScott_Desc_VerdanBattles[] = _("Find SCOTT in VERDANTURF TOWN\nafter getting the\nDYNAMO BADGE.");
 const u8 gText_ScoutingScott_Desc_FallaborBattles[] = _("Find SCOTT in FALLABOR TOWN\nbefore going to METEOR FALLS.");
 const u8 gText_ScoutingScott_Desc_LilyVaca[] = _("Find SCOTT in LILYCOVE CITY\nbefore finding TEAM AQUA.");
 const u8 gText_ScoutingScott_Desc_StarGazer[] = _("Find SCOTT in MOSSDEEP CITY\nbefore finding TEAM MAGMA.");
@@ -2019,11 +2026,32 @@ const u8 gText_ScoutingScott_Desc_ChampRoad[] = _("Find SCOTT in EVER GRANDE CIT
 
 const u8 gText_PuzzleSolver_Desc[] = _("Solve the TRICK MASTER's puzzle.");
 
+const u8 gText_PuzzleSolver_Desc_Puzzle1[] = _("Solve the TRICK MASTER's puzzle.\nThe Maze of Trees");
+const u8 gText_PuzzleSolver_Desc_Interim1[] = _("Return to the TRICK MASTER's HOUSE\nAfter getting the\nDYNAMO BADGE.");
+const u8 gText_PuzzleSolver_Desc_Puzzle2[] = _("Solve the TRICK MASTER's puzzle.\nA Switchy Situation");
+const u8 gText_PuzzleSolver_Desc_Interim2[] = _("Return to the TRICK MASTER's HOUSE\nAfter getting the\nHEAT BADGE.");
+const u8 gText_PuzzleSolver_Desc_Puzzle3[] = _("Solve the TRICK MASTER's puzzle.\nThe Maze of Doors");
+const u8 gText_PuzzleSolver_Desc_Interim3[] = _("Return to the TRICK MASTER's HOUSE\nAfter getting the\nBALANCE BADGE.");
+const u8 gText_PuzzleSolver_Desc_Puzzle4[] = _("Solve the TRICK MASTER's puzzle.\nBouldering Boulders");
+const u8 gText_PuzzleSolver_Desc_Interim4[] = _("Return to the TRICK MASTER's HOUSE\nAfter getting the\nFEATHER BADGE.");
+const u8 gText_PuzzleSolver_Desc_Puzzle5[] = _("Solve the TRICK MASTER's puzzle.\nMind Games");
+const u8 gText_PuzzleSolver_Desc_Interim5[] = _("Return to the TRICK MASTER's HOUSE\nAfter getting the\nMIND BADGE.");
+const u8 gText_PuzzleSolver_Desc_Puzzle6[] = _("Solve the TRICK MASTER's puzzle.\nThe Gated Path");
+const u8 gText_PuzzleSolver_Desc_Interim6[] = _("Return to the TRICK MASTER's HOUSE\nAfter getting the\nRAIN BADGE.");
+const u8 gText_PuzzleSolver_Desc_Puzzle7[] = _("Solve the TRICK MASTER's puzzle.\nTeleport and Spin");
+const u8 gText_PuzzleSolver_Desc_Interim7[] = _("Return to the TRICK MASTER's HOUSE\nAfter becoming the\nHOENN REGION CHAMPION.");
+const u8 gText_PuzzleSolver_Desc_Puzzle8[] = _("Solve the TRICK MASTER's puzzle.\nSlippery Floor");
+
 const u8 gText_ContestStar_Desc_Cool[] = _("Win a Cool Contest.");
 const u8 gText_ContestStar_Desc_Cute[] = _("Win a Cute Contest.");
 const u8 gText_ContestStar_Desc_Beauty[] = _("Win a Beauty Contest.");
 const u8 gText_ContestStar_Desc_Smart[] = _("Win a Smart Contest.");
 const u8 gText_ContestStar_Desc_Tough[] = _("Win a Tough Contest.");
+
+const u8 gText_ContestStar_Desc_Normal[] = _("Win any Normal Rank Contest.");
+const u8 gText_ContestStar_Desc_Super[] = _("Win any Super Rank Contest.");
+const u8 gText_ContestStar_Desc_Hyper[] = _("Win any Hyper Rank Contest.");
+const u8 gText_ContestStar_Desc_Master[] = _("Win any Master Rank Contest.");
 
 const u8 gText_BattleFrontier_Desc_BattleFactory[] = _("Explore the Battle Factory.");
 const u8 gText_BattleFrontier_Desc_BattleArena[] = _("Explore the Battle Arena.");

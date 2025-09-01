@@ -20,29 +20,6 @@ BattleFrontier_BattleDomeLobby_Movement_MoveLeftUp::
 	walk_up
 	step_end
 
-BattleFrontier_BattleDomeLobby_Trigger::
-	goto_if_eq VAR_TEMP_0, 0, BattleFrontier_BattleDomeLobby_QuestTrigger
-	end
-
-BattleFrontier_BattleDomeLobby_TriggerOffLeft::
-	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomeLobby_Movement_MoveRight
-	goto_if_eq VAR_TEMP_0, 0, BattleFrontier_BattleDomeLobby_QuestTrigger
-	end
-
-BattleFrontier_BattleDomeLobby_TriggerOffUpR::
-	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomeLobby_Movement_MoveLeft
-	goto_if_eq VAR_TEMP_0, 0, BattleFrontier_BattleDomeLobby_QuestTrigger
-	end
-
-BattleFrontier_BattleDomeLobby_TriggerOffRight::
-	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomeLobby_Movement_MoveLeftUp
-	goto_if_eq VAR_TEMP_0, 0, BattleFrontier_BattleDomeLobby_QuestTrigger
-	end
-
-BattleFrontier_BattleDomeLobby_QuestTrigger::
-	goto_if_ne VAR_FRONTIER_EXPLORER, 0, BattleFrontier_BattleDomeLobby_EventScript_Tucker
-	end
-
 BattleFrontier_BattleDomeLobby_OnResume:
 	dome_initresultstree
 	end
@@ -720,12 +697,6 @@ BattleFrontier_BattleDomeLobby_Text_ExplainDoubleKORules:
 	.string "match, the REFEREES will review\l"
 	.string "the match and declare the winner.$"
 
-BattleFrontier_BattleDomeLobby_Movement_Approach::
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
 BattleFrontier_BattleDomeLobby_Movement_WalkAway::
 	walk_up
 	walk_up
@@ -734,7 +705,7 @@ BattleFrontier_BattleDomeLobby_Movement_WalkAway::
 
 BattleFrontier_BattleDomeLobby_EventScript_Tucker::
 	lockall
-	applymovement LOCALID_TUCKER, BattleFrontier_BattleDomeLobby_Movement_Approach
+	faceplayer
 	msgbox BattleFrontier_BattleDomeLobby_Text_TuckerWelcome, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
@@ -744,6 +715,8 @@ BattleFrontier_BattleDomeLobby_EventScript_Tucker::
 	fadescreen FADE_FROM_BLACK
 	releaseall
 	updatequest QUEST_FRONTIER_EXPLORER, VAR_FRONTIER_EXPLORER
+	setflag FLAG_HIDE_LOBBY_TUCKER
+	clearflag FLAG_HIDE_LOBBY_NOLAND
 	end
 
 BattleFrontier_BattleDomeLobby_Text_TuckerWelcome:

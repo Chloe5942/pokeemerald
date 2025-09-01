@@ -39,6 +39,7 @@ EverGrandeCity_PokemonCenter_1F_EventScript_Scott::
 	call_if_eq VAR_FACING, DIR_WEST, EverGrandeCity_PokemonCenter_1F_EventScript_ScottExit
 	addvar VAR_SCOTT_STATE, 1
 	setflag FLAG_MET_SCOTT_IN_EVERGRANDE
+	completequest QUEST_SCOUTING_SCOTT
 	playse SE_EXIT
 	waitse
 	removeobject LOCALID_EVER_GRANDE_SCOTT

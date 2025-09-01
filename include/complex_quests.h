@@ -82,15 +82,6 @@ enum PuzzleSolver_States{
     QUEST_PUZZLE_SOLVER_TOTAL_STATES,
 };
 
-enum ContestStar_States{
-    QUEST_CONTEST_STAR_STATE_1, // Enter a Cool Contest
-    QUEST_CONTEST_STAR_STATE_2, // Enter a Cute Contest
-    QUEST_CONTEST_STAR_STATE_3, // Enter a Beauty Contest
-    QUEST_CONTEST_STAR_STATE_4, // Enter a Smart Contest
-    QUEST_CONTEST_STAR_STATE_5, // Enter a Tough Contest
-    QUEST_CONTEST_STAR_TOTAL_STATES,
-};
-
 enum FrontierExplorer_States{
     QUEST_FRONTIER_EXPLORER_STATE_1, // Go to the Battle Arena
     QUEST_FRONTIER_EXPLORER_STATE_2, // Go to the Battle Dome
@@ -99,7 +90,6 @@ enum FrontierExplorer_States{
     QUEST_FRONTIER_EXPLORER_STATE_5, // Go to the Battle Pike
     QUEST_FRONTIER_EXPLORER_STATE_6, // Go to the Battle Pyramid
     QUEST_FRONTIER_EXPLORER_STATE_7, // Go to the Battle Tower
-    QUEST_FRONTIER_EXPLORER_STATE_8, // Return to Scott's House
     QUEST_FRONTIER_EXPLORER_TOTAL_STATES,
 };
 

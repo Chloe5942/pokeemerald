@@ -890,6 +890,7 @@ SlateportCity_EventScript_ScottBattleTentScene::
 	removeobject LOCALID_SLATEPORT_SCOTT
 	addvar VAR_SCOTT_STATE, 1
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
+	updatequest QUEST_SCOUTING_SCOTT, VAR_SCOUTING_SCOTT
 	releaseall
 	end
 

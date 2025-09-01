@@ -23,12 +23,13 @@
 #define QUEST_PUZZLE_SOLVER                  4
 #define QUEST_MAIL_RUN                       5
 #define QUEST_COIN_COLLECTOR                 6
-#define QUEST_CONTEST_STAR                   7
+#define QUEST_HOMECOMING                     7
+#define QUEST_CONTEST_STAR                   8
 // Post Game
-#define QUEST_FRONTIER_WELCOME               8
-#define QUEST_FRONTIER_EXPLORER              9
-#define QUEST_GIGANTIC_FINDINGS             10
-#define QUEST_COUNT                         (QUEST_GIGANTIC_FINDINGS + 1) // 11/100 89 Free Spaces Left
+#define QUEST_FRONTIER_WELCOME               9
+#define QUEST_FRONTIER_EXPLORER             10
+#define QUEST_GIGANTIC_FINDINGS             11
+#define QUEST_COUNT                         (QUEST_GIGANTIC_FINDINGS + 1) // 12/100 88 Free Spaces Left
 
 #define SUB_QUEST_DUMMY               0
 

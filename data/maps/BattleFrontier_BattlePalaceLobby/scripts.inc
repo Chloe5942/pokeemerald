@@ -648,3 +648,31 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainRulesWhenInDanger:
 	.string "If a POKéMON begins behaving oddly\n"
 	.string "in a pinch, watch it carefully.$"
 
+BattleFrontier_BattlePalaceLobby_Movement_WalkAway::
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+BattleFrontier_BattlePalaceLobby_EventScript_Spenser::
+	lockall
+	faceplayer
+	msgbox BattleFrontier_BattlePalaceLobby_Text_SpenserWelcome, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	applymovement LOCALID_SPENSER, BattleFrontier_BattlePalaceLobby_Movement_WalkAway
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SPENSER
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	updatequest QUEST_FRONTIER_EXPLORER, VAR_FRONTIER_EXPLORER
+	setflag FLAG_HIDE_LOBBY_SPENSER
+	clearflag FLAG_HIDE_LOBBY_LUCY
+	end
+
+BattleFrontier_BattlePalaceLobby_Text_SpenserWelcome:
+	.string "SPENSER: Gwahahah! You must be the new\n"
+	.string "TRAINER that SCOTT told me about!\p"
+	.string "Welcome to the BATTLE PALACE!\n"
+	.string "I'm the PALACE MAVEN, SPENSER!\p"
+	.string "I hope to battle you one day.$"

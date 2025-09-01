@@ -902,3 +902,31 @@ BattleFrontier_BattlePyramidLobby_Text_ExplainBagRules:
 	.string "The contents of the BATTLE BAG are\n"
 	.string "lost if you fail in your quest.$"
 
+BattleFrontier_BattlePyramidLobby_Movement_WalkAway::
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+BattleFrontier_BattlePyramidLobby_EventScript_Brandon::
+	lockall
+	faceplayer
+	msgbox BattleFrontier_BattlePyramidLobby_Text_BrandonWelcome, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	applymovement LOCALID_PYRAMID_LOBBY_BRANDON, BattleFrontier_BattlePyramidLobby_Movement_WalkAway
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_PYRAMID_LOBBY_BRANDON
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	updatequest QUEST_FRONTIER_EXPLORER, VAR_FRONTIER_EXPLORER
+	setflag FLAG_HIDE_LOBBY_BRANDON
+	clearflag FLAG_HIDE_LOBBY_ANABEL
+	end
+
+BattleFrontier_BattlePyramidLobby_Text_BrandonWelcome:
+	.string "BRANDON: Hahahah! You must be the new\n"
+	.string "TRAINER that SCOTT told me about!\p"
+	.string "Welcome to the BATTLE PYRAMID!\n"
+	.string "I'm the PYRAMID KING, BRANDON!\p"
+	.string "I hope to battle you one day.$"

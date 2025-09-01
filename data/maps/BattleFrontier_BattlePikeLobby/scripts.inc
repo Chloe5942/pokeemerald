@@ -433,3 +433,31 @@ BattleFrontier_BattlePikeLobby_Text_ExplainMonOrderRules:
 	.string "The sequence must be set before\n"
 	.string "starting your challenge.$"
 
+BattleFrontier_BattlePikeLobby_Movement_WalkAway::
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+BattleFrontier_BattlePikeLobby_EventScript_Lucy::
+	lockall
+	faceplayer
+	msgbox BattleFrontier_BattlePikeLobby_Text_LucyWelcome, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	applymovement LOCALID_LUCY, BattleFrontier_BattlePikeLobby_Movement_WalkAway
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_LUCY
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	updatequest QUEST_FRONTIER_EXPLORER, VAR_FRONTIER_EXPLORER
+	setflag FLAG_HIDE_LOBBY_LUCY
+	clearflag FLAG_HIDE_LOBBY_BRANDON
+	end
+
+BattleFrontier_BattlePikeLobby_Text_LucyWelcome:
+	.string "LUCY: … You must be the new\n"
+	.string "TRAINER that SCOTT told me about…\p"
+	.string "Welcome to the BATTLE PIKE…\n"
+	.string "I'm the PIKE QUEEN, LUCY…\p"
+	.string "I hope to battle you one day…$"

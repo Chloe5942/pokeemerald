@@ -549,3 +549,32 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainOpenLvRules:
 	.string "In the Open Level, the rental POKéMON\n"
 	.string "and the opposing TRAINERS' POKéMON\l"
 	.string "are all Level 100.$"
+
+BattleFrontier_BattleFactoryLobby_Movement_WalkAway::
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+BattleFrontier_BattleFactoryLobby_EventScript_Noland::
+	lockall
+	faceplayer
+	msgbox BattleFrontier_BattleFactoryLobby_Text_NolandWelcome, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	applymovement LOCALID_NOLAND, BattleFrontier_BattleFactoryLobby_Movement_WalkAway
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_NOLAND
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	updatequest QUEST_FRONTIER_EXPLORER, VAR_FRONTIER_EXPLORER
+	setflag FLAG_HIDE_LOBBY_NOLAND
+	clearflag FLAG_HIDE_LOBBY_SPENSER
+	end
+
+BattleFrontier_BattleFactoryLobby_Text_NolandWelcome:
+	.string "NOLAND: Hey! You must be the new\n"
+	.string "TRAINER that SCOTT told me about.\p"
+	.string "Welcome to the BATTLE FACTORY!\n"
+	.string "I'm the FACTORY HEAD, NOLAND!\p"
+	.string "I hope to battle you one day!$"

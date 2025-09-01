@@ -1397,3 +1397,31 @@ BattleFrontier_BattleTowerLobby_Text_ExplainMultiLinkRules:
 	.string "from those of your friend.\p"
 	.string "You may not interrupt this challenge\n"
 	.string "in the middle, unlike other modes.$"
+
+BattleFrontier_BattleTowerLobby_Movement_WalkAway::
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+BattleFrontier_BattleTowerLobby_EventScript_Anabel::
+	lockall
+	faceplayer
+	msgbox BattleFrontier_BattleTowerLobby_Text_AnabelWelcome, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	applymovement LOCALID_ANABEL, BattleFrontier_BattleTowerLobby_Movement_WalkAway
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_ANABEL
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	completequest QUEST_FRONTIER_EXPLORER
+	setflag FLAG_HIDE_LOBBY_ANABEL
+	end
+
+BattleFrontier_BattleTowerLobby_Text_AnabelWelcome:
+	.string "ANABEL: Fufufu! You must be the new\n"
+	.string "TRAINER that SCOTT told me about!\p"
+	.string "Welcome to the BATTLE TOWER!\n"
+	.string "I'm the SALON MAIDEN, ANABEL.\p"
+	.string "I hope to battle you one day.$"

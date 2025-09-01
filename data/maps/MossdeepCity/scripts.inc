@@ -259,6 +259,7 @@ MossdeepCity_EventScript_Scott::
 	call_if_eq VAR_FACING, DIR_EAST, MossdeepCity_EventScript_ScottExitEast
 	addvar VAR_SCOTT_STATE, 1
 	removeobject LOCALID_MOSSDEEP_SCOTT
+	updatequest QUEST_SCOUTING_SCOTT, VAR_SCOUTING_SCOTT
 	release
 	end
 

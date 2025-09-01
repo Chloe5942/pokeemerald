@@ -147,7 +147,6 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle7::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle8::
-	updatequest QUEST_PUZZLE_SOLVER, VAR_PUZZLE_SOLVER
 	completequest QUEST_PUZZLE_SOLVER
 	msgbox Route110_TrickHouseEnd_Text_AllNightPolishingFloors, MSGBOX_DEFAULT
 	closemessage
