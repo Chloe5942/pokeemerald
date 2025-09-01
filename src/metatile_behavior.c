@@ -899,8 +899,7 @@ bool8 MetatileBehavior_IsDeepOrOceanWater(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_OCEAN_WATER
      || metatileBehavior == MB_INTERIOR_DEEP_WATER
-     || metatileBehavior == MB_DEEP_WATER
-     || metatileBehavior == MB_FEEBAS)
+     || metatileBehavior == MB_DEEP_WATER)
         return TRUE;
     else
         return FALSE;
@@ -1160,7 +1159,6 @@ bool8 MetatileBehavior_IsSurfableFishableWater(u8 metatileBehavior)
      || metatileBehavior == MB_INTERIOR_DEEP_WATER
      || metatileBehavior == MB_DEEP_WATER
      || metatileBehavior == MB_SOOTOPOLIS_DEEP_WATER
-     || metatileBehavior == MB_FEEBAS
      || (metatileBehavior == MB_EASTWARD_CURRENT
       || metatileBehavior == MB_WESTWARD_CURRENT
       || metatileBehavior == MB_NORTHWARD_CURRENT

@@ -27,30 +27,18 @@ Route119_OnTransition:
 
 Route119_EventScript_FeebasSpotsMorning::
 	setmaplayoutindex LAYOUT_ROUTE119_MORNING
-	setflag FLAG_TEMP_2
-	setflag FLAG_TEMP_3
-	setflag FLAG_TEMP_4
 	return
 
 Route119_EventScript_FeebasSpotsDay::
 	setmaplayoutindex LAYOUT_ROUTE119
-	setflag FLAG_TEMP_1
-	setflag FLAG_TEMP_3
-	setflag FLAG_TEMP_4
 	return
 
 Route119_EventScript_FeebasSpotsEvening::
 	setmaplayoutindex LAYOUT_ROUTE119_EVENING
-	setflag FLAG_TEMP_2
-	setflag FLAG_TEMP_1
-	setflag FLAG_TEMP_4
 	return
 
 Route119_EventScript_FeebasSpotsNight::
 	setmaplayoutindex LAYOUT_ROUTE119_NIGHT
-	setflag FLAG_TEMP_2
-	setflag FLAG_TEMP_3
-	setflag FLAG_TEMP_1
 	return
 
 Route119_EventScript_MoveInstituteWorkersDownstairs::
@@ -641,50 +629,3 @@ Route119_Text_TrainerTipsDecoration:
 	.string "Pick your favorite items and create\n"
 	.string "your very own SECRET BASE exactly the\l"
 	.string "way you want.$"
-
-Route119_EventScript_Feebas1::
-	playmoncry SPECIES_FEEBAS, CRY_MODE_NORMAL
-	waitmoncry
-	playse SE_M_DIVE
-	setflag FLAG_TEMP_1
-	removeobject VAR_LAST_TALKED
-	msgbox Route119_Text_FeebasRan, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	end
-
-Route119_EventScript_Feebas2::
-	playmoncry SPECIES_FEEBAS, CRY_MODE_NORMAL
-	waitmoncry
-	playse SE_M_DIVE
-	setflag FLAG_TEMP_2
-	removeobject VAR_LAST_TALKED
-	msgbox Route119_Text_FeebasRan, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	end
-
-Route119_EventScript_Feebas3::
-	playmoncry SPECIES_FEEBAS, CRY_MODE_NORMAL
-	waitmoncry
-	playse SE_M_DIVE
-	setflag FLAG_TEMP_3
-	removeobject VAR_LAST_TALKED
-	msgbox Route119_Text_FeebasRan, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	end
-
-Route119_EventScript_Feebas4::
-	playmoncry SPECIES_FEEBAS, CRY_MODE_NORMAL
-	waitmoncry
-	playse SE_M_DIVE
-	setflag FLAG_TEMP_4
-	removeobject VAR_LAST_TALKED
-	msgbox Route119_Text_FeebasRan, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	end
-
-Route119_Text_FeebasRan:
-	.string "The FEEBAS dove under the water!$"

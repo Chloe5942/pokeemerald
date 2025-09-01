@@ -586,62 +586,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_ROUTE_119_SCOTT"
-    },
-    {
-      "local_id": "LOCALID_FEEBAS_DAY",
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_FEEBAS",
-      "x": 18,
-      "y": 34,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 3,
-      "movement_range_y": 2,
-      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route119_EventScript_Feebas2",
-      "flag": "FLAG_TEMP_2"
-    },
-    {
-      "local_id": "LOCALID_FEEBAS_MORNING",
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_FEEBAS",
-      "x": 18,
-      "y": 22,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "Route119_EventScript_Feebas1",
-      "flag": "FLAG_TEMP_1"
-    },
-    {
-      "local_id": "LOCALID_FEEBAS_EVENING",
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_FEEBAS",
-      "x": 25,
-      "y": 45,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 2,
-      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
-      "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route119_EventScript_Feebas3",
-      "flag": "FLAG_TEMP_3"
-    },
-    {
-      "local_id": "LOCALID_FEEBAS_NIGHT",
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_FEEBAS",
-      "x": 21,
-      "y": 73,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 5,
-      "movement_range_y": 3,
-      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
-      "trainer_sight_or_berry_tree_id": "5",
-      "script": "Route119_EventScript_Feebas4",
-      "flag": "FLAG_TEMP_4"
     }
   ],
   "warp_events": [
