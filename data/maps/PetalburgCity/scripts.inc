@@ -760,3 +760,32 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "I'm roaming the land in search of\n"
 	.string "talented TRAINERS.\p"
 	.string "I'm sorry to have taken your time.$"
+
+PetalburgCity_EventScript_TriggerRydelCall::
+	goto_if_unset FLAG_RECEIVED_HM_SURF, PetalburgCity_EventScript_RydelCallEnd
+	checkitem ITEM_HM03
+	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_EventScript_RydelCallCheck
+	end
+
+PetalburgCity_EventScript_RydelCallCheck::
+	goto_if_set FLAG_UPGRADED_BIKE, PetalburgCity_EventScript_RydelCallEnd
+	goto_if_unset FLAG_UPGRADED_BIKE, PetalburgCity_EventScript_CallPlayerBike
+
+PetalburgCity_EventScript_CallPlayerBike::
+	lockall
+	pokenavcall PetalburgCity_Text_RydelPlayerBike
+	waitmessage
+	closemessage
+	setvar VAR_PETALBURG_CITY_STATE, 6
+	releaseall
+	end
+
+PetalburgCity_EventScript_RydelCallEnd::
+	end
+
+PetalburgCity_Text_RydelPlayerBike:
+	.string "RYDEL: Sorry to call you suddenly,\n"
+	.string "but we have a new bike model if you\p"
+	.string "want to drop in at the\n"
+	.string "MAUVILLE CITY BIKE SHOP\p"
+	.string "for a free upgrade.$"

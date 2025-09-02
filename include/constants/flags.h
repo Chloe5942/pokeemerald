@@ -63,13 +63,13 @@
 #define FLAG_HIDE_LOBBY_NOLAND    0x32 // Unused Flag
 #define FLAG_HIDE_LOBBY_BRANDON    0x33 // Unused Flag
 #define FLAG_HIDE_LOBBY_SPENSER    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
+#define FLAG_SYS_NO_COLLISION    0x35 // Unused Flag
+#define FLAG_SYS_NO_TRAINER_SEE    0x36 // Unused Flag
+#define FLAG_SYS_NO_BAG_USE    0x37 // Unused Flag
+#define FLAG_SYS_NO_CATCHING    0x38 // Unused Flag
+#define FLAG_SYS_PC_FROM_DEBUG_MENU    0x39 // Unused Flag
+#define FLAG_SYS_NO_BATTLE_DMG    0x3A // Unused Flag
+#define FLAG_SYS_NO_ENCOUNTER    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
@@ -98,7 +98,7 @@
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
 #define FLAG_UPGRADED_AMULET_COIN            0x54  // Unused Flag
-#define FLAG_UNUSED_0x055                    0x55  // Unused Flag
+#define FLAG_UPGRADED_BIKE                   0x55  // Unused Flag
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
@@ -1384,7 +1384,7 @@
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
-#define FLAG_UNUSED_0x881                           (SYSTEM_FLAGS + 0x21) // Unused Flag
+#define FLAG_SYS_DEBUG                              (SYSTEM_FLAGS + 0x21) // Unused Flag
 #define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
 #define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag

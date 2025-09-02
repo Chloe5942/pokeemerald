@@ -4,6 +4,7 @@ MauvilleCity_BikeShop_MapScripts::
 MauvilleCity_BikeShop_EventScript_Rydel::
 	lock
 	faceplayer
+	goto_if_set FLAG_BADGE05_GET, MauvilleCity_BikeShop_EventScript_UpgradeBikes
 	goto_if_set FLAG_RECEIVED_BIKE, MauvilleCity_BikeShop_EventScript_AskSwitchBikes
 	goto_if_set FLAG_DECLINED_BIKE, MauvilleCity_BikeShop_EventScript_SkipGreeting
 	msgbox MauvilleCity_BikeShop_Text_RydelGreeting, MSGBOX_DEFAULT
@@ -318,3 +319,40 @@ MauvilleCity_BikeShop_Text_Jumps:
 	.string "change directions while jumping.\p"
 	.string "Want to read a different page?$"
 
+MauvilleCity_BikeShop_EventScript_UpgradeBikes::
+	goto_if_set FLAG_UPGRADED_BIKE, MauvilleCity_BikeShop_EventScript_UpgradedBike
+	msgbox MauvilleCity_BikeShop_Text_WantToUpgradeBike, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MauvilleCity_BikeShop_EventScript_AskSwitchBikes
+	checkitem ITEM_ACRO_BIKE
+	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_BikeShop_EventScript_UpgradeAcro
+	checkitem ITEM_MACH_BIKE
+	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_BikeShop_EventScript_UpgradeMach
+	end
+
+MauvilleCity_BikeShop_EventScript_UpgradeAcro::
+	bufferitemname STR_VAR_1, ITEM_ACRO_BIKE
+	msgbox MauvilleCity_BikeShop_Text_UpgradeBike, MSGBOX_AUTOCLOSE
+	setflag FLAG_UPGRADED_BIKE
+	end
+
+MauvilleCity_BikeShop_EventScript_UpgradeMach::
+	bufferitemname STR_VAR_1, ITEM_MACH_BIKE
+	msgbox MauvilleCity_BikeShop_Text_UpgradeBike, MSGBOX_AUTOCLOSE
+	setflag FLAG_UPGRADED_BIKE
+	end
+
+MauvilleCity_BikeShop_Text_UpgradeBike:
+	.string "{PLAYER} upgraded the {STR_VAR_1} into\n"
+	.string "the a 2 in 1 BIKE.$"
+
+MauvilleCity_BikeShop_Text_UpgradedBikeInfo:
+	.string "RYDEL: Press the R Button to switch\n"
+	.string "between the ACRO and MACH modes.$"
+
+MauvilleCity_BikeShop_Text_WantToUpgradeBike:
+	.string "RYDEL: Do you want to upgrade your\n"
+	.string "bike to the 2 in 1 model?$"
+
+MauvilleCity_BikeShop_EventScript_UpgradedBike::
+	msgbox MauvilleCity_BikeShop_Text_HappyYouLikeIt, MSGBOX_AUTOCLOSE
+	end

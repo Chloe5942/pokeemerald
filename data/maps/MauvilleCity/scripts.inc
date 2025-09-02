@@ -773,6 +773,7 @@ MauvilleCity_Text_NotEnoughCoins:
 	.string "You have {STR_VAR_1} out of 2000 COINS.$"
 
 MauvilleCity_EventScript_DevPort::
+	setflag FLAG_SYS_DEBUG
 	warpspinenter MAP_INSIDE_OF_TRUCK, 1, 1
 	end
 

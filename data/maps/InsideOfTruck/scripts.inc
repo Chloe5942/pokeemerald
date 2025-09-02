@@ -58,6 +58,7 @@ InsideOfTruck_Text_BoxPrintedWithMonLogo:
 	.string "delivery service.$"
 
 InsideOfTruck_EventScript_DevPort::
+	goto_if_unset FLAG_SYS_DEBUG, InsideOfTruck_EventScript_Nothing
 	setflag FLAG_SYS_QUEST_MENU_GET
 	startquest QUEST_RIVAL_NEXT_DOOR
 	delay 5
@@ -84,6 +85,7 @@ InsideOfTruck_EventScript_DevPort::
 	end
 
 InsideOfTruck_EventScript_DevPort2::
+	goto_if_unset FLAG_SYS_DEBUG, InsideOfTruck_EventScript_Nothing
 	random 4
 	goto_if_eq VAR_RESULT, 0, InsideOfTruck_EventScript_DevPort2_PuzzleKabuto
 	goto_if_eq VAR_RESULT, 1, InsideOfTruck_EventScript_DevPort2_PuzzleOmanyte
@@ -132,8 +134,9 @@ InsideOfTruck_EventScript_DevPort2_PuzzleHoOh::
 	end
 
 InsideOfTruck_EventScript_DevPort2_Exit::
-	startquest QUEST_HOMECOMING
-	clearflag FLAG_ENABLE_MOM_MATCH_CALL
-	clearflag FLAG_RECEIVED_AMULET_COIN
+	setflag FLAG_SYS_DEBUG
 	warpspinenter MAP_LITTLEROOT_TOWN, 12, 10
+	end
+
+InsideOfTruck_EventScript_Nothing::
 	end
