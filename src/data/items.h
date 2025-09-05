@@ -823,6 +823,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .bpPrice = 1,
     },
 
     [ITEM_PROTEIN] =
@@ -834,6 +835,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .bpPrice = 1,
     },
 
     [ITEM_IRON] =
@@ -845,6 +847,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .bpPrice = 1,
     },
 
     [ITEM_CARBOS] =
@@ -856,6 +859,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .bpPrice = 1,
     },
 
     [ITEM_CALCIUM] =
@@ -867,6 +871,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .bpPrice = 1,
     },
 
     [ITEM_RARE_CANDY] =
@@ -878,6 +883,8 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .coinPrice = 4000,
+        .bpPrice = 48,
     },
 
     [ITEM_PP_UP] =
@@ -1180,6 +1187,8 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .coinPrice = 2000,
+        .bpPrice = 3,
     },
 
     [ITEM_MOON_STONE] =
@@ -1191,6 +1200,8 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .coinPrice = 2000,
+        .bpPrice = 3,
     },
 
     [ITEM_FIRE_STONE] =
@@ -1202,6 +1213,8 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .coinPrice = 2000,
+        .bpPrice = 3,
     },
 
     [ITEM_THUNDER_STONE] =
@@ -1213,6 +1226,8 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .coinPrice = 2000,
+        .bpPrice = 3,
     },
 
     [ITEM_WATER_STONE] =
@@ -1224,6 +1239,8 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .coinPrice = 2000,
+        .bpPrice = 3,
     },
 
     [ITEM_LEAF_STONE] =
@@ -1235,6 +1252,8 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .coinPrice = 2000,
+        .bpPrice = 3,
     },
 
     [ITEM_063] =
@@ -2206,6 +2225,8 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .coinPrice = 4500,
+        .bpPrice = 64,
     },
 
     [ITEM_WHITE_HERB] =
@@ -2218,6 +2239,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .bpPrice = 48,
     },
 
     [ITEM_MACHO_BRACE] =
@@ -2255,6 +2277,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .bpPrice = 48,
     },
 
     [ITEM_SOOTHE_BELL] =
@@ -2279,6 +2302,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .bpPrice = 48,
     },
 
     [ITEM_CHOICE_BAND] =
@@ -2291,6 +2315,8 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .coinPrice = 4500,
+        .bpPrice = 64,
     },
 
     [ITEM_KINGS_ROCK] =
@@ -2304,6 +2330,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .bpPrice = 64,
     },
 
     [ITEM_SILVER_POWDER] =
@@ -2415,6 +2442,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .bpPrice = 64,
     },
 
     [ITEM_LUCKY_EGG] =
@@ -2439,6 +2467,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .bpPrice = 64,
     },
 
     [ITEM_METAL_COAT] =
@@ -2465,6 +2494,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .bpPrice = 48,
     },
 
     [ITEM_DRAGON_SCALE] =
@@ -3692,6 +3722,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = TM,
+        .coinPrice = 4000,
     },
 
     [ITEM_TM_BLIZZARD] =
@@ -3835,6 +3866,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = TM,
+        .coinPrice = 4000,
     },
 
     [ITEM_TM_THUNDER] =
@@ -3900,6 +3932,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = TM,
+        .coinPrice = 3500,
     },
 
     [ITEM_TM_SHADOW_BALL] =
@@ -3939,6 +3972,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = TM,
+        .coinPrice = 1500,
     },
 
     [ITEM_TM_REFLECT] =
@@ -3978,6 +4012,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = TM,
+        .coinPrice = 4000,
     },
 
     [ITEM_TM_SLUDGE_BOMB] =

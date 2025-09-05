@@ -32,7 +32,7 @@
   "warp_events": [
     {
       "x": 7,
-      "y": 11,
+      "y": 16,
       "elevation": 3,
       "dest_map": "MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM",
       "dest_warp_id": "1"

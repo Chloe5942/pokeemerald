@@ -1222,6 +1222,7 @@ extern const u8 gText_TM35AndPrice[];
 extern const u8 gText_TM24AndPrice[];
 extern const u8 gText_TM13AndPrice[];
 extern const u8 gText_50CoinsAndPrice[];
+extern const u8 gText_250CoinsAndPrice[];
 extern const u8 gText_500CoinsAndPrice[];
 extern const u8 gText_Excellent2[];
 extern const u8 gText_NotSoGood[];

@@ -687,6 +687,7 @@ const u8 gText_TreeckoDollAndPrice[] = _("TREECKO DOLL 1,000 COINS");
 const u8 gText_TorchicDollAndPrice[] = _("TORCHIC DOLL 1,000 COINS");
 const u8 gText_MudkipDollAndPrice[] = _("MUDKIP DOLL   1,000 COINS");
 const u8 gText_50CoinsAndPrice[] = _("  50 COINS    ¥1,000");
+const u8 gText_250CoinsAndPrice[] = _("250 COINS    ¥5,000");
 const u8 gText_500CoinsAndPrice[] = _("500 COINS  ¥10,000");
 const u8 gText_Excellent2[] = _("Excellent");
 const u8 gText_NotSoGood[] = _("Not so good");

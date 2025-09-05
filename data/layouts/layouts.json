@@ -4436,7 +4436,7 @@
       "name": "ResearchLab_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/ResearchLab/border.bin",
       "blockdata_filepath": "data/layouts/ResearchLab/map.bin"
