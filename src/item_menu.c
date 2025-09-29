@@ -2117,9 +2117,13 @@ static void Task_RemoveItemFromBag(u8 taskId)
 static u32 CountRegisteredItems(void) {
     u32 i;
     u32 count = 0;
-    for (i = 0; i < ARRAY_COUNT(gSaveBlock1Ptr->registeredItems); i++)
-        if (gSaveBlock1Ptr->registeredItems[i] != ITEM_NONE)
-            count++;
+    for (i = 0; i < ARRAY_COUNT(gSaveBlock1Ptr->registeredItems); i++) {
+        if (gSaveBlock1Ptr->registeredItems[i] == ITEM_NONE)
+            continue;
+        else if (!CheckBagHasItem(gSaveBlock1Ptr->registeredItems[i], 1))
+            continue;
+        count++;
+    }
     // Fallback to vanilla registeredItem
     if (count == 0 && gSaveBlock1Ptr->registeredItemCompat) {
         gSaveBlock1Ptr->registeredItems[0] = gSaveBlock1Ptr->registeredItemCompat;
