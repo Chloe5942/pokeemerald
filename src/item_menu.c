@@ -24,7 +24,6 @@
 #include "list_menu.h"
 #include "link.h"
 #include "mail.h"
-#include "main.h"
 #include "malloc.h"
 #include "map_name_popup.h"
 #include "menu.h"
@@ -579,7 +578,7 @@ void CB2_ChooseBerry(void)
 }
 
 // Choosing berry for Berry Blender or Berry Crush
-void ChooseBerryForMachine(void (*exitCallback)(void), bool32 isSolo)
+void ChooseBerryForMachine(MainCallback exitCallback, bool32 isSolo)
 {
     if (isSolo)
         GoToBagMenu(ITEMMENULOCATION_BERRY_CRUSH_SOLO, BERRIES_POCKET, exitCallback);
@@ -616,7 +615,7 @@ void QuizLadyOpenBagMenu(void)
     gSpecialVar_Result = FALSE;
 }
 
-void GoToBagMenu(u8 location, u8 pocket, void ( *exitCallback)())
+void GoToBagMenu(u8 location, u8 pocket, MainCallback exitCallback)
 {
     gBagMenu = AllocZeroed(sizeof(*gBagMenu));
     if (gBagMenu == NULL)
@@ -1165,7 +1164,7 @@ u8 GetItemListPosition(u8 pocketId)
     return gBagPosition.scrollPosition[pocketId] + gBagPosition.cursorPosition[pocketId];
 }
 
-void DisplayItemMessage(u8 taskId, u8 fontId, const u8 *str, void (*callback)(u8 taskId))
+void DisplayItemMessage(u8 taskId, u8 fontId, const u8 *str, TaskFunc callback)
 {
     s16 *data = gTasks[taskId].data;
 
