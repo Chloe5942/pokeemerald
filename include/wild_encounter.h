@@ -21,7 +21,9 @@ struct WildPokemonHeader
     u8 mapGroup;
     u8 mapNum;
     const struct WildPokemonInfo *landMonsInfo;
+    const struct WildPokemonInfo *landMonsNightInfo;
     const struct WildPokemonInfo *waterMonsInfo;
+    const struct WildPokemonInfo *waterMonsNightInfo;
     const struct WildPokemonInfo *rockSmashMonsInfo;
     const struct WildPokemonInfo *fishingMonsInfo;
 };
