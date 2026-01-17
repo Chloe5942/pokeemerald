@@ -513,10 +513,10 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
         if (TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex, WATER_WILD_COUNT))
             break;
 
-        wildMonIndex = ChooseWildMonIndex_Rock();
+        wildMonIndex = night ? ChooseWildMonIndex_Water_Night() : ChooseWildMonIndex_Water();
         break;
     case WILD_AREA_ROCKS:
-        wildMonIndex = night ? ChooseWildMonIndex_Water_Night() : ChooseWildMonIndex_Water();
+        wildMonIndex = ChooseWildMonIndex_Rock();
         break;
     }
 
