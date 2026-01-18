@@ -64,5 +64,8 @@ bool32 IsPlayerSpinExitActive(void);
 void SetPlayerInvisibility(bool8 invisible);
 u8 player_get_pos_including_state_based_drift(s16 *x, s16 *y);
 void StartFishing(u8 rod);
+void AlignFishingAnimationFrames(void);
+void ResetPlayerAvatar(u16 gfxId);
+void Task_Fishing(u8);
 
 #endif // GUARD_FIELD_PLAYER_AVATAR_H
