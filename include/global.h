@@ -40,6 +40,7 @@
 #define INCBIN_S8   INCBIN
 #define INCBIN_S16  INCBIN
 #define INCBIN_S32  INCBIN
+#define INCBIN_COMP INCBIN
 #endif // IDE support
 
 #define ARRAY_COUNT(array) (size_t)(sizeof(array) / sizeof((array)[0]))
@@ -89,6 +90,8 @@
 #else
 #define SAFE_DIV(a, b) ((a) / (b))
 #endif
+
+#define IS_POW_OF_TWO(n) (((n) & ((n)-1)) == 0)
 
 // The below macro does a%n, but (to match) will switch to a&(n-1) if n is a power of 2.
 // There are cases where GF does a&(n-1) where we would really like to have a%n, because
@@ -542,6 +545,8 @@ struct SaveBlock2
 }; // sizeof=0xF2C
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
+
+extern u8 UpdateSpritePaletteWithTime(u8);
 
 struct SecretBaseParty
 {
@@ -1086,5 +1091,9 @@ struct MapPosition
     s16 y;
     s8 elevation;
 };
+
+// Adds support for compressed OW graphics,
+// (Also compresses pokemon follower graphics)
+#define OW_GFX_COMPRESS TRUE
 
 #endif // GUARD_GLOBAL_H
