@@ -4767,7 +4767,7 @@ void RemoveBattleMonPPBonus(struct BattlePokemon *mon, u8 moveIndex)
     mon->ppBonuses &= gPPUpClearMask[moveIndex];
 }
 
-void CopyPlayerPartyMonToBattleData(u8 battler, u8 partyIndex)
+void CopyPlayerPartyMonToBattleData(u8 battler, u8 partyIndex, bool8 resetStats)
 {
     u16 *hpSwitchout;
     s32 i;
@@ -4813,11 +4813,13 @@ void CopyPlayerPartyMonToBattleData(u8 battler, u8 partyIndex)
 
     hpSwitchout = &gBattleStruct->hpOnSwitchout[GetBattlerSide(battler)];
     *hpSwitchout = gBattleMons[battler].hp;
-
-    for (i = 0; i < NUM_BATTLE_STATS; i++)
-        gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE;
-
-    gBattleMons[battler].status2 = 0;
+    if (resetStats)
+    {
+        for (i = 0; i < NUM_BATTLE_STATS; i++)
+            gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE;
+            
+        gBattleMons[battler].status2 = 0;
+    }
     UpdateSentPokesToOpponentValue(battler);
     ClearTemporarySpeciesSpriteData(battler, FALSE);
 }
@@ -5143,7 +5145,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                 if (battler != MAX_BATTLERS_COUNT)
                                 {
                                     gAbsentBattlerFlags &= ~gBitTable[battler];
-                                    CopyPlayerPartyMonToBattleData(battler, GetPartyIdFromBattlePartyId(gBattlerPartyIndexes[battler]));
+                                    CopyPlayerPartyMonToBattleData(battler, GetPartyIdFromBattlePartyId(gBattlerPartyIndexes[battler]), TRUE);
                                     if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER && gBattleResults.numRevivesUsed < 255)
                                         gBattleResults.numRevivesUsed++;
                                 }
