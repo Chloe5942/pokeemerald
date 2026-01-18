@@ -314,6 +314,7 @@ u16 GetSpriteTileStartByTag(u16 tag);
 u16 GetSpriteTileTagByTileStart(u16 start);
 void FreeAllSpritePalettes(void);
 u8 LoadSpritePalette(const struct SpritePalette *palette);
+u8 LoadSpritePaletteInSlot(const struct SpritePalette *palette, u8 paletteNum);
 void LoadSpritePalettes(const struct SpritePalette *palettes);
 u8 AllocSpritePalette(u16 tag);
 u8 IndexOfSpritePaletteTag(u16 tag);

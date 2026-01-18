@@ -245,6 +245,7 @@
 #define OBJ_EVENT_GFX_HOOH                       238
 #define OBJ_EVENT_GFX_POKE_BALL                  OBJ_EVENT_GFX_ITEM_BALL // replaces ITEM_BALL
 #define OBJ_EVENT_GFX_OW_MON                     OBJ_EVENT_GFX_REGICE
+#define OBJ_EVENT_GFX_LIGHT_SPRITE               OBJ_EVENT_GFX_QUINTY_PLUMP
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
@@ -374,6 +375,8 @@
 #define LOCALID_PLAYER                     255
 
 // Aliases for old names. "object event id" normally refers to an index into gObjectEvents, which these are not.
+// Used for link player OWs in CreateLinkPlayerSprite
+#define OBJ_EVENT_ID_DYNAMIC_BASE 0xF0
 #define OBJ_EVENT_ID_CAMERA LOCALID_CAMERA
 #define OBJ_EVENT_ID_PLAYER LOCALID_PLAYER
 #define OBJ_EVENT_ID_FOLLOWER LOCALID_FOLLOWING_POKEMON

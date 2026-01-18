@@ -23,6 +23,7 @@
 #include "field_tasks.h"
 #include "field_weather.h"
 #include "fieldmap.h"
+#include "gpu_regs.h"
 #include "item.h"
 #include "lilycove_lady.h"
 #include "main.h"
@@ -633,6 +634,12 @@ static bool8 IsPaletteNotActive(void)
         return FALSE;
 }
 
+// pauses script until palette fade inactive
+bool8 ScrFunc_WaitPaletteNotActive(struct ScriptContext *ctx) {
+    SetupNativeScript(ctx, IsPaletteNotActive);
+    return TRUE;
+}
+
 bool8 ScrCmd_fadescreen(struct ScriptContext *ctx)
 {
     FadeScreen(ScriptReadByte(ctx), 0);
@@ -653,22 +660,27 @@ bool8 ScrCmd_fadescreenspeed(struct ScriptContext *ctx)
 bool8 ScrCmd_fadescreenswapbuffers(struct ScriptContext *ctx)
 {
     u8 mode = ScriptReadByte(ctx);
+    u8 nowait = ScriptReadByte(ctx);
 
     switch (mode)
     {
-    case FADE_TO_BLACK:
-    case FADE_TO_WHITE:
-    default:
-        CpuCopy32(gPlttBufferUnfaded, gPaletteDecompressionBuffer, PLTT_SIZE);
-        FadeScreen(mode, 0);
-        break;
     case FADE_FROM_BLACK:
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0, 0));
+        break;
     case FADE_FROM_WHITE:
-        CpuCopy32(gPaletteDecompressionBuffer, gPlttBufferUnfaded, PLTT_SIZE);
-        FadeScreen(mode, 0);
+        // Restore last weather blend before fading in,
+        // since BLDALPHA was modified by fade-out
+        SetGpuReg(
+            REG_OFFSET_BLDALPHA,
+            BLDALPHA_BLEND(gWeatherPtr->currBlendEVA, gWeatherPtr->currBlendEVB)
+        );
         break;
     }
 
+    FadeScreenHardware(mode, 0);
+
+    if (nowait)
+        return FALSE;
     SetupNativeScript(ctx, IsPaletteNotActive);
     return TRUE;
 }
