@@ -4429,6 +4429,39 @@ u8 GiveMonToPlayer(struct Pokemon *mon)
     gPlayerPartyCount = i + 1;
     return MON_GIVEN_TO_PARTY;
 }
+u8 SendMonToPC(struct Pokemon *mon)
+{
+    s32 boxNo, boxPos;
+
+    SetPCBoxToSendMon(VarGet(VAR_PC_BOX_TO_SEND_MON));
+
+    boxNo = StorageGetCurrentBox();
+
+    do
+    {
+        for (boxPos = 0; boxPos < IN_BOX_COUNT; boxPos++)
+        {
+            struct BoxPokemon *checkingMon = GetBoxedMonPtr(boxNo, boxPos);
+            if (GetBoxMonData(checkingMon, MON_DATA_SPECIES, NULL) == SPECIES_NONE)
+            {
+                MonRestorePP(mon);
+                CopyMon(checkingMon, &mon->box, sizeof(mon->box));
+                gSpecialVar_MonBoxId = boxNo;
+                gSpecialVar_MonBoxPos = boxPos;
+                if (GetPCBoxToSendMon() != boxNo)
+                    FlagClear(FLAG_SHOWN_BOX_WAS_FULL_MESSAGE);
+                VarSet(VAR_PC_BOX_TO_SEND_MON, boxNo);
+                return MON_GIVEN_TO_PC;
+            }
+        }
+
+        boxNo++;
+        if (boxNo == TOTAL_BOXES_COUNT)
+            boxNo = 0;
+    } while (boxNo != StorageGetCurrentBox());
+
+    return MON_CANT_GIVE;
+}
 
 static u8 CopyMonToPC(struct Pokemon *mon)
 {
