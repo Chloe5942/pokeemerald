@@ -171,26 +171,15 @@ bool8 HasAtLeastOneBerry(void)
     return FALSE;
 }
 
-bool8 CheckBagHasSpace(u16 itemId, u16 count)
+u32 GetFreeSpaceForItemInBag(u16 itemId)
 {
     u8 i;
-    u8 pocket;
-    u16 slotCapacity;
+    u8 pocket = GetItemPocket(itemId) - 1;
     u16 ownedCount;
+    u32 spaceForItem = 0;
 
     if (GetItemPocket(itemId) == POCKET_NONE)
-        return FALSE;
-
-    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) == TRUE)
-    {
-        return CheckPyramidBagHasSpace(itemId, count);
-    }
-
-    pocket = GetItemPocket(itemId) - 1;
-    if (pocket != BERRIES_POCKET)
-        slotCapacity = MAX_BAG_ITEM_CAPACITY;
-    else
-        slotCapacity = MAX_BERRY_CAPACITY;
+        return 0;
 
     // Check space in any existing item slots that already contain this item
     for (i = 0; i < gBagPockets[pocket].capacity; i++)
@@ -198,41 +187,25 @@ bool8 CheckBagHasSpace(u16 itemId, u16 count)
         if (gBagPockets[pocket].itemSlots[i].itemId == itemId)
         {
             ownedCount = GetBagItemQuantity(&gBagPockets[pocket].itemSlots[i].quantity);
-            if (ownedCount + count <= slotCapacity)
-                return TRUE;
-            if (pocket == TMHM_POCKET || pocket == BERRIES_POCKET)
-                return FALSE;
-            count -= (slotCapacity - ownedCount);
-            if (count == 0)
-                break; //should be return TRUE, but that doesn't match
+            spaceForItem += max(0, MAX_BAG_ITEM_CAPACITY - ownedCount);
         }
-    }
-
-    // Check space in empty item slots
-    if (count > 0)
-    {
-        for (i = 0; i < gBagPockets[pocket].capacity; i++)
+        else if (gBagPockets[pocket].itemSlots[i].itemId == ITEM_NONE)
         {
-            if (gBagPockets[pocket].itemSlots[i].itemId == 0)
-            {
-                if (count > slotCapacity)
-                {
-                    if (pocket == TMHM_POCKET || pocket == BERRIES_POCKET)
-                        return FALSE;
-                    count -= slotCapacity;
-                }
-                else
-                {
-                    count = 0; //should be return TRUE, but that doesn't match
-                    break;
-                }
-            }
+            spaceForItem += MAX_BAG_ITEM_CAPACITY;
         }
-        if (count > 0)
-            return FALSE; // No more item slots. The bag is full
     }
+    return spaceForItem;
+}
 
-    return TRUE;
+bool8 CheckBagHasSpace(u16 itemId, u16 count)
+{
+    if (GetItemPocket(itemId) == POCKET_NONE)
+        return FALSE;
+
+    if (FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) == TRUE)
+        return CheckPyramidBagHasSpace(itemId, count);
+
+    return GetFreeSpaceForItemInBag(itemId) >= count;
 }
 
 bool8 AddBagItem(u16 itemId, u16 count)
@@ -941,4 +914,14 @@ ItemUseFunc GetItemBattleFunc(u16 itemId)
 u8 GetItemSecondaryId(u16 itemId)
 {
     return gItems[SanitizeItemId(itemId)].secondaryId;
+}
+
+u32 GetItemCoinPrice(u16 itemId)
+{
+    return gItems[SanitizeItemId(itemId)].coinPrice;
+}
+
+u32 GetItemBpPrice(u16 itemId)
+{
+    return gItems[SanitizeItemId(itemId)].bpPrice;
 }

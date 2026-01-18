@@ -40,6 +40,7 @@
 #include "script_movement.h"
 #include "script_pokemon_util.h"
 #include "shop.h"
+#include "new_shop.h"
 #include "slot_machine.h"
 #include "sound.h"
 #include "string_util.h"
@@ -49,6 +50,7 @@
 #include "tv.h"
 #include "window.h"
 #include "constants/event_objects.h"
+#include "constants/new_shop.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(void);
@@ -1886,8 +1888,24 @@ bool8 ScrCmd_dowildbattle(struct ScriptContext *ctx)
 bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
+    u16 shopType = ScriptReadHalfword(ctx);
 
-    CreatePokemartMenu(ptr);
+    switch (shopType)
+    {
+    case NEW_SHOP_PRICE_TYPE_VARIABLE:
+        NewShop_CreateVariablePokemartMenu(ptr);
+        break;
+    case NEW_SHOP_PRICE_TYPE_COINS:
+        NewShop_CreateCoinPokemartMenu(ptr);
+        break;
+    case NEW_SHOP_PRICE_TYPE_POINTS:
+        NewShop_CreatePointsPokemartMenu(ptr);
+        break;
+    default:
+        NewShop_CreatePokemartMenu(ptr);
+        break;
+    }
+
     ScriptContext_Stop();
     return TRUE;
 }
@@ -1896,17 +1914,19 @@ bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
-    CreateDecorationShop1Menu(ptr);
+    NewShop_CreateDecorationShop1Menu(ptr);
+
     ScriptContext_Stop();
     return TRUE;
 }
 
-// Changes clerk dialogue slightly from above. See MART_TYPE_DECOR2
+// Changes clerk dialogue slightly from above. See NEW_SHOP_TYPE_DECOR2
 bool8 ScrCmd_pokemartdecoration2(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
-    CreateDecorationShop2Menu(ptr);
+    NewShop_CreateDecorationShop2Menu(ptr);
+
     ScriptContext_Stop();
     return TRUE;
 }
