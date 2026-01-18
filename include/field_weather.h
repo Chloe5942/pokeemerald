@@ -175,6 +175,7 @@ const u8* SetPaletteColorMapType(u8 paletteIndex, u8 colorMapType);
 void PreservePaletteInWeather(u8 preservedPalIndex);
 void ResetPaletteColorMapType(u8 paletteIndex);
 void ResetPreservedPalettesInWeather(void);
+bool8 IsWeatherAlphaBlend(void);
 
 // field_weather_effect.c
 void Clouds_InitVars(void);

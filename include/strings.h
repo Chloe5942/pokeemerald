@@ -3042,4 +3042,8 @@ extern const u8 gText_FoundATreasureItem[];
 extern const u8 gText_PutTreasureInPocket[];
 extern const u8 gText_NoRoomForTreasure[];
 
+// BSBob map pop-ups
+extern const u8 gText_AM[];
+extern const u8 gText_PM[];
+
 #endif // GUARD_STRINGS_H
