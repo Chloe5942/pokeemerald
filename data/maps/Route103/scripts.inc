@@ -59,41 +59,75 @@ Route103_EventScript_RivalBrendan::
 	end
 
 Route103_EventScript_StartMayBattleTreecko::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayThinking
 	goto Route103_EventScript_AfterMayBattle
 	end
 
 Route103_EventScript_StartMayBattleTorchic::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_ROUTE_103_TORCHIC, Route103_Text_MayThinking
 	goto Route103_EventScript_AfterMayBattle
 	end
 
 Route103_EventScript_StartMayBattleMudkip::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_MUDKIP, Route103_Text_MayDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_ROUTE_103_MUDKIP, Route103_Text_MayThinking
 	goto Route103_EventScript_AfterMayBattle
 	end
 
 Route103_EventScript_StartBrendanBattleTreecko::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_BrendanDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_BrendanThinking
 	goto Route103_EventScript_AfterBrendanBattle
 	end
 
 Route103_EventScript_StartBrendanBattleTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanThinking
 	goto Route103_EventScript_AfterBrendanBattle
 	end
 
 Route103_EventScript_StartBrendanBattleMudkip::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_BrendanDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_BrendanThinking
 	goto Route103_EventScript_AfterBrendanBattle
 	end
 
 Route103_EventScript_AfterMayBattle::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route103_EventScript_MayDefeat
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Route103_EventScript_MayVictory
+	end
+
+Route103_EventScript_MayDefeat::
+	special HealPlayerParty
+	msgbox Route103_Text_MayDefeated, MSGBOX_DEFAULT
+	waitmessage
+	msgbox Route103_Text_MayTimeToHeadBack, MSGBOX_DEFAULT
+	goto Route103_EventScript_RivalExit
+	end
+
+Route103_EventScript_MayVictory::
+	special HealPlayerParty
+	msgbox Route103_Text_MayWon, MSGBOX_DEFAULT
+	waitmessage
 	msgbox Route103_Text_MayTimeToHeadBack, MSGBOX_DEFAULT
 	goto Route103_EventScript_RivalExit
 	end
 
 Route103_EventScript_AfterBrendanBattle::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route103_EventScript_BrendanDefeat
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Route103_EventScript_BrendanVictory
+	end
+
+Route103_EventScript_BrendanDefeat::
+	special HealPlayerParty
+	msgbox Route103_Text_BrendanDefeated, MSGBOX_DEFAULT
+	waitmessage
+	msgbox Route103_Text_BrendanTimeToHeadBack, MSGBOX_DEFAULT
+	goto Route103_EventScript_RivalExit
+	end
+
+Route103_EventScript_BrendanVictory::
+	special HealPlayerParty
+	msgbox Route103_Text_BrendanWon, MSGBOX_DEFAULT
+	waitmessage
 	msgbox Route103_Text_BrendanTimeToHeadBack, MSGBOX_DEFAULT
 	goto Route103_EventScript_RivalExit
 	end
@@ -299,8 +333,15 @@ Route103_Text_MayLetsBattle:
 	.string "I'll give you a taste of what being\n"
 	.string "a TRAINER is like.$"
 
+Route103_Text_MayThinking:
+	.string "MAY: Wow!$"
+
 Route103_Text_MayDefeated:
-	.string "Wow! That's great!\n"
+	.string "MAY: That's great!\n"
+	.string "{PLAYER}{KUN}, you're pretty good!$"
+
+Route103_Text_MayWon:
+	.string "MAY: That was a great battle!\n"
 	.string "{PLAYER}{KUN}, you're pretty good!$"
 
 Route103_Text_MayTimeToHeadBack:
@@ -325,8 +366,16 @@ Route103_Text_BrendanLetsBattle:
 	.string "I'll teach you what being a TRAINER's\n"
 	.string "about!$"
 
+Route103_Text_BrendanThinking:
+	.string "BRENDAN: Huh.$"
+
 Route103_Text_BrendanDefeated:
-	.string "Huh, {PLAYER}, you're not too shabby.$"
+	.string "BRENDAN: {PLAYER},\n"
+	.string "you're not too shabby.$"
+
+Route103_Text_BrendanWon:
+	.string "BRENDAN: {PLAYER}, for your first\n"
+	.string "battle, that was great!$"
 
 Route103_Text_BrendanTimeToHeadBack:
 	.string "BRENDAN: I think I get it.\n"
