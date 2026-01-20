@@ -4487,11 +4487,7 @@ static bool8 IsHPRecoveryItem(u16 item)
     const u8 *effect;
 
     if (item == ITEM_ENIGMA_BERRY)
-        #ifndef FREE_ENIGMA_BERRY
         effect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
-        #else
-        effect = 0;
-        #endif
     else
         effect = gItemEffectTable[item - ITEM_POTION];
 
@@ -4808,11 +4804,7 @@ void ItemUseCB_PPRecovery(u8 taskId, TaskFunc task)
     u16 item = gSpecialVar_ItemId;
 
     if (item == ITEM_ENIGMA_BERRY)
-        #ifndef FREE_ENIGMA_BERRY
         effect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
-        #else
-        effect = 0;
-        #endif
     else
         effect = gItemEffectTable[item - ITEM_POTION];
 
@@ -5459,11 +5451,7 @@ u8 GetItemEffectType(u16 item)
 
     // Read the item's effect properties.
     if (item == ITEM_ENIGMA_BERRY)
-        #ifndef FREE_ENIGMA_BERRY
         itemEffect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
-        #else
-        itemEffect = 0;
-        #endif
     else
         itemEffect = gItemEffectTable[item - ITEM_POTION];
 
