@@ -1549,3 +1549,8 @@ static const u8 sOldSeaMapDesc[] = _(
     "A faded sea chart\n"
     "that shows the way\n"
     "to a certain island.");
+
+// Custom Items
+static const u8 sMiningKitDesc[] = _(
+    "A kit full of\n"
+    "mining tools.");

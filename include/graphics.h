@@ -3850,6 +3850,13 @@ extern const u32 gItemIcon_MagmaEmblem[];
 extern const u32 gItemIconPalette_MagmaEmblem[];
 extern const u32 gItemIcon_OldSeaMap[];
 extern const u32 gItemIconPalette_OldSeaMap[];
+// Custom Items
+extern const u32 gItemIcon_MiningKit[];
+extern const u32 gItemIconPalette_MiningKit[];
+extern const u32 gItemIcon_LinkingCord[];
+extern const u32 gItemIconPalette_LinkingCord[];
+extern const u32 gItemIcon_PokeRadar[];
+extern const u32 gItemIconPalette_PokeRadar[];
 
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];

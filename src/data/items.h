@@ -4159,15 +4159,15 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_15B] =
+    [ITEM_MINING_KIT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("MINING KIT"),
+        .itemId = ITEM_MINING_KIT,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sMiningKitDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_MiningKit,
     },
 
     [ITEM_15C] =

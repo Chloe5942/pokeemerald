@@ -56,6 +56,9 @@ To set up the repository, see [INSTALL.md](INSTALL.md).
 **guillotine** branch:
 * ~~Decapitates~~ Decapitalizes **all** text at runtime, with some exceptions (see the [FAQ](#guillotine-q-how-can-i-keep-my-strings-from-being-decapped))
 * Future-proof, does not require mass-replacing strings
+# Pokémon Emerald | Excavation Ui
+
+This branch is aiming to port the Mining Minigame to the 3rd generation Pokemon games
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
@@ -137,4 +140,4 @@ This includes: `"TM01", "PC", "EV"`, any two uppercase characters surrounded by 
 
 ## See also
 
-For contacts and other pret projects, see [pret.github.io](https://pret.github.io/).
+Using Vanilla Pokeemerald: [pokeemerald](https://github.com/pret/pokeemerald)

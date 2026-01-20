@@ -1145,4 +1145,11 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
 
+#include "excavation.h"
+
+void ItemUseOutOfBattle_MiningKit(u8 taskId) {
+    gBagMenu->newScreenCallback = Excavation_ItemUseCB;
+    Task_FadeAndCloseBagMenu(taskId);
+}
+
 #undef tUsingRegisteredKeyItem
