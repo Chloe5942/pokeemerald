@@ -110,7 +110,7 @@
 #define ITEM_THUNDER_STONE 96
 #define ITEM_WATER_STONE 97
 #define ITEM_LEAF_STONE 98
-#define ITEM_063 99
+#define ITEM_LINKING_CORD 99
 #define ITEM_064 100
 #define ITEM_065 101
 #define ITEM_066 102
@@ -383,7 +383,7 @@
 
 // Unknown
 #define ITEM_MINING_KIT 347
-#define ITEM_15C 348
+#define ITEM_POKE_RADAR 348
 
 // FireRed/LeafGreen
 #define ITEM_OAKS_PARCEL 349

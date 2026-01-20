@@ -46,20 +46,20 @@ MauvilleCity_PokemonCenter_2F_EventScript_NeedPowderJar::
 
 MauvilleCity_PokemonCenter_2F_Text_Youngster:
 	.string "Did you know that you can link battle\n"
-	.string "at the COLOSSEUM here?\p"
+	.string "at the Colosseum here?\p"
 	.string "They put up your record on the wall\n"
 	.string "for everyone to see.\p"
 	.string "It's embarrassing if you lose more\n"
 	.string "often than you win…$"
 
 MauvilleCity_PokemonCenter_2F_Text_PlayBerryCrushSolo:
-	.string "Would you like to play BERRY CRUSH\n"
+	.string "Would you like to play Berry Crush\n"
 	.string "by yourself?$"
 
 MauvilleCity_PokemonCenter_2F_Text_Girl1OkayThen:
 	.string "Okay then…$"
 
 MauvilleCity_PokemonCenter_2F_Text_NeedPowderJar:
-	.string "If you want to play BERRY CRUSH by\n"
-	.string "yourself, you'd need a POWDER JAR.$"
+	.string "If you want to play Berry Crush by\n"
+	.string "yourself, you'd need a Powder Jar.$"
 
