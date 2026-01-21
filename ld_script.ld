@@ -340,6 +340,7 @@ SECTIONS {
         src/gym_leader_rematch.o(.text);
         src/battle_transition_frontier.o(.text);
         src/international_string_util.o(.text);
+        src/dexnav.o(.text);
         src/new_shop.o(.text);
         src/ui_main_menu.o(.text);
 		src/ui_stat_editor.o(.text);
@@ -708,6 +709,7 @@ SECTIONS {
         data/mystery_gift.o(.rodata);
         src/m4a_tables.o(.rodata);
         data/sound_data.o(.rodata);
+        src/dexnav.o(.rodata);
         src/new_shop.o(.rodata);
         src/ui_main_menu.o(.rodata);
 		src/ui_stat_editor.o(.rodata);
