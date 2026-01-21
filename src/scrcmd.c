@@ -2432,3 +2432,15 @@ bool8 ScrFunc_hidefollower(struct ScriptContext *ctx) {
     // execute next script command with no delay
     return TRUE;
 }
+
+bool8 ScrCmd_showitemdesc(struct ScriptContext *ctx)
+{
+    DrawHeaderBox();
+    return FALSE;
+}
+
+bool8 ScrCmd_hideitemdesc(struct ScriptContext *ctx)
+{
+    HideHeaderBox();
+    return FALSE;
+}

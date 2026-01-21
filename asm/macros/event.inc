@@ -1796,6 +1796,25 @@
   .byte SCR_OP_CALLFUNC
   .4byte \func
   .endm
+  
+	.macro showdescription
+	.byte SCR_OP_SHOWDESC
+	.endm
+
+	.macro showitemdesc
+	setvar VAR_0x8009, 0
+	showdescription
+	.endm
+
+	.macro showberrydesc
+	setvar VAR_0x8009, 1
+	showdescription
+	.endm
+
+	.macro hideitemdesc
+	.byte SCR_OP_HIDEDESC
+	.endm
+
 
 @ Supplementary
 
