@@ -145,9 +145,6 @@ static u8 Fishing_PutRodAway(struct Task *);
 static u8 Fishing_EndNoMon(struct Task *);
 
 static u8 TrySpinPlayerForWarp(struct ObjectEvent *, s16 *);
-static void PlayerGoSlow(u8 direction);
-
-// .rodata
 
 static bool8 (*const sForcedMovementTestFuncs[NUM_FORCED_MOVEMENTS])(u8) =
 {
@@ -655,20 +652,11 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             return;
         }
     }
-    
-    gPlayerAvatar.creeping = FALSE;
+
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
     {
-        if (FlagGet(FLAG_SYS_DEXNAV_SEARCH) && (heldKeys & A_BUTTON))
-        {
-            gPlayerAvatar.creeping = TRUE;
-            PlayerGoSlow(direction);
-        }
-        else
-        {
-            // speed 2 is fast, same speed as running
-            PlayerWalkFast(direction);
-        }
+        // same speed as running
+        PlayerWalkFast(direction);
         return;
     }
 
@@ -678,11 +666,6 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         PlayerRun(direction);
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         return;
-    }
-    else if (FlagGet(FLAG_SYS_DEXNAV_SEARCH) && (heldKeys & A_BUTTON))
-    {
-        gPlayerAvatar.creeping = TRUE;
-        PlayerGoSlow(direction);
     }
     else
     {
@@ -992,12 +975,6 @@ void PlayerSetAnimId(u8 movementActionId, u8 copyableMovement)
         PlayerSetCopyableMovement(copyableMovement);
         ObjectEventSetHeldMovement(&gObjectEvents[gPlayerAvatar.objectEventId], movementActionId);
     }
-}
-
-// slow
-static void PlayerGoSlow(u8 direction)
-{
-    PlayerSetAnimId(GetWalkSlowMovementAction(direction), 2);
 }
 
 void PlayerWalkNormal(u8 direction)

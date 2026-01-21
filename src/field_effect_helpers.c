@@ -1016,7 +1016,7 @@ void UpdateHotSpringsWaterFieldEffect(struct Sprite *sprite)
 #undef sPrevX
 #undef sPrevY
 
-u32 FldEff_ShakingGrass(void)
+u32 FldEff_UnusedGrass(void)
 {
     u8 spriteId;
 
@@ -1027,13 +1027,12 @@ u32 FldEff_ShakingGrass(void)
         struct Sprite *sprite = &gSprites[spriteId];
         sprite->coordOffsetEnabled = TRUE;
         sprite->oam.priority = gFieldEffectArguments[3];
-        sprite->sWaitFldEff = FLDEFF_SHAKING_GRASS;
+        sprite->sWaitFldEff = FLDEFF_UNUSED_GRASS;
     }
-    
-    return spriteId;
+    return 0;
 }
 
-u32 FldEff_ShakingGrass2(void)
+u32 FldEff_UnusedGrass2(void)
 {
     u8 spriteId;
 
@@ -1044,10 +1043,9 @@ u32 FldEff_ShakingGrass2(void)
         struct Sprite *sprite = &gSprites[spriteId];
         sprite->coordOffsetEnabled = TRUE;
         sprite->oam.priority = gFieldEffectArguments[3];
-        sprite->sWaitFldEff = FLDEFF_SHAKING_LONG_GRASS;
+        sprite->sWaitFldEff = FLDEFF_UNUSED_GRASS_2;
     }
-    
-    return spriteId;
+    return 0;
 }
 
 u32 FldEff_UnusedSand(void)
@@ -1061,9 +1059,9 @@ u32 FldEff_UnusedSand(void)
         struct Sprite *sprite = &gSprites[spriteId];
         sprite->coordOffsetEnabled = TRUE;
         sprite->oam.priority = gFieldEffectArguments[3];
-        sprite->sWaitFldEff = FLDEFF_SAND_HOLE;
+        sprite->sWaitFldEff = FLDEFF_UNUSED_SAND;
     }
-    return spriteId;
+    return 0;
 }
 
 u32 FldEff_WaterSurfacing(void)
@@ -1079,8 +1077,7 @@ u32 FldEff_WaterSurfacing(void)
         sprite->oam.priority = gFieldEffectArguments[3];
         sprite->sWaitFldEff = FLDEFF_WATER_SURFACING;
     }
-    
-    return spriteId;
+    return 0;
 }
 
 // Sprite data for FLDEFF_ASH
@@ -1478,7 +1475,7 @@ u32 FldEff_BerryTreeGrowthSparkle(void)
         UpdateSpritePaletteByTemplate(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_SPARKLE], sprite);
         sprite->sWaitFldEff = FLDEFF_BERRY_TREE_GROWTH_SPARKLE;
     }
-    return spriteId;
+    return 0;
 }
 
 // Sprite data for FLDEFF_TREE_DISGUISE / FLDEFF_MOUNTAIN_DISGUISE / FLDEFF_SAND_DISGUISE
@@ -1606,7 +1603,7 @@ u32 FldEff_Sparkle(void)
         gSprites[spriteId].oam.priority = gFieldEffectArguments[2];
         gSprites[spriteId].coordOffsetEnabled = TRUE;
     }
-    return spriteId;
+    return 0;
 }
 
 void UpdateSparkleFieldEffect(struct Sprite *sprite)
@@ -1870,3 +1867,27 @@ static void UpdateGrassFieldEffectSubpriority(struct Sprite *sprite, u8 elevatio
     }
 }
 
+// Unused, duplicates of data in event_object_movement.c
+static const s8 sFigure8XOffsets[FIGURE_8_LENGTH] = {
+    1, 2, 2, 2, 2, 2, 2, 2,
+    2, 2, 2, 1, 2, 2, 1, 2,
+    2, 1, 2, 2, 1, 2, 1, 1,
+    2, 1, 1, 2, 1, 1, 2, 1,
+    1, 2, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1,
+    0, 1, 1, 1, 0, 1, 1, 0,
+    1, 0, 1, 0, 1, 0, 0, 0,
+    0, 1, 0, 0, 0, 0, 0, 0,
+};
+
+static const s8 sFigure8YOffsets[FIGURE_8_LENGTH] = {
+     0,  0,  1,  0,  0,  1,  0,  0,
+     1,  0,  1,  1,  0,  1,  1,  0,
+     1,  1,  0,  1,  1,  0,  1,  1,
+     0,  0,  1,  0,  0,  1,  0,  0,
+     1,  0,  0,  0,  0,  0,  0,  0,
+     0,  0,  0,  0,  0,  0,  0,  0,
+     0,  0, -1,  0,  0, -1,  0,  0,
+    -1,  0, -1, -1,  0, -1, -1,  0,
+    -1, -1, -1, -1, -1, -1, -1, -2,
+};

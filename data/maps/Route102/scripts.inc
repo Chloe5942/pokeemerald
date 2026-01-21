@@ -107,11 +107,3 @@ Route102_Text_RouteSignOldale:
 Route102_Text_RouteSignPetalburg:
 	.string "Route 102\n"
 	.string "{LEFT_ARROW} Petalburg City$"
-
-Route102_EventScript_Dexnav::
-	setflag FLAG_SYS_DEXNAV_GET
-	msgbox Route102_Text_Dexnav, MSGBOX_AUTOCLOSE
-	end
-
-Route102_Text_Dexnav:
-	.string "Recieved Dexnav$"
