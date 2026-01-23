@@ -527,6 +527,17 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
         return FALSE;
 
     CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
+    if (wildMonInfo->wildPokemon[wildMonIndex].metGameOverride != ENCOUNTER_NO_OVERRIDE)
+    {
+
+        SetBoxMonData(&gEnemyParty[0].box, MON_DATA_MET_GAME, &wildMonInfo->wildPokemon[wildMonIndex].metGameOverride);
+    }
+    if (wildMonInfo->wildPokemon[wildMonIndex].metLocationOverride != ENCOUNTER_NO_OVERRIDE)
+    {
+
+        SetBoxMonData(&gEnemyParty[0].box, MON_DATA_MET_LOCATION, &wildMonInfo->wildPokemon[wildMonIndex].metLocationOverride);
+    }
+
     return TRUE;
 }
 

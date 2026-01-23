@@ -386,7 +386,8 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_SURSKIT"
+                "species": "SPECIES_SURSKIT",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           },
@@ -416,7 +417,8 @@
               {
                 "min_level": 20,
                 "max_level": 30,
-                "species": "SPECIES_SURSKIT"
+                "species": "SPECIES_SURSKIT",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           }
@@ -769,7 +771,8 @@
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 4,
@@ -779,7 +782,8 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 5,
@@ -794,7 +798,8 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 4,
@@ -1077,7 +1082,8 @@
               {
                 "min_level": 12,
                 "max_level": 12,
-                "species": "SPECIES_POOCHYENA"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 12,
@@ -1376,7 +1382,8 @@
               {
                 "min_level": 20,
                 "max_level": 30,
-                "species": "SPECIES_SURSKIT"
+                "species": "SPECIES_SURSKIT",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           }
@@ -1465,7 +1472,8 @@
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_MACHOP"
+                "species": "SPECIES_MACHOP",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 14,
@@ -1480,7 +1488,8 @@
               {
                 "min_level": 14,
                 "max_level": 14,
-                "species": "SPECIES_MACHOP"
+                "species": "SPECIES_MACHOP",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 16,
@@ -1490,7 +1499,8 @@
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_MACHOP"
+                "species": "SPECIES_MACHOP",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 16,
@@ -1599,7 +1609,8 @@
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_SANDSHREW"
+                "species": "SPECIES_SANDSHREW",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 14,
@@ -1624,7 +1635,8 @@
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_SANDSHREW"
+                "species": "SPECIES_SANDSHREW",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 16,
@@ -1803,17 +1815,20 @@
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_ZANGOOSE"
+                "species": "SPECIES_ZANGOOSE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_ZANGOOSE"
+                "species": "SPECIES_ZANGOOSE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 18,
                 "max_level": 18,
-                "species": "SPECIES_ZANGOOSE"
+                "species": "SPECIES_ZANGOOSE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 17,
@@ -1833,7 +1848,8 @@
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_SURSKIT"
+                "species": "SPECIES_SURSKIT",
+                "met_game_override": "VERSION_RUBY"
               }
             ]
           },
@@ -1923,7 +1939,8 @@
               {
                 "min_level": 20,
                 "max_level": 30,
-                "species": "SPECIES_SURSKIT"
+                "species": "SPECIES_SURSKIT",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           }
@@ -2002,7 +2019,8 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 6,
@@ -2042,12 +2060,14 @@
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 7,
@@ -2191,22 +2211,26 @@
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_ROSELIA"
+                "species": "SPECIES_ROSELIA",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 14,
                 "max_level": 14,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 14,
                 "max_level": 14,
-                "species": "SPECIES_ROSELIA"
+                "species": "SPECIES_ROSELIA",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 13,
@@ -2216,7 +2240,8 @@
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_ROSELIA"
+                "species": "SPECIES_ROSELIA",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 13,
@@ -2246,7 +2271,8 @@
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_SURSKIT"
+                "species": "SPECIES_SURSKIT",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           },
@@ -2306,7 +2332,8 @@
               {
                 "min_level": 20,
                 "max_level": 30,
-                "species": "SPECIES_SURSKIT"
+                "species": "SPECIES_SURSKIT",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           }
@@ -2628,7 +2655,8 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 5,
@@ -2643,7 +2671,8 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 5,
@@ -2940,22 +2969,26 @@
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 11,
                 "max_level": 11,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               }
             ]
           }
@@ -3034,62 +3067,74 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 26,
                 "max_level": 26,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 24,
                 "max_level": 24,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 22,
                 "max_level": 22,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 24,
                 "max_level": 24,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 24,
                 "max_level": 24,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               }
             ]
           }
@@ -3464,27 +3509,32 @@
               {
                 "min_level": 11,
                 "max_level": 11,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 12,
                 "max_level": 12,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 12,
                 "max_level": 12,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               }
             ]
           },
@@ -3797,7 +3847,8 @@
               {
                 "min_level": 35,
                 "max_level": 35,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 35,
@@ -3807,7 +3858,8 @@
               {
                 "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 25,
@@ -3817,7 +3869,8 @@
               {
                 "min_level": 39,
                 "max_level": 39,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 38,
@@ -3887,17 +3940,20 @@
               {
                 "min_level": 25,
                 "max_level": 35,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 15,
                 "max_level": 25,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 5,
                 "max_level": 15,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           }
@@ -4833,17 +4889,20 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_LINOONE"
+                "species": "SPECIES_LINOONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_LINOONE"
+                "species": "SPECIES_LINOONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 25,
@@ -4888,7 +4947,8 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_SURSKIT"
+                "species": "SPECIES_SURSKIT",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           },
@@ -4948,7 +5008,8 @@
               {
                 "min_level": 20,
                 "max_level": 30,
-                "species": "SPECIES_SURSKIT"
+                "species": "SPECIES_SURSKIT",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           }
@@ -5082,27 +5143,32 @@
               {
                 "min_level": 26,
                 "max_level": 26,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 26,
                 "max_level": 26,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 26,
                 "max_level": 26,
-                "species": "SPECIES_LINOONE"
+                "species": "SPECIES_LINOONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_LINOONE"
+                "species": "SPECIES_LINOONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 26,
@@ -5390,27 +5456,32 @@
               {
                 "min_level": 26,
                 "max_level": 26,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_ZIGZAGOON",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 26,
                 "max_level": 26,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 26,
                 "max_level": 26,
-                "species": "SPECIES_LINOONE"
+                "species": "SPECIES_LINOONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_LINOONE"
+                "species": "SPECIES_LINOONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 26,
@@ -5554,62 +5625,74 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 26,
                 "max_level": 26,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 24,
                 "max_level": 24,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 22,
                 "max_level": 22,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 24,
                 "max_level": 24,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 24,
                 "max_level": 24,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               }
             ]
           }
@@ -5688,62 +5771,74 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 26,
                 "max_level": 26,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 24,
                 "max_level": 24,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 22,
                 "max_level": 22,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 24,
                 "max_level": 24,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 24,
                 "max_level": 24,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               }
             ]
           }
@@ -6224,27 +6319,32 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_DUSKULL"
+                "species": "SPECIES_DUSKULL",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 28,
                 "max_level": 28,
-                "species": "SPECIES_MEDITITE"
+                "species": "SPECIES_MEDITITE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_MEDITITE"
+                "species": "SPECIES_MEDITITE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_MEDITITE"
+                "species": "SPECIES_MEDITITE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 27,
@@ -8500,17 +8600,20 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 32,
                 "max_level": 32,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 34,
                 "max_level": 34,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 33,
@@ -9312,7 +9415,8 @@
               {
                 "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_MEDICHAM"
+                "species": "SPECIES_MEDICHAM",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 40,
@@ -9347,7 +9451,8 @@
               {
                 "min_level": 38,
                 "max_level": 38,
-                "species": "SPECIES_MEDITITE"
+                "species": "SPECIES_MEDITITE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 42,
@@ -9357,7 +9462,8 @@
               {
                 "min_level": 38,
                 "max_level": 38,
-                "species": "SPECIES_MEDITITE"
+                "species": "SPECIES_MEDITITE",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           },
@@ -9536,7 +9642,8 @@
               {
                 "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_MEDICHAM"
+                "species": "SPECIES_MEDICHAM",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 42,
@@ -9556,7 +9663,8 @@
               {
                 "min_level": 44,
                 "max_level": 44,
-                "species": "SPECIES_MEDICHAM"
+                "species": "SPECIES_MEDICHAM",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 42,
@@ -9765,17 +9873,20 @@
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 18,
                 "max_level": 18,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 14,
                 "max_level": 14,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 19,
@@ -9845,17 +9956,20 @@
               {
                 "min_level": 25,
                 "max_level": 35,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 15,
                 "max_level": 25,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 5,
                 "max_level": 15,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           }
@@ -10004,17 +10118,20 @@
               {
                 "min_level": 35,
                 "max_level": 35,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 33,
                 "max_level": 33,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 35,
@@ -10024,7 +10141,8 @@
               {
                 "min_level": 39,
                 "max_level": 39,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 38,
@@ -10094,17 +10212,20 @@
               {
                 "min_level": 25,
                 "max_level": 35,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 15,
                 "max_level": 25,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 5,
                 "max_level": 15,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           }
@@ -10253,17 +10374,20 @@
               {
                 "min_level": 35,
                 "max_level": 35,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 33,
                 "max_level": 33,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 35,
@@ -10273,7 +10397,8 @@
               {
                 "min_level": 39,
                 "max_level": 39,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 38,
@@ -10343,17 +10468,20 @@
               {
                 "min_level": 25,
                 "max_level": 35,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 15,
                 "max_level": 25,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               },
               {
                 "min_level": 5,
                 "max_level": 15,
-                "species": "SPECIES_LUNATONE"
+                "species": "SPECIES_LUNATONE",
+                "met_game_override": "VERSION_SAPPHIRE"
               }
             ]
           }
@@ -11604,7 +11732,8 @@
               {
                 "min_level": 33,
                 "max_level": 33,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 34,
@@ -11619,7 +11748,8 @@
               {
                 "min_level": 34,
                 "max_level": 34,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 36,
@@ -11629,12 +11759,14 @@
               {
                 "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_DUSCLOPS"
+                "species": "SPECIES_DUSCLOPS",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 38,
                 "max_level": 38,
-                "species": "SPECIES_DUSCLOPS"
+                "species": "SPECIES_DUSCLOPS",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 36,
@@ -11827,7 +11959,8 @@
               {
                 "min_level": 33,
                 "max_level": 33,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 34,
@@ -11842,7 +11975,8 @@
               {
                 "min_level": 34,
                 "max_level": 34,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 36,
@@ -11852,12 +11986,14 @@
               {
                 "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_DUSCLOPS"
+                "species": "SPECIES_DUSCLOPS",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 38,
                 "max_level": 38,
-                "species": "SPECIES_DUSCLOPS"
+                "species": "SPECIES_DUSCLOPS",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 36,
@@ -11961,7 +12097,8 @@
               {
                 "min_level": 33,
                 "max_level": 33,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_MAWILE",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 34,
@@ -11986,12 +12123,14 @@
               {
                 "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_DUSCLOPS"
+                "species": "SPECIES_DUSCLOPS",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 38,
                 "max_level": 38,
-                "species": "SPECIES_DUSCLOPS"
+                "species": "SPECIES_DUSCLOPS",
+                "met_game_override": "VERSION_RUBY"
               },
               {
                 "min_level": 36,

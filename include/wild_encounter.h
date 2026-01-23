@@ -8,6 +8,8 @@ struct WildPokemon
     u8 minLevel;
     u8 maxLevel;
     u16 species;
+    u8 metLocationOverride;
+    u8 metGameOverride;
 };
 
 struct WildPokemonInfo
