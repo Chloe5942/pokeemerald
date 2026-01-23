@@ -613,11 +613,6 @@ static const u16 gItemMoonStonePal[] = INCBIN_U16("graphics/excavation/items/moo
 static const u32 gItemSunStoneGfx[] = INCBIN_U32("graphics/excavation/items/sun_stone.4bpp.lz");
 static const u16 gItemSunStonePal[] = INCBIN_U16("graphics/excavation/items/sun_stone.gbapal");
 
-static const u32 gItemOldAmberGfx[] = INCBIN_U32("graphics/excavation/items/old_amber.4bpp.lz");
-static const u16 gItemOldAmberPal[] = INCBIN_U16("graphics/excavation/items/old_amber.gbapal");
-
-static const u32 gItemDomeFossilGfx[] = INCBIN_U32("graphics/excavation/items/dome_fossil.4bpp.lz");
-static const u32 gItemHelixFossilGfx[] = INCBIN_U32("graphics/excavation/items/helix_fossil.4bpp.lz");
 static const u32 gItemRootFossilGfx[] = INCBIN_U32("graphics/excavation/items/root_fossil.4bpp.lz");
 static const u32 gItemClawFossilGfx[] = INCBIN_U32("graphics/excavation/items/claw_fossil.4bpp.lz");
 static const u16 gItemFossilPal[] = INCBIN_U16("graphics/excavation/items/fossil.gbapal");

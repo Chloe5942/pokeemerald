@@ -55,7 +55,7 @@ enum {
 };
 
 /*********** FLAGS ************/
-#define FLAG_USE_DEFAULT_MESSAGE_BOX            FALSE
+#define FLAG_USE_DEFAULT_MESSAGE_BOX            TRUE
 
 /*********** DEBUG FLAGS ************/
 #define DEBUG_ENABLE_ITEM_GENERATION_OPTIONS    FALSE
