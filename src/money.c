@@ -9,8 +9,7 @@
 #include "sprite.h"
 #include "strings.h"
 #include "decompress.h"
-
-#define MAX_MONEY 999999
+#include "tv.h"
 
 EWRAM_DATA static u8 sMoneyBoxWindowId = 0;
 EWRAM_DATA static u8 sMoneyLabelSpriteId = 0;
@@ -132,7 +131,13 @@ void SubtractMoneyFromVar0x8005(void)
 
 void PrintMoneyAmountInMoneyBox(u8 windowId, int amount, u8 speed)
 {
-    PrintMoneyAmount(windowId, 38, 1, amount, speed);
+    PrintMoneyAmount(windowId, CalculateMoneyTextHorizontalPosition(amount), 1, amount, speed);
+}
+
+u32 CalculateLeadingSpacesForMoney(u32 numDigits)
+{
+    u32 leadingSpaces = CountDigits(INT_MAX) - StringLength(gStringVar1);
+    return (numDigits > 8) ? leadingSpaces : leadingSpaces - 2;
 }
 
 void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
@@ -140,9 +145,9 @@ void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
     u8 *txtPtr;
     s32 strLength;
 
-    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, 6);
+    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
 
-    strLength = 6 - StringLength(gStringVar1);
+    strLength = MAX_MONEY_DIGITS - StringLength(gStringVar1);
     txtPtr = gStringVar4;
 
     while (strLength-- > 0)
@@ -161,6 +166,11 @@ void PrintMoneyAmountInMoneyBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete
 void ChangeAmountInMoneyBox(int amount)
 {
     PrintMoneyAmountInMoneyBox(sMoneyBoxWindowId, amount, 0);
+}
+
+u32 CalculateMoneyTextHorizontalPosition(u32 amount)
+{
+    return (CountDigits(amount) > 8) ? 34 : 26;
 }
 
 void DrawMoneyBox(int amount, u8 x, u8 y)
