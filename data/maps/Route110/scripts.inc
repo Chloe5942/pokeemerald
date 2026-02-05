@@ -406,21 +406,44 @@ Route110_EventScript_MayBattle::
 	end
 
 Route110_EventScript_MayBattleTreecko::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TREECKO, Route110_Text_MayDefeated
-	goto Route110_EventScript_MayDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_ROUTE_110_TREECKO, Route110_Text_RivalThinking
+	goto Route110_EventScript_AfterMayBattle
 	end
 
 Route110_EventScript_MayBattleTorchic::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TORCHIC, Route110_Text_MayDefeated
-	goto Route110_EventScript_MayDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_ROUTE_110_TORCHIC, Route110_Text_RivalThinking
+	goto Route110_EventScript_AfterMayBattle
 	end
 
 Route110_EventScript_MayBattleMudkip::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_MUDKIP, Route110_Text_MayDefeated
-	goto Route110_EventScript_MayDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_ROUTE_110_MUDKIP, Route110_Text_RivalThinking
+	goto Route110_EventScript_AfterMayBattle
+	end
+
+Route110_EventScript_AfterMayBattle::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route110_EventScript_MayDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Route110_EventScript_MayVictory
+	end
+
+Route110_EventScript_MayVictory::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox Route110_Text_MayWon, MSGBOX_DEFAULT
+	waitmessage
+	msgbox Route110_Text_MayTakeThis, MSGBOX_DEFAULT
+	call Route110_EventScript_GiveItemfinder
+	msgbox Route110_Text_MayExplainItemfinder, MSGBOX_DEFAULT
+	goto Route110_EventScript_RivalExit
 	end
 
 Route110_EventScript_MayDefeated::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox Route110_Text_MayDefeated, MSGBOX_DEFAULT
+	waitmessage
 	msgbox Route110_Text_MayTakeThis, MSGBOX_DEFAULT
 	call Route110_EventScript_GiveItemfinder
 	msgbox Route110_Text_MayExplainItemfinder, MSGBOX_DEFAULT
@@ -436,21 +459,44 @@ Route110_EventScript_BrendanBattle::
 	end
 
 Route110_EventScript_BrendanBattleTreecko::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_TREECKO, Route110_Text_BrendanDefeated
-	goto Route110_EventScript_BrendanDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_ROUTE_110_TREECKO, Route110_Text_RivalThinking
+	goto Route110_EventScript_AfterBrendanBattle
 	end
 
 Route110_EventScript_BrendanBattleTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_TORCHIC, Route110_Text_BrendanDefeated
-	goto Route110_EventScript_BrendanDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_ROUTE_110_TORCHIC, Route110_Text_RivalThinking
+	goto Route110_EventScript_AfterBrendanBattle
 	end
 
 Route110_EventScript_BrendanBattleMudkip::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_MUDKIP, Route110_Text_BrendanDefeated
-	goto Route110_EventScript_BrendanDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_ROUTE_110_MUDKIP, Route110_Text_RivalThinking
+	goto Route110_EventScript_AfterBrendanBattle
+	end
+
+Route110_EventScript_AfterBrendanBattle::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route110_EventScript_BrendanDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Route110_EventScript_BrendanVictory
+	end
+
+Route110_EventScript_BrendanVictory::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox Route110_Text_BrendanWon, MSGBOX_DEFAULT
+	waitmessage
+	msgbox Route110_Text_BrendanTakeThis, MSGBOX_DEFAULT
+	call Route110_EventScript_GiveItemfinder
+	msgbox Route110_Text_BrendanExplainItemfinder, MSGBOX_DEFAULT
+	goto Route110_EventScript_RivalExit
 	end
 
 Route110_EventScript_BrendanDefeated::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox Route110_Text_BrendanDefeated, MSGBOX_DEFAULT
+	waitmessage
 	msgbox Route110_Text_BrendanTakeThis, MSGBOX_DEFAULT
 	call Route110_EventScript_GiveItemfinder
 	msgbox Route110_Text_BrendanExplainItemfinder, MSGBOX_DEFAULT
@@ -761,9 +807,16 @@ Route110_Text_MayLetsBattle:
 	.string "So…\n"
 	.string "How about a little battle?$"
 
+Route110_Text_RivalThinking:
+	.string "… … …$"
+
 Route110_Text_MayDefeated:
 	.string "Yikes!\n"
 	.string "You're better than I expected!$"
+
+Route110_Text_MayWon:
+	.string "Yay!\n"
+	.string "You're just as I expected!$"
 
 Route110_Text_MayTakeThis:
 	.string "May: {PLAYER}{KUN}, you've been busy\n"
@@ -790,6 +843,10 @@ Route110_Text_BrendanLetsBattle:
 Route110_Text_BrendanDefeated:
 	.string "Hmm…\n"
 	.string "You're pretty good.$"
+
+Route110_Text_BrendanWon:
+	.string "Hmm…\n"
+	.string "You're pretty good too.$"
 
 Route110_Text_BrendanTakeThis:
 	.string "Brendan: {PLAYER}, you've trained\n"

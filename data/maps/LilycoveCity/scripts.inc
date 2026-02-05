@@ -291,36 +291,63 @@ LilycoveCity_EventScript_DeclineBrendanBattle::
 	end
 
 LilycoveCity_EventScript_BattleMayTreecko::
-	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_TREECKO, LilycoveCity_Text_MayDefeat
-	goto LilycoveCity_EventScript_DefeatedMay
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_LILYCOVE_TREECKO, LilycoveCity_Text_RivalThinking
+	goto LilycoveCity_EventScript_AfterMayBattle
 	end
 
 LilycoveCity_EventScript_BattleMayTorchic::
-	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_TORCHIC, LilycoveCity_Text_MayDefeat
-	goto LilycoveCity_EventScript_DefeatedMay
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_LILYCOVE_TORCHIC, LilycoveCity_Text_RivalThinking
+	goto LilycoveCity_EventScript_AfterMayBattle
 	end
 
 LilycoveCity_EventScript_BattleMayMudkip::
-	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_MUDKIP, LilycoveCity_Text_MayDefeat
-	goto LilycoveCity_EventScript_DefeatedMay
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_LILYCOVE_MUDKIP, LilycoveCity_Text_RivalThinking
+	goto LilycoveCity_EventScript_AfterMayBattle
 	end
 
 LilycoveCity_EventScript_BattleBrendanTreecko::
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TREECKO, LilycoveCity_Text_BrendanDefeat
-	goto LilycoveCity_EventScript_DefeatedBrendan
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_LILYCOVE_TREECKO, LilycoveCity_Text_RivalThinking
+	goto LilycoveCity_EventScript_AfterBrendanBattle
 	end
 
 LilycoveCity_EventScript_BattleBrendanTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TORCHIC, LilycoveCity_Text_BrendanDefeat
-	goto LilycoveCity_EventScript_DefeatedBrendan
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_LILYCOVE_TORCHIC, LilycoveCity_Text_RivalThinking
+	goto LilycoveCity_EventScript_AfterBrendanBattle
 	end
 
 LilycoveCity_EventScript_BattleBrendanMudkip::
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_MUDKIP, LilycoveCity_Text_BrendanDefeat
-	goto LilycoveCity_EventScript_DefeatedBrendan
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_LILYCOVE_MUDKIP, LilycoveCity_Text_RivalThinking
+	goto LilycoveCity_EventScript_AfterBrendanBattle
+	end
+
+LilycoveCity_EventScript_AfterMayBattle::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LilycoveCity_EventScript_DefeatedMay
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, LilycoveCity_EventScript_MayVictory
+	end
+
+LilycoveCity_EventScript_MayVictory::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox LilycoveCity_Text_MayWon, MSGBOX_DEFAULT
+	waitmessage
+	msgbox LilycoveCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT
+	setvar VAR_RESULT, FALSE
+	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge
+	call_if_eq VAR_RESULT, FALSE, LilycoveCity_EventScript_MayCollectBadges
+	call_if_eq VAR_RESULT, TRUE, LilycoveCity_EventScript_MayPokemonLeague
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL
+	goto LilycoveCity_EventScript_RivalFlyAway
 	end
 
 LilycoveCity_EventScript_DefeatedMay::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox LilycoveCity_Text_MayDefeat, MSGBOX_DEFAULT
+	waitmessage
 	msgbox LilycoveCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge
@@ -352,7 +379,34 @@ LilycoveCity_EventScript_MayBattleFrontier::
 	msgbox LilycoveCity_Text_MayYouGoingToBattleFrontier, MSGBOX_DEFAULT
 	return
 
+LilycoveCity_EventScript_AfterBrendanBattle::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LilycoveCity_EventScript_DefeatedBrendan
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, LilycoveCity_EventScript_BrendanVictory
+	end
+
+LilycoveCity_EventScript_BrendanVictory::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox LilycoveCity_Text_BrendanWon, MSGBOX_DEFAULT
+	waitmessage
+	msgbox LilycoveCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT
+	setvar VAR_RESULT, FALSE
+	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge
+	call_if_eq VAR_RESULT, FALSE, LilycoveCity_EventScript_BrendanCollectBadges
+	call_if_eq VAR_RESULT, TRUE, LilycoveCity_EventScript_BrendanPokemonLeague
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL
+	goto LilycoveCity_EventScript_RivalFlyAway
+	end
+
 LilycoveCity_EventScript_DefeatedBrendan::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox LilycoveCity_Text_BrendanDefeat, MSGBOX_DEFAULT
+	waitmessage
 	msgbox LilycoveCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge
@@ -436,11 +490,21 @@ LilycoveCity_Text_MayWontBeBeaten:
 	.string "May: The Pokémon I raised won't be\n"
 	.string "beaten by your Pokémon, {PLAYER}{KUN}!$"
 
+LilycoveCity_Text_RivalThinking:
+	.string "… … …$"
+
 LilycoveCity_Text_MayDefeat:
 	.string "… … … … … … … …\p"
 	.string "I remember the battle I had with you,\n"
 	.string "{PLAYER}{KUN}, on Route 103.\p"
 	.string "That battle helped you become this\n"
+	.string "strong, {PLAYER}{KUN}, didn't it?$"
+
+LilycoveCity_Text_MayWon:
+	.string "… … … … … … … …\p"
+	.string "I remember the battle I had with you,\n"
+	.string "{PLAYER}{KUN}, on Route 103.\p"
+	.string "That battle helped us become this\n"
 	.string "strong, {PLAYER}{KUN}, didn't it?$"
 
 LilycoveCity_Text_MayGoingBackToLittleroot:
@@ -504,6 +568,12 @@ LilycoveCity_Text_BrendanDefeat:
 	.string "You've done a lot of raising.\p"
 	.string "That stings a bit--I had a head start\n"
 	.string "on you as a Trainer…$"
+
+LilycoveCity_Text_BrendanWon:
+	.string "Humph…\n"
+	.string "You've done a ton of raising.\p"
+	.string "That stings a bit--I had a head start\n"
+	.string "on you as a Trainer too…$"
 
 LilycoveCity_Text_BrendanGoingBackToLittleroot:
 	.string "Brendan: I…\n"

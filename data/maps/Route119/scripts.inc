@@ -76,21 +76,44 @@ Route119_EventScript_BattleMay::
 	end
 
 Route119_EventScript_BattleMayTreecko::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_119_TREECKO, Route119_Text_MayDefeat
-	goto Route119_EventScript_DefeatedMay
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_ROUTE_119_TREECKO, Route119_Text_RivalThinking
+	goto Route119_EventScript_AfterMayBattle
 	end
 
 Route119_EventScript_BattleMayTorchic::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_119_TORCHIC, Route119_Text_MayDefeat
-	goto Route119_EventScript_DefeatedMay
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_ROUTE_119_TORCHIC, Route119_Text_RivalThinking
+	goto Route119_EventScript_AfterMayBattle
 	end
 
 Route119_EventScript_BattleMayMudkip::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_119_MUDKIP, Route119_Text_MayDefeat
-	goto Route119_EventScript_DefeatedMay
+	trainerbattle_no_intro_no_whiteout TRAINER_MAY_ROUTE_119_MUDKIP, Route119_Text_RivalThinking
+	goto Route119_EventScript_AfterMayBattle
+	end
+
+Route119_EventScript_AfterMayBattle::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route119_EventScript_DefeatedMay
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Route119_EventScript_MayVictory
+	end
+
+Route119_EventScript_MayVictory::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox Route119_Text_MayWon, MSGBOX_DEFAULT
+	waitmessage
+	msgbox Route119_Text_MayPresentForYou, MSGBOX_DEFAULT
+	call Route119_EventScript_GiveFlyHM
+	msgbox Route119_Text_MayExplainFly, MSGBOX_DEFAULT
+	goto Route119_EventScript_RivalExitScottArrive
 	end
 
 Route119_EventScript_DefeatedMay::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox Route119_Text_MayDefeat, MSGBOX_DEFAULT
+	waitmessage
 	msgbox Route119_Text_MayPresentForYou, MSGBOX_DEFAULT
 	call Route119_EventScript_GiveFlyHM
 	msgbox Route119_Text_MayExplainFly, MSGBOX_DEFAULT
@@ -106,21 +129,44 @@ Route119_EventScript_BattleBrendan::
 	end
 
 Route119_EventScript_BattleBrendanTreecko::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_119_TREECKO, Route119_Text_BrendanDefeat
-	goto Route119_EventScript_DefeatedBrendan
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_ROUTE_119_TREECKO, Route119_Text_RivalThinking
+	goto Route119_EventScript_AfterBrendanBattle
 	end
 
 Route119_EventScript_BattleBrendanTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_119_TORCHIC, Route119_Text_BrendanDefeat
-	goto Route119_EventScript_DefeatedBrendan
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_ROUTE_119_TORCHIC, Route119_Text_RivalThinking
+	goto Route119_EventScript_AfterBrendanBattle
 	end
 
 Route119_EventScript_BattleBrendanMudkip::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_119_MUDKIP, Route119_Text_BrendanDefeat
-	goto Route119_EventScript_DefeatedBrendan
+	trainerbattle_no_intro_no_whiteout TRAINER_BRENDAN_ROUTE_119_MUDKIP, Route119_Text_RivalThinking
+	goto Route119_EventScript_AfterBrendanBattle
+	end
+
+Route119_EventScript_AfterBrendanBattle::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route119_EventScript_DefeatedBrendan
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Route119_EventScript_BrendanVictory
+	end
+
+Route119_EventScript_BrendanVictory::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox Route119_Text_BrendanWon, MSGBOX_DEFAULT
+	waitmessage
+	msgbox Route119_Text_BrendanIllGiveYouThis, MSGBOX_DEFAULT
+	call Route119_EventScript_GiveFlyHM
+	msgbox Route119_Text_BrendanExplainFly, MSGBOX_DEFAULT
+	goto Route119_EventScript_RivalExitScottArrive
 	end
 
 Route119_EventScript_DefeatedBrendan::
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox Route119_Text_BrendanDefeat, MSGBOX_DEFAULT
+	waitmessage
 	msgbox Route119_Text_BrendanIllGiveYouThis, MSGBOX_DEFAULT
 	call Route119_EventScript_GiveFlyHM
 	msgbox Route119_Text_BrendanExplainFly, MSGBOX_DEFAULT
@@ -483,11 +529,19 @@ Route119_Text_MayIntro:
 	.string "Ready with your Pokémon?\n"
 	.string "Of course you are! Go!$"
 
+Route119_Text_RivalThinking:
+	.string "… … …$"
+
 Route119_Text_MayDefeat:
 	.string "Achah!\n"
 	.string "{PLAYER}{KUN}, you're strong!\p"
 	.string "I was worried that you might be\n"
 	.string "struggling with your training.$"
+
+Route119_Text_MayWon:
+	.string "Achah!?\n"
+	.string "{PLAYER}{KUN},\n"
+	.string "are you struggling with your training?$"
 
 Route119_Text_MayPresentForYou:
 	.string "May: But I had absolutely nothing to\n"
@@ -518,6 +572,10 @@ Route119_Text_BrendanIntro:
 Route119_Text_BrendanDefeat:
 	.string "Hmm…\n"
 	.string "You've gotten pretty darn decent.$"
+
+Route119_Text_BrendanWon:
+	.string "Hmm…\n"
+	.string "You've gotten decent.$"
 
 Route119_Text_BrendanIllGiveYouThis:
 	.string "Brendan: I'd say you're good enough\n"
