@@ -22,28 +22,6 @@ MauvilleCity_PokemonCenter_2F_EventScript_Youngster::
 	msgbox MauvilleCity_PokemonCenter_2F_Text_Youngster, MSGBOX_NPC
 	end
 
-MauvilleCity_PokemonCenter_2F_EventScript_Girl1StartSoloBerryCrush::
-	lockall
-	faceplayer
-	checkitem ITEM_POWDER_JAR
-	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_PokemonCenter_2F_EventScript_NeedPowderJar
-	msgbox MauvilleCity_PokemonCenter_2F_Text_PlayBerryCrushSolo, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_PokemonCenter_2F_EventScript_DeclinedBerryCrushFromGirl
-    fadescreenswapbuffers FADE_TO_BLACK
-    special StartBerryCrushSolo
-	releaseall
-	end
-
-MauvilleCity_PokemonCenter_2F_EventScript_DeclinedBerryCrushFromGirl::
-	msgbox MauvilleCity_PokemonCenter_2F_Text_Girl1OkayThen, MSGBOX_AUTOCLOSE
-	releaseall
-	end
-
-MauvilleCity_PokemonCenter_2F_EventScript_NeedPowderJar::
-	msgbox MauvilleCity_PokemonCenter_2F_Text_NeedPowderJar, MSGBOX_AUTOCLOSE
-	releaseall
-	end
-
 MauvilleCity_PokemonCenter_2F_Text_Youngster:
 	.string "Did you know that you can link battle\n"
 	.string "at the Colosseum here?\p"
@@ -51,15 +29,4 @@ MauvilleCity_PokemonCenter_2F_Text_Youngster:
 	.string "for everyone to see.\p"
 	.string "It's embarrassing if you lose more\n"
 	.string "often than you win…$"
-
-MauvilleCity_PokemonCenter_2F_Text_PlayBerryCrushSolo:
-	.string "Would you like to play BERRY CRUSH\n"
-	.string "by yourself?$"
-
-MauvilleCity_PokemonCenter_2F_Text_Girl1OkayThen:
-	.string "Okay then…$"
-
-MauvilleCity_PokemonCenter_2F_Text_NeedPowderJar:
-	.string "If you want to play BERRY CRUSH by\n"
-	.string "yourself, you'd need a POWDER JAR.$"
 
