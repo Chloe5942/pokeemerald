@@ -2,6 +2,7 @@
 #include "malloc.h"
 #include "battle.h"
 #include "battle_tower.h"
+#include "berry_crush.h"
 #include "cable_club.h"
 #include "data.h"
 #include "decoration.h"
@@ -4305,4 +4306,9 @@ void SetPlayerGotFirstFans(void)
 u8 Script_TryGainNewFanFromCounter(void)
 {
     return TryGainNewFanFromCounter(gSpecialVar_0x8004);
+}
+
+void StartBerryCrushSolo(void)
+{
+    StartBerryCrush(CB2_LoadMap, TRUE);
 }
