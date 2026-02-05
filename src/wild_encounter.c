@@ -16,6 +16,7 @@
 #include "script.h"
 #include "tv.h"
 #include "wild_encounter.h"
+#include "config/fishing_game.h"
 #include "constants/abilities.h"
 #include "constants/game_stat.h"
 #include "constants/items.h"
@@ -792,9 +793,12 @@ void FishingWildEncounter(u8 rod)
     {
         species = GenerateFishingWildMon(gWildMonHeaders[GetCurrentMapWildMonHeaderId()].fishingMonsInfo, rod);
     }
-    IncrementGameStat(GAME_STAT_FISHING_ENCOUNTERS);
     SetPokemonAnglerSpecies(species);
-    BattleSetup_StartWildBattle();
+    if (FG_FISH_MINIGAME_ENABLED == FALSE)
+    {
+        IncrementGameStat(GAME_STAT_FISHING_ENCOUNTERS);
+        BattleSetup_StartWildBattle();
+    }
 }
 
 u16 GetLocalWildMon(bool8 *isWaterMon)
