@@ -152,3 +152,4 @@
 	.include "src/pokedex_plus_hgss.o"
 	.include "src/debug.o"
 	.include "src/debug_pokemon_creator.o"
+	.include "src/ui_main_menu.o"
