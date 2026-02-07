@@ -3058,5 +3058,8 @@ extern const u8 gMenuText_Move[];
 extern const u8 gText_MoveItemWhere[];
 extern const u8 gText_XsYAnd[];
 extern const u8 gText_XsYWereSwapped[];
+extern const u8 gText_AshQty[];
+extern const u8 gText_PkmnScannerOn[];
+extern const u8 gText_PkmnScannerOff[];
 
 #endif // GUARD_STRINGS_H

@@ -28,6 +28,7 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "pokemon.h"
 
 struct BattleWindowText
 {
@@ -46,6 +47,7 @@ struct BattleWindowText
 static void ChooseMoveUsedParticle(u8 *textPtr);
 static void ChooseTypeOfMoveUsedString(u8 *dst);
 static void ExpandBattleTextBuffPlaceholders(const u8 *src, u8 *dst);
+extern const u8 *const gNatureNamePointers[];
 
 static EWRAM_DATA u8 sBattlerAbilities[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA struct BattleMsgData *gBattleMsgDataPtr = NULL;
@@ -431,6 +433,12 @@ static const u8 sText_SpAtk2[] = _("Sp. Atk");
 static const u8 sText_SpDef2[] = _("Sp. Def");
 static const u8 sText_Accuracy[] = _("accuracy");
 static const u8 sText_Evasiveness[] = _("evasiveness");
+static const u8 sText_PkmnDroppedItem[] = _("Wild {B_OPPONENT_MON1_NAME} dropped an item!\p");
+static const u8 sText_AddedToBag[] = _("{B_PLAYER_NAME} put away the {B_BUFF1}\nin the {B_BUFF2} Pocket.\p");
+static const u8 sText_BagIsFull[] = _("Too bad! The Bag is full…\p");
+static const u8 sText_WildPkmnAppearedAdv[] = _("You encountered a {B_DEF_NATURE_NAME}\n{B_OPPONENT_MON1_NAME} with {B_DEF_ABILITY_NAME},\pholding {B_DEF_ITEM_NAME}!\p");
+static const u8 sText_LegendaryPkmnAppearedAdv[] = _("You encountered a {B_DEF_NATURE_NAME}\n{B_OPPONENT_MON1_NAME} with {B_DEF_ABILITY_NAME},\pholding {B_DEF_ITEM_NAME}!\p");
+static const u8 sText_WildPkmnAppearedPauseAdv[] = _("You encountered a {B_DEF_NATURE_NAME}\n{B_OPPONENT_MON1_NAME} with {B_DEF_ABILITY_NAME},\pholding {B_DEF_ITEM_NAME}!{PAUSE 127}");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -887,6 +895,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT - BATTLESTRINGS_TABLE_ST
     [STRINGID_PKMNBOXLANETTESPCFULL - BATTLESTRINGS_TABLE_START] = gText_PkmnTransferredLanettesPCBoxFull,
     [STRINGID_TRAINER1WINTEXT - BATTLESTRINGS_TABLE_START] = sText_Trainer1WinText,
     [STRINGID_TRAINER2WINTEXT - BATTLESTRINGS_TABLE_START] = sText_Trainer2WinText,
+    [STRINGID_PKMNDROPPEDITEM - BATTLESTRINGS_TABLE_START] = sText_PkmnDroppedItem,
+    [STRINGID_ADDEDTOBAG - BATTLESTRINGS_TABLE_START] = sText_AddedToBag,
+    [STRINGID_BAGISFULL - BATTLESTRINGS_TABLE_START] = sText_BagIsFull,
 };
 
 const u16 gMissStringIds[] =
@@ -2025,12 +2036,19 @@ void BufferStringBattle(u16 stringID)
         {
             if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
                 stringPtr = sText_LegendaryPkmnAppeared;
+            else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY & FlagGet(FLAG_PKMN_SCANNER))
+                stringPtr = sText_LegendaryPkmnAppearedAdv;
             else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) // interesting, looks like they had something planned for wild double battles
                 stringPtr = sText_TwoWildPkmnAppeared;
             else if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL)
                 stringPtr = sText_WildPkmnAppearedPause;
+            else if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL & FlagGet(FLAG_PKMN_SCANNER))
+                stringPtr = sText_WildPkmnAppearedPause;
+            else if (FlagGet(FLAG_PKMN_SCANNER))
+                stringPtr = sText_WildPkmnAppearedAdv;
             else
                 stringPtr = sText_WildPkmnAppeared;
+                
         }
         break;
     case STRINGID_INTROSENDOUT: // poke first send-out
@@ -2319,6 +2337,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
     u8 text[max(max(max(32, TRAINER_NAME_LENGTH + 1), POKEMON_NAME_LENGTH + 1), ITEM_NAME_LENGTH)];
     u8 multiplayerId;
     s32 i;
+    u32 ability = GetMonAbility(&gEnemyParty[0]);
+    u32 heldItem = GetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, 0);
+    u32 nature = GetNature(&gEnemyParty[0]);
 
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED_LINK)
         multiplayerId = gRecordedBattleMultiplayerId;
@@ -2451,6 +2472,15 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                 break;
             case B_TXT_SCR_ACTIVE_NAME_WITH_PREFIX: // scripting active battler name with prefix
                 HANDLE_NICKNAME_STRING_CASE(gBattleScripting.battler, gBattlerPartyIndexes[gBattleScripting.battler])
+                break;
+            case B_TXT_DEF_NATURE_NAME:
+                toCpy = gNatureNamePointers[nature];
+                break;
+            case B_TXT_DEF_ITEM_NAME:
+                toCpy = gItems[heldItem].name;
+                break;
+            case B_TXT_DEF_ABILITY_NAME:
+                toCpy = gAbilityNames[ability];
                 break;
             case B_TXT_CURRENT_MOVE: // current move name
                 if (gBattleMsgDataPtr->currentMove >= MOVES_COUNT)
@@ -2871,6 +2901,11 @@ static void ExpandBattleTextBuffPlaceholders(const u8 *src, u8 *dst)
             {
                 CopyItemName(hword, dst);
             }
+            srcID += 3;
+            break;
+        case B_BUFF_POCKET:
+            hword = T1_READ_16(&src[srcID + 1]);
+            CopyPocketName(hword, dst);
             srcID += 3;
             break;
         }

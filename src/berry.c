@@ -13,6 +13,7 @@
 #include "text.h"
 #include "constants/event_object_movement.h"
 #include "constants/items.h"
+#include "constants/map_groups.h"
 
 static u32 GetEnigmaBerryChecksum(struct EnigmaBerry *enigmaBerry);
 static bool32 BerryTreeGrow(struct BerryTree *tree);
@@ -1079,16 +1080,6 @@ static bool32 BerryTreeGrow(struct BerryTree *tree)
     case BERRY_STAGE_TALLER:
         tree->stage++;
         break;
-    case BERRY_STAGE_BERRIES:
-        tree->watered1 = 0;
-        tree->watered2 = 0;
-        tree->watered3 = 0;
-        tree->watered4 = 0;
-        tree->berryYield = 0;
-        tree->stage = BERRY_STAGE_SPROUTED;
-        if (++tree->regrowthCount == 10)
-            *tree = gBlankBerryTree;
-        break;
     }
     return TRUE;
 }
@@ -1102,13 +1093,8 @@ void BerryTreeTimeUpdate(s32 minutes)
     {
         tree = &gSaveBlock1Ptr->berryTrees[i];
 
-        if (tree->berry && tree->stage && !tree->stopGrowth)
+        if (tree->berry && tree->stage && !tree->stopGrowth && (tree->stage != BERRY_STAGE_BERRIES))
         {
-            if (minutes >= GetStageDurationByBerryType(tree->berry) * 71)
-            {
-                *tree = gBlankBerryTree;
-            }
-            else
             {
                 s32 time = minutes;
 
@@ -1262,7 +1248,14 @@ static u8 CalcBerryYield(struct BerryTree *tree)
 
 static u8 GetBerryCountByBerryTreeId(u8 id)
 {
-    return gSaveBlock1Ptr->berryTrees[id].berryYield;
+    struct BerryTree *tree = GetBerryTreeInfo(id);
+    const struct Berry *berry = GetBerryInfo(tree->berry);
+    u16 currentMap = gMapHeader.regionMapSectionId;
+
+    if (currentMap == MAP_ROUTE119 || currentMap == MAP_ROUTE120 || currentMap == MAP_ROUTE123)
+        return berry->maxYield;
+    else
+        return gSaveBlock1Ptr->berryTrees[id].berryYield;
 }
 
 static u16 GetStageDurationByBerryType(u8 berry)

@@ -2,7 +2,7 @@ const struct Item gItems[] =
 {
     [ITEM_NONE] =
     {
-        .name = _("????????"),
+        .name = _("Nothing"),
         .itemId = ITEM_NONE,
         .price = 0,
         .description = sDummyDesc,
@@ -239,7 +239,7 @@ const struct Item gItems[] =
 
     [ITEM_PARALYZE_HEAL] =
     {
-        .name = _("Parlyz Heal"),
+        .name = _("Paralyze Heal"),
         .itemId = ITEM_PARALYZE_HEAL,
         .price = 200,
         .description = sParalyzeHealDesc,
@@ -403,7 +403,7 @@ const struct Item gItems[] =
 
     [ITEM_ENERGY_POWDER] =
     {
-        .name = _("Energypowder"),
+        .name = _("Energy Powder"),
         .itemId = ITEM_ENERGY_POWDER,
         .price = 500,
         .description = sEnergyPowderDesc,
@@ -1194,7 +1194,7 @@ const struct Item gItems[] =
 
     [ITEM_THUNDER_STONE] =
     {
-        .name = _("ThunderStone"),
+        .name = _("Thunder Stone"),
         .itemId = ITEM_THUNDER_STONE,
         .price = 2100,
         .description = sThunderStoneDesc,
@@ -2185,7 +2185,7 @@ const struct Item gItems[] =
 
     [ITEM_BRIGHT_POWDER] =
     {
-        .name = _("Brightpowder"),
+        .name = _("Bright Powder"),
         .itemId = ITEM_BRIGHT_POWDER,
         .price = 10,
         .holdEffect = HOLD_EFFECT_EVASION_UP,
@@ -2296,7 +2296,7 @@ const struct Item gItems[] =
 
     [ITEM_SILVER_POWDER] =
     {
-        .name = _("SilverPowder"),
+        .name = _("Silver Powder"),
         .itemId = ITEM_SILVER_POWDER,
         .price = 100,
         .holdEffect = HOLD_EFFECT_BUG_POWER,
@@ -2346,7 +2346,7 @@ const struct Item gItems[] =
 
     [ITEM_DEEP_SEA_TOOTH] =
     {
-        .name = _("DeepSeaTooth"),
+        .name = _("Deep Sea Tooth"),
         .itemId = ITEM_DEEP_SEA_TOOTH,
         .price = 200,
         .holdEffect = HOLD_EFFECT_DEEP_SEA_TOOTH,
@@ -2358,7 +2358,7 @@ const struct Item gItems[] =
 
     [ITEM_DEEP_SEA_SCALE] =
     {
-        .name = _("DeepSeaScale"),
+        .name = _("Deep Sea Scale"),
         .itemId = ITEM_DEEP_SEA_SCALE,
         .price = 200,
         .holdEffect = HOLD_EFFECT_DEEP_SEA_SCALE,
@@ -2521,7 +2521,7 @@ const struct Item gItems[] =
 
     [ITEM_BLACK_GLASSES] =
     {
-        .name = _("BlackGlasses"),
+        .name = _("Black Glasses"),
         .itemId = ITEM_BLACK_GLASSES,
         .price = 100,
         .holdEffect = HOLD_EFFECT_DARK_POWER,
@@ -2599,7 +2599,7 @@ const struct Item gItems[] =
 
     [ITEM_NEVER_MELT_ICE] =
     {
-        .name = _("NeverMeltIce"),
+        .name = _("Never Melt Ice"),
         .itemId = ITEM_NEVER_MELT_ICE,
         .price = 100,
         .holdEffect = HOLD_EFFECT_ICE_POWER,
@@ -2625,7 +2625,7 @@ const struct Item gItems[] =
 
     [ITEM_TWISTED_SPOON] =
     {
-        .name = _("Twistedspoon"),
+        .name = _("Twisted Spoon"),
         .itemId = ITEM_TWISTED_SPOON,
         .price = 100,
         .holdEffect = HOLD_EFFECT_PSYCHIC_POWER,
@@ -3167,7 +3167,7 @@ const struct Item gItems[] =
 
     [ITEM_ITEMFINDER] =
     {
-        .name = _("Itemfinder"),
+        .name = _("Item Finder"),
         .itemId = ITEM_ITEMFINDER,
         .price = 0,
         .description = sItemfinderDesc,
@@ -3288,7 +3288,7 @@ const struct Item gItems[] =
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_SootSack,
     },
 
     [ITEM_BASEMENT_KEY] =
@@ -4159,15 +4159,17 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_15B] =
+    [ITEM_POKE_SCANNER] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("Poké Scanner"),
+        .itemId = ITEM_POKE_SCANNER,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sPokeScannerDesc,
+        .importance = 1,
+        .registrability = TRUE,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_PkmnScanner,
     },
 
     [ITEM_15C] =
@@ -4447,7 +4449,7 @@ const struct Item gItems[] =
 
     [ITEM_MYSTIC_TICKET] =
     {
-        .name = _("MysticTicket"),
+        .name = _("Mystic Ticket"),
         .itemId = ITEM_MYSTIC_TICKET,
         .price = 0,
         .description = sMysticTicketDesc,
@@ -4460,7 +4462,7 @@ const struct Item gItems[] =
 
     [ITEM_AURORA_TICKET] =
     {
-        .name = _("AuroraTicket"),
+        .name = _("Aurora Ticket"),
         .itemId = ITEM_AURORA_TICKET,
         .price = 0,
         .description = sAuroraTicketDesc,

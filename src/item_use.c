@@ -1145,4 +1145,46 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
 
+void ItemUseOutOfBattle_SootSack(u8 taskId)
+{
+	ConvertIntToDecimalStringN(gStringVar1, GetAshCount(), STR_CONV_MODE_LEFT_ALIGN, 4);
+	StringExpandPlaceholders(gStringVar4, gText_AshQty);
+	if (!gTasks[taskId].tUsingRegisteredKeyItem)
+	{
+		DisplayItemMessage(taskId, 1, gStringVar4, CloseItemMessage);
+	}
+	else
+	{
+		DisplayItemMessageOnField(taskId, gStringVar4, Task_CloseCantUseKeyItemMessage);
+	}
+}		
+
+u16 GetAshCount(void)
+{
+	u16 *ashGatherCount;
+	ashGatherCount = GetVarPointer(VAR_ASH_GATHER_COUNT);
+	return *ashGatherCount;
+}
+
+void ItemUseOutOfBattle_PkmnScanner(u8 taskId)
+{
+    if (!FlagGet(FLAG_PKMN_SCANNER))
+    {
+        PlaySE(SE_PC_OFF);
+        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_PkmnScannerOn, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PkmnScannerOn, CloseItemMessage);
+    }
+    else
+    {
+        PlaySE(SE_EXP_MAX);
+        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_PkmnScannerOff, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PkmnScannerOff, CloseItemMessage);
+    }
+    FlagToggle(FLAG_PKMN_SCANNER);
+}
+
 #undef tUsingRegisteredKeyItem

@@ -195,7 +195,7 @@ struct PartyMenuInternal
     u32 spriteIdCancelPokeball:7;
     u32 messageId:14;
     u8 windowId[3];
-    u8 actions[9];
+    u8 actions[10];
     u8 numActions;
     // In vanilla Emerald, only the first 0xB0 hwords (0x160 bytes) are actually used.
     // However, a full 0x100 hwords (0x200 bytes) are allocated.
@@ -369,7 +369,7 @@ static void Task_SendMailToPCYesNo(u8);
 static void Task_HandleSendMailToPCYesNoInput(u8);
 static void Task_LoseMailMessageYesNo(u8);
 static void Task_HandleLoseMailMessageYesNoInput(u8);
-static bool8 TrySwitchInPokemon(void);
+static u8 TrySwitchInPokemon(void);
 static void Task_SpinTradeYesNo(u8);
 static void Task_HandleSpinTradeYesNoInput(u8);
 static void Task_CancelAfterAorBPress(u8);
@@ -2777,12 +2777,24 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                // If Mon already knows FLY and the HM is in the bag, prevent it from being added to action list
+                if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem(ITEM_HM02, 1)){
+                    // If Mon already knows FLASH and the HM is in the bag, prevent it from being added to action list
+                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM05, 1)){ 
+                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                    }
+                }
                 break;
             }
         }
     }
 
+    // If Mon can learn HM02 and action list consists of < 4 moves, add FLY to action list
+    if (sPartyMenuInternal->numActions < 5 && CanMonLearnTMHM(&mons[slotId], ITEM_HM02 - ITEM_TM01) && CheckBagHasItem(ITEM_HM02, 1)) 
+    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
+    // If Mon can learn HM05 and action list consists of < 4 moves, add FLASH to action list
+    if (sPartyMenuInternal->numActions < 5 && CanMonLearnTMHM(&mons[slotId], ITEM_HM05 - ITEM_TM01) && CheckBagHasItem(ITEM_HM05, 1)) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
     if (!InBattlePike())
     {
         if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
@@ -3707,11 +3719,16 @@ static void CursorCb_Cancel2(u8 taskId)
 
 static void CursorCb_SendMon(u8 taskId)
 {
+    u8 switchMon = TrySwitchInPokemon();
     PlaySE(SE_SELECT);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
-    if (TrySwitchInPokemon() == TRUE)
+    if (switchMon == 1)
     {
         Task_ClosePartyMenu(taskId);
+    }
+    else if (switchMon == 2)
+    {
+        HandleChooseMonCancel(taskId, GetCurrentPartySlotPtr());
     }
     else
     {
@@ -6071,7 +6088,7 @@ static u8 GetPartyMenuActionsTypeInBattle(struct Pokemon *mon)
     return ACTIONS_SUMMARY_ONLY;
 }
 
-static bool8 TrySwitchInPokemon(void)
+static u8 TrySwitchInPokemon(void)
 {
     u8 slot = GetCursorSelectionMonId();
     u8 newSlot;
@@ -6082,13 +6099,13 @@ static bool8 TrySwitchInPokemon(void)
     {
         StringCopy(gStringVar1, GetTrainerPartnerName());
         StringExpandPlaceholders(gStringVar4, gText_CantSwitchWithAlly);
-        return FALSE;
+        return 0;
     }
     if (GetMonData(&gPlayerParty[slot], MON_DATA_HP) == 0)
     {
         GetMonNickname(&gPlayerParty[slot], gStringVar1);
         StringExpandPlaceholders(gStringVar4, gText_PkmnHasNoEnergy);
-        return FALSE;
+        return 0;
     }
     for (i = 0; i < gBattlersCount; i++)
     {
@@ -6096,38 +6113,38 @@ static bool8 TrySwitchInPokemon(void)
         {
             GetMonNickname(&gPlayerParty[slot], gStringVar1);
             StringExpandPlaceholders(gStringVar4, gText_PkmnAlreadyInBattle);
-            return FALSE;
+            return 2;
         }
     }
     if (GetMonData(&gPlayerParty[slot], MON_DATA_IS_EGG))
     {
         StringExpandPlaceholders(gStringVar4, gText_EggCantBattle);
-        return FALSE;
+        return 0;
     }
     if (GetPartyIdFromBattleSlot(slot) == gBattleStruct->prevSelectedPartySlot)
     {
         GetMonNickname(&gPlayerParty[slot], gStringVar1);
         StringExpandPlaceholders(gStringVar4, gText_PkmnAlreadySelected);
-        return FALSE;
+        return 0;
     }
     if (gPartyMenu.action == PARTY_ACTION_ABILITY_PREVENTS)
     {
         SetMonPreventsSwitchingString();
-        return FALSE;
+        return 0;
     }
     if (gPartyMenu.action == PARTY_ACTION_CANT_SWITCH)
     {
         u8 currBattler = gBattlerInMenuId;
         GetMonNickname(&gPlayerParty[GetPartyIdFromBattlePartyId(gBattlerPartyIndexes[currBattler])], gStringVar1);
         StringExpandPlaceholders(gStringVar4, gText_PkmnCantSwitchOut);
-        return FALSE;
+        return 0;
     }
     gSelectedMonPartyId = GetPartyIdFromBattleSlot(slot);
     gPartyMenuUseExitCallback = TRUE;
     newSlot = GetPartyIdFromBattlePartyId(gBattlerPartyIndexes[gBattlerInMenuId]);
     SwitchPartyMonSlots(newSlot, slot);
     SwapPartyPokemon(&gPlayerParty[newSlot], &gPlayerParty[slot]);
-    return TRUE;
+    return 1;
 }
 
 void BufferBattlePartyCurrentOrder(void)
@@ -6827,4 +6844,44 @@ void CursorCb_MoveItem(u8 taskId)
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = Task_UpdateHeldItemSprite;
     }
+}
+
+int MoveToHM(u16 move)
+{
+    u8 i;
+    int item;
+    switch (move)
+    {
+    case MOVE_SECRET_POWER:
+        item = ITEM_TM43;
+        break;
+    case MOVE_CUT:
+        item = ITEM_HM01;
+        break;
+    case MOVE_FLY:
+        item = ITEM_HM02;
+        break;
+    case MOVE_SURF:
+        item = ITEM_HM03;
+        break;
+    case MOVE_STRENGTH:
+        item = ITEM_HM04;
+        break;
+    case MOVE_FLASH:
+        item = ITEM_HM05;
+        break;
+    case MOVE_ROCK_SMASH:
+        item = ITEM_HM06;
+        break;
+    case MOVE_WATERFALL:
+        item = ITEM_HM07;
+        break;
+    case MOVE_DIVE:
+        item = ITEM_HM08;
+        break;
+    default:
+        item = 0;
+        break;
+    }
+    return item;
 }

@@ -3434,9 +3434,11 @@ static void Cmd_getexp(void)
                 // music change in wild battle after fainting a poke
                 if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) && gBattleMons[0].hp != 0 && !gBattleStruct->wildVictorySong)
                 {
-                    BattleStopLowHpSound();
-                    PlayBGM(MUS_VICTORY_WILD);
-                    gBattleStruct->wildVictorySong++;
+                    if (GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_POKEBALL) == ITEM_NONE) {
+                        BattleStopLowHpSound();
+                        PlayBGM(MUS_VICTORY_WILD);
+                        gBattleStruct->wildVictorySong++;
+                    }
                 }
 
                 if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_HP))
@@ -3590,8 +3592,34 @@ static void Cmd_getexp(void)
             else
                 gBattleScripting.getexpState = 6; // we're done
         }
+        break;    
+    case 6: // check if wild Pokémon has a hold item after fainting
+        if (gBattleStruct->wildVictorySong && gBattleMons[gBattlerFainted].item != ITEM_NONE)
+        {
+            PrepareStringBattle(STRINGID_PKMNDROPPEDITEM, gBattleStruct->expGetterBattlerId);
+            gBattleScripting.getexpState = 7; // add item to bag
+        }
+        else
+        {
+            gBattleScripting.getexpState = 8; // no hold item, end battle
+        }
         break;
-    case 6: // increment instruction
+    case 7: // add dropped item to bag if space available
+        if (CheckBagHasSpace(gBattleMons[gBattlerFainted].item, 1) == TRUE)
+        {
+            AddBagItem(gBattleMons[gBattlerFainted].item, 1);
+            PREPARE_ITEM_BUFFER(gBattleTextBuff1, gBattleMons[gBattlerFainted].item);
+            PREPARE_POCKET_BUFFER(gBattleTextBuff2, gBattleMons[gBattlerFainted].item);
+            PrepareStringBattle(STRINGID_ADDEDTOBAG, gBattleStruct->expGetterBattlerId);
+            gBattleScripting.getexpState = 8;
+        }
+        else
+        {
+            PrepareStringBattle(STRINGID_BAGISFULL, gBattleStruct->expGetterBattlerId);
+            gBattleScripting.getexpState = 8;
+        }
+        break;
+    case 8: // increment instruction
         if (gBattleControllerExecFlags == 0)
         {
             // not sure why gf clears the item and ability here
@@ -9761,6 +9789,16 @@ static void Cmd_pickup(void)
                 heldItem = GetBattlePyramidPickupItemId();
                 SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
             }
+            else if (species == SPECIES_SHUCKLE
+                && heldItem >= FIRST_BERRY_INDEX
+                && heldItem <= LAST_BERRY_INDEX)
+            {
+                if (!(Random() % 16))
+                {
+                    heldItem = ITEM_BERRY_JUICE;
+                    SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
+                }
+            }
         }
     }
     else
@@ -9799,6 +9837,16 @@ static void Cmd_pickup(void)
                         SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sRarePickupItems[lvlDivBy10 + (99 - rand)]);
                         break;
                     }
+                }
+            }
+            else if (species == SPECIES_SHUCKLE
+                && heldItem >= FIRST_BERRY_INDEX
+                && heldItem <= LAST_BERRY_INDEX)
+            {
+               if (!(Random() % 16))
+                {
+                    heldItem = ITEM_BERRY_JUICE;
+                    SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
                 }
             }
         }
@@ -10191,6 +10239,14 @@ static void Cmd_displaydexinfo(void)
         if (!gPaletteFade.active)
         {
             FreeAllWindowBuffers();
+            gBattle_BG0_X = 0;
+            gBattle_BG0_Y = 0;
+            gBattle_BG1_X = 0;
+            gBattle_BG1_Y = 0;
+            gBattle_BG2_X = 0;
+            gBattle_BG2_Y = 0;
+            gBattle_BG3_X = 0;
+            gBattle_BG3_Y = 0;
             gBattleCommunication[TASK_ID] = DisplayCaughtMonDexPage(SpeciesToNationalPokedexNum(species),
                                                                         gBattleMons[gBattlerTarget].otId,
                                                                         gBattleMons[gBattlerTarget].personality);

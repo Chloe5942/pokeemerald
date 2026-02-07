@@ -50,7 +50,7 @@
 #define FLAG_SYS_NO_CATCHING        0x24 // Unused Flag //DEBUG
 #define FLAG_SYS_PC_FROM_DEBUG_MENU 0x25 // Unused Flag //DEBUG
 #define FLAG_SYS_NO_BATTLE_DMG      0x26 // Unused Flag //DEBUG
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
+#define FLAG_PKMN_SCANNER           0x27 // Pokémon Scanner Active Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
@@ -655,6 +655,8 @@
 #define FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH           (FLAG_HIDDEN_ITEMS_START + 0x6D)
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
+
+#define FLAG_HIDDEN_ITEMS_END                                FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL
 
 #define FLAG_UNUSED_0x264  0x264 // Unused Flag
 #define FLAG_UNUSED_0x265  0x265 // Unused Flag

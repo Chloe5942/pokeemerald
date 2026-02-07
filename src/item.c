@@ -1120,3 +1120,8 @@ u32 GetItemBpPrice(u16 itemId)
 {
     return gItems[SanitizeItemId(itemId)].bpPrice;
 }
+
+void CopyPocketName(u16 itemId, u8 *dst)
+{
+    StringCopy(dst, gPocketNamesStringsTable[GetItemPocket(itemId) - 1]);
+}
