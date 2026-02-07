@@ -3051,4 +3051,11 @@ extern const u8 gText_FoundATreasureItem[];
 extern const u8 gText_PutTreasureInPocket[];
 extern const u8 gText_NoRoomForTreasure[];
 
+// Custom
+extern const u8 gText_Nickname[];
+extern const u8 gMenuText_Move[];
+extern const u8 gText_MoveItemWhere[];
+extern const u8 gText_XsYAnd[];
+extern const u8 gText_XsYWereSwapped[];
+
 #endif // GUARD_STRINGS_H
