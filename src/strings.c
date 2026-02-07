@@ -1819,7 +1819,7 @@ const u8 gText_ProfBirchMatchCallDesc[] = _("{PKMN} Prof.");
 const u8 gText_CommStandbyAwaitingOtherPlayer[] = _("Communication standby…\nAwaiting another player to choose.");
 const u8 gText_BattleWasRefused[] = _("The battle was refused.{PAUSE 60}");
 const u8 gText_RefusedBattle[] = _("Refused the battle.{PAUSE 60}");
-const u8 gText_NoWeather[] = _("No weather"); // Below are unused debug names for weather types
+const u8 gText_NoWeather[] = _("No Weather"); // Below are unused debug names for weather types
 const u8 gText_Sunny[] = _("Sunny"); // Unused
 const u8 gText_Sunny2[] = _("Sunny2"); // Unused
 const u8 gText_Rain[] = _("Rain"); // Unused
@@ -1842,6 +1842,7 @@ const u8 gText_Answer[] = _("Answer");
 const u8 gText_PokeBalls[] = _("Poké Balls");
 const u8 gText_Berry[] = _("Berry");
 const u8 gText_Berries[] = _("Berries");
+const u8 gText_StatEditor[] = _("Edit Stats");
 
 // Custom
 const u8 gText_Nickname[] = _("Nickname");
