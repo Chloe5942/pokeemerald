@@ -53,6 +53,8 @@
 #include "constants/union_room.h"
 #include "day_night.h"
 #include "constants/weather.h"
+#include "constants/metatile_behaviors.h"
+#include "bike.h"
 
 #define SPECIAL_LOCALIDS_START (min(LOCALID_CAMERA, \
                                 min(LOCALID_PLAYER, \
@@ -9332,6 +9334,7 @@ u8 GetLedgeJumpDirection(s16 x, s16 y, u8 direction)
 
     u8 behavior;
     u8 index = direction;
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
 
     if (index == DIR_NONE)
         return DIR_NONE;
@@ -9341,8 +9344,40 @@ u8 GetLedgeJumpDirection(s16 x, s16 y, u8 direction)
     index--;
     behavior = MapGridGetMetatileBehaviorAt(x, y);
 
-    if (ledgeBehaviorFuncs[index](behavior) == TRUE)
-        return index + 1;
+    if (ledgeBehaviorFuncs[index](behavior) == TRUE) {
+        s16 x2 = x;
+        s16 y2 = y;
+        u8 collision;
+        switch(direction)
+        {
+            case DIR_SOUTH:
+                y2 += 1;
+                break;
+            case DIR_NORTH:
+                y2 -= 1;
+                break;
+            case DIR_WEST:
+                x2 -= 1;
+                break;
+            case DIR_EAST:
+                x2 += 1;
+                break;
+        }
+        collision = GetCollisionAtCoords(&gObjectEvents[gPlayerAvatar.objectEventId], x2, y2, direction);
+
+        if (collision == COLLISION_NONE)
+        {
+            return index + 1;
+        }
+    }
+
+    if (gPlayerAvatar.acroBikeState == ACRO_STATE_BUNNY_HOP &&
+       MB_JUMP_EAST <= behavior && behavior <= MB_JUMP_SOUTH)
+    {
+       MoveCoords(direction, &x, &y);
+       if (GetCollisionAtCoords(playerObjEvent, x, y, direction) == COLLISION_NONE)
+           return index + 1;
+    }
 
     return DIR_NONE;
 }
