@@ -57,6 +57,7 @@
 #include "constants/weather.h"
 #include "constants/new_shop.h"
 #include "constants/day_night.h"
+#include "constants/quests.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
