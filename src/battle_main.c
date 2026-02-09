@@ -249,7 +249,7 @@ EWRAM_DATA u8 gBattleInfoSystemSubmenu = 0;
 EWRAM_DATA u8 gBattleInfoSystemSubmenuSplitIconId = MAX_SPRITES;
 EWRAM_DATA u8 gBattleInfoSystemSubmenuButtonPromptIds[2] = {MAX_SPRITES};
 
-COMMON_DATA void (*gPreBattleCallback1)(void) = NULL;
+COMMON_DATA MainCallback gPreBattleCallback1 = NULL;
 COMMON_DATA void (*gBattleMainFunc)(void) = NULL;
 COMMON_DATA struct BattleResults gBattleResults = {0};
 COMMON_DATA u8 gLeveledUpInBattle = 0;

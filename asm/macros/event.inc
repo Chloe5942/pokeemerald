@@ -2074,7 +2074,6 @@
 	.byte SCR_OP_HIDEITEMDESC
 	.endm
 
-
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
