@@ -1,4 +1,0 @@
-#ifndef GUARD_PINBALL_H
-#define GUARD_PINBALL_H
-
-#endif // GUARD_PINBALL_H

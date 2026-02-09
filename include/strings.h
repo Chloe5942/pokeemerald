@@ -117,16 +117,6 @@ extern const u8 gText_NoDecorationsInUse[];
 extern const u8 gText_Exit[];
 extern const u8 gText_Cancel[];
 
-extern const u8 gText_RareCandy[];
-extern const u8 gText_WStone[];
-extern const u8 gText_FStone[];
-extern const u8 gText_LStone[];
-extern const u8 gText_TStone[];
-extern const u8 gText_MStone[];
-extern const u8 gText_SStone[];
-extern const u8 gText_ChoiceB[];
-extern const u8 gText_BrightP[];
-
 extern const u8 gText_ThrowAwayVar1[];
 extern const u8 gText_Var1ThrownAway[];
 
@@ -3239,17 +3229,6 @@ extern const u8 gText_TMCaseWillBePutAway[];
 extern const u8 gText_FontSmall[];
 extern const u8 gText_FontShort[];
 extern const u8 gText_TMCase_Blue[];
-
-// Blackjack
-extern const u8 gText_Bust[];
-extern const u8 gText_YouLose[];
-extern const u8 gText_YouWin[];
-extern const u8 gText_Push[];
-extern const u8 gText_BlackJack[];
-
-extern const u8 gText_Betting[];
-extern const u8 gText_NoBetting[];
-extern const u8 gText_NoMoney[];
 
 // Fishing Minigame
 extern const u8 gText_ReelItIn[];

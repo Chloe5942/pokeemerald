@@ -1,4 +1,0 @@
-#ifndef GUARD_PACHINKO_H
-#define GUARD_PACHINKO_H
-
-#endif // GUARD_PACHINKO_H

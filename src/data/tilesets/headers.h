@@ -558,7 +558,7 @@ const struct Tileset gTileset_MauvilleGameCorner =
     .palettes = gTilesetPalettes_MauvilleGameCorner,
     .metatiles = gMetatiles_MauvilleGameCorner,
     .metatileAttributes = gMetatileAttributes_MauvilleGameCorner,
-    .callback = InitTilesetAnim_MauvilleGameCorner,
+    .callback = NULL,
 };
 
 const struct Tileset gTileset_RustboroGym =

@@ -67,7 +67,6 @@
 #include "constants/rgb.h"
 #include "palette.h"
 #include "pokedex.h"
-#include "rogue_voltorbflip.h"
 #include "naming_screen.h"
 
 #define TAG_ITEM_ICON 5500
@@ -145,13 +144,6 @@ static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 void Special_ShowDiploma(void)
 {
     SetMainCallback2(CB2_ShowDiploma);
-    LockPlayerFieldControls();
-}
-
-void Special_ViewVoltorbFlip(void)
-{
-    gMain.savedCallback = CB2_ReturnToField;
-    SetMainCallback2(CB2_ShowVoltorbFlip);
     LockPlayerFieldControls();
 }
 
@@ -4329,12 +4321,6 @@ void GetCodeFeedback(void)
     static const u8 sText_CodeMasterBlender[] = _("Master Blender");
     static const u8 sText_CodeRouletteLuck[] = _("Roulette Luck!");
     // Fun
-    static const u8 sText_CodeDevChole[] = _("Chole");
-    static const u8 sText_CodeDevMakell[] = _("Makell");
-    static const u8 sText_CodeDevSpecialVer1[] = _("08/26/24");
-    static const u8 sText_CodeDevSpecialVer2[] = _("08/26/2024");
-    static const u8 sText_CodeDevSpecialVer3[] = _("Aug. 26, 2024");
-    static const u8 sText_CodeDevSpecialVer4[] = _("Aug. 26TH, 2024");
     static const u8 sText_CodeDev1BirthVer1[] = _("11/10/05");
     static const u8 sText_CodeDev1BirthVer2[] = _("11/10/2005");
     static const u8 sText_CodeDev1BirthVer3[] = _("Nov. 10, 2005");
@@ -4363,31 +4349,20 @@ void GetCodeFeedback(void)
     else if (!StringCompare(gStringVar2, sText_CodeRouletteLuck))
         gSpecialVar_Result = 8;
     // Fun
-    else if (!StringCompare(gStringVar2, sText_CodeDevChole))
-        gSpecialVar_Result = 9;
-    else if (!StringCompare(gStringVar2, sText_CodeDevMakell))
-        gSpecialVar_Result = 10;
-    else if (
-        !StringCompare(gStringVar2, sText_CodeDevSpecialVer1) ||
-        !StringCompare(gStringVar2, sText_CodeDevSpecialVer2) ||
-        !StringCompare(gStringVar2, sText_CodeDevSpecialVer3) ||
-        !StringCompare(gStringVar2, sText_CodeDevSpecialVer4)
-    )
-        gSpecialVar_Result = 11;
     else if (
         !StringCompare(gStringVar2, sText_CodeDev1BirthVer1) ||
         !StringCompare(gStringVar2, sText_CodeDev1BirthVer2) ||
         !StringCompare(gStringVar2, sText_CodeDev1BirthVer3) ||
         !StringCompare(gStringVar2, sText_CodeDev1BirthVer4)
     )
-        gSpecialVar_Result = 12;
+        gSpecialVar_Result = 9;
     else if (
         !StringCompare(gStringVar2, sText_CodeDev2BirthVer1) ||
         !StringCompare(gStringVar2, sText_CodeDev2BirthVer2) ||
         !StringCompare(gStringVar2, sText_CodeDev2BirthVer3) ||
         !StringCompare(gStringVar2, sText_CodeDev2BirthVer4)
     )
-        gSpecialVar_Result = 13;
+        gSpecialVar_Result = 10;
     else
         gSpecialVar_Result = 0;
 }
@@ -4426,3 +4401,4 @@ void GetTimeOfDay(void)
 	    gSpecialVar_Result = 3; //Night
     }
 }
+
