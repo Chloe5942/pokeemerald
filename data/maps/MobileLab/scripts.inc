@@ -292,16 +292,16 @@ MobileLab_EventScript_AbraTeleportResearchLab::
 	end
 
 MobileLab_Text_AbraTeleport:
-	.string "BRA ABRA AB!$"
+	.string "Bra Abra Ab!$"
 
 MobileLab_Text_AbraNormal:
-	.string "ABRA AB ABRA$"
+	.string "Abra Ab Abra$"
 
 MobileLab_Text_Abra:
-	.string "ABRA seems to be waiting.$"
+	.string "Abra seems to be waiting.$"
 
 MobileLab_Text_AbraWantTeleport:
-	.string "Do you want ABRA to teleport you?$"
+	.string "Do you want Abra to teleport you?$"
 
 MobileLab_Text_NoTeleport:
 	.string "You decided not to.$"
