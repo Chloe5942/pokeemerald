@@ -13,6 +13,9 @@ MEMORY
 /* Modify the following load addresses as needed to make more room. Alternately, delete both the
    declarations below and their references further down to get rid of the gaps.                  */
 
+__anim_mon_load_address = 0x8b00000;
+__gfx_load_address = 0x8c00000;
+
 SECTIONS {
 
     ewram 0x2000000 (NOLOAD) :
@@ -121,7 +124,6 @@ SECTIONS {
         src/field_door.o(.text);
         src/field_player_avatar.o(.text);
         src/event_object_movement.o(.text);
-        src/follower_helper.o(.text);
         src/field_message_box.o(.text);
         src/event_object_lock.o(.text);
         src/text_window.o(.text);
@@ -514,7 +516,6 @@ SECTIONS {
         src/field_door.o(.rodata);
         src/field_player_avatar.o(.rodata);
         src/event_object_movement.o(.rodata);
-        src/follower_helper.o(.rodata);
         src/text_window.o(.rodata);
         src/scrcmd.o(.rodata);
         src/field_control_avatar.o(.rodata);
@@ -1313,13 +1314,13 @@ SECTIONS {
         data/multiboot_pokemon_colosseum.o(.rodata);
     } > ROM =0
 
-    anim_mon_front_pic_data  :
+    anim_mon_front_pic_data __anim_mon_load_address :
     ALIGN(4)
     {
         src/anim_mon_front_pics.o(.rodata);
     } > ROM =0
 
-    gfx_data :
+    gfx_data __gfx_load_address :
     ALIGN(4)
     {
         src/graphics.o(.rodata);

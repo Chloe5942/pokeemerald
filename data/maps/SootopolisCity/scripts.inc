@@ -477,7 +477,6 @@ SootopolisCity_EventScript_RayquazaSceneFromPokeCenter::
 	removeobject LOCALID_SOOTOPOLIS_GROUDON
 	removeobject LOCALID_SOOTOPOLIS_KYOGRE
 	addobject LOCALID_SOOTOPOLIS_RAYQUAZA
-	hideobjectat LOCALID_SOOTOPOLIS_RAYQUAZA, MAP_SOOTOPOLIS_CITY
 	setvar VAR_0x8004, TRUE
 	special Script_DoRayquazaScene
 	waitstate
