@@ -390,8 +390,7 @@ RustboroCity_DevonCorp_2F_EventScript_PokemonStatEditorScientist::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_GiveStatsEditor::
-	goto_if_set FLAG_SYS_STATS_EDITOR_GET, RustboroCity_DevonCorp_2F_EventScript_HasStatsEditor
-	setflag FLAG_SYS_STATS_EDITOR_GET
+	goto_if_set FLAG_SYS_STAT_EDITOR_GET, RustboroCity_DevonCorp_2F_EventScript_HasStatsEditor
 	setflag FLAG_SYS_STAT_EDITOR_GET
 	msgbox RustboroCity_DevonCorp_2F_Text_GiveStatsEditor, MSGBOX_DEFAULT
 	release
@@ -403,26 +402,73 @@ RustboroCity_DevonCorp_2F_EventScript_HasStatsEditor::
 	end
 
 RustboroCity_DevonCorp_2F_Text_WorkingOnStatsEditor:
-	.string "I'm working on a STATS EDITOR program.\p"
+	.string "I'm working on a Stats Editor program.\p"
 	.string "As a programmer, I feel blessed to have\n"
 	.string "the chance to work on something great!$"
 
 RustboroCity_DevonCorp_2F_Text_HasStatsEditor:
-	.string "That's the STATS EDITOR program!\p"
+	.string "That's the Stats Editor program!\p"
 	.string "It came about as a result of our\n"
-	.string "PRESIDENT's SON's desire to learn about\l"
-	.string "the hidden strength of POKéMON.\p"
+	.string "President's Son's desire to learn about\l"
+	.string "the hidden strength of Pokémon.\p"
 	.string "Would you like me to describe its\n"
 	.string "features in detail?\p"
 	.string "No, no. I think you'll find out just by\n"
-	.string "trying the STATS EDITOR out.$"
+	.string "trying the Stats Editor out.$"
 
 RustboroCity_DevonCorp_2F_Text_GiveStatsEditor:
-	.string "This is the STATS EDITOR program!\p"
+	.string "This is the Stats Editor program!\p"
 	.string "It came about as a result of our\n"
-	.string "PRESIDENT's SON's desire to learn about\l"
-	.string "the hidden strength of POKéMON.\p"
+	.string "President's Son's desire to learn about\l"
+	.string "the hidden strength of Pokémon.\p"
 	.string "Would you like me to describe its\n"
 	.string "features in detail?\p"
 	.string "No, no. I think you'll find out just by\n"
-	.string "trying the STATS EDITOR out.$"
+	.string "trying the Stats Editor out.$"
+
+RustboroCity_DevonCorp_2F_EventScript_PokemonScannerScientist::
+	lock
+	faceplayer
+	call_if_eq VAR_FOSSIL_RESURRECTION_STATE, 1, RustboroCity_DevonCorp_2F_EventScript_SetFossilReady
+	goto_if_set FLAG_DELIVERED_STEVEN_LETTER, RustboroCity_DevonCorp_2F_EventScript_GivePokemonScanner
+	msgbox RustboroCity_DevonCorp_2F_Text_WorkingOnPokemonScanner, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_EventScript_GivePokemonScanner::
+	goto_if_set FLAG_POKESCANNER_GET, RustboroCity_DevonCorp_2F_EventScript_HasPokemonScanner
+	setflag FLAG_POKESCANNER_GET
+	giveitem ITEM_POKESCANNER, 1
+	msgbox RustboroCity_DevonCorp_2F_Text_GivePokemonScanner, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_EventScript_HasPokemonScanner::
+	msgbox RustboroCity_DevonCorp_2F_Text_HasPokemonScanner, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_Text_WorkingOnPokemonScanner:
+	.string "I'm working on a Pokémon Scanner device.\p"
+	.string "As a programmer, I feel lucky to have\n"
+	.string "the chance to work on something great!$"
+
+RustboroCity_DevonCorp_2F_Text_HasPokemonScanner:
+	.string "That's a Pokémon Scanner device!\p"
+	.string "It came about as a result of our\n"
+	.string "President's Son's desire to learn about\l"
+	.string "the hidden strength of Pokémon.\p"
+	.string "Would you like me to describe its\n"
+	.string "features in detail?\p"
+	.string "No, no. I think you'll find out just by\n"
+	.string "trying it out in the field.$"
+
+RustboroCity_DevonCorp_2F_Text_GivePokemonScanner:
+	.string "This is a Pokémon Scanner!\p"
+	.string "It came about as a result of our\n"
+	.string "President's Son's desire to learn about\l"
+	.string "the hidden strength of Pokémon.\p"
+	.string "Would you like me to describe its\n"
+	.string "features in detail?\p"
+	.string "No, no. I think you'll find out just by\n"
+	.string "trying it out in the field.$"

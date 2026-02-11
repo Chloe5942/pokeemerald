@@ -1073,5 +1073,6 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ResearchLab/scripts.inc"
 	.include "data/scripts/mobile_lab.inc"
 	.include "data/scripts/codes.inc"
+	.include "data/scripts/trade_machine.inc"
 
 	.include "data/maps/MobileLab/scripts.inc"

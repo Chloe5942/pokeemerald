@@ -1210,4 +1210,25 @@ u16 GetAshCount(void)
 	return *ashGatherCount;
 }
 
+void ItemUseOutOfBattle_PokeScanner(u8 taskId)
+{
+    if (!FlagGet(FLAG_POKESCANNER))
+    {
+        PlaySE(SE_PC_OFF);
+        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_PokeScannerOn, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PokeScannerOn, CloseItemMessage);
+    }
+    else
+    {
+        PlaySE(SE_EXP_MAX);
+        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_PokeScannerOff, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PokeScannerOff, CloseItemMessage);
+    }
+    FlagToggle(FLAG_POKESCANNER);
+}
+
 #undef tUsingRegisteredKeyItem

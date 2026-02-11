@@ -29,9 +29,6 @@ CodeComputer_EventScript_EnterCode::
     goto_if_eq VAR_RESULT, 8, CodeComputer_EventScript_RouletteLuck
     goto_if_eq VAR_RESULT, 9, CodeComputer_EventScript_DeveloperGift1
     goto_if_eq VAR_RESULT, 10, CodeComputer_EventScript_DeveloperGift2
-    goto_if_eq VAR_RESULT, 11, CodeComputer_EventScript_DeveloperGift3
-    goto_if_eq VAR_RESULT, 12, CodeComputer_EventScript_DeveloperGift4
-    goto_if_eq VAR_RESULT, 13, CodeComputer_EventScript_DeveloperGift5
 	releaseall
     end
 
@@ -231,6 +228,7 @@ CodeComputer_EventScript_RouletteLuckCode::
 	end
 
 CodeComputer_EventScript_DeveloperGift1::
+	msgbox CodeComputer_Text_BDayMessage, MSGBOX_DEFAULT
 	goto_if_set FLAG_RECEIVED_DEVELOPER_GIFT_1, CodeComputer_EventScript_DeveloperGift1Code
 	playse MUS_OBTAIN_ITEM
     msgbox CodeComputer_Text_Succeeded MSGBOX_DEFAULT
@@ -246,6 +244,7 @@ CodeComputer_EventScript_DeveloperGift1::
     end
 
 CodeComputer_EventScript_DeveloperGift2::
+	msgbox CodeComputer_Text_BDayMessage, MSGBOX_DEFAULT
 	goto_if_set FLAG_RECEIVED_DEVELOPER_GIFT_2, CodeComputer_EventScript_DeveloperGift2Code
 	playse MUS_OBTAIN_ITEM
     msgbox CodeComputer_Text_Succeeded MSGBOX_DEFAULT
@@ -259,44 +258,6 @@ CodeComputer_EventScript_DeveloperGift2::
 	closemessage
     releaseall
     end
-
-CodeComputer_EventScript_DeveloperGift3::
-    special EnterName
-    waitstate
-    special GetNameFeedback
-    goto_if_eq VAR_RESULT, 0, CodeComputer_EventScript_CodeFailed
-    goto_if_eq VAR_RESULT, 1, CodeComputer_EventScript_Name1
-    goto_if_eq VAR_RESULT, 2, CodeComputer_EventScript_Name2
-    releaseall
-    end
-
-CodeComputer_EventScript_DeveloperGift4::
-	msgbox CodeComputer_Text_BDayMessage1, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	releaseall
-	end
-
-CodeComputer_EventScript_DeveloperGift5::
-	msgbox CodeComputer_Text_BDayMessage2, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	releaseall
-	end
-
-CodeComputer_EventScript_Name1::
-	msgbox CodeComputer_Text_DevMessage1, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	releaseall
-	end
-
-CodeComputer_EventScript_Name2::
-	msgbox CodeComputer_Text_DevMessage2, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	releaseall
-	end
 
 CodeComputer_EventScript_DeveloperGift1Code::
 	bufferspeciesname STR_VAR_1, SPECIES_WEEDLE
@@ -315,7 +276,7 @@ CodeComputer_EventScript_DeveloperGift2Code::
 	end
 
 CodeComputer_Text_Welcome:
-    .string "Welcome to MYSTERY CODES SERVICE.\n"
+    .string "Welcome to the Mystery Codes Service.\n"
     .string "Would you like to enter a code?$"
 
 CodeComputer_Text_ComeAgain:
@@ -337,30 +298,30 @@ CodeComputer_Text_GenItemDesc:
     .string "You can't use it again!$"
 
 CodeComputer_Text_MirageBreaker:
-    .string "This daily code causes both MIRAGE\n"
-    .string "ISLAND and MIRAGE TOWER appear!\p"
+    .string "This daily code causes both Mirage\n"
+    .string "Island and Mirage Tower appear!\p"
     .string "You have already used it today!$"
 
 CodeComputer_Text_BigSale20XX:
-    .string "This daily code starts the LILYCOVE\n"
-    .string "DEPARTMENT STORE's ROOFTOOP SALE!\p"
+    .string "This daily code starts the Lilycove\n"
+    .string "Department Store's Rooftoop Sale!\p"
     .string "You have already used it today!$"
 
 CodeComputer_Text_MasterBlender:
-    .string "This daily code makes the BLEND MASTER\n"
-    .string "appear in LILYCOVE's CONTEST HALL!\p"
+    .string "This daily code makes the Blend Master\n"
+    .string "appear in Lilycove's Contest Hall!\p"
     .string "You have already used it today!$"
 
 CodeComputer_Text_RouletteLuck:
-    .string "This daily code activates MAUVILLE's\n"
-    .string "GAME CORNER Roulette luck bonus!\p"
+    .string "This daily code activates Mauville's\n"
+    .string "Game Corner Roulette luck bonus!\p"
     .string "You have already used it today!$"
 
 CodeComputer_Text_SpecialItem:
     .string "It's a Special Item!$"
 
 CodeComputer_Text_SpecialMon:
-    .string "It's a Special POKéMON!$"
+    .string "It's a Special Pokémon!$"
 
 CodeComputer_Text_SpecialEvent:
     .string "A Special Event is happening!\n"
@@ -371,25 +332,16 @@ CodeComputer_Text_SpecialEvents:
 	.string "Head to {STR_VAR_1} and {STR_VAR_2}!$"
 
 CodeComputer_Text_MauvilleCity:
-	.string "MAUVILLE CITY$"
+	.string "Mauville City$"
 
 CodeComputer_Text_LilycoveCity:
-	.string "LILYCOVE CITY$"
+	.string "Lilycove City$"
 
 CodeComputer_Text_Route111:
-	.string "ROUTE 111$"
+	.string "Route 111$"
 
 CodeComputer_Text_Route130:
-	.string "ROUTE 130$"
+	.string "Route 130$"
 
-CodeComputer_Text_DevMessage1:
-	.string "I love you! <333$"
-
-CodeComputer_Text_DevMessage2:
-	.string "Yes I did make this :)$"
-
-CodeComputer_Text_BDayMessage1:
-	.string "Happy Birthday, dear! <333$"
-
-CodeComputer_Text_BDayMessage2:
-	.string "Happy Birthday, me!$"
+CodeComputer_Text_BDayMessage:
+	.string "Happy Birthday!$"

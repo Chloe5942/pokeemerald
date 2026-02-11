@@ -1062,6 +1062,8 @@ extern const u8 gText_PokenavRibbons_MonListButtons[];
 extern const u8 gText_PokenavRibbons_RibbonListButtons[];
 extern const u8 gText_PokenavRibbons_RibbonCheckButtons[];
 extern const u8 gText_Number2[];
+extern const u8 gText_Pokenav_Access_PC[];
+extern const u8 gText_Pokenav_Cannot_Access_PC[];
 
 extern const u8 gText_Petalburg[];
 extern const u8 gText_Slateport[];
@@ -3253,5 +3255,8 @@ extern const u8 gMenuText_Move[];
 extern const u8 gText_MoveItemWhere[];
 extern const u8 gText_XsYAnd[];
 extern const u8 gText_XsYWereSwapped[];
+extern const u8 gText_PokeScannerOn[];
+extern const u8 gText_PokeScannerOff[];
+extern const u8 gText_Nickname[];
 
 #endif // GUARD_STRINGS_H

@@ -1411,3 +1411,11 @@ bool8 MetatileBehavior_HasFeebas(u8 metatileBehavior)
     else
         return FALSE;
 }
+
+bool8 MetatileBehavior_IsTradeMachine(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_TRADE_MACHINE)
+        return TRUE;
+    else
+        return FALSE;
+}

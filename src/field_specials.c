@@ -1049,6 +1049,8 @@ static void PCTurnOnEffect(struct Task *task)
 static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
 {
     u16 metatileId = 0;
+    if(gSysPcFromPokenav)
+        return;
     if (isScreenOn)
     {
         // Screen is on, set it off
@@ -1086,6 +1088,10 @@ static void PCTurnOffEffect(void)
 
     // Get where the PC should be, depending on where the player is looking.
     u8 playerDirection = GetPlayerFacingDirection();
+    if(gSysPcFromPokenav){
+        gSysPcFromPokenav = FALSE;
+        return;
+    }
     switch (playerDirection)
     {
     case DIR_NORTH:
@@ -4303,11 +4309,6 @@ void EnterCode(void)
     DoNamingScreen(NAMING_SCREEN_CODE, gStringVar2, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
 
-void EnterName(void)
-{
-    DoNamingScreen(NAMING_SCREEN_PLAYER, gStringVar2, 0, 0, 0, CB2_ReturnToFieldContinueScript);
-}
-
 void GetCodeFeedback(void)
 {
     // Items
@@ -4363,20 +4364,6 @@ void GetCodeFeedback(void)
         !StringCompare(gStringVar2, sText_CodeDev2BirthVer4)
     )
         gSpecialVar_Result = 10;
-    else
-        gSpecialVar_Result = 0;
-}
-
-void GetNameFeedback(void)
-{
-    static const u8 sText_NameChole[] = _("Chole");
-    static const u8 sText_NameMakell[] = _("Makell");
-    
-    // Items
-    if (!StringCompare(gStringVar2, sText_NameChole))
-        gSpecialVar_Result = 1;
-    else if (!StringCompare(gStringVar2, sText_NameMakell))
-        gSpecialVar_Result = 2;
     else
         gSpecialVar_Result = 0;
 }

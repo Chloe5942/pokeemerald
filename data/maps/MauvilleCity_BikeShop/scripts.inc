@@ -343,14 +343,14 @@ MauvilleCity_BikeShop_EventScript_UpgradeMach::
 
 MauvilleCity_BikeShop_Text_UpgradeBike:
 	.string "{PLAYER} upgraded the {STR_VAR_1} into\n"
-	.string "the a 2 in 1 BIKE.$"
+	.string "the a 2 in 1 Bike.$"
 
 MauvilleCity_BikeShop_Text_UpgradedBikeInfo:
-	.string "RYDEL: Press the R Button to switch\n"
+	.string "Rydel: Press the R Button to switch\n"
 	.string "between the ACRO and MACH modes.$"
 
 MauvilleCity_BikeShop_Text_WantToUpgradeBike:
-	.string "RYDEL: Do you want to upgrade your\n"
+	.string "Rydel: Do you want to upgrade your\n"
 	.string "bike to the 2 in 1 model?$"
 
 MauvilleCity_BikeShop_EventScript_UpgradedBike::

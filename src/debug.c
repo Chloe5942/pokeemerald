@@ -414,7 +414,7 @@ extern u8 PlayersHouse_2F_EventScript_CheckWallClock[];
 #ifdef BATTLE_ENGINE
 #define ABILITY_NAME_LENGTH 16
 #else
-#define ABILITY_NAME_LENGTH 12
+#define ABILITY_NAME_LENGTH 16
 #endif
 extern const u8 gAbilityNames[][ABILITY_NAME_LENGTH + 1];
 

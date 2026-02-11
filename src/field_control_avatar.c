@@ -141,7 +141,7 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
 #if TX_DEBUG_SYSTEM_ENABLE == TRUE && TX_DEBUG_SYSTEM_IN_MENU == FALSE
     if ((heldKeys & TX_DEBUG_SYSTEM_HELD_KEYS) && input->TX_DEBUG_SYSTEM_TRIGGER_EVENT)
     {
-        input->input_field_1_2 = TRUE;
+        input->pressedLButton = TRUE;
         input->TX_DEBUG_SYSTEM_TRIGGER_EVENT = FALSE;
     }
 #endif
@@ -204,11 +204,11 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
         return TRUE;
     
-    if (input->pressedRButton && EnableAutoRun())
+    if (input->pressedRButton && !TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE) && EnableAutoRun())
         return TRUE;
 
 #if TX_DEBUG_SYSTEM_ENABLE == TRUE && TX_DEBUG_SYSTEM_IN_MENU == FALSE
-    if (input->pressedRButton && !TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE) && FlagGet(FLAG_SYS_DEBUG))
+    if (input->pressedLButton && !TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE) && FlagGet(FLAG_SYS_DEBUG))
     {
         PlaySE(SE_WIN_OPEN);
         FreezeObjectEvents();
@@ -459,6 +459,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
     // Custom
     if (MetatileBehavior_IsCodeComputer(metatileBehavior) == TRUE)
         return EventScript_CodeComputer;
+    if (MetatileBehavior_IsTradeMachine(metatileBehavior) == TRUE)
+        return EventScript_TradeMachine;
 
     elevation = position->elevation;
     if (elevation == MapGridGetElevationAt(position->x, position->y))
@@ -498,7 +500,7 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
 
 static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metatileBehavior, u8 direction)
 {
-    if ((FlagGet(FLAG_BADGE05_GET) == TRUE || PartyHasMonWithSurf() == TRUE || CheckBagHasItem(ITEM_HM03 ,1)) && IsPlayerFacingSurfableFishableWater() == TRUE)
+    if ((FlagGet(FLAG_BADGE05_GET) == TRUE || PartyHasMonWithSurf() == TRUE || CheckBagHasItem(ITEM_HM03, 1)) && IsPlayerFacingSurfableFishableWater() == TRUE)
         return EventScript_UseSurf;
 
     if (MetatileBehavior_IsWaterfall(metatileBehavior) == TRUE)

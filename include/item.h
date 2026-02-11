@@ -80,6 +80,7 @@ ItemUseFunc GetItemBattleFunc(u16 itemId);
 u8 GetItemSecondaryId(u16 itemId);
 u32 GetItemCoinPrice(u16 itemId);
 u32 GetItemBpPrice(u16 itemId);
+void CopyPocketName(u16 itemId, u8 *dst);
 
 /* Expands to:
  * enum

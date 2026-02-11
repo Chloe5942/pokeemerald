@@ -43,8 +43,8 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020                     0x20 // Unused Flag
-#define FLAG_UNUSED_0x021                     0x21 // Unused Flag
+#define FLAG_POKESCANNER                      0x20 // PokéScanner Flag
+#define FLAG_POKESCANNER_GET                  0x21 // PokéScanner Recieved Flag
 #define FLAG_UNUSED_0x022                     0x22 // Unused Flag
 #define FLAG_SHINY_CREATION                   0x23 // Force Shiny Flag
 #define FLAG_HIDE_BAD_LUCK_MAN                0x24 // Mauville City Bad Luck Man Flag
@@ -655,6 +655,7 @@
 #define FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH           (FLAG_HIDDEN_ITEMS_START + 0x6D)
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
+
 #define FLAG_HIDDEN_ITEMS_END                                FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL
 
 #define FLAG_UNUSED_0x264  0x264 // Unused Flag
@@ -1351,7 +1352,7 @@
 #define FLAG_SYS_POKEMON_GET                         (SYSTEM_FLAGS + 0x0) // FLAG_0x860
 #define FLAG_SYS_POKEDEX_GET                         (SYSTEM_FLAGS + 0x1)
 #define FLAG_SYS_POKENAV_GET                         (SYSTEM_FLAGS + 0x2)
-#define FLAG_SYS_STAT_EDITOR_GET                     (SYSTEM_FLAGS + 0x3) // Unused Flag
+#define FLAG_SYS_STAT_EDITOR_GET                     (SYSTEM_FLAGS + 0x3) // Stat Editor Unlocked Flag
 #define FLAG_SYS_GAME_CLEAR                          (SYSTEM_FLAGS + 0x4)
 #define FLAG_SYS_CHAT_USED                           (SYSTEM_FLAGS + 0x5)
 #define FLAG_UNLOCKED_TRENDY_SAYINGS                 (SYSTEM_FLAGS + 0x6)
@@ -1405,7 +1406,7 @@
 #define FLAG_SYS_CRUISE_MODE                        (SYSTEM_FLAGS + 0x2D)
 
 #define FLAG_SYS_QUEST_MENU_GET                     (SYSTEM_FLAGS + 0x2E) // Quest Menu Unlocked Flag
-#define FLAG_SYS_STATS_EDITOR_GET                   (SYSTEM_FLAGS + 0x2F) // Stats Editor Unlocked Flag
+#define FLAG_UNUSED_0x88F                           (SYSTEM_FLAGS + 0x2F) // Unused Flag
 
 #define FLAG_SYS_TV_HOME                            (SYSTEM_FLAGS + 0x30)
 #define FLAG_SYS_TV_WATCH                           (SYSTEM_FLAGS + 0x31)

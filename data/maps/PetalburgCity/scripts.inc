@@ -784,8 +784,8 @@ PetalburgCity_EventScript_RydelCallEnd::
 	end
 
 PetalburgCity_Text_RydelPlayerBike:
-	.string "RYDEL: Sorry to call you suddenly,\n"
+	.string "Rydel: Sorry to call you suddenly,\n"
 	.string "but we have a new bike model if you\p"
 	.string "want to drop in at the\n"
-	.string "MAUVILLE CITY BIKE SHOP\p"
+	.string "Mauville City Bike Shop\p"
 	.string "for a free upgrade.$"

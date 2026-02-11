@@ -651,7 +651,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
 
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
     {
-        if (heldKeys & B_BUTTON)
+        if (heldKeys & B_BUTTON || gSaveBlock2Ptr->autoRun)
         {
             PlayerWalkFaster(direction);
             return;

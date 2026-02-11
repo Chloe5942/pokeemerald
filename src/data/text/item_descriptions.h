@@ -1549,3 +1549,9 @@ static const u8 sOldSeaMapDesc[] = _(
     "A faded sea chart\n"
     "that shows the way\n"
     "to a certain island.");
+
+// Custom
+static const u8 sPokeScannerDesc[] = _(
+    "Reveals extra info\n"
+    "on wild Pokémon\n"
+    "you encounter.");
