@@ -249,6 +249,8 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_GIVECUSTOMMON					ScrCmd_givecustommon				  @ 0xe7
 	script_cmd_table_entry SCR_OP_SHOWITEMDESC  				ScrCmd_showitemdesc              	  @ 0xe8
 	script_cmd_table_entry SCR_OP_HIDEITEMDESC					ScrCmd_hideitemdesc             	  @ 0xe9
+	script_cmd_table_entry SCR_OP_DYNMULTICHOICE	  			ScrCmd_dynmultichoice                 @ 0xea
+	script_cmd_table_entry SCR_OP_DYNMULTIPUSH 	    			ScrCmd_dynmultipush                   @ 0xeb
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 
