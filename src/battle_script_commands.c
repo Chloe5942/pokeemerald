@@ -730,6 +730,15 @@ static const u16 sMovesForbiddenToCopy[] =
     MOVE_STRUGGLE,
     MOVE_SKETCH,
     MOVE_MIMIC,
+    MOVE_HEAT_GALE,
+    MOVE_HEAT_STORM,
+    MOVE_DRAGON_STORM,
+    MOVE_FLASH_FREEZE,
+    MOVE_ABSOLUTE_ZERO,
+    MOVE_TSUNAMI,
+    MOVE_CACOPHONY,
+    MOVE_LULLABY,
+    MOVE_TRI_BEAM,
     MIMIC_FORBIDDEN_END,
     MOVE_COUNTER,
     MOVE_MIRROR_COAT,
@@ -745,6 +754,15 @@ static const u16 sMovesForbiddenToCopy[] =
     MOVE_COVET,
     MOVE_TRICK,
     MOVE_FOCUS_PUNCH,
+    MOVE_HEAT_GALE,
+    MOVE_HEAT_STORM,
+    MOVE_DRAGON_STORM,
+    MOVE_FLASH_FREEZE,
+    MOVE_ABSOLUTE_ZERO,
+    MOVE_TSUNAMI,
+    MOVE_CACOPHONY,
+    MOVE_LULLABY,
+    MOVE_TRI_BEAM,
     METRONOME_FORBIDDEN_END
 };
 
@@ -813,11 +831,11 @@ static const u16 sRarePickupItems[] =
     ITEM_FULL_RESTORE,
     ITEM_ETHER,
     ITEM_WHITE_HERB,
-    ITEM_TM_REST,
+    ITEM_LIGHT_BALL,
     ITEM_ELIXIR,
-    ITEM_TM_FOCUS_PUNCH,
+    ITEM_ULTRA_BALL,
     ITEM_LEFTOVERS,
-    ITEM_TM_EARTHQUAKE,
+    ITEM_MASTER_BALL,
 };
 
 static const u8 sPickupProbabilities[] =
@@ -1478,6 +1496,9 @@ static void Cmd_typecalc(void)
     if (gMoveResultFlags & MOVE_RESULT_DOESNT_AFFECT_FOE)
         gProtectStructs[gBattlerAttacker].targetNotAffected = 1;
 
+    if (gCurrentMove == MOVE_TRI_BEAM && (gBattleMons[gBattlerTarget].types[0] != TYPE_MYSTERY || gBattleMons[gBattlerTarget].types[1] != TYPE_MYSTERY))
+        ModulateDmgByType(TYPE_MUL_NORMAL);
+    
     gBattlescriptCurrInstr++;
 }
 
@@ -1646,6 +1667,10 @@ u8 TypeCalc(u16 move, u8 attacker, u8 defender)
     {
         flags |= MOVE_RESULT_MISSED;
     }
+    
+    if (gCurrentMove == MOVE_TRI_BEAM && (gBattleMons[defender].types[0] != TYPE_MYSTERY || gBattleMons[defender].types[1] != TYPE_MYSTERY))
+        ModulateDmgByType2(TYPE_MUL_NORMAL, move, &flags);
+
     return flags;
 }
 

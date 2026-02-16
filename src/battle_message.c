@@ -502,14 +502,18 @@ static const u8 sText_YouThrowABallNowRight[] = _("You throw a Ball now, right?\
 static const u8 sText_PkmnDroppedItem[] = _("Wild {B_OPPONENT_MON1_NAME} dropped an item!\p");
 static const u8 sText_AddedToBag[] = _("{B_PLAYER_NAME} put away the {B_BUFF1}\nin the {B_BUFF2} Pocket.\p");
 static const u8 sText_BagIsFull[] = _("Too bad! The Bag is full…\p");
+static const u8 sText_WindBecameHeatWave[] = _("The wind turned into a Heat Wave!{PAUSE 64}");
 
 // Combination Moves
-static const u8 sText_WindBecameHeatWave[] = _("The wind turned into a Heat Wave{PAUSE 64}!");
-static const u8 sText_WindBecameTwister[] = _("The wind turned into a Twister{PAUSE 64}!");
-static const u8 sText_WindBecameIcyWind[] = _("The wind turned into an Icy Wind{PAUSE 64}!");
-static const u8 sText_WaterTurnedMuddy[] = _("The water turned into Muddy Water{PAUSE 64}!");
-static const u8 sText_VoicesGotLoud[] = _("The sounds merged into a Hyper Voice{PAUSE 64}!");
-static const u8 sText_IcyWindBecameBlizzard[] = _("The Icy Wind turned into a Blizzard{PAUSE 64}!");
+static const u8 sText_WindBecameHeated[] = _("The wind turned into\na Heat Gale!{PAUSE 64}");
+static const u8 sText_AirBecameBlazing[] = _("The air turned into\na Heat Storm!{PAUSE 64}");
+static const u8 sText_WindBecameDraconic[] = _("The wind turned into\na Dragon Storm!{PAUSE 64}");
+static const u8 sText_AirBecameFreezing[] = _("The air turned into\na Flash Freeze!{PAUSE 64}");
+static const u8 sText_TemperatureDropped[] = _("The temperature dropped\nto absolute zero!{PAUSE 64}");
+static const u8 sText_WavesGrewMassive[] = _("The waves turned into\na Tsunami!{PAUSE 64}");
+static const u8 sText_VoicesGotLoud[] = _("The sounds merged into\na Cacophony!{PAUSE 64}");
+static const u8 sText_VoicesBecameOne[] = _("The voices merged into\na Lullaby!{PAUSE 64}");
+static const u8 sText_AttacksBecameOne[] = _("The attacks merged into\nTri-beam!{PAUSE 64}");
 
 // PokeScanner
 static const u8 sText_WildPkmnAppearedAdv[] = _("You encountered a {B_DEF_NATURE_NAME} {B_OPPONENT_MON1_NAME}\nwith {B_DEF_ABILITY_NAME}, holding {B_DEF_ITEM_NAME}!\p");
@@ -905,14 +909,19 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT - BATTLESTRINGS_TABLE_ST
     [STRINGID_TRAINER1WINTEXT - BATTLESTRINGS_TABLE_START] = sText_Trainer1WinText,
     [STRINGID_TRAINER2WINTEXT - BATTLESTRINGS_TABLE_START] = sText_Trainer2WinText,
     // Custom
-    [STRINGID_WINDBECAMETWISTER - BATTLESTRINGS_TABLE_START] = sText_WindBecameTwister,
-    [STRINGID_WINDBECAMEICYWIND - BATTLESTRINGS_TABLE_START] = sText_WindBecameIcyWind,
-    [STRINGID_WATERTURNEDMUDDY - BATTLESTRINGS_TABLE_START] = sText_WaterTurnedMuddy,
-    [STRINGID_VOICESGOTLOUD - BATTLESTRINGS_TABLE_START] = sText_VoicesGotLoud,
-    [STRINGID_ICYWINDBECAMEBLIZZARD - BATTLESTRINGS_TABLE_START] = sText_IcyWindBecameBlizzard,
     [STRINGID_PKMNDROPPEDITEM - BATTLESTRINGS_TABLE_START] = sText_PkmnDroppedItem,
     [STRINGID_ADDEDTOBAG - BATTLESTRINGS_TABLE_START] = sText_AddedToBag,
     [STRINGID_BAGISFULL - BATTLESTRINGS_TABLE_START] = sText_BagIsFull,
+    // Combination Moves
+    [STRINGID_WINDBECAMEDRACONIC - BATTLESTRINGS_TABLE_START] = sText_WindBecameDraconic,
+    [STRINGID_AIRBECAMEFREEZING - BATTLESTRINGS_TABLE_START] = sText_AirBecameFreezing,
+    [STRINGID_WAVESGREWMASSIVE - BATTLESTRINGS_TABLE_START] = sText_WavesGrewMassive,
+    [STRINGID_VOICESGOTLOUD - BATTLESTRINGS_TABLE_START] = sText_VoicesGotLoud,
+    [STRINGID_TEMPERATUREDROPPED - BATTLESTRINGS_TABLE_START] = sText_TemperatureDropped,
+    [STRINGID_WINDBECAMEHEATED - BATTLESTRINGS_TABLE_START] = sText_WindBecameHeated,
+    [STRINGID_AIRBECAMEBLAZING - BATTLESTRINGS_TABLE_START] = sText_AirBecameBlazing,
+    [STRINGID_VOICESBECAMEONE - BATTLESTRINGS_TABLE_START] = sText_VoicesBecameOne,
+    [STRINGID_ATTACKSBECAMEONE - BATTLESTRINGS_TABLE_START] = sText_AttacksBecameOne,
 };
 
 const u16 gMissStringIds[] =

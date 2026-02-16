@@ -5651,3 +5651,7 @@ static const struct SpriteFrameImage sPicTable_TruckTrailer[] = {
 static const struct SpriteFrameImage sPicTable_TruckTrailerAlt[] = {
     obj_frame_tiles(gObjectEventPic_TruckTrailerAlt),
 };
+
+static const struct SpriteFrameImage sPicTable_TMBall[] = {
+    obj_frame_tiles(gObjectEventPic_TMBall),
+};

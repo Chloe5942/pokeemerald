@@ -45,7 +45,7 @@
 
 #define FLAG_POKESCANNER                      0x20 // PokéScanner Flag
 #define FLAG_POKESCANNER_GET                  0x21 // PokéScanner Recieved Flag
-#define FLAG_UNUSED_0x022                     0x22 // Unused Flag
+#define FLAG_EGG_MOVES_TUTOR                  0x22 // Move Tutor Egg Moves Flag
 #define FLAG_SHINY_CREATION                   0x23 // Force Shiny Flag
 #define FLAG_HIDE_BAD_LUCK_MAN                0x24 // Mauville City Bad Luck Man Flag
 #define FLAG_RECIEVED_BRAILLE_DECODER         0x25 // Recieved Braille Decoder Flag

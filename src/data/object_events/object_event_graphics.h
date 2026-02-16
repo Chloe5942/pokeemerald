@@ -894,3 +894,6 @@ const u32 gObjectEventPic_TruckTrailer[] = INCBIN_U32("graphics/object_events/pi
 const u16 gObjectEventPal_TruckTrailer[] = INCBIN_U16("graphics/object_events/palettes/truck_trailer.gbapal");
 const u32 gObjectEventPic_TruckTrailerAlt[] = INCBIN_U32("graphics/object_events/pics/misc/truck_trailer_alt.4bpp");
 const u16 gObjectEventPal_TruckTrailerAlt[] = INCBIN_U16("graphics/object_events/palettes/truck_trailer_alt.gbapal");
+const u32 gObjectEventPic_TMBall[] = INCBIN_U32("graphics/object_events/pics/misc/tm_ball.4bpp");
+const u16 gObjectEventPal_TMBall[] = INCBIN_U16("graphics/object_events/palettes/tm_ball.gbapal");
+

@@ -66,7 +66,7 @@ const u8 gEasyChatWord_Before[] = _("Before");
 const u8 gEasyChatWord_While[] = _("While");
 const u8 gEasyChatWord_Than[] = _("Than");
 const u8 gEasyChatWord_Once[] = _("Once");
-const u8 gEasyChatWord_Anywhere[] = _("ANYWHERE");
+const u8 gEasyChatWord_Anywhere[] = _("Anywhere");
 
 const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     [EC_INDEX(EC_WORD_WILL)] =

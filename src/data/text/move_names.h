@@ -355,4 +355,14 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_WATER_PULSE] = _("Water Pulse"),
     [MOVE_DOOM_DESIRE] = _("Doom Desire"),
     [MOVE_PSYCHO_BOOST] = _("Psycho Boost"),
+    // Combination Moves
+    [MOVE_HEAT_GALE] = _("Heat Gale"),
+    [MOVE_HEAT_STORM] = _("Heat Storm"),
+    [MOVE_DRAGON_STORM] = _("Dragon Storm"),
+    [MOVE_FLASH_FREEZE] = _("Flash Freeze"),
+    [MOVE_ABSOLUTE_ZERO] = _("Absolute Zero"),
+    [MOVE_TSUNAMI] = _("Tsunami"),
+    [MOVE_CACOPHONY] = _("Cacophony"),
+    [MOVE_LULLABY] = _("Lullaby"),
+    [MOVE_TRI_BEAM] = _("Tri-beam"),
 };

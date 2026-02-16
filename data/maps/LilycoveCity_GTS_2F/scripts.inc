@@ -231,15 +231,15 @@ LilycoveCity_GTS_F2_Text_NoPartner::
 	.string "Do you want to search again?$"
 
 LilycoveCity_GTS_F2_Text_TakeGoodCareOfEgg::
-	.string "Take good care of the EGG.$"
+	.string "Take good care of the egg.$"
 
 LilycoveCity_GTS_F2_Text_AlreadyObtained::
 	.string "It seems you have already obtained\n"
 	.string "this gift egg before.$"
 
 LilycoveCity_GTS_F2_Text_NoRoomForThisEgg::
-	.string "Oh? You've too many POKéMON.\n"
-	.string "There's no room for this EGG…$"
+	.string "Oh? You've too many Pokémon.\n"
+	.string "There's no room for this egg…$"
 
 LilycoveCity_GTS_F2_Text_StartDownloadEgg::
 	.string "Do you want to download a gift\n"
@@ -254,7 +254,7 @@ LilycoveCity_GTS_F2_Text_MailMan::
 	.string "How may I serve you?$"
 
 LilycoveCity_GTS_F2_Text_SelectMailMon::
-	.string "Please select a POKéMON whose mail\n"
+	.string "Please select a Pokémon whose mail\n"
 	.string "you wish to send.$"
 
 LilycoveCity_GTS_F2_Text_MailSent::
@@ -264,7 +264,7 @@ LilycoveCity_GTS_F2_Text_MailSent::
 
 LilycoveCity_GTS_F2_Text_MonHadNoMail::
     .string "Oh… I'm sorry…\p"
-	.string "That POKéMON doesn't appear to be\n" 
+	.string "That Pokémon doesn't appear to be\n" 
 	.string "holding any mail...$"
 
 LilycoveCity_GTS_F2_Text_NoMailFound::
