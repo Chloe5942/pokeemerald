@@ -254,7 +254,7 @@ const u8 gText_TheBattle[] = _("the battle");
 const u8 gText_ThePokemonList[] = _("the Pokémon list");
 const u8 gText_TheShop[] = _("the shop");
 const u8 gText_ThePC[] = _("the PC");
-const u8 gText_ReelItIn[] = _("Hold and release A to keep the\nPOKéMON inside the fishing bar!");
+const u8 gText_ReelItIn[] = _("Hold and release A to keep the\nPokémon inside the fishing bar!");
 const u8 gText_HelpfulTextHigher0[] = _("Whew!\nThat was close!");
 const u8 gText_HelpfulTextHigher1[] = _("That's it!\nKeep it up!");
 const u8 gText_HelpfulTextHigher2[] = _("Just a little bit more!");
@@ -262,12 +262,12 @@ const u8 gText_HelpfulTextLower0[] = _("Uh oh!\nIt's about to escape!");
 const u8 gText_HelpfulTextLower1[] = _("It sure is a fighter!");
 const u8 gText_HelpfulTextLower2[] = _("Aw!\nYou almost had it.");
 const u8 gText_FishingWantToQuit[] = _("Do you want to let this one go?");
-const u8 gText_ReeledInAPokemon[] = _("{PLAYER} reeled in a POKéMON!{PAUSE_UNTIL_PRESS}");
-const u8 gText_PokemonGotAway[] = _("Oh, no!\nThe POKéMON got away…{PAUSE_UNTIL_PRESS}");
-const u8 gText_ReeledInTreasure[] = _("{PLAYER} reeled in a TREASURE!");
+const u8 gText_ReeledInAPokemon[] = _("{PLAYER} reeled in a Pokémon!{PAUSE_UNTIL_PRESS}");
+const u8 gText_PokemonGotAway[] = _("Oh, no!\nThe Pokémon got away…{PAUSE_UNTIL_PRESS}");
+const u8 gText_ReeledInTreasure[] = _("{PLAYER} reeled in a Treasure!");
 const u8 gText_FoundATreasureItem[] = _("{PLAYER} found one\n{STR_VAR_2}!");
-const u8 gText_PutTreasureInPocket[] = _("{PLAYER} put away the {STR_VAR_2}\nin the {STR_VAR_3} POCKET.");
-const u8 gText_NoRoomForTreasure[] = _("Too bad!\nThe BAG is full…");
+const u8 gText_PutTreasureInPocket[] = _("{PLAYER} put away the {STR_VAR_2}\nin the {STR_VAR_3} Pocket.");
+const u8 gText_NoRoomForTreasure[] = _("Too bad!\nThe Bag is full…");
 
 const u8 *const gBagMenu_ReturnToStrings[] =
 {
@@ -1862,6 +1862,7 @@ const u8 gText_MoveItemWhere[] = _("Move {STR_VAR_2} to where?");
 const u8 gText_XsYAnd[] = _("{STR_VAR_1}'s {STR_VAR_2} and\n");
 const u8 gText_XsYWereSwapped[] = _("{STR_VAR_1}'s {STR_VAR_2} were swapped!{PAUSE_UNTIL_PRESS}");
 const u8 gText_OptionTypeDisplay[] = _("Type Display");    //tx_optionsPlus
+const u8 gText_Relearn_Menu[] = _("Relearn");
 
 // frlg_tm_case_port
 const u8 gText_TMCase[] =               _("TM Case");

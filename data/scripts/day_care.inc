@@ -267,6 +267,7 @@ EventScript_EggHatch::
 	lockall
 	msgbox Text_EggHatchHuh, MSGBOX_DEFAULT
 	special EggHatch
+	setflag FLAG_EGG_MOVES_TUTOR
 	waitstate
 	releaseall
 	end

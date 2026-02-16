@@ -383,13 +383,17 @@
 #define STRINGID_ADDEDTOBAG                 383
 #define STRINGID_BAGISFULL                  384
 // Combination Moves
-#define STRINGID_WINDBECAMETWISTER          385
-#define STRINGID_WINDBECAMEICYWIND          386
-#define STRINGID_WATERTURNEDMUDDY           387
-#define STRINGID_VOICESGOTLOUD              388
-#define STRINGID_ICYWINDBECAMEBLIZZARD      389
+#define STRINGID_AIRBECAMEFREEZING          385
+#define STRINGID_WAVESGREWMASSIVE           386
+#define STRINGID_VOICESGOTLOUD              387
+#define STRINGID_TEMPERATUREDROPPED         388
+#define STRINGID_WINDBECAMEHEATED           389
+#define STRINGID_AIRBECAMEBLAZING           391
+#define STRINGID_WINDBECAMEDRACONIC         392
+#define STRINGID_VOICESBECAMEONE            393
+#define STRINGID_ATTACKSBECAMEONE           394
 
-#define BATTLESTRINGS_COUNT                 390
+#define BATTLESTRINGS_COUNT                 395
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

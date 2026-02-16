@@ -93,5 +93,6 @@ void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
 void ItemUseCB_PokeBall(u8 taskId, TaskFunc task);
 int MoveToHM(u16 move);
+void CB2_ReturnToPartyMenuFromSummaryScreen(void);
 
 #endif // GUARD_PARTY_MENU_H

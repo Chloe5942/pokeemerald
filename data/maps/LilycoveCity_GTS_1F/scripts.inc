@@ -113,14 +113,14 @@ LilycoveCity_GTS_F1_EventScript_ShouldStartConnection::
 	.string "Start Pokecom channel connection?$"
 
 LilycoveCity_GTS_F1_Text_ITradedMyShiny::
-	.string "I traded my shiny KADABRA to\n"
+	.string "I traded my shiny Kadabra to\n"
 	.string "a cute girl I met online.\p"
 	.string "Her phone must have broken because\n"
 	.string "she's not returning my calls…$"
 
 LilycoveCity_GTS_F1_Text_TheUnderSeaCables::
 	.string "The under-sea network cables go\n"
-	.string "all the way to GOLDENROD.\p"
+	.string "all the way to Goldenrod.\p"
 	.string "Special ships called cable-layers\n"
 	.string "sink them to the ocean floor.$"
 
@@ -131,7 +131,7 @@ LilycoveCity_GTS_F1_Text_ItsSoEasyToConnect::
 	.string "smaller now?$"
 
 LilycoveCity_GTS_F1_Text_WhenMyFriendMoved::
-	.string "When my friend moved to KANTO I thought\n"
+	.string "When my friend moved to Kanto I thought\n"
 	.string "we wouldn't be able to talk anymore.\p"
 	.string "Thanks to the INTERNET we can \n"
 	.string "send messages every day!\p"
@@ -158,7 +158,7 @@ LilycoveCity_GTS_F1_Text_Version::
 	.string "Emerald Net Demo 0.1.2$"
 
 LilycoveCity_GTS_F1_Text_Info::
-	.string "Welcome to LILYCOVE NETWORK CENTER!\n"
+	.string "Welcome to Lilycove Network Center!\n"
 	.string "You can get connected with the\l"
 	.string "terminal on the left.\p" 
 	.string "Through the door behind me you can find\n"
@@ -168,10 +168,10 @@ ProfileMan_Text_OnlineSafety::
 	.string "Did you know that your profile can\n"
 	.string "help you stay safe while online?\p"
 	.string "If a trainers profile starts with\n"
-	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}FRIEND LINK {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}then they'll only link\l"
+	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Friend Link {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}then they'll only link\l"
 	.string "to players with a matching profile.\p"
 	.string "Actually, my hobby is collecting the\n"
-	.string "profiles of POKéMON TRAINERS.$"
+	.string "profiles of Pokémon Trainers.$"
 
 
 

@@ -3258,5 +3258,6 @@ extern const u8 gText_XsYWereSwapped[];
 extern const u8 gText_PokeScannerOn[];
 extern const u8 gText_PokeScannerOff[];
 extern const u8 gText_Nickname[];
+extern const u8 gText_Relearn_Menu[];
 
 #endif // GUARD_STRINGS_H

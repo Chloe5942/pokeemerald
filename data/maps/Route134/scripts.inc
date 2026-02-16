@@ -56,6 +56,6 @@ Route134_EventScript_LabSign::
 	end
 
 Route134_Text_LabSign:
-	.string "RESEARCH LAB\n"
-	.string "“The lab on the ocean”$"
+	.string "Research Lab\n"
+	.string "“The lab on the ocean!”$"
 

@@ -1417,6 +1417,10 @@ static const u8 sPsychoBoostDescription[] = _(
     "Allows a full-power attack,\n"
     "but sharply lowers Sp. Atk.");
 
+static const u8 sComboMoveDescription[] = _(
+    "A combined attack, varies\n"
+    "in effect, type, and power.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -1774,4 +1778,13 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_WATER_PULSE - 1] = sWaterPulseDescription,
     [MOVE_DOOM_DESIRE - 1] = sDoomDesireDescription,
     [MOVE_PSYCHO_BOOST - 1] = sPsychoBoostDescription,
+    [MOVE_HEAT_GALE - 1] = sComboMoveDescription,
+    [MOVE_HEAT_STORM - 1] = sComboMoveDescription,
+    [MOVE_DRAGON_STORM - 1] = sComboMoveDescription,
+    [MOVE_FLASH_FREEZE - 1] = sComboMoveDescription,
+    [MOVE_ABSOLUTE_ZERO - 1] = sComboMoveDescription,
+    [MOVE_TSUNAMI - 1] = sComboMoveDescription,
+    [MOVE_CACOPHONY - 1] = sComboMoveDescription,
+    [MOVE_LULLABY - 1] = sComboMoveDescription,
+    [MOVE_TRI_BEAM - 1] = sComboMoveDescription,
 };

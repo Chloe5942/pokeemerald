@@ -108,32 +108,32 @@ MobileLab_Text_DesertRuins:
 	.string "You must be {PLAYER}, right?\n"
 	.string "The boss told us that you'll be coming.\p"
 	.string "We've picked up on an energy signal\n"
-	.string "that seems to belong to a ROCK type\p"
-	.string "POKéMON from the DESERT RUINS.\n"
+	.string "that seems to belong to a Rock type\p"
+	.string "Pokémon from the Desert Ruins.\n"
 	.string "We would like for you to investigate it.$"
 
 MobileLab_Text_IslandCave:
 	.string "Welcome back {PLAYER}!\n"
 	.string "The boss told us that you'll be coming.\p"
 	.string "We've picked up on an energy signal\n"
-	.string "that seems to belong to a ICE type\p"
-	.string "POKéMON from the ISLAND CAVE.\n"
+	.string "that seems to belong to a Ice type\p"
+	.string "Pokémon from the Island Cave.\n"
 	.string "We would like for you to investigate it.$"
 
 MobileLab_Text_AncientTomb:
 	.string "Welcome back once more {PLAYER}!\n"
 	.string "The boss told us that you'll be coming.\p"
 	.string "We've picked up on an energy signal\n"
-	.string "that seems to belong to a STEEL type\p"
-	.string "POKéMON from the ANCIENT TOMB.\n"
+	.string "that seems to belong to a Steel type\p"
+	.string "Pokémon from the Ancient Tomb.\n"
 	.string "We would like for you to investigate it.$"
 
 MobileLab_Text_GotoResearchLab:
 	.string "{PLAYER}!\p"
 	.string "The boss told us that he wants you to\n"
-	.string "come back to the RESEARCH LAB with\p"
-	.string "the POKéMON you just caught.\n"
-	.string "ABRA there can teleport you to the lab.$"
+	.string "come back to the Research Lab with\p"
+	.string "the Pokémon you just caught.\n"
+	.string "Abra there can teleport you to the lab.$"
 
 MobileLab_EventScript_FieldScientist2::
 	lockall
@@ -216,29 +216,29 @@ MobileLab_Text_DoingResearch2:
 	.string "energy readings that are in the area.$"
 
 MobileLab_Text_DesertRuins2:
-	.string "{PLAYER}, we suspect the POKéMON in\n"
-	.string "the DESERT RUINS to be REGIROCK.\p"
-	.string "Here are some TIMER BALLS to aid you.$"
+	.string "{PLAYER}, we suspect the Pokémon in\n"
+	.string "the Desert Ruins to be Regirock.\p"
+	.string "Here are some Timer Balls to aid you.$"
 
 MobileLab_Text_IslandCave2:
-	.string "{PLAYER}, we suspect the POKéMON in\n"
-	.string "the ISLAND CAVE to be REGICE.\p"
-	.string "Here are some TIMER BALLS to aid you.$"
+	.string "{PLAYER}, we suspect the Pokémon in\n"
+	.string "the Island Cave to be Regice.\p"
+	.string "Here are some Timer Balls to aid you.$"
 
 MobileLab_Text_AncientTomb2:
-	.string "{PLAYER}, we suspect the POKéMON in\n"
-	.string "the ANCIENT TOMB to be REGISTEEL.\p"
-	.string "Here are some TIMER BALLS to aid you.$"
+	.string "{PLAYER}, we suspect the Pokémon in\n"
+	.string "the Ancient Tomb to be Registeel.\p"
+	.string "Here are some Timer Balls to aid you.$"
 
 MobileLab_Text_AlreadyGave:
 	.string "{PLAYER}, I've already given\n"
-	.string "you some TIMER BALLS.$"
+	.string "you some Timer Balls.$"
 
 MobileLab_Text_GotoResearchLab2:
 	.string "{PLAYER}, I heard that the boss wants\n"
-	.string "you to come back to the RESEARCH LAB\p"
-	.string "with the POKéMON you just caught.\n"
-	.string "ABRA there can teleport you to the lab.$"
+	.string "you to come back to the Research Lab\p"
+	.string "with the Pokémon you just caught.\n"
+	.string "Abra there can teleport you to the lab.$"
 
 MobileLab_EventScript_Abra::
 	lockall

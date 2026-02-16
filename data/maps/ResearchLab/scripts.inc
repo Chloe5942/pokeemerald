@@ -296,22 +296,22 @@ ResearchLab_Text_Machine2_Work1:
 
 ResearchLab_Text_Machine2_Work2:
 	.string "This machine allows us to monitor the\n"
-	.string "SEALED CHAMBER. Which seems to be\p"
+	.string "Sealed Chamber. Which seems to be\p"
 	.string "emitting some kind of energy.$"
 
 ResearchLab_Text_Pc_Work1:
 	.string "I'm working on a device that will allow\n"
 	.string "one to decode the strange markings in\p"
-	.string "the SEALED CHAMBER without a guide.$"
+	.string "the Sealed Chamber without a guide.$"
 
 ResearchLab_Text_Pc_GiveDecoder:
-	.string "You're going to the SEALED CHAMBER?\n"
+	.string "You're going to the Sealed Chamber?\n"
 	.string "I've finished the decoder for the\p"
 	.string "markings down there.\n"
-	.string "I call it the BRAILLE DECODER!$"
+	.string "I call it the Braille Decoder!$"
 
 ResearchLab_Text_Pc_UsingDecoder:
-	.string "Is the BRAILLE DECODER working well?\n"
+	.string "Is the Braille Decoder working well?\n"
 	.string "It is, that's good to hear.$"
 
 ResearchLab_Text_Pc_Work2:
@@ -320,13 +320,13 @@ ResearchLab_Text_Pc_Work2:
 	.string "Best to leave him alone.$"
 
 ResearchLab_Text_NeedAid:
-	.string "We're researching the SEALED CHAMBER,\n"
-	.string "that we found under ROUTE 134.\p"
+	.string "We're researching the Sealed Chamber,\n"
+	.string "that we found under Route 134.\p"
 	.string "Though none of us are really trainers,\n"
 	.string "so we are in need of help from one.$"
 
 ResearchLab_Text_WillingToHelp:
-	.string "Wait, are you a POkéMON TRAINER?\n"
+	.string "Wait, are you a POkémon Trainer?\n"
 	.string "Will you be willing to help us?$"
 
 ResearchLab_Text_ManyThanks:
@@ -335,7 +335,7 @@ ResearchLab_Text_ManyThanks:
 	.string "{PLAYER}, alright, you can speak to my\n"
 	.string "teammate over there to get a prototype\p"
 	.string "decoding device, as you'll need it to\n"
-	.string "decode the SEALED CHAMBER's messages.$"
+	.string "decode the Sealed Chamber's messages.$"
 
 ResearchLab_Text_HowsLooking:
 	.string "{PLAYER}, how's it going?\n"
@@ -343,7 +343,7 @@ ResearchLab_Text_HowsLooking:
 
 ResearchLab_Text_HaventGone:
 	.string "{PLAYER}, you haven't gone to the\n"
-	.string "SEALED CHAMBER yet?$"
+	.string "Sealed Chamber yet?$"
 
 ResearchLab_Text_YoureBack:
 	.string "{PLAYER}, you're back!\n"
@@ -367,11 +367,11 @@ ResearchLab_Text_FieldTrip:
 ResearchLab_Text_GreatThanks:
 	.string "{PLAYER}, thank you for your help!\n"
 	.string "You have provided a ton of information\p"
-	.string "about the SEALED CHAMBER and the\n"
-	.string "3 GIANTS of Hoenn's legends.$"
+	.string "about the Sealed Chamber and the\n"
+	.string "3 Giants of Hoenn's legends.$"
 
 ResearchLab_Text_ThatPokemon:
-	.string "That POKéMON!\p"
+	.string "That Pokémon!\p"
 	.string "It that an actual {STR_VAR_1}?\n"
 	.string "It is!? This is a huge breakthrough!$"
 
@@ -382,16 +382,16 @@ ResearchLab_Text_NothingToShow:
 	.string "Don't have anything to show?$"
 
 ResearchLab_Text_NotRight:
-	.string "{PLAYER}, this isn't the right POKéMON.$"
+	.string "{PLAYER}, this isn't the right Pokémon.$"
 
 ResearchLab_Text_HaventGoneDR:
 	.string "{PLAYER}, you haven't gone to the\n"
-	.string "DESERT RUINS yet?$"
+	.string "Desert Ruins yet?$"
 
 ResearchLab_Text_HaventGoneIC:
 	.string "{PLAYER}, you haven't gone to the\n"
-	.string "ISLAND CAVE yet?$"
+	.string "Island Cave yet?$"
 
 ResearchLab_Text_HaventGoneAT:
 	.string "{PLAYER}, you haven't gone to the\n"
-	.string "ANCIENT TOMB yet?$"
+	.string "Ancient Tomb yet?$"

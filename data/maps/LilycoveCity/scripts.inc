@@ -752,37 +752,9 @@ LilycoveCity_Text_HoneymoonVowToSeeRarePokemon:
 	.string "I mean, we are totally happy!$"
 
 LilycoveCity_Text_GTSSign:
-	.string "LILYCOVE NETWORK CENTER\p"
+	.string "Lilycove Network Center\p"
 	.string "“Wii connect the world”$"
 
-
-LilycoveCity_EventScript_NormanGoToOldale::
-	lock
-	faceplayer
-	message LilycoveCity_Text_NormanGoToOldale
-	waitmessage
-	multichoicedefault 20, 8, MULTI_YESNO, 1, FALSE
-	switch VAR_RESULT
-	case 1, LilycoveCity_EventScript_DontGoToOldale
-	case 0, LilycoveCity_EventScript_DoGoToOldale
-	case MULTI_B_PRESSED, LilycoveCity_EventScript_DontGoToOldale
-
-LilycoveCity_Text_NormanGoToOldale:
-	.string "DAD: Hey, {PLAYER}{KUN}! I'm done shopping.\n"
-	.string "Are you ready to go back to OLDALE?$"
-
-LilycoveCity_EventScript_DontGoToOldale::
-	msgbox LilycoveCity_Text_NormanDontGoToOldale, MSGBOX_NPC
-	end
-
-LilycoveCity_Text_NormanDontGoToOldale:
-	.string "DAD: Ok, just let me know when you're\n"
-	.string "ready.$"
-
-LilycoveCity_EventScript_DoGoToOldale::
-	warp MAP_OLDALE_TOWN, 10, 13
-	waitstate
-	end
 
 LilycoveCity_EventScript_Wailmer::
 	playmoncry SPECIES_WAILMER, CRY_MODE_NORMAL
@@ -794,5 +766,89 @@ LilycoveCity_EventScript_Wailmer::
 	end
 
 LilycoveCity_Text_Wailmer:
-	.string "Wail Wailmer\n"
+	.string "Wail Wailmer!\n"
 	.string "Wailmer seems happy.$"
+
+LilycoveCity_EventScript_ClamperlBoy::
+	goto_if_set FLAG_RECIEVED_CLAMPERL_ITEMS LilycoveCity_EventScript_ClamperlBoyEvo
+	lockall
+	faceplayer
+	msgbox LilycoveCity_Text_AskSeenClamperl, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	goto_if_mon_seen SPECIES_CLAMPERL, LilycoveCity_EventScript_ClamperlSeen
+	msgbox LilycoveCity_Text_AskSeenClamperl, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
+
+LilycoveCity_EventScript_ClamperlSeen::
+	lockall
+	faceplayer
+	msgbox LilycoveCity_Text_SeenClamperl, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	goto_if_mon_caught SPECIES_CLAMPERL, LilycoveCity_EventScript_ClamperlCaught
+	msgbox LilycoveCity_Text_AskSeenClamperl, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
+
+LilycoveCity_EventScript_ClamperlCaught::
+	lockall
+	faceplayer
+	msgbox LilycoveCity_Text_CaughtClamperl, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	giveitem ITEM_DEEP_SEA_TOOTH, 5
+	giveitem ITEM_DEEP_SEA_SCALE, 5
+	setflag FLAG_RECIEVED_CLAMPERL_ITEMS
+	releaseall
+	end
+
+LilycoveCity_EventScript_ClamperlBoyEvo::
+	lockall
+	faceplayer
+	msgbox LilycoveCity_Text_EvolvedClamperl, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
+
+LilycoveCity_Text_AskSeenClamperl:
+	.string "Have you ever seen a Clamperl?$"
+
+LilycoveCity_Text_NeverSeenClamperl:
+	.string "Oh, come back if you ever see one.$"
+
+LilycoveCity_Text_SeenClamperl:
+	.string "You have seen a Clamperl!$"
+	.string "Wait, have you caught a Clamperl yet?$"
+
+LilycoveCity_Text_NeverCaughtClamperl:
+	.string "Oh, come back if you ever catch one.$"
+
+LilycoveCity_Text_CaughtClamperl:
+	.string "You even caught a Clamperl!\p"
+	.string "I want you to have these items they\n"
+	.string "allow you to evolve your Clamperl.$"
+
+LilycoveCity_Text_EvolvedClamperl:
+	.string "Have you evolved your Clamperl yet?\p"
+	.string "It can evolve into two different\n"
+	.string "Pokémon depending on the item held.$"
+
+LilycoveCity_EventScript_Clamperl::
+	playmoncry SPECIES_CLAMPERL, CRY_MODE_NORMAL
+	waitmoncry
+	msgbox LilycoveCity_Text_Clamperl, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	release
+	end
+
+LilycoveCity_Text_Clamperl:
+	.string "Clam Clamperl!\n"
+	.string "Clamperl seems happy.$"

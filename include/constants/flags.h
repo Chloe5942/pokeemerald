@@ -45,7 +45,7 @@
 
 #define FLAG_POKESCANNER                      0x20 // PokéScanner Flag
 #define FLAG_POKESCANNER_GET                  0x21 // PokéScanner Recieved Flag
-#define FLAG_UNUSED_0x022                     0x22 // Unused Flag
+#define FLAG_EGG_MOVES_TUTOR                  0x22 // Move Tutor Egg Moves Flag
 #define FLAG_SHINY_CREATION                   0x23 // Force Shiny Flag
 #define FLAG_HIDE_BAD_LUCK_MAN                0x24 // Mauville City Bad Luck Man Flag
 #define FLAG_RECIEVED_BRAILLE_DECODER         0x25 // Recieved Braille Decoder Flag
@@ -57,21 +57,21 @@
 #define FLAG_HIDE_MOBILE_LAB_ROUTE120         0x2B // Hide the Mobile Lab on Route 120 Flag
 #define FLAG_HIDE_ABRA_ROUTE105               0x2C // Hide the Abra on Route 105 Flag
 #define FLAG_HIDE_LILYCOVE_CITY_WAILMER       0x2D // Hide Wailmer in Lilycove City Flag
-#define FLAG_HIDE_LOBBY_TUCKER    0x2E // Unused Flag
-#define FLAG_HIDE_LOBBY_GRETA    0x2F // Unused Flag
-#define FLAG_HIDE_LOBBY_ANABEL    0x30 // Unused Flag
-#define FLAG_HIDE_LOBBY_LUCY    0x31 // Unused Flag
-#define FLAG_HIDE_LOBBY_NOLAND    0x32 // Unused Flag
-#define FLAG_HIDE_LOBBY_BRANDON    0x33 // Unused Flag
-#define FLAG_HIDE_LOBBY_SPENSER    0x34 // Unused Flag
-#define FLAG_SYS_NO_COLLISION    0x35 // Unused Flag
-#define FLAG_SYS_NO_TRAINER_SEE    0x36 // Unused Flag
-#define FLAG_SYS_NO_BAG_USE    0x37 // Unused Flag
-#define FLAG_SYS_NO_CATCHING    0x38 // Unused Flag
-#define FLAG_SYS_PC_FROM_DEBUG_MENU    0x39 // Unused Flag
-#define FLAG_SYS_NO_BATTLE_DMG    0x3A // Unused Flag
-#define FLAG_SYS_NO_ENCOUNTER    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
+#define FLAG_HIDE_LOBBY_TUCKER                0x2E // Hide Tucker in lobby Flag
+#define FLAG_HIDE_LOBBY_GRETA                 0x2F // Hide Greta in lobby Flag
+#define FLAG_HIDE_LOBBY_ANABEL                0x30 // Hide Anabel in lobby Flag
+#define FLAG_HIDE_LOBBY_LUCY                  0x31 // Hide Lucy in lobby Flag
+#define FLAG_HIDE_LOBBY_NOLAND                0x32 // Hide Noland in lobby Flag
+#define FLAG_HIDE_LOBBY_BRANDON               0x33 // Hide Brandon in lobby Flag
+#define FLAG_HIDE_LOBBY_SPENSER               0x34 // Hide Spenser in lobby Flag
+#define FLAG_SYS_NO_COLLISION                 0x35 // Unused Flag
+#define FLAG_SYS_NO_TRAINER_SEE               0x36 // Unused Flag
+#define FLAG_SYS_NO_BAG_USE                   0x37 // Unused Flag
+#define FLAG_SYS_NO_CATCHING                  0x38 // Unused Flag
+#define FLAG_SYS_PC_FROM_DEBUG_MENU           0x39 // Unused Flag
+#define FLAG_SYS_NO_BATTLE_DMG                0x3A // Unused Flag
+#define FLAG_SYS_NO_ENCOUNTER                 0x3B // Unused Flag
+#define FLAG_RECIEVED_CLAMPERL_ITEMS          0x3C // Recieved 5 Deep Sea Teeth & Scales Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag

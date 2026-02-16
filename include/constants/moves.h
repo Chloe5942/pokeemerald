@@ -357,7 +357,18 @@
 #define MOVE_DOOM_DESIRE 353
 #define MOVE_PSYCHO_BOOST 354
 
-#define MOVES_COUNT 355
+// Combination Moves
+#define MOVE_HEAT_GALE 355
+#define MOVE_HEAT_STORM 356
+#define MOVE_DRAGON_STORM 357
+#define MOVE_FLASH_FREEZE 358
+#define MOVE_ABSOLUTE_ZERO 359
+#define MOVE_TSUNAMI 360
+#define MOVE_CACOPHONY 361
+#define MOVE_LULLABY 362
+#define MOVE_TRI_BEAM 363
+
+#define MOVES_COUNT 364
 
 // Used for checks for moves affected by Disable, Mimic, etc.
 #define MOVE_UNAVAILABLE 0xFFFF

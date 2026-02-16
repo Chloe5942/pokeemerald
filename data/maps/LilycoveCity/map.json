@@ -368,7 +368,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_WAILMER",
       "x": 77,
-      "y": 15,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
       "movement_range_x": 0,
@@ -381,7 +381,20 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_WAILMER",
       "x": 77,
-      "y": 14,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LilycoveCity_EventScript_Wailmer",
+      "flag": "FLAG_HIDE_LILYCOVE_CITY_WAILMER"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_WAILMER",
+      "x": 78,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
       "movement_range_x": 0,
@@ -405,17 +418,30 @@
       "flag": "FLAG_HIDE_LILYCOVE_CITY_WAILMER"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_WAILMER",
-      "x": 78,
-      "y": 16,
+      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
+      "x": 69,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LilycoveCity_EventScript_ClamperlBoy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_CLAMPERL",
+      "x": 68,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_Wailmer",
-      "flag": "FLAG_HIDE_LILYCOVE_CITY_WAILMER"
+      "script": "LilycoveCity_EventScript_Clamperl",
+      "flag": "0"
     }
   ],
   "warp_events": [
