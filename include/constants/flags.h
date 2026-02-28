@@ -72,7 +72,7 @@
 #define FLAG_SYS_NO_BATTLE_DMG                0x3A // Unused Flag
 #define FLAG_SYS_NO_ENCOUNTER                 0x3B // Unused Flag
 #define FLAG_RECIEVED_CLAMPERL_ITEMS          0x3C // Recieved 5 Deep Sea Teeth & Scales Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
+#define FLAG_TIDE_KEEPER_ACTIVE               0x3D // Route 125 Tide Keeper Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
@@ -516,9 +516,9 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_RECEIVED_DEVELOPER_GIFT_1       0x1DE // Unused Flag
-#define FLAG_RECEIVED_DEVELOPER_GIFT_2       0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
+#define FLAG_RECEIVED_BIRTHDAY_GIFT_1        0x1DE // Received Jan 8th Birthday Gift Flag
+#define FLAG_RECEIVED_BIRTHDAY_GIFT_2        0x1DF // Received Nov 10th Birthday Gift Flag
+#define FLAG_RECEIVED_BIRTHDAY_GIFT_3        0x1E0 // Received Feb 10th Birthday Gift Flag
 #define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
 #define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
@@ -1389,7 +1389,7 @@
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
-#define FLAG_SYS_DEBUG                              (SYSTEM_FLAGS + 0x21) // Unused Flag
+#define FLAG_SYS_DEBUG                              (SYSTEM_FLAGS + 0x21) // Debug Mode Flag
 #define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
 #define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag

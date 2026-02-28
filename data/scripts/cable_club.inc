@@ -347,6 +347,7 @@ CableClub_EventScript_EnterColosseum::
 	special DrawWholeMapView
 	playse SE_CLICK
 	delay 60
+	hidefollower 0
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
 	closemessage
@@ -441,6 +442,7 @@ CableClub_EventScript_EnterTradeCenter::
 	special DrawWholeMapView
 	playse SE_CLICK
 	delay 60
+	hidefollower 0
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
 	closemessage
@@ -506,6 +508,7 @@ CableClub_EventScript_EnterRecordCorner::
 	special DrawWholeMapView
 	playse SE_CLICK
 	delay 60
+	hidefollower 0
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
 	closemessage
@@ -894,6 +897,7 @@ CableClub_EventScript_EnterUnionRoom::
 	special DrawWholeMapView
 	playse SE_CLICK
 	delay 60
+	hidefollower 0
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Movement_PlayerApproachLinkRoomLeft
@@ -1193,6 +1197,7 @@ CableClub_EventScript_EnterWirelessLinkRoom::
 	special DrawWholeMapView
 	playse SE_CLICK
 	delay 60
+	hidefollower 0
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
 	closemessage
@@ -1375,6 +1380,7 @@ MossdeepCity_GameCorner_1F_EventScript_EnterMinigameRoom::
 	special DrawWholeMapView
 	playse SE_CLICK
 	delay 60
+	hidefollower 0
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
 	closemessage

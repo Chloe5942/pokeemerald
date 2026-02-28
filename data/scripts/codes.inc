@@ -27,8 +27,11 @@ CodeComputer_EventScript_EnterCode::
     goto_if_eq VAR_RESULT, 6, CodeComputer_EventScript_BigSale20XX
     goto_if_eq VAR_RESULT, 7, CodeComputer_EventScript_MasterBlender
     goto_if_eq VAR_RESULT, 8, CodeComputer_EventScript_RouletteLuck
-    goto_if_eq VAR_RESULT, 9, CodeComputer_EventScript_DeveloperGift1
-    goto_if_eq VAR_RESULT, 10, CodeComputer_EventScript_DeveloperGift2
+    goto_if_eq VAR_RESULT, 9, CodeComputer_EventScript_BirthdayGift1
+    goto_if_eq VAR_RESULT, 10, CodeComputer_EventScript_BirthdayGift2
+    goto_if_eq VAR_RESULT, 11, CodeComputer_EventScript_BirthdayGift3
+    goto_if_eq VAR_RESULT, 12, CodeComputer_EventScript_DevMode
+    goto_if_eq VAR_RESULT, 13, CodeComputer_EventScript_Reset
 	releaseall
     end
 
@@ -49,7 +52,8 @@ CodeComputer_EventScript_CodeFailed::
     end
 
 CodeComputer_EventScript_EonTicket::
-	goto_if_set FLAG_RECEIVED_EON_TICKET, CodeComputer_EventScript_EonTicketCode
+	bufferitemname STR_VAR_1, ITEM_EON_TICKET
+	goto_if_set FLAG_RECEIVED_EON_TICKET, CodeComputer_EventScript_GiftItemCode
 	playse MUS_OBTAIN_ITEM
     msgbox CodeComputer_Text_Succeeded MSGBOX_DEFAULT
 	waitmessage
@@ -63,7 +67,8 @@ CodeComputer_EventScript_EonTicket::
     end
 
 CodeComputer_EventScript_AuroraTicket::
-	goto_if_set FLAG_RECEIVED_AURORA_TICKET, CodeComputer_EventScript_AuroraTicketCode
+	bufferitemname STR_VAR_1, ITEM_AURORA_TICKET
+	goto_if_set FLAG_RECEIVED_AURORA_TICKET, CodeComputer_EventScript_GiftItemCode
 	playse MUS_OBTAIN_ITEM
     msgbox CodeComputer_Text_Succeeded MSGBOX_DEFAULT
 	waitmessage
@@ -77,7 +82,8 @@ CodeComputer_EventScript_AuroraTicket::
     end
 
 CodeComputer_EventScript_MysticTicket::
-	goto_if_set FLAG_RECEIVED_MYSTIC_TICKET, CodeComputer_EventScript_MysticTicketCode
+	bufferitemname STR_VAR_1, ITEM_MYSTIC_TICKET
+	goto_if_set FLAG_RECEIVED_MYSTIC_TICKET, CodeComputer_EventScript_GiftItemCode
 	playse MUS_OBTAIN_ITEM
     msgbox CodeComputer_Text_Succeeded MSGBOX_DEFAULT
 	waitmessage
@@ -91,7 +97,8 @@ CodeComputer_EventScript_MysticTicket::
     end
 
 CodeComputer_EventScript_OldSeaMap::
-	goto_if_set FLAG_RECEIVED_OLD_SEA_MAP, CodeComputer_EventScript_OldSeaMapCode
+	bufferitemname STR_VAR_1, ITEM_OLD_SEA_MAP
+	goto_if_set FLAG_RECEIVED_OLD_SEA_MAP, CodeComputer_EventScript_GiftItemCode
 	playse MUS_OBTAIN_ITEM
     msgbox CodeComputer_Text_Succeeded MSGBOX_DEFAULT
 	waitmessage
@@ -103,38 +110,6 @@ CodeComputer_EventScript_OldSeaMap::
 	closemessage
     releaseall
     end
-
-CodeComputer_EventScript_EonTicketCode::
-	bufferitemname STR_VAR_1, ITEM_EON_TICKET
-	msgbox CodeComputer_Text_GenItemDesc, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	releaseall
-	end
-
-CodeComputer_EventScript_AuroraTicketCode::
-	bufferitemname STR_VAR_1, ITEM_AURORA_TICKET
-	msgbox CodeComputer_Text_GenItemDesc, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	releaseall
-	end
-
-CodeComputer_EventScript_MysticTicketCode::
-	bufferitemname STR_VAR_1, ITEM_MYSTIC_TICKET
-	msgbox CodeComputer_Text_GenItemDesc, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	releaseall
-	end
-
-CodeComputer_EventScript_OldSeaMapCode::
-	bufferitemname STR_VAR_1, ITEM_OLD_SEA_MAP
-	msgbox CodeComputer_Text_GenItemDesc, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	releaseall
-	end
 
 CodeComputer_EventScript_MirageBreaker::
 	goto_if_set FLAG_MIRAGE_BREAKER_USED, CodeComputer_EventScript_MirageBreakerCode
@@ -227,48 +202,116 @@ CodeComputer_EventScript_RouletteLuckCode::
 	releaseall
 	end
 
-CodeComputer_EventScript_DeveloperGift1::
+CodeComputer_EventScript_BirthdayGift1::
 	msgbox CodeComputer_Text_BDayMessage, MSGBOX_DEFAULT
-	goto_if_set FLAG_RECEIVED_DEVELOPER_GIFT_1, CodeComputer_EventScript_DeveloperGift1Code
+	bufferspeciesname STR_VAR_1, SPECIES_WEEDLE
+	goto_if_set FLAG_RECEIVED_BIRTHDAY_GIFT_1, CodeComputer_EventScript_GiftMonCode
 	playse MUS_OBTAIN_ITEM
     msgbox CodeComputer_Text_Succeeded MSGBOX_DEFAULT
 	waitmessage
 	closemessage
 	delay 5
     msgbox CodeComputer_Text_SpecialMon, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_DEVELOPER_GIFT_1
-	givecustommon SPECIES_WEEDLE, 10, ITEM_POISON_BARB, ITEM_POKE_BALL, NATURE_ADAMANT, 0, 0, 0, 0, 0, 0, 0, 31, 31, 15, 31, 15, 15, MOVE_SLUDGE_BOMB, MOVE_TWINEEDLE, MOVE_HIDDEN_POWER, MOVE_HARDEN, FALSE
+	setflag FLAG_RECEIVED_BIRTHDAY_GIFT_1
+	givecustommon SPECIES_WEEDLE, 10, ITEM_POISON_BARB, ITEM_POKE_BALL, NATURE_ADAMANT, 0, 0, 0, 0, 0, 0, 0, 31, 31, 15, 31, 15, 15, MOVE_SLUDGE_BOMB, MOVE_TWINEEDLE, MOVE_HIDDEN_POWER, MOVE_HARDEN, TRUE
 	waitmessage
 	closemessage
     releaseall
     end
 
-CodeComputer_EventScript_DeveloperGift2::
+CodeComputer_EventScript_BirthdayGift2::
 	msgbox CodeComputer_Text_BDayMessage, MSGBOX_DEFAULT
-	goto_if_set FLAG_RECEIVED_DEVELOPER_GIFT_2, CodeComputer_EventScript_DeveloperGift2Code
+	bufferspeciesname STR_VAR_1, SPECIES_RALTS
+	goto_if_set FLAG_RECEIVED_BIRTHDAY_GIFT_2, CodeComputer_EventScript_GiftMonCode
 	playse MUS_OBTAIN_ITEM
     msgbox CodeComputer_Text_Succeeded MSGBOX_DEFAULT
 	waitmessage
 	closemessage
 	delay 5
     msgbox CodeComputer_Text_SpecialMon, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_DEVELOPER_GIFT_2
+	setflag FLAG_RECEIVED_BIRTHDAY_GIFT_2
 	givecustommon SPECIES_RALTS, 10, ITEM_TWISTED_SPOON, ITEM_PREMIER_BALL, NATURE_MODEST, 0, 0, 0, 0, 0, 0, 0, 31, 15, 15, 31, 31, 15, MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_HIDDEN_POWER, MOVE_CALM_MIND, TRUE
 	waitmessage
 	closemessage
     releaseall
     end
 
-CodeComputer_EventScript_DeveloperGift1Code::
-	bufferspeciesname STR_VAR_1, SPECIES_WEEDLE
-	msgbox CodeComputer_Text_GenMonDesc, MSGBOX_DEFAULT
+CodeComputer_EventScript_BirthdayGift3::
+	msgbox CodeComputer_Text_BDayMessage, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_MAREEP
+	goto_if_set FLAG_RECEIVED_BIRTHDAY_GIFT_3, CodeComputer_EventScript_GiftMonCode
+	playse MUS_OBTAIN_ITEM
+    msgbox CodeComputer_Text_Succeeded MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	delay 5
+    msgbox CodeComputer_Text_SpecialMon, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_BIRTHDAY_GIFT_3
+	givecustommon SPECIES_MAREEP, 10, ITEM_MAGNET, ITEM_PREMIER_BALL, NATURE_MODEST, 0, 0, 0, 0, 0, 0, 0, 31, 15, 15, 31, 31, 15, MOVE_THUNDERBOLT, MOVE_BODY_SLAM, MOVE_HIDDEN_POWER, MOVE_CHARGE, TRUE
+	waitmessage
+	closemessage
+    releaseall
+    end
+
+CodeComputer_EventScript_DevMode::
+	msgbox CodeComputer_Text_SpecialCode, MSGBOX_DEFAULT
+	bufferstring STR_VAR_1, CodeComputer_Text_DebugModeText
+	goto_if_set FLAG_SYS_DEBUG, CodeComputer_EventScript_OneTimeCode
+	playse MUS_OBTAIN_ITEM
+    msgbox CodeComputer_Text_Succeeded MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	delay 5
+    msgbox CodeComputer_Text_DebugMode, MSGBOX_DEFAULT
+	setflag FLAG_SYS_DEBUG
+	waitmessage
+	closemessage
+    releaseall
+    end
+
+CodeComputer_EventScript_Reset::
+	msgbox CodeComputer_Text_SpecialCode, MSGBOX_DEFAULT
+	playse MUS_OBTAIN_ITEM
+    msgbox CodeComputer_Text_Succeeded MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	delay 5
+	call CodeComputer_EventScript_ResetCode
+    msgbox CodeComputer_Text_ResetCode, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+    releaseall
+    end
+
+CodeComputer_EventScript_ResetCode::
+	clearflag FLAG_DAILY_PICKED_LOTO_TICKET
+	clearflag FLAG_DAILY_BERRY_MASTER_RECEIVED_BERRY
+	clearflag FLAG_DAILY_BERRY_MASTERS_WIFE
+	clearflag FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY
+	clearflag FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY
+	clearflag FLAG_DAILY_LILYCOVE_RECEIVED_BERRY
+	clearflag FLAG_DAILY_ROUTE_111_RECEIVED_BERRY
+	clearflag FLAG_DAILY_ROUTE_114_RECEIVED_BERRY
+	clearflag FLAG_DAILY_ROUTE_120_RECEIVED_BERRY
+	clearflag FLAG_DAILY_SECRET_BASE
+	clearflag FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY
+	return
+
+CodeComputer_EventScript_OneTimeCode::
+	msgbox CodeComputer_Text_GenCodeDesc, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
 	releaseall
 	end
 
-CodeComputer_EventScript_DeveloperGift2Code::
-	bufferspeciesname STR_VAR_1, SPECIES_RALTS
+CodeComputer_EventScript_GiftItemCode::
+	msgbox CodeComputer_Text_GenItemDesc, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
+
+CodeComputer_EventScript_GiftMonCode::
 	msgbox CodeComputer_Text_GenMonDesc, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
@@ -288,14 +331,6 @@ CodeComputer_Text_Failed:
 
 CodeComputer_Text_Succeeded:
     .string "The code worked!$"
-
-CodeComputer_Text_GenMonDesc:
-    .string "This code was for a {STR_VAR_1}!\n"
-    .string "You can't use it again!$"
-
-CodeComputer_Text_GenItemDesc:
-    .string "This code was for the {STR_VAR_1}!\n"
-    .string "You can't use it again!$"
 
 CodeComputer_Text_MirageBreaker:
     .string "This daily code causes both Mirage\n"
@@ -317,12 +352,6 @@ CodeComputer_Text_RouletteLuck:
     .string "Game Corner Roulette luck bonus!\p"
     .string "You have already used it today!$"
 
-CodeComputer_Text_SpecialItem:
-    .string "It's a Special Item!$"
-
-CodeComputer_Text_SpecialMon:
-    .string "It's a Special Pokémon!$"
-
 CodeComputer_Text_SpecialEvent:
     .string "A Special Event is happening!\n"
 	.string "Head to {STR_VAR_1}!$"
@@ -330,6 +359,37 @@ CodeComputer_Text_SpecialEvent:
 CodeComputer_Text_SpecialEvents:
     .string "A Special Event is happening!\n"
 	.string "Head to {STR_VAR_1} and {STR_VAR_2}!$"
+
+CodeComputer_Text_GenMonDesc:
+    .string "This code was for a {STR_VAR_1}!\n"
+    .string "You can't use it again!$"
+
+CodeComputer_Text_GenItemDesc:
+    .string "This code was for the {STR_VAR_1}!\n"
+    .string "You can't use it again!$"
+
+CodeComputer_Text_GenCodeDesc:
+    .string "This code was for {STR_VAR_1}!\n"
+    .string "You can't use it again!$"
+
+CodeComputer_Text_SpecialItem:
+    .string "It's a Special Item!$"
+
+CodeComputer_Text_SpecialMon:
+    .string "It's a Special Pokémon!$"
+
+CodeComputer_Text_SpecialCode:
+    .string "You used a Special Code!$"
+
+CodeComputer_Text_DebugMode:
+    .string "You activated debug mode!\n"
+    .string "Press {L_BUTTON} and {START_BUTTON}!$"
+
+CodeComputer_Text_DebugModeText:
+    .string "Debug Mode$"
+
+CodeComputer_Text_ResetCode:
+    .string "You triggered a daily reset!$"
 
 CodeComputer_Text_MauvilleCity:
 	.string "Mauville City$"

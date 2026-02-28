@@ -81,3 +81,86 @@ Route125_EventScript_Auron::
 	msgbox Route125_Text_AuronPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route125_EventScript_TideKeeper::
+	goto_if_set FLAG_TIDE_KEEPER_ACTIVE, Route125_EventScript_TideKeeperActive
+	lockall
+	faceplayer
+	msgbox Route125_Text_TideKeeper, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route125_EventScript_TideKeeperAccepted
+	goto_if_eq VAR_RESULT, NO, Route125_EventScript_TideKeeperDeclined
+	releaseall
+	end
+
+Route125_EventScript_TideKeeperAccepted::
+	lockall
+	faceplayer
+	msgbox Route125_Text_TideKeeperAccepted, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	setflag FLAG_TIDE_KEEPER_ACTIVE
+	releaseall
+	end
+
+Route125_EventScript_TideKeeperDeclined::
+	lockall
+	faceplayer
+	msgbox Route125_Text_TideKeeperDeclined, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
+
+Route125_EventScript_TideKeeperActive::
+	goto_if_unset FLAG_TIDE_KEEPER_ACTIVE, Route125_EventScript_TideKeeper
+	lockall
+	faceplayer
+	msgbox Route125_Text_TideKeeperActive, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route125_EventScript_TideKeeperStopAccepted
+	goto_if_eq VAR_RESULT, NO, Route125_EventScript_TideKeeperStopDeclined
+	releaseall
+	end
+
+Route125_EventScript_TideKeeperStopAccepted::
+	lockall
+	faceplayer
+	msgbox Route125_Text_TideKeeperStopAccepted, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	clearflag FLAG_TIDE_KEEPER_ACTIVE
+	releaseall
+	end
+
+Route125_EventScript_TideKeeperStopDeclined::
+	lockall
+	faceplayer
+	msgbox Route125_Text_TideKeeperDeclined, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
+
+Route125_Text_TideKeeper:
+	.string "Hey, I'm the Tide Keeper!\p"
+	.string "Do you want me to use my psychic powers\n"
+	.string "to keep Shoal Cave at Low Tide?$"
+
+Route125_Text_TideKeeperDeclined:
+	.string "No? Well I'll still be here.$"
+
+Route125_Text_TideKeeperAccepted:
+	.string "Alright, give me a moment!\p"
+	.string "… … … … … … … … … … … … … … …\n"
+	.string "Shoal Cave is now at Low Tide!\p"
+	.string "Come back to me if you want me to\n"
+	.string "return the tides back to normal.$"
+
+Route125_Text_TideKeeperStopAccepted:
+	.string "Alright, give me a moment!\p"
+	.string "… … … … … … … … … … … … … … …\n"
+	.string "Shoal Cave is now back to normal!\p"
+	.string "Come back to me if you want me to\n"
+	.string "cause a low tide here.$"
+
+Route125_Text_TideKeeperActive:
+	.string "Do you want me to stop using\n"
+	.string "my psychic powers on the tides?$"

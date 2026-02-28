@@ -1,5 +1,6 @@
 #include "global.h"
 #include "play_time.h"
+#include "rtc.h"
 
 enum
 {
@@ -45,6 +46,9 @@ void PlayTimeCounter_Update(void)
 
     gSaveBlock2Ptr->playTimeVBlanks = 0;
     gSaveBlock2Ptr->playTimeSeconds++;
+
+    // Runs once per second
+    RtcAdvanceTime(0, 0, 60); //Advance "rtc" by 0 Hour(s), 0 Minute(s), 60 Second(s)
 
     if (gSaveBlock2Ptr->playTimeSeconds < 60)
         return;

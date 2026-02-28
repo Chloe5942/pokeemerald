@@ -252,7 +252,11 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
 
     if (GetMonData(&pokemon, MON_DATA_LEVEL) != MAX_LEVEL)
     {
-        experience = GetMonData(&pokemon, MON_DATA_EXP) + daycareMon->steps;
+        if (GetMonData(&pokemon, MON_DATA_HELD_ITEM) == ITEM_LUCKY_EGG)
+            experience = GetMonData(&pokemon, MON_DATA_EXP) + (daycareMon->steps * 5);
+        else
+            experience = GetMonData(&pokemon, MON_DATA_EXP) + daycareMon->steps;
+        
         SetMonData(&pokemon, MON_DATA_EXP, &experience);
         ApplyDaycareExperience(&pokemon);
     }
@@ -286,8 +290,13 @@ u16 TakePokemonFromDaycare(void)
 static u8 GetLevelAfterDaycareSteps(struct BoxPokemon *mon, u32 steps)
 {
     struct BoxPokemon tempMon = *mon;
+    u32 experience;
 
-    u32 experience = GetBoxMonData(mon, MON_DATA_EXP) + steps;
+    if (GetBoxMonData(mon, MON_DATA_HELD_ITEM) == ITEM_LUCKY_EGG)
+        experience = GetBoxMonData(mon, MON_DATA_EXP) + (steps * 5);
+    else
+        experience = GetBoxMonData(mon, MON_DATA_EXP) + steps;
+    
     SetBoxMonData(&tempMon, MON_DATA_EXP,  &experience);
     return GetLevelFromBoxMonExp(&tempMon);
 }
@@ -316,7 +325,7 @@ static u32 GetDaycareCostForSelectedMon(struct DaycareMon *daycareMon)
 
     u8 numLevelsGained = GetNumLevelsGainedFromSteps(daycareMon);
     GetBoxMonNickname(&daycareMon->mon, gStringVar1);
-    cost = 100 + 100 * numLevelsGained;
+    cost = 50 * numLevelsGained;
     ConvertIntToDecimalStringN(gStringVar2, cost, STR_CONV_MODE_LEFT_ALIGN, 5);
     return cost;
 }

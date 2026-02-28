@@ -15,7 +15,6 @@ InsideOfTruck_OnResume:
 
 InsideOfTruck_EventScript_SetIntroFlags::
 	lockall
-	setflag FLAG_SYS_QUEST_MENU_GET
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, InsideOfTruck_EventScript_SetIntroFlagsMale
@@ -56,87 +55,3 @@ InsideOfTruck_Text_BoxPrintedWithMonLogo:
 	.string "The box is printed with a Pokémon logo.\p"
 	.string "It's a Pokémon brand moving and\n"
 	.string "delivery service.$"
-
-InsideOfTruck_EventScript_DevPort::
-	goto_if_unset FLAG_SYS_DEBUG, InsideOfTruck_EventScript_Nothing
-	setflag FLAG_SYS_QUEST_MENU_GET
-	startquest QUEST_RIVAL_NEXT_DOOR
-	delay 5
-	startquest QUEST_SCOUTING_SCOTT
-	cleartrainerflag TRAINER_ROXANNE_1
-	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 2
-	clearflag FLAG_BADGE01_GET
-	clearflag FLAG_DEFEATED_RUSTBORO_GYM
-	clearflag FLAG_RECEIVED_EXP_SHARE
-	clearflag FLAG_HIDE_BATTLE_FRONTIER_RECEPTION_GATE_SCOTT
-	clearflag FLAG_MET_SCOTT_RUSTBORO
-	clearflag FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE
-	clearflag FLAG_MET_SCOTT_IN_EVERGRANDE
-	clearflag FLAG_MET_SCOTT_IN_FALLARBOR
-	clearflag FLAG_MET_SCOTT_IN_LILYCOVE
-	clearflag FLAG_HIDE_MOSSDEEP_CITY_SCOTT
-	clearflag FLAG_HIDE_LILYCOVE_MOTEL_SCOTT
-	clearflag FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT
-	clearflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
-	clearflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
-	clearflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
-	clearflag FLAG_HIDE_SLATEPORT_CITY_SCOTT
-	warpspinenter MAP_LITTLEROOT_TOWN, 12, 10
-	end
-
-InsideOfTruck_EventScript_DevPort2::
-	goto_if_unset FLAG_SYS_DEBUG, InsideOfTruck_EventScript_Nothing
-	random 4
-	goto_if_eq VAR_RESULT, 0, InsideOfTruck_EventScript_DevPort2_PuzzleKabuto
-	goto_if_eq VAR_RESULT, 1, InsideOfTruck_EventScript_DevPort2_PuzzleOmanyte
-	goto_if_eq VAR_RESULT, 2, InsideOfTruck_EventScript_DevPort2_PuzzleAerodactyl
-	goto_if_eq VAR_RESULT, 3, InsideOfTruck_EventScript_DevPort2_PuzzleHoOh
-	end
-
-InsideOfTruck_EventScript_DevPort2_PuzzleKabuto::
-	setflag FLAG_SYS_QUEST_MENU_GET
-	fadescreen FADE_TO_BLACK
-	setvar VAR_0x8004, SLIDING_PUZZLE_KABUTO
-	setvar VAR_0x8005, FALSE
-	special DoSlidingPuzzle
-	waitstate
-	goto_if_eq VAR_RESULT, TRUE, InsideOfTruck_EventScript_DevPort2_Exit
-	end
-
-InsideOfTruck_EventScript_DevPort2_PuzzleOmanyte::
-	setflag FLAG_SYS_QUEST_MENU_GET
-	fadescreen FADE_TO_BLACK
-	setvar VAR_0x8004, SLIDING_PUZZLE_OMANYTE
-	setvar VAR_0x8005, FALSE
-	special DoSlidingPuzzle
-	waitstate
-	goto_if_eq VAR_RESULT, TRUE, InsideOfTruck_EventScript_DevPort2_Exit
-	end
-
-InsideOfTruck_EventScript_DevPort2_PuzzleAerodactyl::
-	setflag FLAG_SYS_QUEST_MENU_GET
-	fadescreen FADE_TO_BLACK
-	setvar VAR_0x8004, SLIDING_PUZZLE_AERODACTYL
-	setvar VAR_0x8005, FALSE
-	special DoSlidingPuzzle
-	waitstate
-	goto_if_eq VAR_RESULT, TRUE, InsideOfTruck_EventScript_DevPort2_Exit
-	end
-
-InsideOfTruck_EventScript_DevPort2_PuzzleHoOh::
-	setflag FLAG_SYS_QUEST_MENU_GET
-	fadescreen FADE_TO_BLACK
-	setvar VAR_0x8004, SLIDING_PUZZLE_HO_OH
-	setvar VAR_0x8005, FALSE
-	special DoSlidingPuzzle
-	waitstate
-	goto_if_eq VAR_RESULT, TRUE, InsideOfTruck_EventScript_DevPort2_Exit
-	end
-
-InsideOfTruck_EventScript_DevPort2_Exit::
-	setflag FLAG_SYS_DEBUG
-	warpspinenter MAP_LITTLEROOT_TOWN, 12, 10
-	end
-
-InsideOfTruck_EventScript_Nothing::
-	end

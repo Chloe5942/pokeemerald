@@ -6,18 +6,72 @@ Route117_PokemonDayCare_OnTransition:
 	setflag FLAG_LANDMARK_POKEMON_DAYCARE
 	end
 
-Route117_PokemonDayCare_EventScript_EggIncubator::
+Route117_PokemonDayCare_EventScript_DaycareStation::
 	lockall
 	playse SE_PC_ON
 	waitse
-	msgbox Route117_PokemonDayCare_Text_EggIncubator, MSGBOX_DEFAULT
+	msgbox Route117_PokemonDayCare_Text_DaycareStation, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
+	dynmultipush Route117_PokemonDayCare_Text_Supplies, 0
+	dynmultipush Route117_PokemonDayCare_Text_Incubator, 1
+	dynmultipush Route117_PokemonDayCare_Text_Exit, 2
+	dynmultistack 19, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	switch VAR_RESULT
+	case 0, Route117_PokemonDayCare_EventScript_Supplies
+	case 1, Route117_PokemonDayCare_EventScript_Incubator
+	case 2, Route117_PokemonDayCare_EventScript_Declined
+	case MULTI_B_PRESSED, Route117_PokemonDayCare_EventScript_Declined
+	releaseall
+	end
+
+Route117_PokemonDayCare_EventScript_DaycareStation_Quick::
+	lockall
+	dynmultipush Route117_PokemonDayCare_Text_Supplies, 0
+	dynmultipush Route117_PokemonDayCare_Text_Incubator, 1
+	dynmultipush Route117_PokemonDayCare_Text_Exit, 2
+	dynmultistack 19, 0, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	switch VAR_RESULT
+	case 0, Route117_PokemonDayCare_EventScript_Supplies
+	case 1, Route117_PokemonDayCare_EventScript_Incubator
+	case 2, Route117_PokemonDayCare_EventScript_Declined
+	case MULTI_B_PRESSED, Route117_PokemonDayCare_EventScript_Declined
+	releaseall
+	end
+
+Route117_PokemonDayCare_EventScript_Supplies::
+	lockall
+	message Route117_PokemonDayCare_Text_DaycareSupplies
+	waitmessage
+	pokemart Route117_PokemonDayCare_Supplies
+	goto Route117_PokemonDayCare_EventScript_Declined
+	releaseall
+	end
+
+	.align 2
+Route117_PokemonDayCare_Supplies:
+	.2byte ITEM_SEA_INCENSE
+	.2byte ITEM_LAX_INCENSE
+	.2byte ITEM_LUCKY_EGG
+	.2byte ITEM_EVERSTONE
+	pokemartlistend
+
+Route117_PokemonDayCare_EventScript_Declined::
+	lockall
+	msgbox Route117_PokemonDayCare_Text_ComeBackAgain, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	goto Route117_PokemonDayCare_EventScript_DaycareStation_Off
+
+Route117_PokemonDayCare_EventScript_Incubator::
+	lockall
+	playse SE_PC_ON
+	waitse
 	showmoneybox 0, 0
 	msgbox Route117_PokemonDayCare_Text_EggIncubator_Ask, MSGBOX_YESNO
 	switch VAR_RESULT
 	case YES, Route117_PokemonDayCare_EventScript_EggIncubator_Incubate
-	case NO, Route117_PokemonDayCare_EventScript_EggIncubator_Declined
+	case NO, Route117_PokemonDayCare_EventScript_DaycareStation_Quick
 	releaseall
 	end
 
@@ -38,18 +92,10 @@ Route117_PokemonDayCare_EventScript_EggIncubator_Incubate::
 Route117_PokemonDayCare_EventScript_EggIncubator_NothingSelected::
 	lockall
 	hidemoneybox
-	msgbox Route117_PokemonDayCare_Text_EggIncubator_NothingSelected, MSGBOX_DEFAULT
+	msgbox Route117_PokemonDayCare_Text_EggIncubator_NoEgg, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	goto Route117_PokemonDayCare_EventScript_EggIncubator_Off
-
-Route117_PokemonDayCare_EventScript_EggIncubator_Declined::
-	lockall
-	hidemoneybox
-	msgbox Route117_PokemonDayCare_Text_EggIncubator_Declined, MSGBOX_DEFAULT
-	waitmessage
-	closemessage
-	goto Route117_PokemonDayCare_EventScript_EggIncubator_Off
+	goto Route117_PokemonDayCare_EventScript_DaycareStation_Off
 
 Route117_PokemonDayCare_EventScript_EggIncubator_NotEgg::
 	lockall
@@ -57,7 +103,7 @@ Route117_PokemonDayCare_EventScript_EggIncubator_NotEgg::
 	msgbox Route117_PokemonDayCare_Text_EggIncubator_NotEgg, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	goto Route117_PokemonDayCare_EventScript_EggIncubator_Off
+	goto Route117_PokemonDayCare_EventScript_DaycareStation_Off
 
 Route117_PokemonDayCare_EventScript_EggIncubator_Hatch::
 	lockall
@@ -81,7 +127,7 @@ Route117_PokemonDayCare_EventScript_EggIncubator_Hatch::
 	waitmessage
 	hidemoneybox
 	closemessage
-	goto Route117_PokemonDayCare_EventScript_EggIncubator_Off
+	goto Route117_PokemonDayCare_EventScript_DaycareStation_Off
 
 Route117_PokemonDayCare_EventScript_EggIncubator_NotEnoughMoney::
 	lockall
@@ -89,27 +135,31 @@ Route117_PokemonDayCare_EventScript_EggIncubator_NotEnoughMoney::
 	msgbox Route117_PokemonDayCare_Text_EggIncubator_NotEnoughMoney, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	goto Route117_PokemonDayCare_EventScript_EggIncubator_Off
+	goto Route117_PokemonDayCare_EventScript_DaycareStation_Off
 
-Route117_PokemonDayCare_EventScript_EggIncubator_Off::
+Route117_PokemonDayCare_EventScript_DaycareStation_Off::
 	lockall
 	playse SE_PC_OFF
 	waitse
 	releaseall
 	end
 
-Route117_PokemonDayCare_Text_EggIncubator::
-	.string "It's an Egg Incubator.\n"
-	.string "It causes eggs to hatch immediately.$"
+Route117_PokemonDayCare_Text_DaycareStation::
+	.string "Welcome to the Daycare Station!\n"
+	.string "What service would you like?$"
+
+Route117_PokemonDayCare_Text_DaycareSupplies::
+	.string "Daycare Supplies.\n"
+	.string "What would you like?$"
 
 Route117_PokemonDayCare_Text_EggIncubator_Ask::
 	.string "Do you want to incubate an egg?\n"
 	.string "Costs ¥2500 per egg.$"
 
-Route117_PokemonDayCare_Text_EggIncubator_NothingSelected::
+Route117_PokemonDayCare_Text_ComeBackAgain::
 	.string "Come back again!$"
 
-Route117_PokemonDayCare_Text_EggIncubator_Declined::
+Route117_PokemonDayCare_Text_EggIncubator_NoEgg::
 	.string "Oh, you don't want to incubate an egg.\n"
 	.string "Come back again!$"
 
@@ -130,3 +180,12 @@ Route117_PokemonDayCare_Text_EggIncubator_TakeMoney::
 
 Route117_PokemonDayCare_Text_EggIncubator_MoneyTaken::
 	.string "Payment accepted!$"
+
+Route117_PokemonDayCare_Text_Supplies::
+	.string "Daycare Supplies$"
+
+Route117_PokemonDayCare_Text_Incubator::
+	.string "Egg Incubator$"
+
+Route117_PokemonDayCare_Text_Exit::
+	.string "Exit$"
