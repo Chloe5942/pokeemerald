@@ -2103,6 +2103,10 @@ static const s8 sFriendshipEventModifiers[][3] =
     [FRIENDSHIP_EVENT_FAINT_SMALL]     = {-1, -1, -1},
     [FRIENDSHIP_EVENT_FAINT_FIELD_PSN] = {-5, -5, -10},
     [FRIENDSHIP_EVENT_FAINT_LARGE]     = {-5, -5, -10},
+    [FRIENDSHIP_EVENT_WAITING]         = {15, 15,  15},
+    [FRIENDSHIP_EVENT_RESTING]         = {30, 30,  30},
+    [FRIENDSHIP_EVENT_MASSAGE]         = {15, 10,   5},
+    [FRIENDSHIP_EVENT_GROOMING]        = {30, 25,  20},
 };
 
 #define HM_MOVES_END 0xFFFF

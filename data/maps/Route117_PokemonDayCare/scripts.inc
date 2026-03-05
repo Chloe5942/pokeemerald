@@ -144,6 +144,50 @@ Route117_PokemonDayCare_EventScript_DaycareStation_Off::
 	releaseall
 	end
 
+Route117_PokemonDayCare_EventScript_DaycareMasseuse::
+	lockall
+	faceplayer
+	msgbox Route117_PokemonDayCare_Text_WantMonMassaged, MSGBOX_YESNO
+	switch VAR_RESULT
+	case YES, Route117_PokemonDayCare_EventScript_AcceptMassage
+	case NO, Route117_PokemonDayCare_EventScript_DeclineMassage
+	releaseall
+	end
+
+Route117_PokemonDayCare_EventScript_AcceptMassage::
+	lockall
+	msgbox Route117_PokemonDayCare_Text_ChooseMon, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Route117_PokemonDayCare_EventScript_DeclineMassage
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, Route117_PokemonDayCare_EventScript_CantMassageEgg
+	special MassageServices
+	special BufferMonNickname
+	msgbox Route117_PokemonDayCare_Text_HasBeenMassaged, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
+
+Route117_PokemonDayCare_EventScript_DeclineMassage::
+	lockall
+	msgbox Route117_PokemonDayCare_Text_DeclinedMassage, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
+
+Route117_PokemonDayCare_EventScript_CantMassageEgg::
+	lockall
+	msgbox Route117_PokemonDayCare_Text_CantMassageEgg, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	releaseall
+	end
+
 Route117_PokemonDayCare_Text_DaycareStation::
 	.string "Welcome to the Daycare Station!\n"
 	.string "What service would you like?$"
@@ -189,3 +233,21 @@ Route117_PokemonDayCare_Text_Incubator::
 
 Route117_PokemonDayCare_Text_Exit::
 	.string "Exit$"
+
+Route117_PokemonDayCare_Text_WantMonMassaged:
+	.string "Hey, would you like one of your Pokémon\n"
+	.string "to get a short massage?$"
+
+Route117_PokemonDayCare_Text_CantMassageEgg:
+	.string "I can't massage an Egg!$"
+
+Route117_PokemonDayCare_Text_DeclinedMassage:
+	.string "Oh, you don't want me to give one of\n"
+	.string "your Pokémon a massage?\p"
+	.string "Come back soon though!$"
+
+Route117_PokemonDayCare_Text_HasBeenMassaged:
+	.string "{STR_VAR_1} looks happier!$"
+
+Route117_PokemonDayCare_Text_ChooseMon:
+	.string "Choose a Pokémon.$"

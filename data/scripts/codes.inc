@@ -1,5 +1,11 @@
 EventScript_CodeComputer::
+	goto_if_unset FLAG_SYS_POKEDEX_GET, CodeComputer_EventScript_Adjustements
 	goto CodeComputer_EventScript_Interact
+	end
+
+CodeComputer_EventScript_Adjustements::
+	msgbox CodeComputer_Text_SorryAdjustments, MSGBOX_DEFAULT
+	release
 	end
 
 CodeComputer_EventScript_Interact::
@@ -321,6 +327,10 @@ CodeComputer_EventScript_GiftMonCode::
 CodeComputer_Text_Welcome:
     .string "Welcome to the Mystery Codes Service.\n"
     .string "Would you like to enter a code?$"
+
+CodeComputer_Text_SorryAdjustments:
+	.string "Welcome to the Mystery Codes Service.\n"
+	.string "Sorry, we're undergoing adjustments.$"
 
 CodeComputer_Text_ComeAgain:
     .string "You're free to come back\n"

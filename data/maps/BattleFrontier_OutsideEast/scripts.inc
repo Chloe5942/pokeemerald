@@ -435,3 +435,11 @@ BattleFrontier_OutsideEast_Text_StickyMonWithLongTail:
 	.string "with a long tail up ahead!\p"
 	.string "It was hiding under a boulder, and\n"
 	.string "it kept staring at me!$"
+
+BattleFrontier_OutsideEast_EventScript_TrainingCenterSign::
+	msgbox BattleFrontier_OutsideEast_Text_TrainingCenterSign, MSGBOX_SIGN
+	end
+
+BattleFrontier_OutsideEast_Text_TrainingCenterSign:
+	.string "Battle Frontier Training Center\n"
+	.string "Engaging with your Pokémon!$"

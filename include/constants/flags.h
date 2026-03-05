@@ -43,7 +43,7 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_POKESCANNER                      0x20 // PokéScanner Flag
+#define FLAG_POKESCANNER                      0x20 // PokéScanner Active Flag
 #define FLAG_POKESCANNER_GET                  0x21 // PokéScanner Recieved Flag
 #define FLAG_EGG_MOVES_TUTOR                  0x22 // Move Tutor Egg Moves Flag
 #define FLAG_SHINY_CREATION                   0x23 // Force Shiny Flag
@@ -64,16 +64,16 @@
 #define FLAG_HIDE_LOBBY_NOLAND                0x32 // Hide Noland in lobby Flag
 #define FLAG_HIDE_LOBBY_BRANDON               0x33 // Hide Brandon in lobby Flag
 #define FLAG_HIDE_LOBBY_SPENSER               0x34 // Hide Spenser in lobby Flag
-#define FLAG_SYS_NO_COLLISION                 0x35 // Unused Flag
-#define FLAG_SYS_NO_TRAINER_SEE               0x36 // Unused Flag
-#define FLAG_SYS_NO_BAG_USE                   0x37 // Unused Flag
-#define FLAG_SYS_NO_CATCHING                  0x38 // Unused Flag
-#define FLAG_SYS_PC_FROM_DEBUG_MENU           0x39 // Unused Flag
-#define FLAG_SYS_NO_BATTLE_DMG                0x3A // Unused Flag
-#define FLAG_SYS_NO_ENCOUNTER                 0x3B // Unused Flag
+#define FLAG_SYS_NO_COLLISION                 0x35 // Debug Flag
+#define FLAG_SYS_NO_TRAINER_SEE               0x36 // Debug Flag
+#define FLAG_SYS_NO_BAG_USE                   0x37 // Debug Flag
+#define FLAG_SYS_NO_CATCHING                  0x38 // Debug Flag
+#define FLAG_SYS_PC_FROM_DEBUG_MENU           0x39 // Debug Flag
+#define FLAG_SYS_NO_BATTLE_DMG                0x3A // Debug Flag
+#define FLAG_SYS_NO_ENCOUNTER                 0x3B // Debug Flag
 #define FLAG_RECIEVED_CLAMPERL_ITEMS          0x3C // Recieved 5 Deep Sea Teeth & Scales Flag
 #define FLAG_TIDE_KEEPER_ACTIVE               0x3D // Route 125 Tide Keeper Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
+#define FLAG_TRAINING_CENTER_GYM              0x3E // In Battle Frontier Training Center Gym Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag

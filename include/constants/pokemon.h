@@ -181,6 +181,11 @@
 #define FRIENDSHIP_EVENT_FAINT_SMALL      6
 #define FRIENDSHIP_EVENT_FAINT_FIELD_PSN  7 // Removed
 #define FRIENDSHIP_EVENT_FAINT_LARGE      8 // If opponent was >= 30 levels higher. See AdjustFriendshipOnBattleFaint
+// Custom
+#define FRIENDSHIP_EVENT_WAITING          9
+#define FRIENDSHIP_EVENT_RESTING          10
+#define FRIENDSHIP_EVENT_MASSAGE          11
+#define FRIENDSHIP_EVENT_GROOMING         12
 
 // Constants for GetLeadMonFriendshipScore
 #define FRIENDSHIP_NONE        0
@@ -203,7 +208,7 @@
 #define USE_RANDOM_IVS (MAX_PER_STAT_IVS + 1)
 #define MAX_PER_STAT_EVS 255
 #define MAX_TOTAL_EVS 510
-#define EV_ITEM_RAISE_LIMIT 100
+#define EV_ITEM_RAISE_LIMIT 255
 
 // Battle move flags
 #define FLAG_MAKES_CONTACT          (1 << 0)

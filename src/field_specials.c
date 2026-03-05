@@ -68,6 +68,8 @@
 #include "palette.h"
 #include "pokedex.h"
 #include "naming_screen.h"
+#include "constants/hold_effects.h"
+#include "item.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4397,3 +4399,172 @@ void GetTimeOfDay(void)
     }
 }
 
+void MassageServices(void)
+{
+    AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_MASSAGE);
+}
+
+void GroomingServices(void)
+{
+    AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_GROOMING);
+}
+
+void WaitOnBench(void)
+{
+    AdjustFriendship(&gPlayerParty[GetLeadMonIndex()], FRIENDSHIP_EVENT_WAITING);
+    RtcAdvanceTime(VAR_0x8004, 0, 0);
+}
+
+void RestInBed(void)
+{
+    int i;
+    struct Pokemon *mon = gPlayerParty;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        AdjustFriendship(mon, FRIENDSHIP_EVENT_RESTING);
+        RtcAdvanceTimeTo(VAR_0x8004, 0, 0);
+        mon++;
+    }
+}
+
+void HealLeadMon(void)
+{
+    u8 j;
+    u8 ppBonuses;
+    u8 arg[4];
+
+    // restore HP.
+    u16 maxHP = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MAX_HP);
+    arg[0] = maxHP;
+    arg[1] = maxHP >> 8;
+    SetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_HP, arg);
+    ppBonuses = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_PP_BONUSES);
+
+    // restore PP.
+    for(j = 0; j < MAX_MON_MOVES; j++)
+    {
+        arg[0] = CalculatePPWithBonus(GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE1 + j), ppBonuses, j);
+        SetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_PP1 + j, arg);
+    }
+
+    // since status is u32, the four 0 assignments here are probably for safety to prevent undefined data from reaching SetMonData.
+    arg[0] = 0;
+    arg[1] = 0;
+    arg[2] = 0;
+    arg[3] = 0;
+    SetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_STATUS, arg);
+}
+
+void ResetMonEvs(void)
+{
+    u8 setEv = gSpecialVar_0x8000;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV, &setEv);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_EV, &setEv);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_EV, &setEv);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_EV, &setEv);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_EV, &setEv);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_EV, &setEv);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetMonEv(void)
+{
+    u8 setEv = gSpecialVar_0x8000;
+    u8 statId = gSpecialVar_0x8001;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV + statId, &setEv);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+bool8 AreMonEVsMaxedOut(void)
+{
+    if (GetMonEVCount(&gPlayerParty[gSpecialVar_0x8004]) >= MAX_TOTAL_EVS)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void AddMonEVs(void)
+{
+    u8 evYield_HP = VarGet(VAR_HP_EV);
+    u8 evYield_Attack = VarGet(VAR_ATK_EV);
+    u8 evYield_Defense = VarGet(VAR_DEF_EV);
+    u8 evYield_Speed = VarGet(VAR_SPEED_EV);
+    u8 evYield_SpAttack = VarGet(VAR_SPATK_EV);
+    u8 evYield_SpDefense = VarGet(VAR_SPDEF_EV);
+    u8 intensity = VarGet(VAR_EV_TRAINING);
+    u8 evs[NUM_STATS];
+    u16 evIncrease = 0;
+    u16 totalEVs = 0;
+    u16 heldItem;
+    u8 holdEffect;
+    int i, multiplier;
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        evs[i] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV + i, 0);
+        totalEVs += evs[i];
+    }
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        if (totalEVs >= MAX_TOTAL_EVS)
+            break;
+
+        if (CheckPartyHasHadPokerus(&gPlayerParty[gSpecialVar_0x8004], 0))
+            multiplier = 2;
+        else
+            multiplier = 1;
+
+        switch (i)
+        {
+        case STAT_HP:
+            evIncrease = (evYield_HP * intensity) * multiplier;
+            break;
+        case STAT_ATK:
+            evIncrease = (evYield_Attack * intensity) * multiplier;
+            break;
+        case STAT_DEF:
+            evIncrease = (evYield_Defense * intensity) * multiplier;
+            break;
+        case STAT_SPEED:
+            evIncrease = (evYield_Speed * intensity) * multiplier;
+            break;
+        case STAT_SPATK:
+            evIncrease = (evYield_SpAttack * intensity) * multiplier;
+            break;
+        case STAT_SPDEF:
+            evIncrease = (evYield_SpDefense * intensity) * multiplier;
+            break;
+        }
+
+        heldItem = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HELD_ITEM, 0);
+        if (heldItem == ITEM_ENIGMA_BERRY)
+        {
+            if (gMain.inBattle)
+                holdEffect = gEnigmaBerries[0].holdEffect;
+            else
+                holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+        }
+        else
+        {
+            holdEffect = GetItemHoldEffect(heldItem);
+        }
+
+        if (holdEffect == HOLD_EFFECT_MACHO_BRACE)
+            evIncrease *= 2;
+
+        if (totalEVs + (s16)evIncrease > MAX_TOTAL_EVS)
+            evIncrease = ((s16)evIncrease + MAX_TOTAL_EVS) - (totalEVs + evIncrease);
+
+        if (evs[i] + (s16)evIncrease > MAX_PER_STAT_EVS)
+        {
+            int val1 = (s16)evIncrease + MAX_PER_STAT_EVS;
+            int val2 = evs[i] + evIncrease;
+            evIncrease = val1 - val2;
+        }
+
+        evs[i] += evIncrease;
+        totalEVs += evIncrease;
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV + i, &evs[i]);
+    }
+}

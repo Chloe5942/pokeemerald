@@ -439,10 +439,10 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 21,
+      "x": 24,
       "y": 45,
       "elevation": 0,
-      "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE9",
+      "dest_map": "MAP_BATTLE_FRONTIER_TRAINING_CENTER",
       "dest_warp_id": "0"
     },
     {
@@ -460,7 +460,80 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "EventScript_Bench_Left"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "EventScript_Bench_Right"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "EventScript_Bench_Left"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "EventScript_Bench_Right"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "EventScript_Bench_Left"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "EventScript_Bench_Right"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "EventScript_Bench_Left"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "EventScript_Bench_Right"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -525,6 +598,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Common_EventScript_ShowPokemonCenterSign"
+    },
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 45,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleFrontier_OutsideEast_EventScript_TrainingCenterSign"
     }
   ]
 }

@@ -545,3 +545,12 @@ gSpecials::
 	def_special EnterCode
 	def_special GetCodeFeedback
 	def_special GetTimeOfDay
+	def_special MassageServices
+	def_special GroomingServices
+	def_special WaitOnBench
+	def_special RestInBed
+	def_special HealLeadMon
+	def_special SetMonEv
+	def_special ResetMonEvs
+	def_special AreMonEVsMaxedOut
+	def_special AddMonEVs

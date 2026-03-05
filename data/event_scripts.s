@@ -1075,5 +1075,8 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/scripts/codes.inc"
 	.include "data/scripts/trade_machine.inc"
 	.include "data/scripts/puzzles.inc"
+	.include "data/scripts/time_skipping.inc"
 
 	.include "data/maps/MobileLab/scripts.inc"
+
+	.include "data/maps/BattleFrontier_TrainingCenter/scripts.inc"
