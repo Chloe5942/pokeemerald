@@ -345,7 +345,6 @@ SECTIONS {
         src/new_shop.o(.text);
         src/ui_main_menu.o(.text);
 		src/ui_stat_editor.o(.text);
-        src/day_night.o(.text);
         src/quests.o(.text);
     } > ROM =0
 
@@ -714,7 +713,6 @@ SECTIONS {
         src/new_shop.o(.rodata);
         src/ui_main_menu.o(.rodata);
 		src/ui_stat_editor.o(.rodata);
-        src/day_night.o(.rodata);
         src/quests.o(.rodata);
     } > ROM =0
 
